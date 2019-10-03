@@ -1,0 +1,105 @@
+@media only screen and (max-width: 1880px) {
+    .logincontainer {width: 96%}
+}
+@media only screen and (max-width: 1730px) {
+    .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 18px 41px !important}
+}
+@media only screen and (max-width: 1640px) {
+    .loginbuttonwrapper button, .loginbuttonwrapper button:hover {font-size: 20px !important}
+}
+@media only screen and (max-width: 1600px) {
+    .textwrapper mat-card-title {font-size: 28px}
+    .textwrapper mat-card-subtitle {font-size: 18px}
+    .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 35px !important;font-size: 21px !important;}
+}
+@media only screen and (max-width: 1500px) {
+    .loginbodycontainer {-ms-flex-align: center; align-items: center}
+    .loginbody {padding: 42px 10px 42px 2px}
+}
+@media only screen and (max-width: 1380px) {.loginbuttonwrapper button, .loginbuttonwrapper button:hover {padding: 12px 36px !important;}
+}
+@media only screen and (max-width: 1260px) {
+    .loginform .formgroup input {width: 174px}
+    .loginbuttoncon .errormsgred {left: -207px}
+    .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 26px !important;font-size: 18px !important;}
+}
+@media only screen and (max-width: 1199px) {
+    .loginbody {padding: 42px 10px 42px 10px;}
+    .loginbodycontainer {display: inline-block !important;text-align: center;}
+    .loginbodycontainer .loginbodyleftblock {width: 100% !important;}
+    .loginbodycontainer .loginbodyrightblock {width: 100% !important;border-left: 0px solid #303a49;padding-top: 40px !important}
+    .logoimgwrapper {width: 330px;display: inline-block;}
+    .orangegradientbutton, .orangegradientbutton:hover {padding: 4px 39px !important}
+    .loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 0px !important}
+}
+@media only screen and (max-width: 991px) {
+    .signupfrwrapper {padding: 5px 0;}
+    .loginform {padding-bottom: 16px}
+    .logintopbarcontainer {display: inline-block !important; text-align: center;width: 100%}
+    .logoimgwrapper {margin: 0 auto;}
+    .loginformwrapper {width: 100%}
+    .loginform {width: 100%;justify-content: center;}
+
+    
+    .vpheaderwrapper {position: inherit !important;top:0;}
+.vpheaderwrapper .mat-toolbar.mat-primary {background: #7f729500 !important;
+    color: #fff;
+    width: 98%;
+    margin: 0 auto;
+    padding: 10px 0;}
+.homemain .mat-drawer-backdrop.mat-drawer-shown {visibility: hidden !important;}
+.homemain {display: block;justify-content: space-between;}
+.homemain .mat-list-item {float: none;}
+.mat-icon-button {display: block !important;}
+.homemain .smlmenudiv {display: none; width: 100%}
+.homemain .smlmenudiv.show {display: block;background: #282828;}
+.homemain .mat-nav-list span.menuwrapper {display: inline-block; width: 100%; padding: 0 !important;}
+.homemain .mat-list-item:before {display: none}
+.vpheaderwrapper .mat-toolbar-row, .vpheaderwrapper .mat-toolbar-single-row {display: inline-block;width: 100%;}
+.topmenuiconlogo {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;width: 100%;align-items: center;}
+.homemain mat-nav-list span.logowrapper {display: none;}
+.vpheaderwrapper .homemain .mat-nav-list {width: 100%;align-items: center;display: inline-block !important;}
+.vpheaderwrapper .mat-toolbar-row, .mat-toolbar-single-row {height: auto;padding: 10px 0px !important;}
+.vpheaderwrapper .logowrappersml {display: block;flex: 1 1 20%;margin-left: 20px;}
+.vpheaderwrapper .logowrappersml img {max-width: 100%;}
+.vpheaderwrapper .mat-drawer-container.mat-drawer-opened {background-color: transparent !important;}
+.vpheaderwrapper .mat-drawer {background-color: transparent;position: inherit;box-shadow: none !important;}
+.vpheaderwrapper .homemain .mat-sidenav .mat-nav-list {width: 100%;display: inline-block !important;background-color: #3e3e40;padding-top: 0px;}
+.vpheaderwrapper .mat-drawer-container.mat-drawer-opened {position: inherit;display: block !important;}
+.vpheaderwrapper .mat-drawer-backdrop {position: inherit;}
+.vpheaderwrapper.mat-card {padding: 0 !important; position: relative !important;padding-top: 15px !important;}
+.vpheaderwrapper .mat-nav-list .mat-list-item {border-bottom:1px solid #333;}
+.mat-icon-button.mat-animation-noopable .smlmenudiv.ng-star-inserted {display: none !important;}
+.mat-icon-button.mat-animation-noopable.cdk-touch-focused .smlmenudiv.ng-star-inserted {display: block !important;}
+}
+@media only screen and (max-width: 620px) {
+    .loginform .formgroup input {width: 200px;margin:0 5px;}
+    .loginbuttoncon .errormsgred {left: -179px;}
+    .loginbuttoncon .errormsgred {left: 0;position: inherit;bottom: 0;width: 100%;padding: 10px 0 20px;}
+    .loginform .loginbuttoncon {display: flex;align-items: center;justify-content: center;flex-wrap: wrap;width: 97%;padding-top: 10px;}
+    .loginform .formgroup .errormsgblue {padding-left: 5px}
+}
+@media only screen and (max-width: 540px) {
+    .btnbuyticket_genuserlan .buttoncon {font-size: 28px !important; display: block;}
+    .btnbuyticket_genuserlan {line-height: 60px !important;}
+    .signupfrwrapper {width: 98%;}
+    .footertop mat-list {width: 96%;}
+}
+@media only screen and (max-width: 520px) {
+    .loginform .formgroup input {width: 168px}
+}
+@media only screen and (max-width: 440px) {
+    .logoimgwrapper {
+        width: 220px;
+        display: inline-block;
+    }
+    .loginbuttoncon .errormsgred {left: 0;position: inherit;bottom: 0;width: auto;}
+    .loginform .loginbuttoncon {display: flex;align-items: center;justify-content: space-between;}
+    .loginform {padding-bottom: 0;padding-top: 10px;}
+    .loginform .formgroup input {width: 95%;margin: 0;}
+    .loginform .formgroup {width: 100%; padding: 5px 0}
+    .loginform .formgroup .errormsgblue {padding-left: 0;}
+    .logintopbarcontainer {padding: 27px 0 5px 0 !important}
+    .loginbuttonwrapper {flex-wrap: wrap}
+    .loginbuttonwrapper button, .loginbuttonwrapper button:hover {margin: 10px 0;}
+}

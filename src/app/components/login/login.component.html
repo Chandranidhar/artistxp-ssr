@@ -1,0 +1,68 @@
+<mat-card class="signupflowblock">
+
+    <mat-card-header class="logintopbarmainwrapper">
+        <mat-card-content class="logincontainer">
+            <mat-list class="logintopbarcontainer">
+                <mat-list-item class="logintopleft">
+                    <span class="logoimgwrapper">
+                        <img src="../../../assets/images/artistheaderlogo.png">
+                    </span>
+                </mat-list-item>
+                <mat-list-item class="logintopright">
+                    <mat-card-content class="loginformwrapper">
+                        <form class="loginform">
+                            <div class="formgroup">
+                                <input type="email" placeholder="Email">
+                                <span class="errormsgblue">Email is required !</span>
+                            </div>
+                            <div class="formgroup">
+                                <input type="password" placeholder="Password">
+                                <span class="errormsgblue">Password is required !</span>
+                            </div>
+                            <div class="formgroup loginbuttoncon">
+                                <a class="errormsgred">Forgot Password? </a>
+                                <button mat-button class="orangegradientbutton">Login</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card-header>
+
+    <mat-card-content class="loginbody">
+        <span class="logincontainer">
+            <mat-list class="loginbodycontainer">
+                <mat-list-item class="loginbodyleftblock">
+                    <span class="loginvideowrapper">
+                        <span class="loginvideo">
+                            <iframe width="560px" height="315px" src="https://www.youtube.com/embed/Q_FoWu-z_BA"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </span>
+                    </span>
+                </mat-list-item>
+                <mat-list-item class="loginbodyrightblock">
+                    <span class="textwrapper">
+                        <mat-card-title>THE ARTIST EXPERIENCE SOCIAL NETWORK IS THE NEW WAY FOR ARTISTS AND FANS TO CONNECT!</mat-card-title>
+                        <mat-card-subtitle>JOIN IN THE ACTION OF ARTISTXP! MUSIC, DANCE VIDEOS, MODEL PORTFOLIOS--WE GOT IT ALL! DISCOVER NEW ARTISTS OR REACH NEW FANS WHILE BUILDING RELATIONSHIPS WITH OTHER TALENTED ARTISTS.</mat-card-subtitle>
+                        <p>Personalize your artist or fan profile to your liking</p>
+                        <p>Upload video content directly or embed YouTube Videos</p>
+                        <p>Add your SoundCloud player account directly on your profile dashboard</p>
+                        <p>Add your Reverbnation widgets directly to your profile page</p>
+                        <p>Add music in several audio formats to your profile music player</p>
+                        <p>Add countless photo galleries to your profile</p>
+                        <p>Directly link Facebook page, along with Instagram and Twitter accounts to stream on your artist page</p>
+                        <p>Build an army of fans that visit and like your Artist page</p>
+                    </span>
+                    <mat-action-list class="loginbuttonwrapper">
+                            <button mat-button class="blackgradientbutton"> ArtistXP Info </button>
+                            <button mat-button class="orangegradientbutton" routerLink="/signup"> join now </button>
+                    </mat-action-list>
+                </mat-list-item>
+            </mat-list>
+        </span>
+    </mat-card-content>
+<app-footer></app-footer>
+</mat-card>

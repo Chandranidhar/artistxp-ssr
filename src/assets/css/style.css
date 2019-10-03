@@ -1,0 +1,223 @@
+@font-face {font-family: 'RobotoCondensedBold';src: url('../fonts/RobotoCondensed-Bold.eot');src: url('../fonts/RobotoCondensed-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/RobotoCondensed-Bold.woff2') format('woff2'),url('../fonts/RobotoCondensed-Bold.woff') format('woff'),url('../fonts/RobotoCondensed-Bold.ttf') format('truetype'),url('../fonts/RobotoCondensed-Bold.svg#RobotoCondensed-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'OpenSansSemibold';src: url('../fonts/OpenSans-Semibold.eot');src: url('../fonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),url('../fonts/OpenSans-Semibold.woff2') format('woff2'),url('../fonts/OpenSans-Semibold.woff') format('woff'),url('../fonts/OpenSans-Semibold.ttf') format('truetype'),url('../fonts/OpenSans-Semibold.svg#OpenSans-Semibold') format('svg');font-weight: 600;font-style: normal;}
+@font-face {font-family: 'RobotoBlack';src: url('../fonts/Roboto-Black.eot');src: url('../fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Black.woff') format('woff'),url('../fonts/Roboto-Black.ttf') format('truetype'),url('../fonts/Roboto-Black.svg#Roboto-Black') format('svg');font-weight: 900;font-style: normal;}
+@font-face {font-family: 'OpenSans';src: url('../fonts/OpenSans.eot');src: url('../fonts/OpenSans.eot?#iefix') format('embedded-opentype'),url('../fonts/OpenSans.woff2') format('woff2'),url('../fonts/OpenSans.woff') format('woff'),url('../fonts/OpenSans.ttf') format('truetype'),url('../fonts/OpenSans.svg#OpenSans') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'RobotoBold';src: url('../fonts/Roboto-Bold.eot');src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Bold.woff2') format('woff2'),url('../fonts/Roboto-Bold.woff') format('woff'),url('../fonts/Roboto-Bold.ttf') format('truetype'),url('../fonts/Roboto-Bold.svg#Roboto-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'RobotoLight';src: url('../fonts/Roboto-Light.eot');src: url('../fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Light.woff2') format('woff2'),url('../fonts/Roboto-Light.woff') format('woff'),url('../fonts/Roboto-Light.ttf') format('truetype'),url('../fonts/Roboto-Light.svg#Roboto-Light') format('svg');font-weight: 300;font-style: normal;}
+@font-face {font-family: 'OpenSansBold';src: url('../fonts/OpenSans-Bold.eot');src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/OpenSans-Bold.woff2') format('woff2'),url('../fonts/OpenSans-Bold.woff') format('woff'),url('../fonts/OpenSans-Bold.ttf') format('truetype'),url('../fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'OpenSansExtrabold';src: url('../fonts/OpenSans-Extrabold.eot');src: url('../fonts/OpenSans-Extrabold.eot?#iefix') format('embedded-opentype'),url('../fonts/OpenSans-Extrabold.woff2') format('woff2'),url('../fonts/OpenSans-Extrabold.woff') format('woff'),url('../fonts/OpenSans-Extrabold.ttf') format('truetype'),url('../fonts/OpenSans-Extrabold.svg#OpenSans-Extrabold') format('svg');font-weight: 800;font-style: normal;}
+@font-face {font-family: 'RobotoMedium';src: url('../fonts/Roboto-Medium.eot');src: url('../fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Medium.woff2') format('woff2'),url('../fonts/Roboto-Medium.woff') format('woff'),url('../fonts/Roboto-Medium.ttf') format('truetype'),url('../fonts/Roboto-Medium.svg#Roboto-Medium') format('svg');font-weight: 500;font-style: normal;}
+@font-face {font-family: 'RobotoRegular';src: url('../fonts/Roboto-Regular.eot');src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Regular.woff2') format('woff2'),url('../fonts/Roboto-Regular.woff') format('woff'),url('../fonts/Roboto-Regular.ttf') format('truetype'),url('../fonts/Roboto-Regular.svg#Roboto-Regular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'Adobe-Garamond-Pro-Bold';src: url('../fonts/AGaramondPro-Bold.eot');src: url('../fonts/AGaramondPro-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/AGaramondPro-Bold.woff2') format('woff2'),url('../fonts/AGaramondPro-Bold.woff') format('woff'),url('../fonts/AGaramondPro-Bold.ttf') format('truetype'),url('../fonts/AGaramondPro-Bold.svg#AGaramondPro-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'notera_personal_use_onlyRg';src: url('../fonts/notera_personaluseonly-webfont.woff2') format('woff2'),url('../fonts/notera_personaluseonly-webfont.woff') format('woff');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'TypoSlabIrregularDemo';src: url('../fonts/TypoSlabIrregularDemo.eot');src: url('../fonts/TypoSlabIrregularDemo.eot?#iefix') format('embedded-opentype'),url('../fonts/TypoSlabIrregularDemo.woff2') format('woff2'),url('../fonts/TypoSlabIrregularDemo.woff') format('woff'),url('../fonts/TypoSlabIrregularDemo.ttf') format('truetype'),url('../fonts/TypoSlabIrregularDemo.svg#TypoSlabIrregularDemo') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'Adobe-Garamond-Pro-Bold';src: url('../fonts/AGaramondPro-Bold.woff2') format('woff2'),url('../fonts/AGaramondPro-Bold.woff') format('woff');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'VerminVibesSlant';src: url('../fonts/Vermin-Vibes-Slant.eot');src: url('../fonts/Vermin-Vibes-Slant.eot?#iefix') format('embedded-opentype'),url('../fonts/Vermin-Vibes-Slant.woff2') format('woff2'),url('../fonts/Vermin-Vibes-Slant.woff') format('woff'),url('../fonts/Vermin-Vibes-Slant.ttf') format('truetype'),url('../fonts/Vermin-Vibes-Slant.svg#Vermin-Vibes-Slant') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'BitterRegular';src: url('../fonts/Bitter-Regular.eot');src: url('../fonts/Bitter-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/Bitter-Regular.woff2') format('woff2'),url('../fonts/Bitter-Regular.woff') format('woff'),url('../fonts/Bitter-Regular.ttf') format('truetype'),url('../fonts/Bitter-Regular.svg#Bitter-Regular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'ACaslonProBoldItalic';src: url('../fonts/ACaslonPro-BoldItalic.eot');src: url('../fonts/ACaslonPro-BoldItalic.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-BoldItalic.woff2') format('woff2'),url('../fonts/ACaslonPro-BoldItalic.woff') format('woff'),url('../fonts/ACaslonPro-BoldItalic.ttf') format('truetype'),url('../fonts/ACaslonPro-BoldItalic.svg#ACaslonPro-BoldItalic') format('svg');font-weight: bold;font-style: italic;}
+@font-face {font-family: 'ACaslonProItalic';src: url('../fonts/ACaslonPro-Italic.eot');src: url('../fonts/ACaslonPro-Italic.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-Italic.woff2') format('woff2'),url('../fonts/ACaslonPro-Italic.woff') format('woff'),url('../fonts/ACaslonPro-Italic.ttf') format('truetype'),url('../fonts/ACaslonPro-Italic.svg#ACaslonPro-Italic') format('svg');font-weight: normal;font-style: italic;}
+@font-face {font-family: 'ACaslonProSemiboldItalic';src: url('../fonts/ACaslonPro-SemiboldItalic.eot');src: url('../fonts/ACaslonPro-SemiboldItalic.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-SemiboldItalic.woff2') format('woff2'),url('../fonts/ACaslonPro-SemiboldItalic.woff') format('woff'),url('../fonts/ACaslonPro-SemiboldItalic.ttf') format('truetype'),url('../fonts/ACaslonPro-SemiboldItalic.svg#ACaslonPro-SemiboldItalic') format('svg');font-weight: 600;font-style: italic;}
+@font-face {font-family: 'ACaslonProRegular';src: url('../fonts/ACaslonPro-Regular.eot');src: url('../fonts/ACaslonPro-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-Regular.woff2') format('woff2'),url('../fonts/ACaslonPro-Regular.woff') format('woff'),url('../fonts/ACaslonPro-Regular.ttf') format('truetype'),url('../fonts/ACaslonPro-Regular.svg#ACaslonPro-Regular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'ACaslonProSemibold';src: url('../fonts/ACaslonPro-Semibold.eot');src: url('../fonts/ACaslonPro-Semibold.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-Semibold.woff2') format('woff2'),url('../fonts/ACaslonPro-Semibold.woff') format('woff'),url('../fonts/ACaslonPro-Semibold.ttf') format('truetype'),url('../fonts/ACaslonPro-Semibold.svg#ACaslonPro-Semibold') format('svg');font-weight: 600;font-style: normal;}
+@font-face {font-family: 'ACaslonProBold';src: url('../fonts/ACaslonPro-Bold.eot');src: url('../fonts/ACaslonPro-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-Bold.woff2') format('woff2'),url('../fonts/ACaslonPro-Bold.woff') format('woff'),url('../fonts/ACaslonPro-Bold.ttf') format('truetype'),url('../fonts/ACaslonPro-Bold.svg#ACaslonPro-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'RalewayBold';src: url('../fonts/Raleway-Bold.eot');src: url('../fonts/Raleway-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/Raleway-Bold.woff2') format('woff2'),url('../fonts/Raleway-Bold.woff') format('woff'),url('../fonts/Raleway-Bold.ttf') format('truetype'),url('../fonts/Raleway-Bold.svg#Raleway-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'RalewayRegular';src: url('../fonts/Raleway.eot');src: url('../fonts/Raleway.eot?#iefix') format('embedded-opentype'),url('../fonts/Raleway.woff2') format('woff2'),url('../fonts/Raleway.woff') format('woff'),url('../fonts/Raleway.ttf') format('truetype'),url('../fonts/Raleway.svg#Raleway') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'HelveticaNormal';src: url('../fonts/Helvetica-Normal.eot');src: url('../fonts/Helvetica-Normal.eot?#iefix') format('embedded-opentype'),url('../fonts/Helvetica-Normal.woff2') format('woff2'),url('../fonts/Helvetica-Normal.woff') format('woff'),url('../fonts/Helvetica-Normal.ttf') format('truetype'),url('../fonts/Helvetica-Normal.svg#Helvetica-Normal') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'HelveticaBold';src: url('../fonts/Helvetica-Bold.eot');src: url('../fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/Helvetica-Bold.woff2') format('woff2'),url('../fonts/Helvetica-Bold.woff') format('woff'),url('../fonts/Helvetica-Bold.ttf') format('truetype'),url('../fonts/Helvetica-Bold.svg#Helvetica-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'HelveticaNeueMedium';src: url('../fonts/HelveticaNeueMedium.eot');src: url('../fonts/HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),url('../fonts/HelveticaNeueMedium.woff2') format('woff2'),url('../fonts/HelveticaNeueMedium.woff') format('woff'),url('../fonts/HelveticaNeueMedium.ttf') format('truetype'),url('../fonts/HelveticaNeueMedium.svg#HelveticaNeueMedium') format('svg');font-weight: 500;font-style: normal;}
+@font-face {font-family: 'CarmeRegular';src: url('../fonts/Carme.eot');src: url('../fonts/Carme.eot?#iefix') format('embedded-opentype'),url('../fonts/Carme.woff2') format('woff2'),url('../fonts/Carme.woff') format('woff'),url('../fonts/Carme.ttf') format('truetype'),url('../fonts/Carme.svg#Carme') format('svg');font-weight: normal;font-style: normal;}
+
+
+mat-card{box-shadow: none !important; border-radius: 0 !important;padding: 0 !important;}
+mat-list-item{height: auto !important;}
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content{flex-wrap: wrap;padding: 0 !important;}
+@font-face {
+font-family: 'FontAwesome';
+src: url('../../assets/fonts/fontawesome/FontAwesome.eot');
+src: url('../../assets/fonts/fontawesome/FontAwesome.eot?#iefix') format('embedded-opentype'),
+url('../../assets/fonts/fontawesome/FontAwesome.woff2') format('woff2'),
+url('../../assets/fonts/fontawesome/FontAwesome.woff') format('woff'),
+url('../../assets/fonts/fontawesome/FontAwesome.ttf') format('truetype'),
+url('../../assets/fonts/fontawesome/FontAwesome.svg#FontAwesome') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'FontAwesome';
+src: url('../../assets/fonts/fontawesome/FontAwesome_1.eot');
+src: url('../../assets/fonts/fontawesome/FontAwesome_1.eot?#iefix') format('embedded-opentype'),
+url('../../assets/fonts/fontawesome/FontAwesome_1.woff2') format('woff2'),
+url('../../assets/fonts/fontawesome/FontAwesome_1.woff') format('woff'),
+url('../../assets/fonts/fontawesome/FontAwesome_1.ttf') format('truetype'),
+url('../../assets/fonts/fontawesome/FontAwesome_1.svg#FontAwesome') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+/* body{background-color: #000;} */
+
+
+
+/*------------------------------------ login css start ------------------------------------ */
+.logintopbarmainwrapper {background-color: #101014;display: block !important;}
+.logincontainer {width: 1782px;margin: 0 auto!important;;display: block !important;;}
+.logintopbarcontainer mat-list-item {width: auto !important}
+.logintopbarcontainer {position: relative;display: -ms-flexbox;display: flex !important;-ms-flex-wrap: wrap;flex-wrap: wrap;-ms-flex-align: stretch;align-items: center;justify-content: space-between;padding: 10px 0 10px;}
+.signupflowwrapperintro {height: 100vh;}
+.signupflowblock {width: 100%;padding: 0;display: inline-block !important;margin: 0;max-width: none;background-color: #101014 !important;min-height: 100%;}
+.loginform mat-form-field {margin: 0 10px}
+.loginform {display: flex;flex-flow: row nowrap; flex-wrap: wrap}
+.loginform .formgroup {display: inline-block; margin-bottom: 0;vertical-align: middle}
+.loginform .formgroup input {vertical-align: middle;height: 39px;border: 1px solid #53585b;border-radius: 0 !important;background-color: #181818;color: #c9c9c9;font-family: "OpenSans";font-size: 14px;line-height: 30px;padding: 0 7px;resize: none;margin-right: 20px;width: 250px;}
+.blackgradientbutton, .blackgradientbutton:hover {  padding: 18px 55px !important;background: #1f2223 !important;background: -moz-linear-gradient(top, #1f2223 0%, #000000 100%) !important;
+background: -webkit-linear-gradient(top, #1f2223 0%,#000000 100%) !important;background: linear-gradient(to bottom, #1f2223 0%,#000000 100%) !important;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f2223', endColorstr='#000000',GradientType=0 ) !important;border: 1px solid #2f3236 !important;
+color: #fffefe !important;border-radius: 50px  !important;font-family: "OpenSans-Bold" !important;font-size: 26px !important;
+line-height: 30px !important;text-transform: uppercase !important;}
+.orangegradientbutton, .orangegradientbutton:hover {padding: 3px 55px !important;background: rgba(254,148,0,1) !important;
+background: -moz-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,148,0,1)), color-stop(100%, rgba(231,85,0,1))) !important;
+background: -webkit-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+background: -o-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);background: -ms-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+background: linear-gradient(to bottom, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9400', endColorstr='#e75500', GradientType=0 );border: 1px solid #101014 !important;
+color: #fffefe !important;border-radius: 50px !important;font-family: "OpenSans-Semibold" !important;font-size: 14px !important;line-height: 30px !important;
+text-transform: uppercase;}
+.logoimgwrapper img {max-width: 100%;}
+.logoimgwrapper {width: 405px; display: block; margin: 0 !important;}
+.loginbodycontainer {position: relative;display: -ms-flexbox;display: flex !important;-ms-flex-wrap: wrap;flex-wrap: wrap;-ms-flex-align: stretch;align-items: stretch;justify-content: space-between;}
+.loginbody {padding: 68px;border-top: 1px solid #2c3436;background-color: #101318; margin: 0 !important;}
+.loginbodycontainer .loginbodyleftblock {width: 58% !important;}
+.loginbodycontainer .loginbodyleftblock .mat-list-item-content {padding-right: 0 !important;padding-left: 0 !important}
+.loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 32px !important;padding-right: 0 !important;flex-wrap: wrap}
+.loginbodycontainer .loginbodyrightblock {width: 40% !important;position: relative;z-index: 10;padding: 0px;border-left: 1px solid #303a49;}
+.loginvideowrapper {width: 100%;background-color: #101217;padding: 9px;-webkit-box-shadow: 2px 2px 15px -5px #000000;box-shadow: 2px 2px 15px -5px #000000;}
+.loginvideo {position: relative;padding-bottom: 54.25%;padding-top: 30px;height: 0;overflow: hidden;background-color: #000;border: 2px solid #37393a;display: block;}
+.loginvideo iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: transparent;}
+.textwrapper mat-card-title {font-family: "Adobe-Garamond-Pro-Bold";font-size: 36px;color: #c7c7c7;margin: 0;padding: 0;text-transform: uppercase;margin-bottom: 15px;}
+.textwrapper mat-card-subtitle {font-family: "Adobe-Garamond-Pro-Bold";font-size: 24px;color: #eb6000;margin: 0;padding: 0;text-transform: uppercase;margin-bottom: 15px;margin-top: 15px;}
+.textwrapper p {background: url(../../assets/images/signupflowmiddlerighticon.png);background-position: left 0px top;background-repeat: no-repeat;padding-left: 26px !important;text-align: left;font-family: "ACaslonProRegular";font-size: 18px;color: #c5c5c5;margin: 0;padding: 0;line-height: 22px;margin-bottom: 15px;}
+.loginbuttonwrapper {width: 100%;display: flex !important;align-items: center;justify-content: center}
+.loginbuttonwrapper button, .loginbuttonwrapper button:hover {font-size: 26px !important;line-height: 30px !important;height: auto;padding: 18px 55px !important;width: auto; margin: 0 10px}
+.loginbodycontainer .blackgradientbutton .mat-list-item-content, .loginbodycontainer .orangegradientbutton .mat-list-item-content {padding-left: 0 !important}
+.errormsgred {color: #eb6000}
+.errormsgblue {color: #01cbee;display: block;padding-top: 7px; display: none;text-align: left}
+.loginbuttoncon {position: relative}
+.loginbuttoncon .errormsgred {position: absolute;left: -285px;bottom: -26px;cursor: pointer;}
+
+/*------------------------------------ login css end ------------------------------------ */
+
+
+/*------------------------------------ footer css start ------------------------------------ */
+.footermainwrapper .logoimgwrapper {margin: 0 auto !important}
+.footermainwrapper {background-color: #000 !important;display: inline-block !important;text-align: center;width: 100%;padding-top: 27px !important;border-top: 1px solid #292929;}
+.footertop {margin: 0 !important}
+.footertop mat-list mat-list-item {color: #989595 !important;width: auto !important;font-size: 14px !important;line-height: 21px;cursor: pointer}
+.footertop mat-list mat-list-item .mat-list-item-content {padding: 0 5px !important}
+.footertop mat-list mat-list-item:hover {color: #f27300 !important}
+.footertop mat-list {width: 450px;margin: 0 auto;display: flex;flex-wrap: wrap;justify-content: center;}
+.footerbottom p {color: #7d7979;font-size: 14px;text-align: center}
+.footerbottom {padding: 25px 20px;background-color: #292929;margin-top: 27px;}
+.footersolist {color: #aeaeae;font-size: 20px;text-align: center;text-transform: capitalize;font-weight: normal;}
+/*------------------------------------ footer css end ------------------------------------ */
+
+/*------------------------------------ signup css start ------------------------------------ */
+.fromtitle span {margin: 0;padding: 0px;text-transform: uppercase;font-size: 28px;font-family: "TypoSlabIrregularDemo";color: #fff;text-shadow: 2px 3px 9px rgba(0,0,0,0.45);}
+.fromtitle {background-color: #fc8d00;padding: 11px 0;text-align: center;border: 1px solid #000;border-bottom: 0px !important;width: 100%;display: block;}
+.signupbody:after {content: '';background-image: url(../../assets/images/signupflow2wrapperbgoverlay.png) !important;background-position: left top;background-repeat: no-repeat;background-size: cover;position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+.signupbody {background-image: url(../../assets/images/signupflow2wrapper.jpg) !important;background-position: center center;background-color: #000;background-repeat: no-repeat;background-size: cover;position: relative;width: 100%;min-height: 100vh;padding-bottom: 30px;padding-top: 0px;display: inline-block !important;}
+.signupfrwrapper {position: relative;top: 0%;left: 0;width: 550px;margin-top: 45px;margin-bottom: 85px;margin: 0 auto;display: block;z-index: 9;padding: 55px 0;}
+.signupfrwrapper mat-list mat-list-item {background-color: #1e2223;padding-bottom: 25px !important;}
+.signupfrwrapper mat-list {position: relative;z-index: 99;width: auto;background: #44494b;padding: 8px;text-align: left;display: inline-block;min-height: 100%;}
+.mat-form-field-appearance-legacy .mat-form-field-label {transform: inherit !important;-ms-transform: none;color: #373737;transition: none !important;margin-top: 11px;margin-left: 10px;}
+.fromgroup input, .fromgroup textarea, .fromgroup mat-select {-webkit-animation-name: cdk-text-field-autofill-end;animation-name: cdk-text-field-autofill-end;border: 1px solid #2e3234;border-radius: 0 !important;background-color: #000000;height: 40px;color: #89898f;padding: 0 10px !important;/* width: 100%; */}
+.mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;display: none;}
+.mat-form-field-flex {width: 96% !important;}
+.mat-form-field {display: inline-block;position: relative;text-align: left;width: 100%;}
+.signupflowform {width: 93%; margin: 0 auto}
+.mat-form-field-appearance-legacy .mat-form-field-label {color:#89898f  !important;width: auto !important;}
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 0 !important;}
+.mat-focused .mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: none !important}
+.mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: block !important}
+.mat-form-field-label.ng-star-inserted {display: none !important}
+.mat-form-field-infix {border: 0 !important}
+.signupfrwrapper .mat-list-item .mat-list-item-content {padding:0 !important}
+.mat-select-trigger {padding-top: 8px !important;}
+.mat-select-value {color:#89898f !important;}
+.mat-select-arrow {color: rgba(236, 235, 235, 0.54) !important;}
+.mat-placeholder-required.mat-form-field-required-marker.ng-tns-c3-3.ng-star-inserted {display: none !important}
+.fromgroupcol2 {width: 47%}
+.fromgroupcols {display: flex !important; justify-content: space-between;width: 98%;flex-wrap: wrap}
+.mat-select-panel {background: #000000 !important;border-radius: 0 !important;border: 1px solid #2e3234;padding: 5px 0 !important;}
+.mat-option {color: rgba(156, 156, 156, 0.87) !important;}
+.mat-select-panel .mat-option {font-size: inherit;line-height: 34px !important;height: auto !important;}
+.signupflowform .mat-card-subtitle {font-family: "OpenSans-Semibold";font-size: 16px;line-height: 30px;color: #89898f;text-transform: uppercase;width: 100%;border-bottom: 1px solid #404548;display: inline-block;padding-bottom: 6px;margin-bottom: 30px;margin-top: 10px !important;}
+.fromgroupcol3 {width: 30%;}
+.signupflowform .mat-checkbox-frame {background-color: black;transition: border-color 90ms cubic-bezier(0,0,.2,.1);border-width: inherit;border-style: inherit;border: 1px solid #2e3234;border-radius: 0;}
+.signupflowform .mat-checkbox {line-height: 24px;position: inherit;font-family: "OpenSans";font-size: 14px;color: #999795;display: block;padding-bottom: 7px;}
+.signupflowform .mat-checkbox-checked .mat-checkbox-checkmark {background: black;border: 1px solid #2e3234;}
+.signupflowform .mat-checkbox-checkmark-path {stroke: #60ff02!important;}
+.fromgroupcol1 {width: 100%; padding: 10px 0 !important}
+.signupflowform .fromgroupcol1 {width: 100%; padding: 20px 0 !important}
+.signupflowform  .fromgroupcol1 .mat-checkbox {color: #ffffff}
+.btnbuyticket_genuserlan {background: rgba(0,0,6,1) !important;background: -moz-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,6,1)), color-stop(100%, rgba(21,21,25,1))) !important;background: -webkit-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;background: -o-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;background: -ms-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;background: linear-gradient(to bottom, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000006', endColorstr='#151519', GradientType=0 ) !important;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;text-align: center;width: 100%;line-height: 81px !important;}
+.btnbuyticket_genuserlan .buttoncon {width: 100% !important;font-family: "VerminVibesSlant" !important;font-size: 36px !important;background: -webkit-linear-gradient(#f3f3f1, #8c8d8c) !important;-webkit-background-clip: text !important;-webkit-text-fill-color: transparent !important;margin: 0px !important;line-height: 36px !important;letter-spacing: 0px !important;text-transform: uppercase !important;border: 0 !important;text-align: center !important;padding: 16px 8px 6px !important;}
+.mat-checkbox-layout .mat-checkbox-label {line-height: 17px;white-space: pre-wrap;}
+
+/*------------------------------------ signup css end ------------------------------------ */
+
+/*------------------------------------ signupheader css start ------------------------------------ */
+
+
+.logowrappersml {display: none}
+.mat-drawer-container {display: none !important;}
+.homemain {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;justify-content: space-between;}
+.homemain .smlmenudiv {width: 100%;margin: 0 auto;}
+.homemain .mat-list-item {float: right;text-align: center;height: auto; width: auto;position: relative;margin: 0 1px !important;}
+.smlmenudiv .mat-list-base .menuwrapper .mat-list-item .mat-list-item-content{padding: 0 !important;}
+
+
+.homemain .mat-list-item a{height: 33px;}
+/*.homemain .mat-list-item:before {content: "";position: absolute;left: 0;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;width: 4px;height: 4px;border: none;text-align: center;-o-text-overflow: ellipsis;text-overflow: ellipsis;background: #b623ff;top: 50%;transform: translateY(-50%);}*/
+.homemain .mat-list-item:first-child:before {display: none;}
+.homemain .mat-list-item .mat-list-item-content {padding: 0 4px;}
+.homemain .mat-nav-list {margin: 0 auto;width: 100%;}
+.homemain .mat-nav-list span.logowrapper {margin-right: 10px;box-sizing: border-box; width:auto;}
+.menuwrapper .mat-list-item.active a{color: #3d3d3d !important;}
+.menuwrapper .mat-list-item.active:after {content: ''; position: absolute;width: 100%; height: 7px; background: #fcff00; top: -250%; left: 0;}
+.menuwrapper .mat-list-item a:hover{color: #3d3d3d !important;}
+.homemain .mat-nav-list span.logowrapperimg {max-width: 100%;}
+.homemain .mat-nav-list span.menuwrapper {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex; width: auto;}
+.navbarlists {display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6 */display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */display: -ms-flexbox;  /* TWEENER - IE 10 */display: -webkit-flex; /* NEW - Chrome */display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */}
+.vpheaderwrapper .mat-toolbar-row, .vpheaderwrapper .mat-toolbar-single-row {height:auto !important;
+ display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;box-sizing: border-box;padding: 0 0px;width: 98%; margin: 0 auto;
+ flex-direction: row;align-items: center;white-space: nowrap;justify-content: center;}
+.mat-list-item {float: right;}
+.homemain mat-nav-list {margin: 0 auto; width: 1350px}
+.homemain mat-nav-list span.logowrapper {flex: 1 1 20% !important;box-sizing: border-box}
+.homemain mat-nav-list span.logowrapper img {max-width: 100%; margin: 0 auto}
+.logowrappersml {display: none}
+.mat-drawer-container {display: none !important;}
+.vpheaderwrapper {position: relative !important;top: 0px;left: 0;z-index: 999;color: #fff;width: 100%; padding: 7px 0px;}
+.vpheaderwrapper.mat-card {background-color: transparent !important;box-shadow: none !important;}
+.vpheaderwrapper .mat-nav-list {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;justify-content: space-between; align-items: center;}
+.vpheaderwrapper .mat-nav-list a {font-family: "OpenSansSemibold";color: #fff;text-transform: uppercase !important;padding: 6px 15px;display: inline-block;font-size: 14px;}
+.vpheaderwrapper .mat-nav-list a:hover{color: #fff !important;background: #fff; border-radius: 50px;}
+.vpheaderwrapper .mat-nav-list a:hover {color:#036bfe;}
+.vpheaderwrapper .mat-nav-list .mat-list-item:not(.mat-list-item-disabled):hover {background: none;}
+.landinglogoblock {position: relative !important;top: 0;left: 0;z-index: 999;color: #fff;width: 100%;}
+.mat-card-content.topbannerhomewrapper {display: block;margin-bottom: 16px;position: relative;z-index: 99;}
+.vpblock1imgleftwrapper {position: absolute;left: -24px;top: 10%;width: 620px;}
+.vpblock1imgleftwrapper img {max-width: 100%;}
+.mat-menu-content {padding: 0 !important;border-radius: 0px !important;background-color: #0071bc;color: #fff;}
+.mat-menu-content a.mat-menu-item {color: #fff !important;text-align: center;}
+.mat-menu-content a.mat-menu-item:hover {color: #000 !important;}
+.mat-menu-panel {position: relative;min-width: inherit;max-width: inherit;border-radius: 0px !important;}
+.mat-menu-panel {min-width: 100%;max-width: 100%;overflow: auto;border-radius: 0px;outline: 0;margin-left: -25%;margin-top: 10px;}
+.mat-menu-content:before {content: "";width: 0;height: 0;border-style: solid;border-width: 0 10px 10px 10px;border-color: transparent transparent #0071bc transparent;line-height: 0px;_border-color: #0071bc #0071bc #2a2b2c #0071bc;_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');top: -10px;z-index: 99999;position: absolute;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-o-transform: translateX(-50%);}
+.mat-menu-content .mat-menu-item {height:auto;border-radius: 0px !important;line-height: 24px;}
+.vpheaderwrapper .mat-toolbar.mat-primary {background: transparent !important;color: #fff;height:auto !important;}
+.topmenuiconlogo {display: none}
+
+/*------------------------------------ signupheader css end ------------------------------------ */

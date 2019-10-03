@@ -1,0 +1,45 @@
+<mat-card class="vpheaderwrapper">
+        <span class="homemain" id="pagetopblock">
+          <mat-toolbar color="primary">
+          <mat-toolbar-row>
+            <span class="topmenuiconlogo">
+                <span class="logowrappersml" fxFlex><a class="logoimgwrapper" [routerLink]="['/']"><img src="../../../assets/images/artistheaderlogo.png" class="landinglogoblock1"></a></span>
+              <button mat-icon-button (click)="toggleNavbar()" fxShow="true" fxHide.gt-sm><mat-icon>menu</mat-icon></button>
+              <span class="menu-spacer"></span>
+            </span>
+            <span fxShow="true" class="smlmenudiv" [ngClass]="{ 'show': navbarOpen }">
+                <mat-nav-list fxLayout>
+                  <span class="logowrapper" fxFlex><a class="logoimgwrapper" [routerLink]="['/']"> <img src="../../../assets/images/artistheaderlogo.png" class="landinglogoblock1"></a></span>
+                  <span class="menuwrapper">
+                      <mat-list-item fxFlex >
+                        <a [routerLink]="['/']"> Competition page</a>
+                      </mat-list-item>
+                      <mat-list-item fxFlex >
+                        <a [routerLink]="['/aboutus']">audiodeadline</a>
+                      </mat-list-item>
+                      <mat-list-item fxFlex >
+                        <a [routerLink]="['/portfolio']">Login</a>
+                      </mat-list-item>
+                      <!--<mat-list-item fxFlex [ngClass]="router.url === '/investors' ? 'active' : ''" >
+                        <a [routerLink]="['/investors']">Investors</a>
+                      </mat-list-item>-->
+                      <mat-list-item fxFlex>
+                        <a [routerLink]="['/representation']">Help Center</a>
+                      </mat-list-item>
+                     <!-- <mat-list-item fxFlex>
+                        <a [matMenuTriggerFor]="menu">Submenu</a>
+                        <mat-menu #menu="matMenu">
+                          <button mat-menu-item>Submenu 1</a>
+                          <button mat-menu-item>Submenu 2</a>
+                        </mat-menu>
+                      </mat-list-item>-->
+                  </span>
+                </mat-nav-list>
+            </span>
+          </mat-toolbar-row>
+          </mat-toolbar>
+        </span>
+      </mat-card>
+      
+      
+      
