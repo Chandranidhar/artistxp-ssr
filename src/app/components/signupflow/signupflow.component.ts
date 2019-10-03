@@ -12,7 +12,7 @@ export class SignupflowComponent implements OnInit {
   firstForm:FormGroup;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  constructor(public _formBuilder: FormBuilder,private f:FormService) {this.fstgen(); }
+  constructor(public _formBuilder: FormBuilder,public f:FormService) {this.fstgen(); }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
