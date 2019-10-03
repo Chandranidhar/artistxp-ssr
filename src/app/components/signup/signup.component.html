@@ -2,8 +2,8 @@
     <mat-card-content class="signupbody">
         <app-signupheader></app-signupheader>
         <span class="signupfrwrapper">
-            <mat-list>
-                <mat-list-item>
+            <mat-list class="signupcontainer">
+                <mat-list-item class="signupflow signupflow1" style="display: none;">
                     <mat-card-title class="fromtitle">
                         <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
                     </mat-card-title>
@@ -56,7 +56,6 @@
                         <mat-form-field class="example-full-width fromgroup">
                             <input matInput placeholder="city" value="" type="text">
                         </mat-form-field>
-
                         <span class="fromgroupcols">
                             <span class="fromgroupcol2">
                                 <mat-form-field class="example-full-width fromgroup">
@@ -73,7 +72,6 @@
                                 </mat-form-field>
                             </span>
                         </span>
-
                         <mat-card-subtitle>ACCOUNT TYPE</mat-card-subtitle>
                         <span class="fromgroupcols">
                             <span class="fromgroupcol3">
@@ -103,13 +101,125 @@
                                 </section>
                             </span>
                         </span>
-
                         <button mat-button class="btnbuyticket_genuserlan">
                             <span class="buttoncon">submit</span>
                         </button>
                     </form>
                 </mat-list-item>
-                <mat-list-item> Salt </mat-list-item>
+
+                <mat-list-item class="signupflow signupflow2" >
+                    <mat-card-title class="fromtitle">
+                        <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
+                    </mat-card-title>
+                    <form class="signupflowform">
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Real Name" value="">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Aliases" value="">
+                        </mat-form-field>
+
+                        <span class="formlistwrapper">
+                            <mat-card-title>afca</mat-card-title>
+                            <mat-list role="list">
+                                <mat-list-item role="listitem">Item 1</mat-list-item>
+                                <mat-list-item role="listitem">Item 2</mat-list-item>
+                                <mat-list-item role="listitem">Item 3</mat-list-item>
+                              </mat-list>
+                        </span>
+
+                        <!-- <mat-form-field class="example-full-width fromgroup">
+                      <textarea matInput placeholder="Leave a comment"></textarea>
+                    </mat-form-field> -->
+
+                        <mat-form-field class="example-full-width fromgroup">
+                            <mat-select aria-placeholder="1234">
+                                <mat-option value="male">Male</mat-option>
+                                <mat-option value="female">Female</mat-option>
+                            </mat-select>
+                            <mat-label>Gender</mat-label>
+                        </mat-form-field>
+
+
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Email" value="" type="email">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Username" value="" type="text">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Password" value="" type="password">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Confirm Password" value="" type="email">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Phone" value="" type="text">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Stage name/Aliases" value="" type="text">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Bio" value="" type="text">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Hometown" value="" type="text">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="city" value="" type="text">
+                        </mat-form-field>
+                        <span class="fromgroupcols">
+                            <span class="fromgroupcol2">
+                                <mat-form-field class="example-full-width fromgroup">
+                                    <mat-select aria-placeholder="">
+                                        <mat-option value="male">Male</mat-option>
+                                        <mat-option value="female">Female</mat-option>
+                                    </mat-select>
+                                    <mat-label>Select State</mat-label>
+                                </mat-form-field>
+                            </span>
+                            <span class="fromgroupcol2">
+                                <mat-form-field class="example-full-width fromgroup">
+                                    <input matInput placeholder="Zip" value="" type="text">
+                                </mat-form-field>
+                            </span>
+                        </span>
+                        <mat-card-subtitle>ACCOUNT TYPE</mat-card-subtitle>
+                        <span class="fromgroupcols">
+                            <span class="fromgroupcol3">
+                                <section class="example-section">
+                                    <mat-checkbox class="example-margin">Musician!</mat-checkbox>
+                                    <mat-checkbox class="example-margin">Producer!</mat-checkbox>
+                                </section>
+                            </span>
+                            <span class="fromgroupcol3">
+                                <section class="example-section">
+                                    <mat-checkbox class="example-margin">Dancer!</mat-checkbox>
+                                    <mat-checkbox class="example-margin">Affiliates!</mat-checkbox>
+                                </section>
+                            </span>
+                            <span class="fromgroupcol3">
+                                <section class="example-section">
+                                    <mat-checkbox class="example-margin">Models!</mat-checkbox>
+                                    <mat-checkbox class="example-margin">Fans!</mat-checkbox>
+                                </section>
+                            </span>
+                            <span class="fromgroupcol1">
+                                <section class="example-section">
+                                    <mat-checkbox class="example-margin">Public (This will be visible to the ArtistXP
+                                        community) </mat-checkbox>
+                                    <mat-checkbox class="example-margin">Private (This will keep your stats only visible
+                                        to you) </mat-checkbox>
+                                </section>
+                            </span>
+                        </span>
+                        <button mat-button class="btnbuyticket_genuserlan">
+                            <span class="buttoncon">submit</span>
+                        </button>
+                    </form>
+                </mat-list-item>
+
             <mat-list-item> Paprika </mat-list-item>
             </mat-list>
         </span>
