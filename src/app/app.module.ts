@@ -5,15 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './modules/material-module';
+import { CommonModule } from '@angular/common';
+import { TransferHttpCacheModule } from '@nguniversal/common';
+import { HttpClientModule } from '@angular/common/http';
+// universal(SEO usage) import statements here
+import { NgtUniversalModule } from '@ng-toolkit/universal';
+// cookieservice import statements here
+import { CookieService } from 'ngx-cookie-service';
+// authguard import statements here
+import { AuthGuard } from './services/auth.guard';
+// component import statements here
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignupheaderComponent } from './components/signupheader/signupheader.component';
 import { SignupflowComponent } from './components/signupflow/signupflow.component';
-import { CommonModule } from '@angular/common';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { HttpClientModule } from '@angular/common/http';
-import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { ApiService } from './services/api-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,9 +40,10 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
     HttpClientModule,
     NgtUniversalModule,
     FormsModule, 
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    // CookieService 
   ],
-  providers: [],
+  providers: [AuthGuard,CookieService,ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

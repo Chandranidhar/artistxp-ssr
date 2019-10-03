@@ -12,6 +12,12 @@ const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: 'signupheader', component: SignupheaderComponent },
   { path: 'signupflow', component: SignupflowComponent },
+  // demo example for resolve and auth guard along with can activate
+  
+  // { path: "recentSignUp", component: RecentSignUpComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: 'admindashboard'}},
+  // { path: "activeUsers", component: ActiveUsersComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: 'admindashboard'}},
+  // { path: "login/:path/:id", component: LoginComponent, resolve: {results: Resolveservice}, data: { source: 'allmodelllist', condition: {_id: 'id'}}},
+  // { path: "brand", component: BrandmanagementComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

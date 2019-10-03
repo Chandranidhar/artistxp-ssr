@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {FormService} from '../../form.service';
+import {ApiService} from '../../services/api-service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,9 +9,17 @@ import {FormService} from '../../form.service';
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,private f:FormService) { this.genarateloginForm(); }
+  constructor(public formBuilder: FormBuilder,public f:FormService, public api_service:ApiService) { this.genarateloginForm(); 
+  }
 
   ngOnInit() {
+    let condition:any = {};
+    condition = {"email":"selena@yopmail.com","password":"123456"};
+    this.api_service.postDatawithoutToken('loginasuser',condition).subscribe(res=> {
+      let result:any;
+      result = res;
+      console.log(result);
+    });
   }
   genarateloginForm() {
     this.loginForm = this.formBuilder.group({
@@ -29,6 +38,11 @@ export class LoginComponent implements OnInit {
             if (this.loginForm.valid) 
             {
           console.log(this.loginForm.value);
+          this.api_service.postDatawithoutToken('loginasuser',this.loginForm.value).subscribe(res=> {
+            let result:any;
+            result = res;
+            console.log(result);
+          });
         } 
         else 
         {
