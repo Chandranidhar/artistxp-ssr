@@ -2,8 +2,9 @@
   <mat-card-content class="signupbody">
 <app-signupheader></app-signupheader>
 
-  <mat-horizontal-stepper class="signupflowstepper" linear="false" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
+  <mat-horizontal-stepper class="signupflowstepper" linear="false"  #stepper>
+    <mat-step [stepControl]="firstFormGroup"> 
+        <ng-template matStepLabel>step 1</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
             <mat-list-item class="signupflow signupflow1">
@@ -109,11 +110,11 @@
                     </button>
                 </form>
             </mat-list-item>
-        <mat-list-item> Paprika </mat-list-item>
         </mat-list>
     </span>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" class="active">
+    <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>step  2</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
             <mat-list-item class="signupflow signupflow1" style="display: none;">
@@ -339,13 +340,11 @@
                     </button>
                 </form>
             </mat-list-item>
-
-        <mat-list-item> Paprika </mat-list-item>
         </mat-list>
     </span>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel></ng-template>
+        <ng-template matStepLabel>step 3</ng-template>
       You are now done.
       <div>
         <button mat-button matStepperPrevious>Back</button>
@@ -353,7 +352,7 @@
       </div>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel></ng-template>
+        <ng-template matStepLabel>step 4</ng-template>
         You are now done.
         <div>
           <button mat-button matStepperPrevious>Back</button>
@@ -361,7 +360,7 @@
         </div>
       </mat-step>
       <mat-step>
-        <ng-template matStepLabel></ng-template>
+          <ng-template matStepLabel>step 5</ng-template>
         You are now done.
         <div>
           <button mat-button matStepperPrevious>Back</button>
@@ -369,7 +368,7 @@
         </div>
       </mat-step>
       <mat-step>
-        <ng-template matStepLabel></ng-template>
+          <ng-template matStepLabel>step 1</ng-template>
         You are now done.
         <div>
           <button mat-button matStepperPrevious>Back</button>

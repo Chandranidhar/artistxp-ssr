@@ -148,7 +148,17 @@ text-transform: uppercase;}
 .fromtitle {background-color: #fc8d00;padding: 11px 0;text-align: center;border: 1px solid #000;border-bottom: 0px !important;width: 100%;display: block;}
 .signupbody:after {content: '';background-image: url(../../assets/images/signupflow2wrapperbgoverlay.png) !important;background-position: left top;background-repeat: no-repeat;background-size: cover;position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
 .signupbody {background-image: url(../../assets/images/signupflow2wrapper.jpg) !important;background-position: center center;background-color: #000;background-repeat: no-repeat;background-size: cover;position: relative;width: 100%;min-height: 100vh;padding-bottom: 30px;padding-top: 0px;display: inline-block !important;}
-.signupfrwrapper {position: relative;top: 0%;left: 0;width: 550px;margin-top: 45px;margin-bottom: 85px;margin: 0 auto;display: block;z-index: 9;padding: 55px 0;}
+.signupfrwrapper {position: relative;
+    top: 0%;
+    left: 0;
+    width: 599px;
+    margin-top: 45px;
+    margin-bottom: 85px;
+    margin: 0 auto;
+    display: block;
+    z-index: 9;
+    padding: 55px 0;
+    padding-top: 10px;}
 .signupfrwrapper mat-list .signupflow {background-color: #1e2223;padding-bottom: 25px !important;}
 .signupfrwrapper .signupcontainer {position: relative;z-index: 99;width: auto;background: #44494b;padding: 8px;text-align: left;display: inline-block;min-height: 100%;}
 .mat-form-field-appearance-legacy .mat-form-field-label {transform: inherit !important;-ms-transform: none;color: #373737;transition: none !important;margin-top: 11px;margin-left: 10px;}
@@ -282,16 +292,16 @@ text-transform: uppercase;}
         background: #000;
         border-radius: 5px;
         border: 1px solid #1e2223;
-        background: rgba(82,81,82,1);
-    background: -moz-linear-gradient(top, rgba(82,81,82,1) 0%, rgba(64,64,64,1) 50%, rgba(61,60,61,1) 51%, rgba(0,0,0,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(82,81,82,1)), color-stop(50%, rgba(64,64,64,1)), color-stop(51%, rgba(61,60,61,1)), color-stop(100%, rgba(0,0,0,1)));
-    background: -webkit-linear-gradient(top, rgba(82,81,82,1) 0%, rgba(64,64,64,1) 50%, rgba(61,60,61,1) 51%, rgba(0,0,0,1) 100%);
-    background: -o-linear-gradient(top, rgba(82,81,82,1) 0%, rgba(64,64,64,1) 50%, rgba(61,60,61,1) 51%, rgba(0,0,0,1) 100%);
-    background: -ms-linear-gradient(top, rgba(82,81,82,1) 0%, rgba(64,64,64,1) 50%, rgba(61,60,61,1) 51%, rgba(0,0,0,1) 100%);
-    background: linear-gradient(to bottom, rgba(82,81,82,1) 0%, rgba(64,64,64,1) 50%, rgba(61,60,61,1) 51%, rgba(0,0,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#525152', endColorstr='#000000', GradientType=0 );
+        background: rgba(48,47,48,1);
+        background: -moz-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(48,47,48,1)), color-stop(50%, rgba(36,36,36,1)), color-stop(51%, rgba(26,26,26,1)), color-stop(100%, rgba(0,0,0,1)));
+        background: -webkit-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        background: -o-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        background: -ms-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(to bottom, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f30', endColorstr='#000000', GradientType=0 );
     }
-    .active .mat-step-header {
+    .active{
         overflow: hidden;
         outline: 0;
         cursor: pointer;
@@ -301,4 +311,60 @@ text-transform: uppercase;}
         background: #f27200;
         color: #fff;
     }
+    .activeafter{background: #000;
+        color: #fff;}
+        .mat-step-header[aria-selected="true"]:nth-child(1){border-radius: 5px;}
+        .mat-step-header[aria-selected="true"] {
+            background: rgba(255,149,0,1);
+            background: -moz-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,149,0,1)), color-stop(48%, rgba(251,138,0,1)), color-stop(51%, rgba(246,123,0,1)), color-stop(100%, rgba(237,99,0,1)));
+            background: -webkit-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -o-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -ms-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: linear-gradient(to bottom, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9500', endColorstr='#ed6300', GradientType=0 );
+           position: relative;overflow: inherit;
+
+        }
+        .mat-step-header[aria-selected="true"]:after {
+            content: '';
+            position: absolute;
+            right: -25px;
+            top: 0;
+            height: 100%;
+            width: 100%; clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+            background: rgba(255,149,0,1);
+            background: -moz-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,149,0,1)), color-stop(48%, rgba(251,138,0,1)), color-stop(51%, rgba(246,123,0,1)), color-stop(100%, rgba(237,99,0,1)));
+            background: -webkit-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -o-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -ms-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: linear-gradient(to bottom, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9500', endColorstr='#ed6300', GradientType=0 );
+            
+        }
+        .mat-step-header[aria-selected="true"]:nth-last-child(1):after{display: none}
+        .signupflowstepper .mat-horizontal-stepper-header .mat-step-icon {
+            margin-right: 8px;
+            flex: none;
+            display: none;
+        }
+        .signupflowstepper .mat-step-header .mat-step-label.mat-step-label-active {
+            color: rgba(255, 255, 255, 0.87);font-size: 18px;
+            position: relative; z-index: 9;
+        }
+        .mat-stepper-horizontal-line{min-width: 44px !important;}
+        .signupflowstepper .mat-horizontal-content-container{padding: 0;    }
+        .signupflowstepper .mat-horizontal-stepper-header{height: 55px;}
+        .signupflowstepper .mat-horizontal-stepper-header:before {
+            content: '';
+            position: absolute;
+            right: 0px;
+            bottom: 0;
+            background: #474747;
+            height: 100%;
+            width: 100%;
+            clip-path: polygon(98% 50%, 75% 0%, 100% 50%, 75% 100%, 98% 50%);
+        }
+        .signupflowstepper .mat-horizontal-stepper-header:nth-last-child(1):before{display: none;}
 /*------------------------------------ signupheader css end ------------------------------------ */
