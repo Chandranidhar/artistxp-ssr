@@ -57,7 +57,27 @@ font-style: normal;
 
 /* body{background-color: #000;} */
 
-
+/* width */
+.scrolllight::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .scrolllight::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .scrolllight::-webkit-scrollbar-thumb {
+    background: #565454;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .scrolllight::-webkit-scrollbar-thumb:hover {
+    background: #565454; 
+  }
 
 /*------------------------------------ login css start ------------------------------------ */
 .logintopbarmainwrapper {background-color: #101014;display: block !important;}
@@ -129,8 +149,8 @@ text-transform: uppercase;}
 .signupbody:after {content: '';background-image: url(../../assets/images/signupflow2wrapperbgoverlay.png) !important;background-position: left top;background-repeat: no-repeat;background-size: cover;position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
 .signupbody {background-image: url(../../assets/images/signupflow2wrapper.jpg) !important;background-position: center center;background-color: #000;background-repeat: no-repeat;background-size: cover;position: relative;width: 100%;min-height: 100vh;padding-bottom: 30px;padding-top: 0px;display: inline-block !important;}
 .signupfrwrapper {position: relative;top: 0%;left: 0;width: 550px;margin-top: 45px;margin-bottom: 85px;margin: 0 auto;display: block;z-index: 9;padding: 55px 0;}
-.signupfrwrapper mat-list mat-list-item {background-color: #1e2223;padding-bottom: 25px !important;}
-.signupfrwrapper mat-list {position: relative;z-index: 99;width: auto;background: #44494b;padding: 8px;text-align: left;display: inline-block;min-height: 100%;}
+.signupfrwrapper mat-list .signupflow {background-color: #1e2223;padding-bottom: 25px !important;}
+.signupfrwrapper .signupcontainer {position: relative;z-index: 99;width: auto;background: #44494b;padding: 8px;text-align: left;display: inline-block;min-height: 100%;}
 .mat-form-field-appearance-legacy .mat-form-field-label {transform: inherit !important;-ms-transform: none;color: #373737;transition: none !important;margin-top: 11px;margin-left: 10px;}
 .fromgroup input, .fromgroup textarea, .fromgroup mat-select {-webkit-animation-name: cdk-text-field-autofill-end;animation-name: cdk-text-field-autofill-end;border: 1px solid #2e3234;border-radius: 0 !important;background-color: #000000;height: 40px;color: #89898f;padding: 0 10px !important;/* width: 100%; */}
 .mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;display: none;}
@@ -204,8 +224,8 @@ text-transform: uppercase;}
 .vpheaderwrapper.mat-card {background-color: transparent !important;box-shadow: none !important;}
 .vpheaderwrapper .mat-nav-list {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;justify-content: space-between; align-items: center;}
 .vpheaderwrapper .mat-nav-list a {font-family: "OpenSansSemibold";color: #fff;text-transform: uppercase !important;padding: 6px 15px;display: inline-block;font-size: 14px;}
-.vpheaderwrapper .mat-nav-list a:hover{color: #fff !important;background: #fff; border-radius: 50px;}
-.vpheaderwrapper .mat-nav-list a:hover {color:#036bfe;}
+.vpheaderwrapper .mat-nav-list a:hover{color: #000 !important;background: #fff; border-radius: 50px;}
+.vpheaderwrapper .mat-nav-list a.logoimgwrapper:hover{background:none !important;}
 .vpheaderwrapper .mat-nav-list .mat-list-item:not(.mat-list-item-disabled):hover {background: none;}
 .landinglogoblock {position: relative !important;top: 0;left: 0;z-index: 999;color: #fff;width: 100%;}
 .mat-card-content.topbannerhomewrapper {display: block;margin-bottom: 16px;position: relative;z-index: 99;}
@@ -220,5 +240,35 @@ text-transform: uppercase;}
 .mat-menu-content .mat-menu-item {height:auto;border-radius: 0px !important;line-height: 24px;}
 .vpheaderwrapper .mat-toolbar.mat-primary {background: transparent !important;color: #fff;height:auto !important;}
 .topmenuiconlogo {display: none}
+
+
+.formlistwrapper mat-card-title {
+    font-family: "OpenSans";
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0px 8px;
+    color: #89898f !important;
+    font-weight: normal;
+    background: #000;
+    margin: 0;
+    border: 1px solid #2e3234;
+    width: 97%;
+}
+.formlistwrapper mat-list {
+    font-size: 14px;    
+    padding: 0px 8px;
+    color: #89898f !important;
+    font-weight: normal;
+    background: #1e2223;
+    margin: 0;
+    border: 1px solid #2e3234;
+    max-height: 160px !important;
+    display: inline-block;
+    width: 97%;
+    border-top: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.formlistwrapper mat-list mat-list-item{color: #89898f !important;font-family: "OpenSans";cursor: pointer;font-size: 14px !important;line-height: 26px;}
 
 /*------------------------------------ signupheader css end ------------------------------------ */
