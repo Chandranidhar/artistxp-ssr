@@ -285,6 +285,7 @@ text-transform: uppercase;}
     width: 601px;
     margin: 0 auto;}
     .signupflowstepper .mat-horizontal-stepper-header-container {
+        justify-content: space-between;
         white-space: nowrap;
         display: flex;
         align-items: center;
@@ -299,6 +300,7 @@ text-transform: uppercase;}
         background: -ms-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
         background: linear-gradient(to bottom, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f30', endColorstr='#000000', GradientType=0 );
+        overflow: hidden;
     }
     .active{
         overflow: hidden;
@@ -349,21 +351,23 @@ text-transform: uppercase;}
             display: none;
         }
         .signupflowstepper .mat-step-header .mat-step-label.mat-step-label-active {
-            color: rgba(255, 255, 255, 0.87);font-size: 18px;
+            color: rgba(255, 255, 255, 0.87);font-size: 16px;
             position: relative; z-index: 9;
+            margin-left: 19px;
         }
-        .mat-stepper-horizontal-line{min-width: 44px !important;}
+        .mat-stepper-horizontal-line{min-width: 44px !important;display: none;}
         .signupflowstepper .mat-horizontal-content-container{padding: 0;    }
-        .signupflowstepper .mat-horizontal-stepper-header{height: 55px;}
+        .signupflowstepper .mat-horizontal-stepper-header{height: 55px;overflow: initial; padding: 0 16px;}
         .signupflowstepper .mat-horizontal-stepper-header:before {
             content: '';
             position: absolute;
-            right: 0px;
+            right: -25px;
             bottom: 0;
-            background: #474747;
+            background: #ffffff;
             height: 100%;
             width: 100%;
             clip-path: polygon(98% 50%, 75% 0%, 100% 50%, 75% 100%, 98% 50%);
+            z-index: 99;
         }
         .signupflowstepper .mat-horizontal-stepper-header:nth-last-child(1):before{display: none;}
 /*------------------------------------ signupheader css end ------------------------------------ */
