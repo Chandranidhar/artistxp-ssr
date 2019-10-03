@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,30 +10,17 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignupheaderComponent } from './components/signupheader/signupheader.component';
 import { SignupflowComponent } from './components/signupflow/signupflow.component';
-import { CommonModule } from '@angular/common';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { HttpClientModule } from '@angular/common/http';
-import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { AppModule } from './app.module';
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    SignupComponent,
-    FooterComponent,
-    SignupheaderComponent,
-    SignupflowComponent
-  ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    
     AppRoutingModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
-    CommonModule,
-    TransferHttpCacheModule,
-    HttpClientModule,
-    NgtUniversalModule
+    AppModule,
+    BrowserTransferStateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppBrowserModule { }

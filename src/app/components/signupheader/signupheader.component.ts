@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {Router, NavigationEnd} from "@angular/router";
 import {MatDialog} from '@angular/material';
 import {LocationStrategy} from "@angular/common";
+import { WINDOW } from '@ng-toolkit/universal';
 
 @Component({
   selector: 'app-signupheader',
@@ -10,7 +11,7 @@ import {LocationStrategy} from "@angular/common";
 })
 export class SignupheaderComponent implements OnInit {
 
-  constructor(public router: Router, private locStrat: LocationStrategy, public dialog: MatDialog) { }
+  constructor(@Inject(WINDOW) private window: Window, public router: Router, private locStrat: LocationStrategy, public dialog: MatDialog) { }
 
   
   public click: any;
@@ -29,7 +30,7 @@ export class SignupheaderComponent implements OnInit {
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd && !this.isPopState) {
-        window.scrollTo(0, 0);
+        this.window.scrollTo(0, 0);
         this.isPopState = false;
       }
 
