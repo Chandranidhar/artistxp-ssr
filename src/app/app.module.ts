@@ -1,11 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-=======
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
->>>>>>> 96ae7c8c824c90a137c480435bf98b9743700969
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,17 +28,12 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
     AppRoutingModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
-<<<<<<< HEAD
-    FormsModule,
-    ReactiveFormsModule,
-=======
     CommonModule,
     TransferHttpCacheModule,
     HttpClientModule,
     NgtUniversalModule,
     FormsModule, 
     ReactiveFormsModule 
->>>>>>> 96ae7c8c824c90a137c480435bf98b9743700969
   ],
   providers: [],
   bootstrap: [AppComponent]

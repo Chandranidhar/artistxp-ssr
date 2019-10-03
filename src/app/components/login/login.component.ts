@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {FormService} from '../../form.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +8,7 @@ import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) { this.genarateloginForm(); }
+  constructor(private formBuilder: FormBuilder,private f:FormService) { this.genarateloginForm(); }
 
   ngOnInit() {
   }
@@ -18,7 +19,11 @@ export class LoginComponent implements OnInit {
       password: [null, [Validators.required,Validators.minLength(6)]],
     });
   }
-  
+
+  // inputBlur(val: any) {
+  //   this.loginForm.controls[val].markAsUntouched();
+  // }
+
   loginsubmit() {
 
             if (this.loginForm.valid) 
@@ -27,8 +32,8 @@ export class LoginComponent implements OnInit {
         } 
         else 
         {
-          this.loginForm.controls['email'].markAsTouched(),
-          this.loginForm.controls['password'].markAsTouched()
+          this.loginForm.controls['email'].markAsTouched();
+          this.loginForm.controls['password'].markAsTouched();
         }
   }
 }

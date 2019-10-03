@@ -14,14 +14,14 @@
                         <form [formGroup]="loginForm" (ngSubmit)="loginsubmit()" class="loginform">
                             <div class="formgroup">
 
-                                <input matInput type="email" placeholder="Email" formControlName="email"/>
+                                <input matInput type="email" placeholder="Email" formControlName="email" (blur)="f.inputBlur(loginForm,'email')"/>
                                 <mat-error *ngIf="loginForm.controls['email']?.touched && loginForm.controls['email'].errors && loginForm.controls['email'].errors.required" class="errormsgblue">Email is required !</mat-error>
                                 <mat-error *ngIf="loginForm.controls['email']?.touched && loginForm.controls['email'].errors && loginForm.controls['email'].errors.pattern" class="errormsgblue">Please Check Your Email !</mat-error>
 
                             </div>
                             <div class="formgroup">
 
-                                <input matInput type="password" placeholder="Password" formControlName="password"/>
+                                <input matInput type="password" placeholder="Password" formControlName="password" (blur)="f.inputBlur(loginForm,'password')"/>
                                 <mat-error *ngIf="loginForm.controls['password']?.touched && loginForm.controls['password'].errors && loginForm.controls['password'].errors.required" class="errormsgblue">Password is required !</mat-error>
                                 <mat-error *ngIf="loginForm.controls['password']?.touched && loginForm.controls['password'].errors && loginForm.controls['password'].errors.minlength" class="errormsgblue">Password is too short !</mat-error>
   
