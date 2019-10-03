@@ -184,6 +184,10 @@ text-transform: uppercase;}
 .mat-option {color: rgba(156, 156, 156, 0.87) !important;}
 .mat-select-panel .mat-option {font-size: inherit;line-height: 34px !important;height: auto !important;}
 .signupflowform .mat-card-subtitle {font-family: "OpenSans-Semibold";font-size: 16px;line-height: 30px;color: #89898f;text-transform: uppercase;width: 100%;border-bottom: 1px solid #404548;display: inline-block;padding-bottom: 6px;margin-bottom: 30px;margin-top: 10px !important;}
+.signupflowform .mat-card-subtitle b{display: block;font-family: OpenSans;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgb(208, 210, 215) !important;font-weight: normal;}
 .fromgroupcol3 {width: 30%;}
 .signupflowform .mat-checkbox-frame {background-color: black;transition: border-color 90ms cubic-bezier(0,0,.2,.1);border-width: inherit;border-style: inherit;border: 1px solid #2e3234;border-radius: 0;}
 .signupflowform .mat-checkbox {line-height: 24px;position: inherit;font-family: "OpenSans";font-size: 14px;color: #999795;display: block;padding-bottom: 7px;}
@@ -196,6 +200,37 @@ text-transform: uppercase;}
 .btnbuyticket_genuserlan .buttoncon {width: 100% !important;font-family: "VerminVibesSlant" !important;font-size: 36px !important;background: -webkit-linear-gradient(#f3f3f1, #8c8d8c) !important;-webkit-background-clip: text !important;-webkit-text-fill-color: transparent !important;margin: 0px !important;line-height: 36px !important;letter-spacing: 0px !important;text-transform: uppercase !important;border: 0 !important;text-align: center !important;padding: 16px 8px 6px !important;}
 .mat-checkbox-layout .mat-checkbox-label {line-height: 17px;white-space: pre-wrap;}
 
+.signupflowform .fromgroupcol1 .mat-checkbox .mat-checkbox-inner-container{margin-right: 8px;
+    margin: 5px 4px auto;
+    vertical-align: top;
+    align-items: self-start;}
+    .signupflowform .fromgroupcol1 .mat-checkbox .mat-checkbox-label b{
+        display: block;
+    font-weight: normal;
+    font-family: OpenSans;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgb(208, 210, 215) !important;
+    margin-bottom: 6px;
+    }
+    .inputgroup .mat-flat-button:not([class*=mat-elevation-z]), .mat-stroked-button:not([class*=mat-elevation-z]) {
+        border: 1px solid #2e3234 !important;
+        border-radius: 0;
+        background: linear-gradient(to top,#010202,#1f2529);
+        color: #fff;
+        height: 42px;
+        border-left: 0 !important;
+    }
+    .inputgroup .mat-flat-button:not([class*=mat-elevation-z]), .mat-stroked-button:not([class*=mat-elevation-z]) input{
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .inputgroup .mat-form-field-flex{align-items: center;}
+    .inputgroup .mat-form-field-flex {
+        width: 100% !important;
+    }
 /*------------------------------------ signup css end ------------------------------------ */
 
 /*------------------------------------ signupheader css start ------------------------------------ */
