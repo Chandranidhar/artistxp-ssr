@@ -57,7 +57,27 @@ font-style: normal;
 
 /* body{background-color: #000;} */
 
-
+/* width */
+.scrolllight::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .scrolllight::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .scrolllight::-webkit-scrollbar-thumb {
+    background: #565454;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .scrolllight::-webkit-scrollbar-thumb:hover {
+    background: #565454; 
+  }
 
 /*------------------------------------ login css start ------------------------------------ */
 .logintopbarmainwrapper {background-color: #101014;display: block !important;}
@@ -225,7 +245,7 @@ text-transform: uppercase;}
     font-family: "OpenSans";
     font-size: 14px;
     line-height: 30px;
-    padding: 0px 7px;
+    padding: 0px 8px;
     color: #89898f !important;
     font-weight: normal;
     background: #000;
@@ -234,9 +254,8 @@ text-transform: uppercase;}
     width: 97%;
 }
 .formlistwrapper mat-list {
-    font-size: 14px;
-    line-height: 28px;
-    padding: 0px 7px;
+    font-size: 14px;    
+    padding: 0px 8px;
     color: #89898f !important;
     font-weight: normal;
     background: #1e2223;
@@ -246,7 +265,9 @@ text-transform: uppercase;}
     display: inline-block;
     width: 97%;
     border-top: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
-.formlistwrapper mat-list mat-list-item{color: #89898f !important;font-family: "OpenSans";cursor: pointer;}
+.formlistwrapper mat-list mat-list-item{color: #89898f !important;font-family: "OpenSans";cursor: pointer;font-size: 14px !important;line-height: 26px;}
 
 /*------------------------------------ signupheader css end ------------------------------------ */
