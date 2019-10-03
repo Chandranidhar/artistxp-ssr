@@ -249,6 +249,14 @@
                         <input matInput placeholder="Aliases" value="">
                     </mat-form-field>
 
+                    <mat-form-field class="example-full-width fromgroup">
+                        <mat-select aria-placeholder="1234">
+                            <mat-option value="male">Male</mat-option>
+                            <mat-option value="female">Female</mat-option>
+                        </mat-select>
+                        <mat-label>Gender</mat-label>
+                    </mat-form-field>
+
                     <span class="formlistwrapper">
                         <mat-card-title>Performance Category/ Genre (Music):</mat-card-title>
                         <mat-list role="list" class="scrolllight">
@@ -269,88 +277,85 @@
                   <textarea matInput placeholder="Leave a comment"></textarea>
                 </mat-form-field> -->
 
-                    <mat-form-field class="example-full-width fromgroup">
-                        <mat-select aria-placeholder="1234">
-                            <mat-option value="male">Male</mat-option>
-                            <mat-option value="female">Female</mat-option>
-                        </mat-select>
-                        <mat-label>Gender</mat-label>
+                <mat-card-subtitle>ABILITY: (CHOOSE ONE ONLY) <b>Enter by the Most Experienced Dancer's Ability Level</b></mat-card-subtitle>
+                <span class="fromgroupcols">
+                    
+                    <span class="fromgroupcol1">
+                        <section class="example-section">
+                            <mat-checkbox class="example-margin">
+                                Beginning 
+                              <b>Less than Two years in any Studio environment</b>
+                              </mat-checkbox>
+                            <mat-checkbox class="example-margin">Private (This will keep your stats only visible
+                                Elementary
+                                <b>Two, Three or Four years of study</b>
+                              </mat-checkbox>
+                              <mat-checkbox class="example-margin">Private (This will keep your stats only visible
+                                  Junior
+                                  <b>Five, Six or Seven years of study</b>
+                                </mat-checkbox>
+                                <mat-checkbox class="example-margin">Private (This will keep your stats only visible
+                                    Senior
+                                    <b>MORE than seven years of study</b>
+                                  </mat-checkbox>
+                        </section>
+                    </span>
+                </span>
+
+                <mat-form-field class="example-full-width fromgroup inputgroup">
+                    <mat-placeholder>Experiences</mat-placeholder>
+                      <input matInput type="text">
+                      <button mat-button matSuffix mat-stroked-button aria-label="search">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                    <button mat-button matSuffix mat-stroked-button aria-label="search">
+                        <mat-icon>remove</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width fromgroup inputgroup">
+                      <mat-placeholder>Website</mat-placeholder>
+                        <input matInput type="text">
+                        <button mat-button matSuffix mat-stroked-button>
+                          <mat-icon>add</mat-icon>
+                      </button>
+                      <button mat-button matSuffix mat-stroked-button>
+                          <mat-icon>remove</mat-icon>
+                      </button>
                     </mat-form-field>
 
+                    <mat-form-field class="example-full-width fromgroup inputgroup">
+                        <mat-placeholder>Add Image:</mat-placeholder>
+                          <input matInput type="Add Image:">
+                          <button mat-button matSuffix mat-stroked-button>
+                              Select File 
+                              <input type="file">
+                        </button>
+                        
+                      </mat-form-field>
 
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Email" value="" type="email">
-                    </mat-form-field>
-
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Username" value="" type="text">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Password" value="" type="password">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Confirm Password" value="" type="email">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Phone" value="" type="text">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Stage name/Aliases" value="" type="text">
-                    </mat-form-field>
                     <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="Bio" value="" type="text">
                     </mat-form-field>
+
                     <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Hometown" value="" type="text">
+                        <input matInput placeholder="City" value="" type="text">
+                    </mat-form-field> 
+                    
+                    <mat-form-field class="example-full-width fromgroup">
+                        <mat-select aria-placeholder="">
+                            <mat-option value="male">Male</mat-option>
+                            <mat-option value="female">Female</mat-option>
+                        </mat-select>
+                        <mat-label>Select State</mat-label>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width fromgroup">
+                        <input matInput placeholder="Address" value="" type="text">
                     </mat-form-field>
                     <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="city" value="" type="text">
+                        <input matInput placeholder="Zip" value="" type="text">
                     </mat-form-field>
-                    <span class="fromgroupcols">
-                        <span class="fromgroupcol2">
-                            <mat-form-field class="example-full-width fromgroup">
-                                <mat-select aria-placeholder="">
-                                    <mat-option value="male">Male</mat-option>
-                                    <mat-option value="female">Female</mat-option>
-                                </mat-select>
-                                <mat-label>Select State</mat-label>
-                            </mat-form-field>
-                        </span>
-                        <span class="fromgroupcol2">
-                            <mat-form-field class="example-full-width fromgroup">
-                                <input matInput placeholder="Zip" value="" type="text">
-                            </mat-form-field>
-                        </span>
-                    </span>
-                    <mat-card-subtitle>ACCOUNT TYPE</mat-card-subtitle>
-                    <span class="fromgroupcols">
-                        <span class="fromgroupcol3">
-                            <section class="example-section">
-                                <mat-checkbox class="example-margin">Musician!</mat-checkbox>
-                                <mat-checkbox class="example-margin">Producer!</mat-checkbox>
-                            </section>
-                        </span>
-                        <span class="fromgroupcol3">
-                            <section class="example-section">
-                                <mat-checkbox class="example-margin">Dancer!</mat-checkbox>
-                                <mat-checkbox class="example-margin">Affiliates!</mat-checkbox>
-                            </section>
-                        </span>
-                        <span class="fromgroupcol3">
-                            <section class="example-section">
-                                <mat-checkbox class="example-margin">Models!</mat-checkbox>
-                                <mat-checkbox class="example-margin">Fans!</mat-checkbox>
-                            </section>
-                        </span>
-                        <span class="fromgroupcol1">
-                            <section class="example-section">
-                                <mat-checkbox class="example-margin">Public (This will be visible to the ArtistXP
-                                    community) </mat-checkbox>
-                                <mat-checkbox class="example-margin">Private (This will keep your stats only visible
-                                    to you) </mat-checkbox>
-                            </section>
-                        </span>
-                    </span>
+                    
                     <button mat-button class="btnbuyticket_genuserlan">
                         <span class="buttoncon">submit</span>
                     </button>
