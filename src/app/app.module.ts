@@ -32,7 +32,8 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
     TransferHttpCacheModule,
     HttpClientModule,
     NgtUniversalModule,
-    FormsModule, ReactiveFormsModule 
+    FormsModule, 
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
