@@ -72,6 +72,9 @@
           "configurations": {
             "production": {
               "browserTarget": "artistxp-ssr:build:production"
+            },
+            "development": {
+              "browserTarget": "artistxp-ssr:build:development"
             }
           }
         },
