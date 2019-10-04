@@ -201,7 +201,7 @@
                     </span>
                 </span>
            
-                <div formArrayName="experiences" *ngFor="let creds of secondForm.controls.experiences?.value; let i = index">
+                <div formArrayName="experiences" *ngFor="let creds of secondForm.controls.experiences['controls']; let i = index">
                         <div [formGroupName]="i">
                 <mat-form-field class="example-full-width fromgroup inputgroup">
                     <mat-placeholder>Experiences</mat-placeholder>
@@ -217,7 +217,7 @@
                  </div>
                 </div>
 
-                <div formArrayName="website" *ngFor="let creds of secondForm.controls.website?.value; let k = index">
+                <div formArrayName="website" *ngFor="let creds of secondForm.controls.website['controls']; let k = index">
                         <div [formGroupName]="k">
                   <mat-form-field class="example-full-width fromgroup inputgroup">
                       <mat-placeholder>Website</mat-placeholder>

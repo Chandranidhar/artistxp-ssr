@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginsubmit() {
-<<<<<<< HEAD
 
             if (this.loginForm.valid) 
             {
@@ -42,7 +41,6 @@ export class LoginComponent implements OnInit {
         {
           this.loginForm.controls['email'].markAsTouched();
           this.loginForm.controls['password'].markAsTouched();
-=======
     for (let x in this.loginForm.controls) {
       console.log(this.loginForm.controls[x]);
       this.loginForm.controls[x].markAsTouched();
@@ -66,7 +64,6 @@ export class LoginComponent implements OnInit {
           this.cookieservice.set('last_notify_id', result.msg.last_notify_id);
           // just to give it a render on homepage , later things will change
           this.router.navigate(['/']);
->>>>>>> 8f059e8db84c1ecabe329adee62fce39e85c373b
         }
 
       });
@@ -74,5 +71,6 @@ export class LoginComponent implements OnInit {
     else {
       console.log('error in form validation');
     }
+  }
   }
 }
