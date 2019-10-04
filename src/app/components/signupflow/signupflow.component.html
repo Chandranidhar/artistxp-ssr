@@ -94,7 +94,7 @@
                     <span class="fromgroupcols">
                         <span class="fromgroupcol3">
                             <section class="example-section">
-                                <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="recordingartist">Recording Artist!</mat-checkbox>
+                                <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="musicians">Recording Artist!</mat-checkbox>
                                 <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="dancer">Dancer!</mat-checkbox>
                                 <!-- <mat-checkbox class="example-margin">Producer!</mat-checkbox> -->
                             </section>
@@ -103,13 +103,13 @@
                             <section class="example-section">
                                 
                                 <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="afiliates">Affiliates!</mat-checkbox>
-                                <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="models">Models!</mat-checkbox>
+                                <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="model">Models!</mat-checkbox>
                             </section>
                         </span>
                         <span class="fromgroupcol3">
                             <section class="example-section">
                                 
-                                <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="fans">Fans!</mat-checkbox>
+                                <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="fan">Fans!</mat-checkbox>
                             </section>
                         </span>
                         <span class="fromgroupcol1">
@@ -133,143 +133,41 @@
         <ng-template matStepLabel>step  2</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
-            <mat-list-item class="signupflow signupflow1" style="display: none;">
+                        <mat-list-item class="signupflow signupflow2" >
                 <mat-card-title class="fromtitle">
                     <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
                 </mat-card-title>
-                <form class="signupflowform">
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="First Name" value="">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Last Name" value="">
-                    </mat-form-field>
 
+                <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit()">
                     <!-- <mat-form-field class="example-full-width fromgroup">
-                  <textarea matInput placeholder="Leave a comment"></textarea>
-                </mat-form-field> -->
-
-                    <mat-form-field class="example-full-width fromgroup">
-                        <mat-select aria-placeholder="1234">
-                            <mat-option value="male">Male</mat-option>
-                            <mat-option value="female">Female</mat-option>
-                        </mat-select>
-                        <mat-label>Gender</mat-label>
-                    </mat-form-field>
-
-
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Email" value="" type="email">
-                    </mat-form-field>
-
-                    <!-- <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Username" value="" type="text">
+                        <input matInput placeholder="Real Name" value="" formControlName="realname">
                     </mat-form-field> -->
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Password" value="" type="password">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Confirm Password" value="" type="email">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Phone" value="" type="text">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Stage name/Aliases" value="" type="text">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Bio" value="" type="text">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Hometown" value="" type="text">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="city" value="" type="text">
-                    </mat-form-field>
-                    <span class="fromgroupcols">
-                        <span class="fromgroupcol2">
-                            <mat-form-field class="example-full-width fromgroup">
-                                <mat-select aria-placeholder="">
-                                    <mat-option value="male">Male</mat-option>
-                                    <mat-option value="female">Female</mat-option>
-                                </mat-select>
-                                <mat-label>Select State</mat-label>
-                            </mat-form-field>
-                        </span>
-                        <span class="fromgroupcol2">
-                            <mat-form-field class="example-full-width fromgroup">
-                                <input matInput placeholder="Zip" value="" type="text">
-                            </mat-form-field>
-                        </span>
-                    </span>
-                    <mat-card-subtitle>ACCOUNT TYPE</mat-card-subtitle>
-                    <span class="fromgroupcols">
-                        <span class="fromgroupcol3">
-                            <section class="example-section">
-                                <mat-checkbox class="example-margin">Musician!</mat-checkbox>
-                                <!-- <mat-checkbox class="example-margin">Producer!</mat-checkbox> -->
-                            </section>
-                        </span>
-                        <span class="fromgroupcol3">
-                            <section class="example-section">
-                                <mat-checkbox class="example-margin">Dancer!</mat-checkbox>
-                                <mat-checkbox class="example-margin">Affiliates!</mat-checkbox>
-                            </section>
-                        </span>
-                        <span class="fromgroupcol3">
-                            <section class="example-section">
-                                <mat-checkbox class="example-margin">Models!</mat-checkbox>
-                                <mat-checkbox class="example-margin">Fans!</mat-checkbox>
-                            </section>
-                        </span>
-                        <span class="fromgroupcol1">
-                            <section class="example-section">
-                                <mat-checkbox class="example-margin">Public (This will be visible to the ArtistXP
-                                    community) </mat-checkbox>
-                                <mat-checkbox class="example-margin">Private (This will keep your stats only visible
-                                    to you) </mat-checkbox>
-                            </section>
-                        </span>
-                    </span>
-                    <button mat-button class="btnbuyticket_genuserlan">
-                        <span class="buttoncon">submit</span>
-                    </button>
-                </form>
-            </mat-list-item>
-
-            <mat-list-item class="signupflow signupflow2" >
-                <mat-card-title class="fromtitle">
-                    <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
-                </mat-card-title>
-                <form class="signupflowform">
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Real Name" value="">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
+                    <!-- <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="Aliases" value="">
-                    </mat-form-field>
+                    </mat-form-field> -->
 
-                    <mat-form-field class="example-full-width fromgroup">
+                    <!-- <mat-form-field class="example-full-width fromgroup">
                         <mat-select aria-placeholder="1234">
                             <mat-option value="male">Male</mat-option>
                             <mat-option value="female">Female</mat-option>
                         </mat-select>
                         <mat-label>Gender</mat-label>
-                    </mat-form-field>
+                    </mat-form-field> -->
 
                     <span class="formlistwrapper">
                         <mat-card-title>Performance Category/ Genre (Music):</mat-card-title>
                         <mat-list role="list" class="scrolllight">
-                            <mat-list-item role="listitem">Select Genre</mat-list-item>
-                            <mat-list-item role="listitem">Heavy Metal</mat-list-item>
-                            <mat-list-item role="listitem">EDM</mat-list-item>
-                            <mat-list-item role="listitem">Rap</mat-list-item>
-                            <mat-list-item role="listitem">Blues</mat-list-item>
-                            <mat-list-item role="listitem">Country</mat-list-item>
-                            <mat-list-item role="listitem">Musical</mat-list-item>
-                            <mat-list-item role="listitem">Rock</mat-list-item>
-                            <mat-list-item role="listitem">Pop</mat-list-item>
-                            <mat-list-item role="listitem">Hip-Hop (Music)</mat-list-item>
+                                
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="genre">Select Genre</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="heavymetal">Heavy Metal</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="edm">EDM</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="rap">Rap</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="blues">Blues</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="country">Country</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="musical">Musical</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="rock">Rock</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="pop">Pop</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="hiphop">Hip-Hop (Music)</mat-checkbox></mat-list-item>
                           </mat-list>
                     </span>
 
@@ -282,46 +180,59 @@
                     
                     <span class="fromgroupcol1">
                         <section class="example-section">
-                            <mat-checkbox class="example-margin">
-                                Beginning 
-                              <b>Less than Two years in any Studio environment</b>
+                            <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="beginning">
+                                
+                              Less than Two years in any Studio environment
                               </mat-checkbox>
-                            <mat-checkbox class="example-margin">Private (This will keep your stats only visible
-                                Elementary
-                                <b>Two, Three or Four years of study</b>
+                            <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="elementary">                 
+                                Two, Three or Four years of study
                               </mat-checkbox>
-                              <mat-checkbox class="example-margin">Private (This will keep your stats only visible
-                                  Junior
-                                  <b>Five, Six or Seven years of study</b>
+
+                              <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="junior">
+                                
+                                  Five, Six or Seven years of study
                                 </mat-checkbox>
-                                <mat-checkbox class="example-margin">Private (This will keep your stats only visible
-                                    Senior
-                                    <b>MORE than seven years of study</b>
+
+                                <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="senior">
+                        
+                                MORE than seven years of study
                                   </mat-checkbox>
                         </section>
                     </span>
                 </span>
-
+           
+                <div formArrayName="experiences" *ngFor="let creds of secondForm.controls.experiences?.value; let i = index">
+                        <div [formGroupName]="i">
                 <mat-form-field class="example-full-width fromgroup inputgroup">
                     <mat-placeholder>Experiences</mat-placeholder>
-                      <input matInput type="text">
-                      <button mat-button matSuffix mat-stroked-button aria-label="search">
+                      <input matInput type="text" formControlName="exper">
+                      <mat-error *ngIf="secondForm.controls['exper']?.touched && secondForm.controls['exper'].errors && secondForm.controls['exper'].errors.required" class="errormsgred">Experienced is required !</mat-error>
+                      <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="addCreds()">
                         <mat-icon>add</mat-icon>
                     </button>
-                    <button mat-button matSuffix mat-stroked-button aria-label="search">
+                   <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="delCreds(i)">
                         <mat-icon>remove</mat-icon>
-                    </button>
+                    </button>            
                   </mat-form-field>
+                 </div>
+                </div>
+
+                <div formArrayName="website" *ngFor="let creds of secondForm.controls.website?.value; let k = index">
+                        <div [formGroupName]="k">
                   <mat-form-field class="example-full-width fromgroup inputgroup">
                       <mat-placeholder>Website</mat-placeholder>
-                        <input matInput type="text">
-                        <button mat-button matSuffix mat-stroked-button>
+                        <input matInput type="text" formControlName="wsite">
+                        <mat-error *ngIf="secondForm.controls['wsite']?.touched && secondForm.controls['wsite'].errors && secondForm.controls['wsite'].errors.required" class="errormsgred">Experienced is required !</mat-error>
+                        <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="addweb()">
                           <mat-icon>add</mat-icon>
                       </button>
-                      <button mat-button matSuffix mat-stroked-button>
+                      <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="delweb(k)">
                           <mat-icon>remove</mat-icon>
                       </button>
                     </mat-form-field>
+                </div>
+            </div>
+
 
                     <mat-form-field class="example-full-width fromgroup inputgroup">
                         <mat-placeholder>Add Image:</mat-placeholder>
@@ -333,11 +244,11 @@
                         
                       </mat-form-field>
 
-                    <mat-form-field class="example-full-width fromgroup">
+                    <!-- <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="Bio" value="" type="text">
-                    </mat-form-field>
+                    </mat-form-field> -->
 
-                    <mat-form-field class="example-full-width fromgroup">
+                    <!-- <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="City" value="" type="text">
                     </mat-form-field> 
                     
@@ -347,20 +258,21 @@
                             <mat-option value="female">Female</mat-option>
                         </mat-select>
                         <mat-label>Select State</mat-label>
-                    </mat-form-field>
+                    </mat-form-field> -->
 
-                    <mat-form-field class="example-full-width fromgroup">
+                    <!-- <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="Address" value="" type="text">
                     </mat-form-field>
                     <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="Zip" value="" type="text">
-                    </mat-form-field>
+                    </mat-form-field> -->
                     
                     <button mat-button class="btnbuyticket_genuserlan">
                         <span class="buttoncon">submit</span>
                     </button>
                 </form>
             </mat-list-item>
+
         </mat-list>
     </span>
     </mat-step>

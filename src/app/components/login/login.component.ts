@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
 
             if (this.loginForm.valid) 
             {
-          console.log(this.loginForm.value);
+         // console.log(this.loginForm.value);
           this.api_service.postDatawithoutToken('loginasuser',this.loginForm.value).subscribe(res=> {
             let result:any;
             result = res;
