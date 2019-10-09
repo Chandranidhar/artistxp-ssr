@@ -35,7 +35,7 @@ export class SignupflowComponent implements OnInit {
       confirmpassword:[null,[Validators.required,Validators.minLength(6)]],
       phone:[null,[Validators.required]],
       aliases:[null],
-      hometown:[null,[Validators.required]],
+      // hometown:[null,[Validators.required]],
       city:[null,[Validators.required]],
       state:[null,[Validators.required]],
       zip:[null,[Validators.required]],
@@ -97,7 +97,7 @@ statechangeforprivacy(){
           this.firstForm.controls['password'].markAsTouched();
           this.firstForm.controls['confirmpassword'].markAsTouched();
           this.firstForm.controls['phone'].markAsTouched();
-          this.firstForm.controls['hometown'].markAsTouched();
+          // this.firstForm.controls['hometown'].markAsTouched();
           this.firstForm.controls['city'].markAsTouched();
           this.firstForm.controls['state'].markAsTouched();
           this.firstForm.controls['zip'].markAsTouched();
