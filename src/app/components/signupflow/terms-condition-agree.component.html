@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>This is a Dialog title</h2>
+
+<mat-dialog-content>
+
+<p>By using Artist's properties, you agree to our use of cookies, including for analytics and targeted advertising, as described in our <a [routerLink]="['/']" target="_blank" class="linktxt">Cookie Policy</a>.</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" [mat-dialog-close]="data.agreeterms" >I Agree</button>
+    <button class="mat-raised-button" (click)="onNoClick()">Close</button>
+</mat-dialog-actions>
