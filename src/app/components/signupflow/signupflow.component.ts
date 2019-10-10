@@ -40,7 +40,6 @@ export class SignupflowComponent implements OnInit {
   constructor(public _formBuilder: FormBuilder, public f: FormService, public apiService: ApiService, public _http: HttpClient, public dialog: MatDialog, public userdata: CookieService) {
     this.fstgen();
     this.secgen();
-    this.openTermsDialog();
   }
   openQueryDialog() {            //demo for dialog 
     const dialogQueryRef = this.dialog.open(QueryDialogComponent);
@@ -353,9 +352,8 @@ export class SignupflowComponent implements OnInit {
           // this.termsmodal.onNoClick();
           // console.log(this.agreeval);
           this.dialog.closeAll();
-          setTimeout(()=>{
             this.myStepper.next();
-          },2000);
+          
           
           let udetails = result.result.ops[0];
           this.userdata.set('firstname', data.firstname);
@@ -430,6 +428,12 @@ export class SignupflowComponent implements OnInit {
       rock: false,
       pop: false,
       hiphop: false,
+      height: [null],
+      waist: [null],
+      weight: [null],
+      hips: [null],
+      bust: [null],
+      ethnicity:[null],
 
       beginning: false,
       elementary: false,
