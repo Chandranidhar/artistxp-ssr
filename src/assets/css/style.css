@@ -552,7 +552,9 @@ text-transform: uppercase;}
  
 /*---------------- end fbartistxp css --------------------*/
 
-
+.asfbartistxpsubcontainer .competitionrightdiv .mat-form-field-flex {
+    width: 91% !important;
+}
 
 
 

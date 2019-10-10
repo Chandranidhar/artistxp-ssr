@@ -23,7 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SignupheaderComponent } from './components/signupheader/signupheader.component';
 import { SignupflowComponent, QueryDialogComponent, TermsDialogComponent } from './components/signupflow/signupflow.component';
 import { ApiService } from './services/api-service';
-import { BlastorpassComponent } from './components/blastorpass/blastorpass.component';
+import { BlastorpassComponent, QueryDialogBlastComponent, TermsDialogBlastComponent } from './components/blastorpass/blastorpass.component';
 import { CompetitionComponent } from './components/competition/competition.component';
 import { CommunityComponent } from './components/community/community.component';
 @NgModule({
@@ -38,7 +38,9 @@ import { CommunityComponent } from './components/community/community.component';
     TermsDialogComponent,
     BlastorpassComponent,
     CompetitionComponent,
-    CommunityComponent
+    CommunityComponent,
+    TermsDialogBlastComponent,
+    QueryDialogBlastComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -55,7 +57,7 @@ import { CommunityComponent } from './components/community/community.component';
     // CookieService 
   ],
   providers: [AuthGuard,CookieService,ApiService],
-  entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent],
+  entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent,BlastorpassComponent, TermsDialogComponent,QueryDialogBlastComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
