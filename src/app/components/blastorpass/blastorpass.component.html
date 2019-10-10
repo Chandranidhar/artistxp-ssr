@@ -1,0 +1,386 @@
+
+<div class="asfbartistxpmaincontainer">
+        <div class="fbartistxpnavwrapper">
+          <!--<app-newsignupheader></app-newsignupheader>-->
+          <app-signupheader></app-signupheader>
+        </div>
+      <div class="asfbartistxpsubcontainer communitysignupnewblock1">
+        <div class="container-fluid competitionblock2 activecompetitionblock2">
+          <div class="row no-gutter blastorpassmainpwrapper">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 artistsexchangeleftdiv">
+              <div class="fbartistxptextwrapper">
+                <h1>Blast or Pass</h1>
+                <p>
+                  <strong>Sign-up to be an affiliate and help spread the word about this brand new artist community!</strong>
+                  This is an amazing
+                  opportunity to revolutionize the way your work can be
+                  noticed by a wider range of fans. Being apart of the ArtistXP family means being an advocate for artists promoting
+                  artists.  We strive to all rise together (ART)!
+                </p>
+                <button>ArtistXP Music Network</button>
+                <img src="../../assets/images/fbartistxplogo.png">
+                <p>Our Master Ambassador, Alfa Blvck, hosts a live streamed music review weekly on our Facebook group, Artist XP Music Network. Independent artist can participate to be heard by more than just their local community and get the chance to be featured as the Artist of the Week! Follow our page for all of the updates</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 competitionrightdiv competitionrightdivtop fbcompetitionrightdivtop">
+              <div class="signupfrwrapper">
+              <mat-list class="signupcontainer ">
+              <mat-list-item class="communitysignupnewblock1right signupflow">
+                <mat-card-title class="fromtitle "><span>Sign-up Now</span></mat-card-title>
+                <!-- <form class="formdiv" name="dancingform" novalidate [formGroup]="dataForm" (ngSubmit)="openagree()">   for development site -->
+                  <form class="formdiv" name="dancingform" novalidate [formGroup]="dataForm" (ngSubmit)="dosubmit1()">   <!--for development site-->
+                    <!--<form class="formdiv" name="dancingform" novalidate [formGroup]="dataForm" (ngSubmit)="dosubmit1(templatedemo)">--> <!--for live site-->
+                  <div class="cslandingformwrapper" #destinationRef>
+                    
+                    <div class="cslandingforminnerwrapper">
+                      <!-- <div *ngIf="is_error" class="singleerror" style="font-family: 'OpenSans' !important; text-align: left;">{{is_error}}</div> -->
+                      <mat-form-field class="example-full-width fromgroup">
+                        <input name="first-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(dataForm,'firstname')" [formControl]="dataForm.controls['firstname']" placeholder="first name">
+                        <span class="has-error" *ngIf ="dataForm.controls['firstname'].touched && !dataForm.controls['firstname'].valid"> First Name field can not be blank</span>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width fromgroup">
+                        <input name="last-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(dataForm,'lastname')" [formControl]="dataForm.controls['lastname']" placeholder="last name">
+                        <span class="has-error" *ngIf ="dataForm.controls['lastname'].touched && !dataForm.controls['lastname'].valid"> Last Name field can not be blank</span>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width fromgroup">
+                        <mat-select class="form-control classic"  name="gender" (blur)="_commonservices.inputUntouch(dataForm,'gender')" [formControl]="dataForm.controls['gender']">
+                          <mat-option value="">Gender</mat-option>
+                          <mat-option value="male">Male</mat-option>
+                          <mat-option value="female">Female</mat-option>
+                        </mat-select>
+                        <span class="has-error" *ngIf ="dataForm.controls['gender'].touched && !dataForm.controls['gender'].valid"> Gender field can not be blank</span>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width fromgroup">
+                        <input name="your-email" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(dataForm,'email')" [formControl]="dataForm.controls['email']" placeholder="email" >
+                        <span class="has-error" *ngIf ="dataForm.controls['email'].touched && !dataForm.controls['email'].valid"> Email field can not be blank</span>
+                        <span class="has-error" *ngIf ="err==1"> Email is already exists!</span>
+                      </mat-form-field>
+                      <!-- <div class="fromgroup">
+                        <input type="text" name="username" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" [formControl]="dataForm.controls['username']" (blur)="_commonservices.inputUntouch(dataForm,'username')" placeholder="username" >
+                        <span class="has-error" *ngIf ="dataForm.controls['username'].touched && !dataForm.controls['username'].valid"> Username field can not be blank</span>
+                        <span class="has-error" *ngIf ="erruser==1"> Username is already exists!</span>
+                      </div> -->
+                      <mat-form-field class="example-full-width fromgroup">
+                        <input type="password" name="password" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" [formControl]="dataForm.controls['password']" (blur)="_commonservices.inputUntouch(dataForm,'password')" placeholder="password">
+                        <span class="has-error" *ngIf ="dataForm.controls['password'].touched && !dataForm.controls['password'].valid">Password field can not be blank</span>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width fromgroup">
+                        <input type="password" name="confirmpassword" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" [formControl]="dataForm.controls['confirmpassword']" (blur)="_commonservices.inputUntouch(dataForm,'confirmpassword')" placeholder="confirm password">
+                        <span class="has-error"*ngIf ="dataForm.controls['confirmpassword'].touched && !dataForm.controls['confirmpassword'].valid"> Confirm Password field can not be blank</span>
+                        <span class="has-error" *ngIf ="dataForm.hasError('mismatchedPasswords') && !dataForm.controls['confirmpassword'].valid "> Passwords must match</span>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width fromgroup">
+                        <input name="your-phone" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" [formControl]="dataForm.controls['phone']" (blur)="_commonservices.inputUntouch(dataForm,'phone')"  placeholder="phone">
+                        <span class="has-error" *ngIf ="dataForm.controls['phone'].touched && !dataForm.controls['phone'].valid"> Phone field can not be blank</span>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width fromgroup">
+                        <p>Select Account Type. If you are here to enjoy the artistry, please select fan.</p>
+                        <ul class="formdivinnerlist">
+                          <li class="formdivinnerlistinner">
+                            <div>
+                              <input type="checkbox" name="name1" value=""  checked [formControl]="dataForm.controls['musicians']" (blur)="_commonservices.inputUntouch(dataForm,'musicians')" (change)="onChangeCategory()"><label>Musician!</label>
+      
+                              <!--<input type="checkbox" name="name1" value="" > Musician!--></div>
+                          </li>
+                          <li class="formdivinnerlistinner">
+                            <div>
+                              <input type="checkbox" name="name2" value=""  checked [formControl]="dataForm.controls['dancer']" (blur)="_commonservices.inputUntouch(dataForm,'dancer')" (change)="onChangeCategory()"><label>dancer!</label>
+                              <!--<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['dancer']" (change)="onChangeCategory()"> Dancers!--></div>
+                          </li>
+                          <li class="formdivinnerlistinner">
+                            <div>
+                              <input type="checkbox" name="name3" value=""  (blur)="_commonservices.inputUntouch(dataForm,'model')" checked [formControl]="dataForm.controls['model']" (change)="onChangeCategory()"><label>Models!</label>
+                              <!--<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['model']" (change)="onChangeCategory()"> Models!-->
+                            </div>
+                          </li>
+                          <li class="formdivinnerlistinner">
+                            <div>
+                              <input type="checkbox" name="name4" value="" (blur)="_commonservices.inputUntouch(dataForm,'producer')"  checked [formControl]="dataForm.controls['producer']" (change)="onChangeCategory()"><label>Producer!</label>
+      
+                              <!--<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['signupaffiliate']" (change)="onChangeCategory()"> Affiliates!-->
+                            </div>
+      
+                          </li>
+      
+                          <li class="formdivinnerlistinner">
+                            <div>
+                              <input type="checkbox" name="name5" value="" (blur)="_commonservices.inputUntouch(dataForm,'signupaffiliate')" disabled checked [formControl]="dataForm.controls['signupaffiliate']" (change)="onChangeCategory()"><label>Affiliates!</label>
+      
+                              <!--<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['signupaffiliate']" (change)="onChangeCategory()"> Affiliates!-->
+                            </div>
+      
+                          </li>
+                          <li class="formdivinnerlistinner">
+                            <div>
+                              <input type="checkbox"  checked name="name6" value="" (blur)="_commonservices.inputUntouch(dataForm,'fan')" [formControl]="dataForm.controls['fan']" (change)="onChangeCategory()"><label>Fans!</label>
+                              <!--<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['fan']" (change)="onChangeCategory()"> Fans!-->
+                            </div>
+                          </li>
+                        </ul>
+                      </mat-form-field>
+                      <div *ngIf="feature==1">
+                        <mat-form-field class="example-full-width fromgroup">
+                          <p class="titletagnew">Stats</p>
+                        </mat-form-field>
+                        <div class="doublecolumn">
+                          <mat-form-field class="example-full-width fromgroup">
+                            <input name="height" class="form-control" type="text" [formControl]="dataForm.controls['height']" placeholder="Height" (blur)="_commonservices.inputUntouch(dataForm,'height')">
+                            <span class="has-error" *ngIf ="dataForm.controls['height'].touched && !dataForm.controls['height'].valid"> Height field can not be blank</span>
+                          </mat-form-field>
+                          <mat-form-field class="example-full-width fromgroup">
+                            <input name="weight" class="form-control" type="text" placeholder="Weight" [formControl]="dataForm.controls['weight']" (blur)="_commonservices.inputUntouch(dataForm,'weight')" >
+                            <span class="has-error" *ngIf ="dataForm.controls['weight'].touched && !dataForm.controls['weight'].valid"> Weight field can not be blank</span>
+                          </mat-form-field>
+                        </div>
+                        <div class="doublecolumn">
+                          <mat-form-field class="example-full-width fromgroup">
+                            <input name="bust" class="form-control" type="text" placeholder="Bust" [formControl]="dataForm.controls['bust']" (blur)="_commonservices.inputUntouch(dataForm,'bust')">
+                            <span class="has-error" *ngIf ="dataForm.controls['bust'].touched && !dataForm.controls['bust'].valid"> Bust field can not be blank</span>
+                          </mat-form-field>
+                          <mat-form-field class="example-full-width fromgroup">
+                            <input name="waist" class="form-control" type="text" placeholder="Waist" [formControl]="dataForm.controls['waist']" (blur)="_commonservices.inputUntouch(dataForm,'waist')">
+                            <span class="has-error" *ngIf ="dataForm.controls['waist'].touched && !dataForm.controls['waist'].valid"> Waist field can not be blank</span>
+                          </mat-form-field>
+                        </div>
+                        <div class="doublecolumn">
+                          <mat-form-field class="example-full-width fromgroup">
+                            <input name="hips" class="form-control" type="text" placeholder="Hips"  [formControl]="dataForm.controls['hips']" (blur)="_commonservices.inputUntouch(dataForm,'hips')">
+                            <span class="has-error" *ngIf ="dataForm.controls['hips'].touched && !dataForm.controls['hips'].valid"> Hips field can not be blank</span>
+                          </mat-form-field>
+                          <mat-form-field class="example-full-width fromgroup">
+                            <!--<select name="state" class="form-control classic" [formControl]="dataForm.controls['ethnicity']" (blur)="_commonservices.inputUntouch(dataForm,'ethnicity')">
+                              <option value="">Select Ethnicity</option>
+                              <option value="Indigenous Maori">Indigenous Maori</option>
+                              <option value="Indigenous First Nations">Indigenous First Nations</option>
+                              <option value="Indigenous Native American">Indigenous Native American</option>
+                              <option value="Indigenous Other">Indigenous Other</option>
+                              <option value="Indigenous Pacific Nations">Indigenous Pacific Nations</option>
+                              <option value="Other Ethnicity">Other Ethnicity</option>
+                              <option value="Indigenous Aboriginal - Aus">Indigenous Aboriginal - Aus</option>
+                            </select>-->
+      
+                             <input name="ethnicity" class="form-control" type="text" placeholder="Ethnicity" [formControl]="dataForm.controls['ethnicity']" (blur)="_commonservices.inputUntouch(dataForm,'ethnicity')">
+                            <span class="has-error" *ngIf ="dataForm.controls['ethnicity'].touched && !dataForm.controls['ethnicity'].valid"> Ethnicity field can not be blank</span>
+                          </mat-form-field>
+                        </div>
+                      </div>
+      
+                      <div class="fromgroup accept-tc-wrapper1">
+      
+                          <label class="ccnew">Accept <a (click)="open_termsandconditions()"> Terms And Conditions</a>
+                            <input type="checkbox" name="accept-tc[]" value="Accept Terms And Conditions" [formControl]="dataForm.controls['accepttermscond']" (blur)="_commonservices.inputUntouch(dataForm,'accepttermscond')" checked="checked">
+                            <span class="checkmark"></span>
+                            <span class="has-error" *ngIf="chkerror"> You have to accept the <a (click)="open_termsandconditions()">Terms and Conditions</a> !</span>
+                          </label>
+                          <label class="ccnew" >I certify that I am 18 years of age or older
+                            <input type="checkbox" name="accept-ageandolder[]" value="I certify that I am 18 years of age or older" [formControl]="dataForm.controls['ageandolder']" (blur)="_commonservices.inputUntouch(dataForm,'ageandolder')">
+                            <span class="checkmark"></span>
+                            <span class="has-error" *ngIf="chkerror1"> You have to accept your age or older!</span>
+                          </label>
+                          <!--<label class="ccnew" *ngIf="dataForm.controls['signupaffiliate']==0">I certify that I am 16 years of age or older-->
+                            <!--<input type="checkbox" name="accept-ageandolder[]" value="I certify that I am 18 years of age or older" [formControl]="dataForm.controls['ageandolder']" (blur)="_commonservices.inputUntouch(dataForm,'ageandolder')">-->
+                            <!--<span class="checkmark"></span>-->
+                            <!--<span class="has-error" *ngIf="chkerror1"> You have to accept your age or older!</span>-->
+                          <!--</label>-->
+                        </div>
+                      <!-- <div class="fromgroup accept-tc-wrapper">
+                        <label>
+                              <span class="accept-tc">
+                                <div>
+                                  <input type="checkbox" name="accept-tc[]" value="Accept Terms And Conditions" [formControl]="dataForm.controls['accepttermscond']" (blur)="_commonservices.inputUntouch(dataForm,'accepttermscond')" ><label>Accept <a (click)="open_termsandconditions()"> Terms And Conditions</a></label>
+                                </div>
+                                <input name="accept-tc[]" value="" type="checkbox" >
+                                <span></span>
+                              </span>
+                          <span class="has-error" *ngIf="chkerror"> You have to accept the <a (click)="open_termsandconditions()">Terms and Conditions</a> !</span>
+                        </label>
+      
+                        <label>
+                              <span class="accept-tc">
+                                 <div>
+                                  <input type="checkbox" name="accept-ageandolder[]" value="I certify that I am 18 years of age or older" [formControl]="dataForm.controls['ageandolder']" (blur)="_commonservices.inputUntouch(dataForm,'ageandolder')">
+                                   <label>I certify that I am 18 years of age or older</label>
+                                </div>
+      
+      
+                                <input name="accept-ageandolder[]" value="I certify that I am 18 years of age or older" type="checkbox" [formControl]="dataForm.controls['ageandolder']">
+                                <span>Accept <a> I certify that I am 18 years of age or older</a></span>
+                              </span>
+                          <span class="has-error" *ngIf="chkerror1"> You have to accept your age or older!</span>
+                        </label>
+      
+                      </div> -->
+                      <div class="btnnewwrapper">
+                        <input class="btnbuyticket_genuserlan" value="Submit" type="submit">
+                      </div>
+      
+                    </div>
+                    <div class="landingformfooter_genuserlan"></div>
+                  </div>
+                </form>
+              </mat-list-item>
+            </mat-list>
+            </div>
+      
+            </div>
+          </div>
+          <div class="row no-gutter blastorpassmainpwrapper">
+          <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 artistsexchangeleftdiv">
+            <div class="sectionbody">
+      
+              <div class="fbartistxpmainwrapper">
+                <div class="fbartistxpsubwrapper">
+                  <!--<div class="fbartistxpcontainerwrapper">
+                   
+                    &lt;!&ndash; <fb-post class="myclass" href="https://www.facebook.com/ArtistXP/posts/810740519325018"></fb-post>
+                    <fb-post class="myclass" href="https://www.facebook.com/dshawn.dmanreal/posts/339684110058607"></fb-post> 
+                    <fb-post class="myclass" href="https://www.facebook.com/random40/videos/vb.375567122815479/619754861868071/?type=2&theater"></fb-post> 
+                     &ndash;&gt;
+                    <fb-post class="myclass" href="https://www.facebook.com/photo.php?fbid=10217871086787022&amp;set=gm.901507536850098&amp;type=3&amp;eid=ARDF6sIGav0ez4dduouzEGQ_i6Mzw8VW9lNxgmpu2hjGo2ut4UBoU97WgjmU1iYnXOWfZhANXVrmPekR&amp;ifg=1"></fb-post>
+                  </div>
+                  &lt;!&ndash; <div class="fbartistxpcontainerwrapper">
+                    <fb-post class="myclass" href="https://www.facebook.com/yuppyaraw/videos/395710447928750/UzpfSTEwMDAwODk1MjMwMjI5NjpWSzo4Njc3MTE3ODAyMjk2NzQ/?multi_permalinks=867044253629760%2C867711780229674%2C867710866896432%2C867167200284132%2C867116086955910&notif_id=1556392655240603&notif_t=group_activity"></fb-post>
+                  </div> &ndash;&gt;
+                  <div class="fbartistxpcontainerwrapper">
+                    <fb-post class="myclass" href="https://www.facebook.com/dshawn.dmanreal/videos/341643649862653/?t=11"></fb-post>
+                  </div>
+                  <div class="fbartistxpcontainerwrapper">
+                    <fb-post class="myclass" href="https://www.facebook.com/photo.php?fbid=10217854014960237&set=gm.899895613677957&type=3&eid=ARB31ucBPkifLVRPCjVRJd8xOvJS1hy9QZXG3jW8df1sp8rpq1sgwIEiqlZ4l3HPuYoNLua63CGXdUiM&ifg=1"></fb-post>
+                  </div>
+                  <div class="fbartistxpcontainerwrapper">
+                    <fb-post class="myclass" href="https://www.facebook.com/dshawn.dmanreal/videos/341230933237258/?t=0"></fb-post>
+                  </div>-->
+                  <div class="embed-container1">
+                    <fb-page width="500" height="1500" href="https://www.facebook.com/ArtistXP" tabs="timeline,events,messages" frameborder='0' allowfullscreen></fb-page>
+                  </div>
+      
+      
+      
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 competitionrightdiv competitionrightdivtop ascompetitionrightdivtop">
+            <div class="rightbannerdivwrapper">
+              <div class="rightbannerdiv">
+      
+                <div class="rightbannerdivimg">
+                  <div class="rightbannerdivimgwrapper">
+                    <img src="../../assets/images/artistrightbannerdiv_new1.jpg" alt="rightbannerdiv new1">
+                  </div>
+      
+                </div>
+                <div class="rightbannerdivimg">
+                  <div class="rightbannerdivimgwrapper">
+                    <img src="../../assets/images/artistrightbannerdiv_new2.jpg" alt="rightbannerdiv new2">
+                  </div>
+                </div>
+                <div class="rightbannerdivimg">
+                  <div class="rightbannerdivimgwrapper">
+                    <img src="../../assets/images/artistrightbannerdiv_new3.jpg" alt="rightbannerdiv new3">
+                  </div>
+                </div>
+                <div class="rightbannerdivimg">
+                  <div class="rightbannerdivimgwrapper">
+                    <img src="../../assets/images/artistrightbannerdiv_new4.jpg" alt="rightbannerdiv new4">
+                  </div>
+                </div>
+                <div class="rightbannerdivimg">
+                  <div class="rightbannerdivimgwrapper">
+                    <img src="../../assets/images/artistrightbannerdiv_new5.jpg" alt="rightbannerdiv new5">
+                  </div>
+                </div>
+                <div class="rightbannerdivimg">
+                  <div class="rightbannerdivimgwrapper">
+                    <img src="../../assets/images/artistrightbannerdiv_new6.jpg" alt="rightbannerdiv new6">
+                  </div>
+                </div>
+                <div class="rightbannerdivimg">
+                  <div class="rightbannerdivimgwrapper">
+                    <img src="../../assets/images/artistrightbannerdiv_new7.jpg" alt="rightbannerdiv new7">
+                  </div>
+                </div>
+                <div class="rightbannerdivimg">
+                  <div class="rightbannerdivimgwrapper">
+                    <img src="../../assets/images/artistrightbannerdiv_new8.jpg" alt="rightbannerdiv new8">
+                  </div>
+                </div>
+                <div class="rightbannerdivimg">
+                  <div class="rightbannerdivimgwrapper">
+                    <img src="../../assets/images/artistrightbannerdiv_new9.jpg" alt="rightbannerdiv new9">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row no-gutter asfbblock3">
+            <div class="fbartistxptextwrapper">
+              <h3>Join the team today</h3>
+              <p>Becoming a part of ArtistXP as an affiliate, will not only show support for your
+                members as an artist, but you have the opportunity to receive commissions in
+                perpetuity!  That’s right, we will give you commissions from all sales made by any user signed under you in the ArtistXP dashboard.</p>
+      
+      
+                <p>Anyone that signs up under you as an artist or a fan of an artist that
+                purchases anything from ArtistXP and AudioDeadline, whether that be a ticket for the show or some sick merch, you get a commission.  Know someone with some powerful persuasion skills?  Have them join as an affiliate and earn a commission from their
+                follower's purchases.  Show your support for independent artists, join the biggest
+                movement in entertainment, and get paid!
+              </p>
+              <button class="blackbutton" (click)="scrollToTop()">Sign-Up Now!</button>
+            </div>
+          </div>
+      </div>
+      </div>
+      </div>
+      
+      <app-footer></app-footer>
+      
+      
+      <!-- <ng-template #template>
+        <div class="modal-body text-center signupeamilbody">
+      
+          <button type="button" class="close" (click)="closep()">&times;</button>
+          <img src="../../assets/images/logo.png" alt="logo">
+          <p><span>Sign up begin Aug 27th After our company opening webinar. <a href="https://registerforwebinar.audiodeadline.com" target="_blank">Sign up for the webinar</a></span></p>
+      
+        </div>
+      </ng-template> -->
+      
+      <!-- <div *ngIf="termsandconditionsmodal" class="modal fade modalVideoUpload" (onHidden)="onHidden()" data-backdrop="static" bsModal #staticModal="bs-modal" [config]="{ show: true}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            
+            <div class="modal-body">
+              <div class="deletemodal" style="border: none">
+      
+                <button type="button" class="close pull-right" aria-label="Close" (click)="termsandconditionsmodal=false">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <app-termsandconditions></app-termsandconditions>
+            </div>
+          </div>
+        </div>
+      
+      </div> -->
+      
+      <!-- <div *ngIf="agreecookiemodal" class="modal fade modalVideoUpload agreecookiemodal" (onHidden)="onHidden()" data-backdrop="static" bsModal #staticModal="bs-modal" [config]="{ show: true}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            
+            <div class="modal-body">
+                <div class="deletemodal" style="border: none">
+      
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="agreecookiemodal=false">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+              <p>By using Artist's properties, you agree to our use of cookies, including for analytics and targeted advertising, as described in our <a [routerLink]="['/cookiepolicy']" target="_blank" class="linktxt">Cookie Policy</a>.</p>
+              <a (click)="agreetotermsFunc(template)" class="btnpink">Agree</a>
+      
+            </div>
+          </div>
+        </div>
+      
+      </div> -->

@@ -31,6 +31,9 @@
 mat-card{box-shadow: none !important; border-radius: 0 !important;padding: 0 !important;}
 mat-list-item{height: auto !important;}
 .mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content{flex-wrap: wrap;padding: 0 !important;}
+.mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
 @font-face {
 font-family: 'FontAwesome';
 src: url('../../assets/fonts/fontawesome/FontAwesome.eot');
@@ -78,7 +81,10 @@ body{background-color: #000;}
   .scrolllight::-webkit-scrollbar-thumb:hover {
     background: #565454; 
   }
-
+  p {
+    margin: 0;
+    padding: 0;
+}
 /*------------------------------------ login css start ------------------------------------ */
 .logintopbarmainwrapper {background-color: #101014;display: block !important;}
 .logincontainer {width: 1782px;margin: 0 auto!important;;display: block !important;;}
@@ -126,7 +132,24 @@ text-transform: uppercase;}
 .errormsgblue {color: #01cbee !important;display: block;padding-top: 7px; text-align: left}
 .loginbuttoncon {position: relative}
 .loginbuttoncon .errormsgred {position: absolute;left: -285px;bottom: -26px;cursor: pointer;}
-
+.formsubtitle {
+    color: #89898f;
+    font-family: "OpenSans-Semibold";
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+.rightbutton{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    padding: 10px 21px;
+}
+.rightbutton .orangegradientbutton{
+    padding: 8px 20px !important;
+    font-size: 22px !important;
+    border-radius: 5px !important;
+}
 /*------------------------------------ login css end ------------------------------------ */
 
 
@@ -166,10 +189,24 @@ text-transform: uppercase;}
     z-index: 9;
     padding: 55px 0;
     padding-top: 10px;}
-.signupfrwrapper mat-list .signupflow {background-color: #1e2223;padding-bottom: 25px !important;}
-.signupfrwrapper .signupcontainer {position: relative;z-index: 99;width: auto;background: #44494b;padding: 8px;text-align: left;display: inline-block;min-height: 100%;}
+.signupflow {background-color: #1e2223;padding-bottom: 25px !important;}
+.signupfrwrapper .signupcontainer {
+    position: relative;
+    z-index: 99;
+    width: auto;
+    background: #44494b;
+    padding: 8px;
+    text-align: left;
+    display: block;
+    min-height: 100%;
+    height: 100%;
+    clear: both;
+    overflow: hidden;
+}
 .mat-form-field-appearance-legacy .mat-form-field-label {transform: inherit !important;-ms-transform: none;color: #373737;transition: none !important;margin-top: 11px;margin-left: 10px;}
-.fromgroup input, .fromgroup textarea, .fromgroup mat-select {-webkit-animation-name: cdk-text-field-autofill-end;animation-name: cdk-text-field-autofill-end;border: 1px solid #2e3234;border-radius: 0 !important;background-color: #000000;height: 40px;color: #89898f;padding: 0 10px !important;/* width: 100%; */}
+.fromgroup input, .fromgroup textarea, .fromgroup mat-select {-webkit-animation-name: cdk-text-field-autofill-end;animation-name: cdk-text-field-autofill-end;
+    border: 1px solid #2e3234;border-radius: 0 !important;background-color: #000000;height: 40px;color: #89898f;padding: 0 10px !important;width: 100%;}
+    .fromgroup textarea{height: 80px; max-height: 80px;}
 .mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;display: none;}
 .mat-form-field-flex {width: 96% !important;}
 .mat-form-field {display: inline-block;position: relative;text-align: left;width: 100%;}
@@ -203,8 +240,23 @@ text-transform: uppercase;}
 .fromgroupcol1 {width: 100%; padding: 10px 0 !important}
 .signupflowform .fromgroupcol1 {width: 100%; padding: 20px 0 !important}
 .signupflowform  .fromgroupcol1 .mat-checkbox {color: #ffffff}
-.btnbuyticket_genuserlan {background: rgba(0,0,6,1) !important;background: -moz-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,6,1)), color-stop(100%, rgba(21,21,25,1))) !important;background: -webkit-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;background: -o-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;background: -ms-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;background: linear-gradient(to bottom, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000006', endColorstr='#151519', GradientType=0 ) !important;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;text-align: center;width: 100%;line-height: 81px !important;}
-.btnbuyticket_genuserlan .buttoncon {width: 100% !important;font-family: "VerminVibesSlant" !important;font-size: 36px !important;background: -webkit-linear-gradient(#f3f3f1, #8c8d8c) !important;-webkit-background-clip: text !important;-webkit-text-fill-color: transparent !important;margin: 0px !important;line-height: 36px !important;letter-spacing: 0px !important;text-transform: uppercase !important;border: 0 !important;text-align: center !important;padding: 16px 8px 6px !important;}
+.btnbuyticket_genuserlan {    margin: 8px !important;background: rgba(0,0,6,1) !important;background: -moz-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,6,1)), color-stop(100%, rgba(21,21,25,1))) !important;
+    background: -webkit-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    background: -o-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    background: -ms-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    background: linear-gradient(to bottom, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000006', endColorstr='#151519', GradientType=0 ) !important;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;text-align: center;width: 100%;line-height: 81px !important;}
+    .signupbuttonwrapper {
+        display: flex !important;
+        justify-content: center;
+        margin: 0 !important;
+    padding: 0 !important;
+    }
+    .btnbuyticket_genuserlan .buttoncon {width: 100% !important;font-family: "VerminVibesSlant" !important;
+    font-size: 36px !important;background: -webkit-linear-gradient(#f3f3f1, #8c8d8c) !important;-webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;margin: 0px !important;line-height: 36px !important;letter-spacing: 0px !important;text-transform: uppercase !important;
+    border: 0 !important;text-align: center !important;padding: 16px 8px 6px !important;}
 .mat-checkbox-layout .mat-checkbox-label {line-height: 17px;white-space: pre-wrap;}
 
 .signupflowform .fromgroupcol1 .mat-checkbox .mat-checkbox-inner-container{margin-right: 8px;
@@ -292,10 +344,11 @@ text-transform: uppercase;}
         .mat-step-header[aria-selected="true"]:after {
             content: '';
             position: absolute;
-            right: -25px;
+            right: -28px;
             top: 0;
             height: 100%;
-            width: 100%; clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+            width: 107px;
+            clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
             background: rgba(255,149,0,1);
             background: -moz-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
             background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,149,0,1)), color-stop(48%, rgba(251,138,0,1)), color-stop(51%, rgba(246,123,0,1)), color-stop(100%, rgba(237,99,0,1)));
@@ -313,21 +366,31 @@ text-transform: uppercase;}
             display: none;
         }
         .signupflowstepper .mat-step-header .mat-step-label.mat-step-label-active {
-            color: rgba(255, 255, 255, 0.87);font-size: 16px;
-            position: relative; z-index: 9;
-            margin-left: 19px;
+            color: rgba(255, 255, 255, 0.87);
+            font-size: 16px;
+            position: relative;
+            z-index: 9;
+            margin-left: 25px;
         }
         .mat-stepper-horizontal-line{min-width: 44px !important;display: none;}
         .signupflowstepper .mat-horizontal-content-container{padding: 0;    }
-        .signupflowstepper .mat-horizontal-stepper-header{height: 55px;overflow: initial; padding: 0 16px;}
+        .signupflowstepper .mat-horizontal-stepper-header{
+            height: 55px;
+            overflow: initial;
+            padding: 0 16px;
+            min-width: inherit;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+        }
         .signupflowstepper .mat-horizontal-stepper-header:before {
             content: '';
             position: absolute;
-            right: -25px;
+            right: -28px;
             bottom: 0;
+            width: 107px;
             background: #ffffff;
             height: 100%;
-            width: 100%;
             clip-path: polygon(98% 50%, 75% 0%, 100% 50%, 75% 100%, 98% 50%);
             z-index: 99;
         }
@@ -368,6 +431,9 @@ text-transform: uppercase;}
 .mat-drawer-container {display: none !important;}
 .vpheaderwrapper {position: relative !important;top: 0px;left: 0;z-index: 999;color: #fff;width: 100%; padding: 7px 0px;}
 .vpheaderwrapper.mat-card {background-color: transparent !important;box-shadow: none !important;}
+.vpheaderwrapper .mat-toolbar{background: none !important;
+    color: rgba(0,0,0,.87);
+    width: 100% !important;}
 .vpheaderwrapper .mat-nav-list {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;justify-content: space-between; align-items: center;}
 .vpheaderwrapper .mat-nav-list a {font-family: "OpenSansSemibold";color: #fff;text-transform: uppercase !important;padding: 6px 15px;display: inline-block;font-size: 14px;}
 .vpheaderwrapper .mat-nav-list a:hover{color: #000 !important;background: #fff; border-radius: 50px;}
@@ -417,3 +483,69 @@ text-transform: uppercase;}
 }
 
 /*------------------------------------ signupheader css end ------------------------------------ */
+/*---------------- start fbartistxp css --------------------*/
+.asfbartistxpmaincontainer {background-image:url("../../assets/images/fbartistxpbackground.png");background-position: left top;background-color: #000 ;background-repeat: no-repeat;background-size: contain;}
+.asfbartistxpsubcontainer {width: 1024px; margin: 0 auto; display: block; background: none !important}
+.asfbartistxpsubcontainer .competitionblock2 {background: none; background: none}
+.asfbartistxpsubcontainer .competitionblock2.activecompetitionblock2 .rightbannerdivimg {width: 100%}
+.asfbartistxpsubcontainer .competitionblock2.activecompetitionblock2 .competitionrightdiv .rightbannerdivwrapper .rightbannerdivimgwrapper img {padding: 0px 0px 18px}
+.asfbartistxpsubcontainer .communitysignupnewblock1right .formdiv {width: 100%}
+.asfbartistxpsubcontainer.communitysignupnewblock1 .btnbuyticket_genuserlan {font-size: 30px}
+.asfbartistxpsubcontainer .competitionblock2.activecompetitionblock2 .competitionrightdiv .rightbannerdivwrapper {overflow: inherit}
+.asfbartistxpsubcontainer .artistsexchangeleftdiv {width: 70%; background: none; padding-right: 25px}
+.asfbartistxpsubcontainer .artistsexchangeleftdiv .sectionbody {padding-bottom: 0}
+.asfbartistxpsubcontainer .competitionrightdiv {width: 30%; background: none}
+.fbartistxptextwrapper h1 {font-family: "Adobe Caslon Pro"; text-transform: uppercase; color: #fc8e00; font-size: 48px; font-weight: 600}
+.fbartistxptextwrapper h3 {font-family: "Adobe Caslon Pro"; color: #f27200; font-size: 48px; font-weight: 600; margin-top: 10px; margin-bottom: 10px}
+.fbartistxptextwrapper p {font-family: "BitterRegular"; color: #8a8a8e; font-size: 24px;margin-bottom: 30px}
+.fbartistxptextwrapper p strong {color: #f88400;font-weight: normal}
+.fbartistxptextwrapper button {font-family: "Adobe Caslon Pro"; font-weight: 600; text-transform: uppercase; font-size: 44px; color: #000000; background-image: linear-gradient(#fe9400, #ed6700); border: 0; padding: 10px 12px; padding-bottom: 0; margin: 30px 0 20px 0; width: 100%}
+.fbartistxptextwrapper img {max-width: 100%; margin-bottom: 35px}
+/*.ascompetitionrightdivtop {margin-top: -66px}
+*/.ascompetitionrightdivtop {margin-top:10px}
+.competitionrightdivtop.ascompetitionrightdivtop .rightbannerdivwrapper {top: 0px;}
+.fbartistxptextwrapper .blackbutton {background-image: linear-gradient(#292a2a, #1f1f1f); font-size: 30px; font-family: "RobotoRegular"; color: #f27200; font-weight: normal; width: auto; padding: 6px 20px; float: right;  border: 1px solid #191919; margin-bottom: 35px; margin-top: 0}
+.asfbblock3 .fbartistxptextwrapper p {padding-top: 30px;}
+.fbartistxpactivetextwrapper button { margin: 25px 0px; margin-top: 0}
+.fbartistxpactivetextwrapper button.smbutton { width: auto; font-family: "RobotoRegular"; font-size: 26px; padding: 5px 20px}
+/*body.plugin {background: #0e0e0eba !important;}*/
+.blastorpassmainpwrapper{display: flex;}
+.blastorpassmainpwrapper .signupfrwrapper{width: 100%;}
+.fbartistxpmainwrapper:after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #2b2d2d;
+    z-index: 9;
+}
+.fbartistxpmainwrapper{position: relative;}
+.asfbartistxpmaincontainer .fbartistxpmainwrapper {
+    background-color: transparent;
+    display: block;
+    width: 95%;
+}
+.fbartistxpsubwrapper {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    max-height: 1554px;
+    z-index: 99;
+    position: relative;
+}
+ 
+/*---------------- end fbartistxp css --------------------*/
+
+
+
+
+
+
+
+
+
+
+

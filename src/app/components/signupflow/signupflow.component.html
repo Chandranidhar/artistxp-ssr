@@ -4,7 +4,7 @@
 
   <mat-horizontal-stepper class="signupflowstepper" linear="false"  #stepper>
     <mat-step [stepControl]="firstFormGroup"> 
-        <ng-template matStepLabel>step 1</ng-template>
+        <ng-template matStepLabel>Step 1</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
             <mat-list-item class="signupflow signupflow1">
@@ -64,24 +64,45 @@
                     <!-- <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="Bio" value="" type="text">
                     </mat-form-field> -->
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Hometown" value="" type="text" formControlName="hometown" (blur)="f.inputBlur(firstForm,'hometown')">
-                        <mat-error *ngIf="firstForm.controls['hometown']?.touched && firstForm.controls['hometown'].errors && firstForm.controls['hometown'].errors.required" class="errormsgred">Hometown is required !</mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width fromgroup">
+                    
+                    <!-- <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="city" value="" type="text" formControlName="city" (blur)="f.inputBlur(firstForm,'city')">
                         <mat-error *ngIf="firstForm.controls['city']?.touched && firstForm.controls['city'].errors && firstForm.controls['city'].errors.required" class="errormsgred">City is required !</mat-error>
-                    </mat-form-field>
+                    </mat-form-field> -->
+
+                    <mat-form-field class="example-full-width fromgroup">
+                            <input type="text" matInput placeholder="Country" formControlName="country" required [matAutocomplete]="autoGroup" (keyup)="setStatelist()"  (blur)="f.inputBlur(firstForm,'country')">
+                              <mat-autocomplete #autoGroup="matAutocomplete" >
+                                  <mat-option (click)="setStatelist()" *ngFor="let country of filteredCountryOptions | async"  [value]="country.name">
+                                    {{country.name}}
+                                  </mat-option>
+                            </mat-autocomplete>
+                            
+                            <mat-error *ngIf="firstForm.controls['country']?.touched && firstForm.controls['country'].errors && firstForm.controls['country'].errors.required" class="errormsgred">Country is required !</mat-error>
+                          </mat-form-field>
+                          <span (click)="openDialog()">Why is my country not listed<i class="material-icons">help_outline</i></span>
+                          <mat-form-field class="example-full-width fromgroup">
+                                <input type="text" matInput placeholder="State" formControlName="state" required [matAutocomplete]="autoGroup2" (keyup)="setCitylist()"  (blur)="f.inputBlur(firstForm,'state')">
+                                  <mat-autocomplete #autoGroup2="matAutocomplete" >
+                                      <mat-option (click)="setCitylist()" *ngFor="let state of filteredStateOptions | async"  [value]="state.name">
+                                        {{state.name}}
+                                      </mat-option>
+                                </mat-autocomplete>
+                                <mat-error *ngIf="firstForm.controls['state']?.touched && firstForm.controls['state'].errors && firstForm.controls['state'].errors.required" class="errormsgred">State is required !</mat-error>
+                              </mat-form-field>
+
                     <span class="fromgroupcols">
                         <span class="fromgroupcol2">
-                            <mat-form-field class="example-full-width fromgroup">
-                                <mat-select aria-placeholder="" formControlName="state" (blur)="f.inputBlur(firstForm,'state')">
-                                    <mat-option value="kolkata">kolkata</mat-option>
-                                    <mat-option value="kalyani">kalyani</mat-option>
-                                </mat-select>
-                                <mat-label>Select State</mat-label>
-                                <mat-error *ngIf="firstForm.controls['state']?.touched && firstForm.controls['state'].errors && firstForm.controls['state'].errors.required" class="errormsgred">State is required !</mat-error>
-                            </mat-form-field>
+                                <mat-form-field class="example-full-width fromgroup">
+                                        <input type="text" matInput placeholder="City" required formControlName="city" required [matAutocomplete]="autoGroup3"   (blur)="f.inputBlur(firstForm,'city')">
+                                          <mat-autocomplete #autoGroup3="matAutocomplete" >
+                                              <mat-option *ngFor="let city of filteredCityOptions | async"  [value]="city.name">
+                                                {{city.name}}
+                                              </mat-option>
+                                        </mat-autocomplete>
+                                        
+                                        <mat-error *ngIf="firstForm.controls['city']?.touched && firstForm.controls['city'].errors && firstForm.controls['city'].errors.required" class="errormsgred">City is required !</mat-error>
+                                      </mat-form-field>
                         </span>
                         <span class="fromgroupcol2">
                             <mat-form-field class="example-full-width fromgroup">
@@ -90,6 +111,10 @@
                             </mat-form-field>
                         </span>
                     </span>
+                    <mat-form-field class="example-full-width fromgroup">
+                            <input matInput placeholder="Hometown" value="" type="text" formControlName="hometown" (blur)="f.inputBlur(firstForm,'hometown')">
+                            <mat-error *ngIf="firstForm.controls['hometown']?.touched && firstForm.controls['hometown'].errors && firstForm.controls['hometown'].errors.required" class="errormsgred">Hometown is required !</mat-error>
+                        </mat-form-field>
                     <mat-card-subtitle>ACCOUNT TYPE</mat-card-subtitle>
                     <span class="fromgroupcols">
                         <span class="fromgroupcol3">
@@ -112,7 +137,39 @@
                                 <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="fan">Fans!</mat-checkbox>
                             </section>
                         </span>
-                        <span class="fromgroupcol1">
+                        
+                    </span>
+                   
+<ng-container *ngIf="firstForm.controls['musicians'].value!=null && firstForm.controls['musicians'].value == true">
+        <mat-card-subtitle>EXPERTISE</mat-card-subtitle>
+                    <span class="fromgroupcols">
+                        <span class="fromgroupcol3">
+                            <section class="example-section">
+                                <mat-checkbox class="example-margin"  formControlName="vocalist" (blur)="f.inputBlur(firstForm,'vocalist')">Vocalist</mat-checkbox>
+                                <mat-checkbox class="example-margin" formControlName="instrumentalist" (blur)="f.inputBlur(firstForm,'instrumentalist')">Instrumentalist</mat-checkbox>
+                                <!-- <mat-checkbox class="example-margin">Producer!</mat-checkbox> -->
+                            </section>
+                        </span>
+                        <span class="fromgroupcol3">
+                            <section class="example-section">
+                                
+                                <mat-checkbox class="example-margin" formControlName="dj" (blur)="f.inputBlur(firstForm,'dj')">DJ</mat-checkbox>
+                                <mat-checkbox class="example-margin" formControlName="producer" (blur)="f.inputBlur(firstForm,'producer')">Producer</mat-checkbox>
+                            </section>
+                        </span>
+                        <span class="fromgroupcol3">
+                            <section class="example-section">
+                                
+                                <mat-checkbox class="example-margin" formControlName="sound_engineer" (blur)="f.inputBlur(firstForm,'sound_engineer')">Sound Engineer</mat-checkbox>
+                                <mat-checkbox class="example-margin" formControlName="song_writer" (blur)="f.inputBlur(firstForm,'song_writer')">Song Writer</mat-checkbox>
+                            </section>
+                        </span>
+                        <mat-error class="errormsgred" *ngIf="(firstForm.controls['vocalist'].touched && firstForm.controls['instrumentalist'].touched && firstForm.controls['dj'].touched && firstForm.controls['producer'].touched && firstForm.controls['sound_engineer'].touched && firstForm.controls['song_writer'].touched) && (firstForm.controls['vocalist'].value == false && firstForm.controls['instrumentalist'].value == false && firstForm.controls['dj'].value == false && firstForm.controls['producer'].value == false && firstForm.controls['sound_engineer'].value == false && firstForm.controls['song_writer'].value == false )">Select At Least One Expertise!</mat-error>
+                        
+                    </span>
+                </ng-container>
+                    <mat-card-subtitle>PRIVACY</mat-card-subtitle>
+                    <span class="fromgroupcol1">
                             <section class="example-section">
                                 <mat-checkbox class="example-margin"(change)="statechangeforprivacy()"  formControlName="public">Public (This will be visible to the ArtistXP
                                     community) </mat-checkbox>
@@ -120,7 +177,6 @@
                                     to you) </mat-checkbox>
                             </section>
                         </span>
-                    </span>
                     <button mat-button class="btnbuyticket_genuserlan">
                         <span class="buttoncon">next</span>
                     </button>
@@ -130,7 +186,7 @@
     </span>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
-        <ng-template matStepLabel>step  2</ng-template>
+        <ng-template matStepLabel>Step  2</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
                         <mat-list-item class="signupflow signupflow2" >
@@ -177,7 +233,6 @@
 
                 <mat-card-subtitle>ABILITY: (CHOOSE ONE ONLY) <b>Enter by the Most Experienced Dancer's Ability Level</b></mat-card-subtitle>
                 <span class="fromgroupcols">
-                    
                     <span class="fromgroupcol1">
                         <section class="example-section">
                             <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="beginning">
@@ -197,6 +252,10 @@
                         
                                 MORE than seven years of study
                                   </mat-checkbox>
+                                  <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="private">
+                        
+                                        Keep This Private!
+                                          </mat-checkbox>
                         </section>
                     </span>
                 </span>
@@ -262,14 +321,18 @@
 
                     <!-- <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="Address" value="" type="text">
-                    </mat-form-field>
+                    </mat-form-field> -->
                     <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="Zip" value="" type="text">
-                    </mat-form-field> -->
-                    
+                    </mat-form-field>
+                    <mat-card-actions class="signupbuttonwrapper">
                     <button mat-button class="btnbuyticket_genuserlan">
-                        <span class="buttoncon">next</span>
+                        <span class="buttoncon">Next</span>
                     </button>
+                    <button mat-button class="btnbuyticket_genuserlan">
+                        <span class="buttoncon">Skip</span>
+                    </button>
+                </mat-card-actions>
                 </form>
             </mat-list-item>
 
@@ -277,37 +340,81 @@
     </span>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>step 3</ng-template>
-      You are now done.
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
+        <ng-template matStepLabel>Step 3</ng-template>
+     
+        <span class="signupfrwrapper">
+                <mat-list class="signupcontainer">
+                                <mat-list-item class="signupflow signupflow2" >
+                        <mat-card-title class="fromtitle">
+                            <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
+                        </mat-card-title>        
+                        <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit()">
+                            
+                        </form>
+                    </mat-list-item>        
+                </mat-list>
+            </span>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>step 4</ng-template>
-        You are now done.
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
+       
+        <span class="signupfrwrapper">
+                <mat-list class="signupcontainer">
+                                <mat-list-item class="signupflow signupflow4" >
+                        <mat-card-title class="fromtitle">
+                            <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
+                        </mat-card-title>        
+                        <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit()">
+                            <span class="formsubtitle">
+                                    INVITE FRIENDS VIA YOUR ONLINE ADDRESS BOOK
+                            </span>
+                            <mat-form-field class="example-full-width fromgroup">
+                                    <mat-select>
+                                        <mat-option value="male">Male</mat-option>
+                                        <mat-option value="female">Female</mat-option>
+                                    </mat-select>
+                                    <mat-label>Gender</mat-label>
+                                    <mat-error class="errormsgred">Gender is required !</mat-error>  
+                                    <span class="rightbutton"> 
+                                    <button class="orangegradientbutton">Get Contacts</button> 
+                                </span>
+                                </mat-form-field>
+
+                               <span class="formsubtitle">
+                                    ENTER YOUR FRIEND'S EMAIL ADDRESSES
+                            </span>
+
+                            <span class="formsubtitle">
+                                    EMAIL MESSAGE
+                            </span>
+                            <mat-form-field class="example-full-width fromgroup">
+                                    <textarea matInput placeholder="Leave a comment"></textarea>
+                            </mat-form-field>
+                            <span class="rightbutton"> 
+                                    <button class="orangegradientbutton">Send Email Invite</button> 
+                                </span>
+                                
+                                <span class="formsubtitle">
+                                        INVITE FRIENDS VIA SOCIAL MEDLA
+                                </span>
+                                <mat-form-field class="example-full-width fromgroup">
+                                        <mat-select>
+                                            <mat-option value="male">Male</mat-option>
+                                            <mat-option value="female">Female</mat-option>
+                                        </mat-select>
+                                        <mat-label>Gender</mat-label>
+                                        <mat-error class="errormsgred">Gender is required !</mat-error>  
+                                        <span class="rightbutton"> 
+                                        <button class="orangegradientbutton">Send Social Invite</button> 
+                                    </span>
+                                    </mat-form-field>
+
+                        </form>
+                    </mat-list-item>        
+                </mat-list>
+            </span>
       </mat-step>
-      <mat-step>
-          <ng-template matStepLabel>step 5</ng-template>
-        You are now done.
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-      </mat-step>
-      <mat-step>
-          <ng-template matStepLabel>step 6</ng-template>
-        You are now done.
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-      </mat-step>
+    
   </mat-horizontal-stepper>
   
   
