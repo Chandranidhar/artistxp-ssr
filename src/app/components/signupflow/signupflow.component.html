@@ -204,15 +204,19 @@
                         <input matInput placeholder="Aliases" value="">
                     </mat-form-field> -->
 
-                    <!-- <mat-form-field class="example-full-width fromgroup">
-                        <mat-select aria-placeholder="1234">
-                            <mat-option value="male">Male</mat-option>
-                            <mat-option value="female">Female</mat-option>
-                        </mat-select>
-                        <mat-label>Gender</mat-label>
-                    </mat-form-field> -->
+                    <mat-form-field class="example-full-width fromgroup">
+                        <mat-select placeholder="Select Genre" [formControl]="secondForm.controls['musicgenre']" multiple>
+                            <mat-select-trigger>
+                              {{secondForm.controls['musicgenre'].value ? secondForm.controls['musicgenre'].value[0] : ''}}
+                              <span *ngIf="secondForm.controls['musicgenre'].value?.length > 1" class="example-additional-selection">
+                                (+{{secondForm.controls['musicgenre'].value.length - 1}} {{secondForm.controls['musicgenre'].value?.length === 2 ? 'other' : 'others'}})
+                              </span>
+                            </mat-select-trigger>
+                            <mat-option *ngFor="let item of musicgenreList" [value]="item">{{item}}</mat-option>
+                          </mat-select>
+                    </mat-form-field>
 
-                    <span class="formlistwrapper">
+                    <!-- <span class="formlistwrapper">
                         <mat-card-title>Performance Category/ Genre (Music):</mat-card-title>
                         <mat-list role="list" class="scrolllight">
                                 
@@ -227,7 +231,7 @@
                             <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="pop">Pop</mat-checkbox></mat-list-item>
                             <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="hiphop">Hip-Hop (Music)</mat-checkbox></mat-list-item>
                           </mat-list>
-                    </span>
+                    </span> -->
 
                     <!-- <mat-form-field class="example-full-width fromgroup">
                   <textarea matInput placeholder="Leave a comment"></textarea>
@@ -379,7 +383,7 @@
                     <button mat-button class="btnbuyticket_genuserlan">
                         <span class="buttoncon">Next</span>
                     </button>
-                    <button mat-button class="btnbuyticket_genuserlan">
+                    <button mat-button class="btnbuyticket_genuserlan" matStepperNext>
                         <span class="buttoncon">Skip</span>
                     </button>
                 </mat-card-actions>
@@ -464,6 +468,14 @@
                                         </mat-expansion-panel>
                                       
                                       </mat-accordion>
+                                      <mat-card-actions class="signupbuttonwrapper">
+                                        <button mat-button class="btnbuyticket_genuserlan">
+                                            <span class="buttoncon">Next</span>
+                                        </button>
+                                        <button mat-button class="btnbuyticket_genuserlan" matStepperNext>
+                                            <span class="buttoncon">Skip</span>
+                                        </button>
+                                    </mat-card-actions>
                         </form>
                     </mat-list-item>        
                 </mat-list>

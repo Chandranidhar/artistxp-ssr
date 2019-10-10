@@ -90,19 +90,20 @@ export class SignupflowComponent implements OnInit {
   public userContacts: any=[];
   public checkemail: any = 0;
   public invitesystem:any;
-
-
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
   matcher = new MyErrorStateMatcher();
   /*mat chip initialisation ends here*/
+
+
+  // 2nd form 
+  public musicgenreList:any = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepper'];  
+  // demo data above
   constructor(public _formBuilder: FormBuilder, public f: FormService, public apiService: ApiService, public _http: HttpClient, public dialog: MatDialog, public userdata: CookieService,public FBS: FacebookService, public activeRoute:ActivatedRoute, public router:Router) {
     this.fstgen();
     this.secgen();
-<<<<<<< HEAD
-=======
     this.fourthFormGenerate();
     this.openGenreDialog();
     let initParams: InitParams = {
@@ -112,7 +113,6 @@ export class SignupflowComponent implements OnInit {
   };
 
   FBS.init(initParams);
->>>>>>> 1fd714e00236cc30fdff6d776dbdecd84411167b
   }
   openQueryDialog() {            //demo for dialog 
     const dialogQueryRef = this.dialog.open(QueryDialogComponent);
@@ -369,7 +369,6 @@ export class SignupflowComponent implements OnInit {
 
   }
 
-  // old function
 
   agreetotermsFunc() {
     // if(this.agreedtoterms == true){
@@ -504,16 +503,19 @@ export class SignupflowComponent implements OnInit {
   /**2nd form genarate */
   secgen() {
     this.secondForm = this._formBuilder.group({
-      genre: false,
-      heavymetal: false,
-      edm: false,
-      rap: false,
-      blues: false,
-      country: false,
-      musical: false,
-      rock: false,
-      pop: false,
-      hiphop: false,
+      // genre: false,
+      // heavymetal: false,
+      // edm: false,
+      // rap: false,
+      // blues: false,
+      // country: false,
+      // musical: false,
+      // rock: false,
+      // pop: false,
+      // hiphop: false,
+      musicgenre:[''],
+      dancergenre:[''],
+      instrumentalistgenre:[''],
       height: [null],
       waist: [null],
       weight: [null],
@@ -621,6 +623,11 @@ export class SignupflowComponent implements OnInit {
       console.log("Not Valid");
     }
   }
+
+
+
+
+
 // fourth form development
 fourthFormGenerate() {
   this.fourthForm = this._formBuilder.group({
@@ -697,7 +704,6 @@ fourthFormGenerate() {
   private handleError(error) {
     console.error('Error processing action', error);
 }
-
   /*-------------------mat chip functions-----------------*/
   /*function to add chip*/
   add(event: MatChipInputEvent): void {
