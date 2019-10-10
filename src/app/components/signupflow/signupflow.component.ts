@@ -105,7 +105,6 @@ export class SignupflowComponent implements OnInit {
     this.fstgen();
     this.secgen();
     this.fourthFormGenerate();
-    this.openGenreDialog();
     let initParams: InitParams = {
       appId: '2034821446556410',
       xfbml: true,
