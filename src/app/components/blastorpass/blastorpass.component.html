@@ -27,7 +27,7 @@
                     <mat-list class="signupcontainer">
                         <mat-list-item class="signupflow signupflow1">
                             <mat-card-title class="fromtitle">
-                                <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
+                                <span>SIGN-UP NOW</span>
                             </mat-card-title>
                             <form class="signupflowform" [formGroup]="firstForm" (ngSubmit)="firstsubmit()">
                                 <mat-form-field class="example-full-width fromgroup">
@@ -99,7 +99,7 @@
                                         
                                         <mat-error *ngIf="firstForm.controls['country']?.touched && firstForm.controls['country'].errors && firstForm.controls['country'].errors.required" class="errormsgred">Country is required !</mat-error>
                                       </mat-form-field>
-                                      <span (click)="openQueryDialog()">Why is my country not listed<i class="material-icons">help_outline</i></span>
+                                      <span class="signupflowsubtitle" (click)="openQueryDialog()">Why is my country not listed<i class="material-icons">help_outline</i></span>
                                       <mat-form-field class="example-full-width fromgroup">
                                             <input type="text" matInput placeholder="State" formControlName="state" required [matAutocomplete]="autoGroup2" (keyup)="setCitylist()"  (blur)="f.inputBlur(firstForm,'state')">
                                               <mat-autocomplete #autoGroup2="matAutocomplete" >
@@ -136,21 +136,19 @@
                                     </mat-form-field>
                                 <mat-card-subtitle>ACCOUNT TYPE</mat-card-subtitle>
                                 <span class="fromgroupcols">
-                                    <span class="fromgroupcol3">
+                                    <span class="fromgroupcol1">
                                         <section class="example-section">
                                             <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="musicians">Recording Artist!</mat-checkbox>
                                             <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="dancer">Dancer!</mat-checkbox>
                                             <!-- <mat-checkbox class="example-margin">Producer!</mat-checkbox> -->
                                         </section>
-                                    </span>
-                                    <span class="fromgroupcol3">
+                                    
                                         <section class="example-section">
                                             
                                             <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="signupaffiliate">Affiliates!</mat-checkbox>
                                             <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="model">Models!</mat-checkbox>
                                         </section>
-                                    </span>
-                                    <span class="fromgroupcol3">
+                                   
                                         <section class="example-section">
                                             
                                             <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="fan">Fans!</mat-checkbox>
@@ -162,21 +160,21 @@
             <ng-container *ngIf="firstForm.controls['musicians'].value!=null && firstForm.controls['musicians'].value == true">
                     <mat-card-subtitle>EXPERTISE</mat-card-subtitle>
                                 <span class="fromgroupcols">
-                                    <span class="fromgroupcol3">
+                                    <span class="fromgroupcol1">
                                         <section class="example-section">
                                             <mat-checkbox class="example-margin"  formControlName="vocalist" (blur)="f.inputBlur(firstForm,'vocalist')">Vocalist</mat-checkbox>
                                             <mat-checkbox class="example-margin" formControlName="instrumentalist" (blur)="f.inputBlur(firstForm,'instrumentalist')">Instrumentalist</mat-checkbox>
                                             <!-- <mat-checkbox class="example-margin">Producer!</mat-checkbox> -->
                                         </section>
                                     </span>
-                                    <span class="fromgroupcol3">
+                                    <span class="fromgroupcol1">
                                         <section class="example-section">
                                             
                                             <mat-checkbox class="example-margin" formControlName="dj" (blur)="f.inputBlur(firstForm,'dj')">DJ</mat-checkbox>
                                             <mat-checkbox class="example-margin" formControlName="producer" (blur)="f.inputBlur(firstForm,'producer')">Producer</mat-checkbox>
                                         </section>
                                     </span>
-                                    <span class="fromgroupcol3">
+                                    <span class="fromgroupcol1">
                                         <section class="example-section">
                                             
                                             <mat-checkbox class="example-margin" formControlName="sound_engineer" (blur)="f.inputBlur(firstForm,'sound_engineer')">Sound Engineer</mat-checkbox>

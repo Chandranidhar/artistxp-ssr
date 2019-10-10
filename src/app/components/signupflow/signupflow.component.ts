@@ -104,7 +104,7 @@ export class SignupflowComponent implements OnInit {
 <<<<<<< HEAD
 =======
     this.fourthFormGenerate();
-    // this.openTermsDialog();
+    this.openGenreDialog();
     let initParams: InitParams = {
       appId: '2034821446556410',
       xfbml: true,
@@ -142,6 +142,18 @@ export class SignupflowComponent implements OnInit {
       }
     });
   }
+
+  openGenreDialog() {            //demo for dialog 
+    const dialogGenreRef = this.dialog.open(GenreDialogComponent, {
+     panelClass:'myClass',
+      data: { agreeterms: 0 }
+    });
+    dialogGenreRef.afterClosed().subscribe(result => {
+      console.log('GenreDialog was closed');
+      console.log(result);
+    });
+  }
+  
 
   emailcheck(email) {
     this.apiService.postDatawithoutToken('datalist', { "source": "user", "condition": { "email": email } })
@@ -927,4 +939,21 @@ export class TermsDialogComponent {
   }
   
 }
+
+// genre dialog component
+@Component({
+  selector: 'genre-dialog',
+  templateUrl: 'genre.component.html',
+})
+export class GenreDialogComponent {
+ 
+  constructor(public dialogRef: MatDialogRef<TermsDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  public onNoClick(): void {
+    this.dialogRef.close();
+  }
+  
+}
+
+
 
