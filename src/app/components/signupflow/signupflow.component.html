@@ -2,8 +2,8 @@
   <mat-card-content class="signupbody">
 <app-signupheader></app-signupheader>
 
-  <mat-horizontal-stepper class="signupflowstepper" linear="false"  #stepper>
-    <mat-step [stepControl]="firstFormGroup"> 
+  <mat-horizontal-stepper class="signupflowstepper"  #stepper>
+    <mat-step [stepControl]="firstForm" editable="false"> 
         <ng-template matStepLabel>Step 1</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
@@ -39,6 +39,7 @@
                         <input matInput placeholder="Email" value="" type="email" formControlName="email" (blur)="f.inputBlur(firstForm,'email')">
                         <mat-error *ngIf="firstForm.controls['email']?.touched && firstForm.controls['email'].errors && firstForm.controls['email'].errors.required" class="errormsgred">email is required !</mat-error>
                         <mat-error *ngIf="firstForm.controls['email']?.touched && firstForm.controls['email'].errors && firstForm.controls['email'].errors.pattern" class="errormsgred">Please Check yourEemail !</mat-error>
+                        <span class="errormsgred" *ngIf="err==1"> Email already exists!</span>
                     </mat-form-field>
 
                     <!-- <mat-form-field class="example-full-width fromgroup">
@@ -59,7 +60,7 @@
                         <mat-error *ngIf="firstForm.controls['phone']?.touched && firstForm.controls['phone'].errors && firstForm.controls['phone'].errors.required" class="errormsgred">Phone is required !</mat-error>
                     </mat-form-field>
                     <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Stage name/Aliases" value="" type="text" formControlName="aliases">
+                        <input matInput placeholder="Stage name/Aliases" value="" type="text" formControlName="alias">
                         </mat-form-field>
                     <!-- <mat-form-field class="example-full-width fromgroup">
                         <input matInput placeholder="Bio" value="" type="text">
@@ -80,7 +81,7 @@
                             
                             <mat-error *ngIf="firstForm.controls['country']?.touched && firstForm.controls['country'].errors && firstForm.controls['country'].errors.required" class="errormsgred">Country is required !</mat-error>
                           </mat-form-field>
-                          <span (click)="openDialog()">Why is my country not listed<i class="material-icons">help_outline</i></span>
+                          <span (click)="openQueryDialog()">Why is my country not listed<i class="material-icons">help_outline</i></span>
                           <mat-form-field class="example-full-width fromgroup">
                                 <input type="text" matInput placeholder="State" formControlName="state" required [matAutocomplete]="autoGroup2" (keyup)="setCitylist()"  (blur)="f.inputBlur(firstForm,'state')">
                                   <mat-autocomplete #autoGroup2="matAutocomplete" >
@@ -127,7 +128,7 @@
                         <span class="fromgroupcol3">
                             <section class="example-section">
                                 
-                                <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="afiliates">Affiliates!</mat-checkbox>
+                                <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="signupaffiliate">Affiliates!</mat-checkbox>
                                 <mat-checkbox class="example-margin" (change)="statechangeforaccounttype()" formControlName="model">Models!</mat-checkbox>
                             </section>
                         </span>
@@ -171,13 +172,13 @@
                     <mat-card-subtitle>PRIVACY</mat-card-subtitle>
                     <span class="fromgroupcol1">
                             <section class="example-section">
-                                <mat-checkbox class="example-margin"(change)="statechangeforprivacy()"  formControlName="public">Public (This will be visible to the ArtistXP
+                                <mat-checkbox class="example-margin"(change)="statechangeforprivacy()"  formControlName="publicval">Public (This will be visible to the ArtistXP
                                     community) </mat-checkbox>
-                                <mat-checkbox class="example-margin"(change)="statechangeforprivacy()" formControlName="private">Private (This will keep your stats only visible
+                                <mat-checkbox class="example-margin"(change)="statechangeforprivacy()" formControlName="privateval">Private (This will keep your stats only visible
                                     to you) </mat-checkbox>
                             </section>
                         </span>
-                    <button mat-button class="btnbuyticket_genuserlan">
+                    <button mat-button matStepperNext class="btnbuyticket_genuserlan">
                         <span class="buttoncon">next</span>
                     </button>
                 </form>
@@ -185,7 +186,7 @@
         </mat-list>
     </span>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
+    <mat-step [stepControl]="secondForm" >
         <ng-template matStepLabel>Step  2</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
@@ -260,7 +261,7 @@
                     </span>
                 </span>
            
-                <div formArrayName="experiences" *ngFor="let creds of secondForm.controls.experiences['controls']; let i = index">
+                <!-- <div formArrayName="experiences" *ngFor="let creds of secondForm.controls.experiences['controls']; let i = index">
                         <div [formGroupName]="i">
                 <mat-form-field class="example-full-width fromgroup inputgroup">
                     <mat-placeholder>Experiences</mat-placeholder>
@@ -274,7 +275,7 @@
                     </button>            
                   </mat-form-field>
                  </div>
-                </div>
+                </div> -->
 
                 <div formArrayName="website" *ngFor="let creds of secondForm.controls.website['controls']; let k = index">
                         <div [formGroupName]="k">
@@ -344,18 +345,82 @@
      
         <span class="signupfrwrapper">
                 <mat-list class="signupcontainer">
-                                <mat-list-item class="signupflow signupflow2" >
+                                <mat-list-item class="signupflow signupflow3" >
                         <mat-card-title class="fromtitle">
                             <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
                         </mat-card-title>        
                         <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit()">
-                            
+                                <mat-accordion class="example-headers-align signupflow3wrapper">
+                                        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                                          <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                              Personal data
+                                            </mat-panel-title>                                            
+                                          </mat-expansion-panel-header>
+                                      
+                                          <mat-form-field>
+                                            <input matInput placeholder="First name">
+                                          </mat-form-field>
+                                      
+                                          <mat-form-field class="fromgroup">
+                                            <input matInput type="number" min="1" placeholder="Age">
+                                          </mat-form-field>
+                                      
+                                          <mat-action-row>
+                                            <button mat-button color="primary" (click)="nextStep()">Next</button>
+                                          </mat-action-row>
+                                        </mat-expansion-panel>
+                                      
+                                        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                                          <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                              Destination
+                                            </mat-panel-title>
+                                            <mat-panel-description>
+                                              Type the country name
+                                              <mat-icon>map</mat-icon>
+                                            </mat-panel-description>
+                                          </mat-expansion-panel-header>
+                                      
+                                          <mat-form-field>
+                                            <input matInput placeholder="Country">
+                                          </mat-form-field>
+                                      
+                                          <mat-action-row>
+                                            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                                            <button mat-button color="primary" (click)="nextStep()">Next</button>
+                                          </mat-action-row>
+                                        </mat-expansion-panel>
+                                      
+                                        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                                          <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                              Day of the trip
+                                            </mat-panel-title>
+                                            <mat-panel-description>
+                                              Inform the date you wish to travel
+                                              <mat-icon>date_range</mat-icon>
+                                            </mat-panel-description>
+                                          </mat-expansion-panel-header>
+                                      
+                                          <mat-form-field>
+                                            <input matInput placeholder="Date" [matDatepicker]="picker" (focus)="picker.open()" readonly>
+                                          </mat-form-field>
+                                          <mat-datepicker #picker></mat-datepicker>
+                                      
+                                          <mat-action-row>
+                                            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                                            <button mat-button color="primary" (click)="nextStep()">End</button>
+                                          </mat-action-row>
+                                        </mat-expansion-panel>
+                                      
+                                      </mat-accordion>
                         </form>
                     </mat-list-item>        
                 </mat-list>
             </span>
     </mat-step>
-    <mat-step>
+    <mat-step  [stepControl]="fourthForm"> 
         <ng-template matStepLabel>step 4</ng-template>
        
         <span class="signupfrwrapper">
@@ -364,51 +429,77 @@
                         <mat-card-title class="fromtitle">
                             <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
                         </mat-card-title>        
-                        <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit()">
+                        <form class="signupflowform" [formGroup]="fourthForm" >
                             <span class="formsubtitle">
                                     INVITE FRIENDS VIA YOUR ONLINE ADDRESS BOOK
                             </span>
-                            <mat-form-field class="example-full-width fromgroup">
-                                    <mat-select>
-                                        <mat-option value="male">Male</mat-option>
-                                        <mat-option value="female">Female</mat-option>
+                            <mat-form-field class="example-full-width fromgroup" >
+                                    <mat-select [formControl]="fourthForm.controls['socialcontact']">
+                                        <mat-option value="gmail">Gmail</mat-option>
+                                        <mat-option value="yahoo">Yahoo</mat-option>
                                     </mat-select>
-                                    <mat-label>Gender</mat-label>
+                                    <mat-label>Select Service</mat-label>
                                     <mat-error class="errormsgred">Gender is required !</mat-error>  
                                     <span class="rightbutton"> 
-                                    <button class="orangegradientbutton">Get Contacts</button> 
+                                    <button class="orangegradientbutton" (click)="getcontacts()" id="googleres">Get Contacts</button> 
                                 </span>
                                 </mat-form-field>
 
                                <span class="formsubtitle">
                                     ENTER YOUR FRIEND'S EMAIL ADDRESSES
                             </span>
+                            <mat-form-field class="example-full-width fromgroup">
+                                <!-- <input matInput type="email" placeholder="Enter Your Email Addresses"> -->
+                                    <mat-chip-list #chipList aria-label="Fruit selection" >
+                                      <mat-chip *ngFor="let item of contactarray" [selectable]="selectable"
+                                                [removable]="removable" (removed)="remove(item)">
+                                        {{item}}
+                                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                      </mat-chip>
+                                      <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="New Email..."
+                                             [matChipInputFor]="chipList"
+                                             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                             [matChipInputAddOnBlur]="addOnBlur"
+                                             (matChipInputTokenEnd)="add($event)">
+                                      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                        Please enter a valid email address
+                                      </mat-error>
+                                      <mat-error *ngIf="emailFormControl.hasError('required') && emailFormControl.touched == true">
+                                        Email is <strong>required</strong>!
+                                      </mat-error>
+                                    </mat-chip-list>
+                                  </mat-form-field>
 
                             <span class="formsubtitle">
                                     EMAIL MESSAGE
                             </span>
                             <mat-form-field class="example-full-width fromgroup">
-                                    <textarea matInput placeholder="Leave a comment"></textarea>
+                                    <textarea matInput id="artistxpemailmessage" placeholder="" [formControl]="fourthForm.controls['artistxpmsg']"></textarea>
+                                    <span class="has-error" *ngIf="axmsg == 1">Email Message field can not be blank</span>
                             </mat-form-field>
-                            <span class="rightbutton"> 
-                                    <button class="orangegradientbutton">Send Email Invite</button> 
+                            <span class="rightbutton rightbutton2"> 
+                                    <button class="orangegradientbutton" (click)="sendartistxpmsg()">Send Email Invite</button> 
                                 </span>
                                 
                                 <span class="formsubtitle">
                                         INVITE FRIENDS VIA SOCIAL MEDLA
                                 </span>
                                 <mat-form-field class="example-full-width fromgroup">
-                                        <mat-select>
-                                            <mat-option value="male">Male</mat-option>
-                                            <mat-option value="female">Female</mat-option>
+                                        <mat-select  [formControl]="fourthForm.controls['socialinvite']">
+                                            <mat-option value="twitter">Twitter</mat-option>
+                                            <mat-option value="linkedin">Linkedin</mat-option>
+                                            <mat-option value="facebook">Facebook</mat-option>
+                                            <mat-option value="tumblr">Tumblr</mat-option>
                                         </mat-select>
-                                        <mat-label>Gender</mat-label>
-                                        <mat-error class="errormsgred">Gender is required !</mat-error>  
+                                        <mat-label>Select Service</mat-label>
+                                        <mat-error class="errormsgred" *ngIf="socialmediaerror==1">Select Service field can not be blank</mat-error>
                                         <span class="rightbutton"> 
-                                        <button class="orangegradientbutton">Send Social Invite</button> 
+                                        <button class="orangegradientbutton btnorangenew" (click)="sendsocialinvite()" >Send Social Invite</button> 
                                     </span>
                                     </mat-form-field>
-
+                                    <button mat-button class="btnbuyticket_genuserlan" (click)="gotomainpage()">
+                                            <span class="buttoncon">Submit</span>
+                                        </button>
                         </form>
                     </mat-list-item>        
                 </mat-list>
@@ -426,3 +517,11 @@
 </mat-card-content>
 </mat-card>
 <app-footer></app-footer>
+<div class="hide">
+
+        <a class="btntwit twitteranchor" #gsharelink1  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fshare.artistxp.com%2Fsharetool2.php%3Fmedia_id%3DArtistXP_Social_Banner.jpg%26username%3D{{affiliatename}}%26image%3DArtistXP_Social_Banner.jpg%26submittype%3Dsignup"  target="_blank"><span><i class="fa fa-twitter"></i></span></a>
+        <a class="btn n-btnsocialsharenew btnfb btnnew" #gsharelink2 (click)="postinfb2(affiliatename)"><span><i class="fa fa-facebook"></i></span></a>
+        <a class="btn n-btnsocialsharenew btnin btnnew" #gsharelink3 href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fshare.artistxp.com%2Fsharetool2.php%3Fmedia_id%3DArtistXP_Social_Banner.jpg%26username%3D{{affiliatename}}%26image%3DArtistXP_Social_Banner.jpg%26submittype%3Dsignup" target="_blank"><span><i class="fa fa-linkedin"></i></span></a>
+        <a class="btn n-btnsocialsharenew btntumblr btnnew" #gsharelink4  href="https://www.tumblr.com/widgets/share/tool?shareSource=legacy&canonicalUrl=http%3A%2F%2Fshare.artistxp.com%2Fsharetool2.php%3Fmedia_id%3DArtistXP_Social_Banner.jpg%26username%3D{{affiliatename}}%26image%3DArtistXP_Social_Banner.jpg%26submittype%3Dsignup" target="_blank"><span><i class="fa fa-tumblr"></i></span></a>
+      
+      </div>

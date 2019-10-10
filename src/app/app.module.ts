@@ -21,7 +21,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignupheaderComponent } from './components/signupheader/signupheader.component';
-import { SignupflowComponent, QueryDialogComponent } from './components/signupflow/signupflow.component';
+import { SignupflowComponent, QueryDialogComponent, TermsDialogComponent } from './components/signupflow/signupflow.component';
 import { ApiService } from './services/api-service';
 import { BlastorpassComponent } from './components/blastorpass/blastorpass.component';
 import { CompetitionComponent } from './components/competition/competition.component';
@@ -35,6 +35,7 @@ import { CommunityComponent } from './components/community/community.component';
     SignupheaderComponent,
     SignupflowComponent,
     QueryDialogComponent,
+    TermsDialogComponent,
     BlastorpassComponent,
     CompetitionComponent,
     CommunityComponent
@@ -54,7 +55,7 @@ import { CommunityComponent } from './components/community/community.component';
     // CookieService 
   ],
   providers: [AuthGuard,CookieService,ApiService],
-  entryComponents: [SignupflowComponent, QueryDialogComponent],
+  entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
