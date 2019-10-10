@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators, FormArray, FormControl, FormGroupDirective, NgForm} from '@angular/forms';
 import { FormService } from '../../form.service';
 import { ApiService } from '../../services/api-service';
 import { HttpClient } from '@angular/common/http';
@@ -10,6 +10,23 @@ import { map, startWith } from 'rxjs/operators';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CookieService } from 'ngx-cookie-service';
 import { MatStepper } from '@angular/material';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';             /*for comma , and enter key codes from keyboard*/
+import {MatChipInputEvent} from '@angular/material/chips';
+import { FacebookService, InitParams,UIParams, UIResponse } from 'ngx-facebook';
+declare var FB: any;
+declare var twttr: any;
+declare var $:any;
+declare var gapi:any;
+import {ErrorStateMatcher} from '@angular/material/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 export interface DialogData {
 
   agreeterms: any;
@@ -26,6 +43,7 @@ export class SignupflowComponent implements OnInit {
   isLinear = false;
   firstForm: FormGroup;
   secondForm: FormGroup;
+  fourthForm: FormGroup;
   public countrylistarray: any = [];
   public statelistarray: any = [];
   public citylistarray: any = [];
@@ -37,9 +55,64 @@ export class SignupflowComponent implements OnInit {
   signup: any = {};
   public err: any = 0;
   public isOptional:any = false;
-  constructor(public _formBuilder: FormBuilder, public f: FormService, public apiService: ApiService, public _http: HttpClient, public dialog: MatDialog, public userdata: CookieService) {
+
+  // fourthg form 
+  @ViewChild('gsharelink1',{static:true}) gsharelink1: ElementRef;
+  @ViewChild('gsharelink2',{static:true}) gsharelink2: ElementRef;
+  @ViewChild('gsharelink3',{static:true}) gsharelink3: ElementRef;
+  @ViewChild('gsharelink4',{static:true}) gsharelink4: ElementRef;
+  
+  public FB_APP_ID:any;
+  public FB_APP_SECRET:any;
+  public LI_CLIENT_ID:any;
+  public LI_CLIENT_SECRET:any;
+  public usercookie:any;
+  public affiliatename:any;
+  public username:any;
+  public userdetails:any;
+  public submitmodal:any = false;
+  public firstname:any;
+  public lastname:any;
+  public user_id:any;
+  public auth2 :any;
+  public admsg :any = 0;
+  public axmsg :any = 0;
+  public socialmediaerror:any = 0;
+  public dataForm: FormGroup;
+  private fb;
+  /*mat chip initialisation starts here*/
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  contactarray: any= [];
+  public userContacts: any=[];
+  public checkemail: any = 0;
+  public invitesystem:any;
+
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+  matcher = new MyErrorStateMatcher();
+  /*mat chip initialisation ends here*/
+  constructor(public _formBuilder: FormBuilder, public f: FormService, public apiService: ApiService, public _http: HttpClient, public dialog: MatDialog, public userdata: CookieService,public FBS: FacebookService, public activeRoute:ActivatedRoute, public router:Router) {
     this.fstgen();
     this.secgen();
+<<<<<<< HEAD
+=======
+    this.fourthFormGenerate();
+    // this.openTermsDialog();
+    let initParams: InitParams = {
+      appId: '2034821446556410',
+      xfbml: true,
+      version: 'v2.8'
+  };
+
+  FBS.init(initParams);
+>>>>>>> 1fd714e00236cc30fdff6d776dbdecd84411167b
   }
   openQueryDialog() {            //demo for dialog 
     const dialogQueryRef = this.dialog.open(QueryDialogComponent);
@@ -180,6 +253,7 @@ export class SignupflowComponent implements OnInit {
 
     return array.filter(option => option.name.toLowerCase().includes(filterValue));
   }
+  
 
   fstgen() {
     this.firstForm = this._formBuilder.group({
@@ -535,7 +609,298 @@ export class SignupflowComponent implements OnInit {
       console.log("Not Valid");
     }
   }
+// fourth form development
+fourthFormGenerate() {
+  this.fourthForm = this._formBuilder.group({
+    /*fullname: ["", Validators.required],*/
+    socialinvite: [""],
+    socialcontact: [""],
+    /* emailcontact:  ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],*/
+    /*phoneno: ["", Validators.required],*/
+    audiodeadlinemsg: ["I just found an awesome online streaming show that I think you would be interested in! It is based on a quarterly live streamed show that will showcase artists of all kinds such as, musicians, dancers, producers, and rappers. The artists go head to head in a competition where they show their best work and we get to vote on our favorite artist! When the best of the best is picked by the community, we get to watch them go head to head and collaborate on an original song that they will have only 8-hours to complete! This is a chance to see artists in live action in a real time studio making their creativity come to life. Don’t miss out and check it out now!"],
+    artistxpmsg: ["Come join ArtistXP with me! I just joined this new social media that is full of fun and exciting features that I think you would enjoy too! They are all about a tight knit artist community where independent artists are even closer to their fans than ever before. As an artist you will be able to consolidate where all your work is located no matter what social media you use the most. They can do artist exchanges where it promotes all artists to work together by sharing each other’s artistry! As a fan we have front row seats to watch their creativity bloom. There is so much more it has to offer; all you need to do is come join me in this amazing community. Check it out now!"],
+  });
 }
+
+  sendsocialinvite(){
+    console.log("this.fourthForm.controls['socialinvite'].value");
+    console.log(this.fourthForm.controls['socialinvite'].value);
+    this.socialmediaerror = 0;
+    if(this.fourthForm.controls['socialinvite'].value==""){
+      this.socialmediaerror = 1;
+    }
+    if(this.fourthForm.controls['socialinvite'].value=="twitter"){
+      setTimeout(()=> {
+        this.gsharelink1.nativeElement.click();
+      }, 500);
+    }
+    if(this.fourthForm.controls['socialinvite'].value=="linkedin"){
+      setTimeout(()=> {
+        this.gsharelink3.nativeElement.click();
+      }, 500);
+    }
+    if(this.fourthForm.controls['socialinvite'].value=="tumblr"){
+      setTimeout(()=> {
+        this.gsharelink4.nativeElement.click();
+      }, 500);
+    }
+    if(this.fourthForm.controls['socialinvite'].value=="facebook"){
+      setTimeout(()=> {
+        this.gsharelink2.nativeElement.click();
+      }, 500);
+    }
+  }
+
+  sendartistxpmsg(){
+    
+    // let link :any = this._commonservices.nodesslurl+'artistxpemailsend';
+    let data = {'artistxpmsg':this.fourthForm.controls['artistxpmsg'].value,emails:this.contactarray,'fullname':this.userdetails.firstname+' '+this.userdetails.lastname};
+    console.log(data);
+    this.apiService.postDatawithoutToken('artistxpemailsend', data)
+    // this._http.post(link,data)
+        .subscribe(res=>{
+          let result:any;
+          result = res;
+          if(result.status == "success"){
+            this.contactarray = [];
+          }
+        });
+  }
+  postinfb2(username,media_id,image){
+    // this.apiService.postDatawithoutToken('artistxpemailsend', data)
+    // var link = this._commonservices.phpurlforshare+'sharetool2.php?media_id=ArtistXP_Social_Banner.jpg&username='+username+'&image=ArtistXP_Social_Banner.jpg&submittype=signup';
+    
+    let options: any = {};
+    options = {
+      method: 'share',
+
+      // href: this._commonservices.phpurlforshare+'sharetool2.php?media_id=ArtistXP_Social_Banner.jpg&username='+username+'&image=ArtistXP_Social_Banner.jpg&submittype=signup'
+  };
+  this.FBS.ui(options)
+                    .then((res: UIResponse) => {
+                        // console.log('Got the users profile', res);
+                    })
+                    .catch(this.handleError);
+  }
+  private handleError(error) {
+    console.error('Error processing action', error);
+}
+
+  /*-------------------mat chip functions-----------------*/
+  /*function to add chip*/
+  add(event: MatChipInputEvent): void {
+    if(this.emailFormControl.valid || (this.contactarray!=null && this.contactarray.length>0)){
+      const input = event.input;
+      const value = event.value;
+
+      // Add our input email
+      if ((value || '').trim()) {
+        this.contactarray.push(value.trim());
+      }
+
+      // Reset the input value
+      if (input) {
+        input.value = '';
+      }
+    }
+
+  }
+
+  /*function to add chip*/
+  remove(fruit: any): void {
+    const index = this.contactarray.indexOf(fruit);
+    if (index >= 0) {
+      this.contactarray.splice(index, 1);
+    }
+  }
+  /*-------------------mat chip functions-----------------*/
+
+  ngAfterViewInit(): void {
+    setTimeout(() => this.signIn(), 1000);
+  }
+  signIn() {
+    gapi.load('auth2', () => {
+      this.auth2 = gapi.auth2.init({
+        client_id: '1036664457460-9o9ihhnjrnb3vqhklo72nu5mu7gbp84r.apps.googleusercontent.com',
+        cookie_policy: 'single_host_origin',
+        scope: 'profile email https://www.googleapis.com/auth/contacts.readonly'
+        // scope: 'profile email https://www.googleapis.com/auth/contacts.readonly'
+      });
+      this.auth2.attachClickHandler(document.getElementById('googleres'), {}, this.onSignIn, this.onFailure);
+    })
+  }
+  onFailure(data:any){
+    console.log('onFailure called');
+    console.log(data);
+  }
+  onSignIn = (data: any) => {
+
+    // setTimeout(() => this.fetchmail(), 1000);
+    this.handleAuthorization(data.Zi);
+    console.log('onSignIn');
+    console.log(data);
+    console.log(data.Zi);
+    //console.log(data.WE.Zi);
+  }
+
+  handleAuthorization(authorizationResult) {
+    if (authorizationResult && !authorizationResult.error) {
+      let link:any = "https://www.google.com/m8/feeds/contacts/default/thin?alt=json&access_token=" + authorizationResult.access_token + "&max-results=500&v=3.0";
+      this._http.get(link)
+          .subscribe(res=>{
+            this.contactarray=[];
+            //process the response here
+            let response:any={};
+            response = res;
+            console.log('response.gd$email');
+            /* console.log(response.feed.gd$email);
+             console.log(response.feed.entry);
+             console.log(response.feed);*/
+            for(let v in response.feed.entry){
+              console.log('response.feed.entry.gd$email');
+              if(typeof (response.feed.entry[v].gd$email)!='undefined'){
+                //console.log(response.feed.entry[v].gd$email[0].address);
+                this.contactarray.push(response.feed.entry[v].gd$email[0].address);
+              }
+            }
+            console.log('contactarray');
+            console.log(this.contactarray);
+            console.log(this.contactarray.length);
+          });
+      /*function(response){
+       var contactarray=[];
+       //process the response here
+       console.log(response);
+       console.log('response.gd$email');
+       console.log(response.feed.gd$email);
+       console.log(response.feed.entry);
+       console.log(response.feed);
+       for(var v in response.feed.entry){
+       console.log('response.feed.entry.gd$email');
+       if(typeof (response.feed.entry[v].gd$email)!='undefined'){
+       //console.log(response.feed.entry[v].gd$email[0].address);
+       contactarray.push(response.feed.entry[v].gd$email[0].address);
+       }
+       }
+       console.log('contactarray');
+       console.log(contactarray);
+       console.log(contactarray.length);
+       });*/
+    }
+  }
+  fetchmail() {
+    console.log('fetchmail');
+    gapi.load('client:auth2', () => {
+      gapi.client.init({
+        apiKey: 'H1qzKV7Q8iUciTn8arwZPcti',
+        discoveryDocs: ['https://people.googleapis.com/$discovery/rest?version=v1'],
+        clientId: '1036664457460-9o9ihhnjrnb3vqhklo72nu5mu7gbp84r.apps.googleusercontent.com',
+        scope: 'profile email https://www.googleapis.com/auth/contacts.readonly'
+      }).then(() => {
+        return gapi.client.people.people.connections.list({
+          resourceName:'people/me',
+          personFields: 'emailAddresses,names'
+        });
+      }).then(
+          (res) => {
+            console.log("Res: " + JSON.stringify(res));         // to debug
+            this.userContacts.emit(this.transformToMailListModel(res.result));
+          },
+          error => console.log("ERROR " + JSON.stringify(error))
+      );
+    });
+  }
+  transformToMailListModel(item:any){
+    return item;
+  }
+
+
+
+  /*for google contacts api service*/
+
+  getcontacts(){
+    if(this.fourthForm.controls['socialcontact'].value == 'gmail'){
+      console.log('gapi-------------------------');
+      console.log(gapi);
+      setTimeout(()=>{
+        this.signIn();
+
+      },2000);
+      if(this.contactarray == null || this.contactarray.length == 0){
+        this.checkemail = 1;
+      }
+
+    }
+  }
+  /*functions to access google contacts*/
+  gotomainpage(){
+    this.submitmodal = true;
+    // let link2= this._commonservices.nodesslurl+"getalldetailsbyuserid";
+    //alert(this.userdata.get('user_id'));
+    //if(this.user_id=='' || this.user_id==null || this.user_id.length<5) return true;
+    let data = {'user_id':this.activeRoute.snapshot.params.id};
+    this.apiService.postDatawithoutToken('getalldetailsbyuserid', data)
+    // this._http.post(link2,data)
+        .subscribe(res=>{
+          let result:any;
+          result = res;
+          // console.log(result);
+          this.usercookie.set('real_name',result.item[0].realname);
+          this.usercookie.set('user_name',result.item[0].username);
+          this.usercookie.set('user_id',result.item[0]._id);
+          this.usercookie.set('image',result.item[0].images);
+          this.usercookie.set('fan',result.item[0].fan);
+          this.usercookie.set('musicians',result.item[0].musicians);
+          this.usercookie.set('dancer',result.item[0].dancer);
+          this.usercookie.set('model',result.item[0].model);
+          this.usercookie.set('signupaffiliate',result.item[0].signupaffiliate);
+          this.usercookie.set('last_notify_id',result.item[0].last_notify_id);
+          console.log(this.usercookie);
+          setTimeout(()=>{
+            if(this.invitesystem == 'on'){
+              if(result.item[0].signupaffiliate == 1){
+                this.router.navigateByUrl('/agreement/'+result.item[0]._id);
+              }else{
+                this.router.navigateByUrl('/invitationforlaunchplan');
+              }
+              
+            }
+            else{
+              if(result.item[0].signupaffiliate == 1){
+                this.router.navigateByUrl('/agreement/'+result.item[0]._id);
+              }else
+                this.router.navigateByUrl('/profile');
+            }
+
+
+
+
+
+            // console.log(this.usercookie.get('blastorpass'));
+            // if(result.item[0].signupaffiliate == 1){
+            //   this.router.navigateByUrl('/agreement/'+result.item[0]._id);
+            // }else{
+            //   this.submitmodal = false;
+            //   if(this.usercookie.get('blastorpass')=='true'){
+            //     this.router.navigateByUrl('/fbartistxpactive');
+            //   }else{
+            //     this.router.navigateByUrl('/profile');
+            //   }
+            // }
+            
+            
+          },2000);
+        });
+    // this.usercookie.set('user_id',this.activeRoute.snapshot.params.id);
+
+
+
+  }
+
+}
+
+
+
 // query for english speaking country dialog component
 
 @Component({

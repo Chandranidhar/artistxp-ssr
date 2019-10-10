@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FacebookService, InitParams,UIParams, UIResponse } from 'ngx-facebook';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../services/api-service';
@@ -6,6 +6,8 @@ import {CookieService} from "ngx-cookie-service";
 // import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {Router, ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { DialogData } from '../signupflow/signupflow.component';
 declare var $:any;
 declare var FB: any;
 @Component({
@@ -16,6 +18,7 @@ declare var FB: any;
 export class BlastorpassComponent implements OnInit {
   // modalRef: BsModalRef;
   public dataForm: FormGroup;
+  public firstForm:FormGroup;
   private fb;
   public serverurl;
   public chkerror;
@@ -38,7 +41,7 @@ export class BlastorpassComponent implements OnInit {
   signup:any={};
 
 
-  constructor(public FBS: FacebookService,fb: FormBuilder,private _http: HttpClient,private router: Router, public apiservice : ApiService,private route:ActivatedRoute, userdata: CookieService) { 
+  constructor(public FBS: FacebookService,fb: FormBuilder,private _http: HttpClient,private router: Router, public apiservice : ApiService,private route:ActivatedRoute, userdata: CookieService, public dialog: MatDialog) { 
     this.fb = fb;
     this.chkerror = 0;
     this.chkerror1 = 0;
@@ -114,6 +117,45 @@ export class BlastorpassComponent implements OnInit {
       hips:[''],
       ethnicity:[''],
     },{validator: this.matchingPasswords('password', 'confirmpassword')});
+
+
+    this.firstForm = this.fb.group({
+
+      firstname: [null, [Validators.required]],
+      lastname: [null, [Validators.required]],
+      gender: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.pattern('[a-z0-9._%+-]{1,40}[@]{1}[a-z]{1,10}[.]{1}[a-z]{3}')]],
+      password: [null, [Validators.required, Validators.minLength(6)]],
+      confirmpassword: [null, [Validators.required, Validators.minLength(6)]],
+      phone: [null],
+      alias: [null],
+      hometown: [null],
+      city: [null, [Validators.required]],
+      country: [null, [Validators.required]],
+      state: [null, [Validators.required]],
+      zip: [null, [Validators.required]],
+      musicians: false,
+      dancer: false,
+      signupaffiliate: false,
+      model: false,
+      fan: false,
+      vocalist: false,
+      instrumentalist: false,
+      dj: false,
+      producer: false,
+      sound_engineer: false,
+      song_writer: false,
+      privateval: false,
+      publicval: false,
+      height: [null],
+      weight: [null],
+      bust: [null],
+      waist: [null],
+      hips: [null],
+      ethnicity: [null],
+
+
+    },{validator: this.matchingPasswords('password', 'confirmpassword')});
   }
   scrollToTop(){
 
@@ -138,6 +180,174 @@ export class BlastorpassComponent implements OnInit {
       this.feature=0;
     }
   }
+
+  firstsubmit() {
+    // this.emailcheck(this.firstForm.controls['email'].value);
+    this.firstForm.markAllAsTouched();
+    if (this.firstForm.valid) {
+      this.apiservice.postDatawithoutToken('datalist', { "source": "user", "condition": { "email": this.firstForm.controls['email'].value } })
+        .subscribe(res => {
+          let result1: any = {};
+          result1 = res;
+          this.signup = result1.resc;
+          console.log(result1.resc);
+          console.log(this.signup);
+          if (this.signup == 1) {
+            this.err = 1;
+            console.log(this.err);
+            console.log('false');
+          } else {
+            this.err = 0;
+            console.log(this.err);
+            this.openTermsDialogAgree();
+          }
+        })
+    } else {
+      console.log('error');
+    }
+
+
+
+
+  }
+
+  agreetotermsFunc() {
+    // if(this.agreedtoterms == true){
+    // var link = this._commonservices.nodesslurl1+'signupartistxp';
+    var data = {
+      firstname: this.firstForm.controls['firstname'].value,
+      lastname: this.firstForm.controls['lastname'].value,
+      phone: this.firstForm.controls['phone'].value,
+      email: this.firstForm.controls['email'].value,
+      // username: this.dataForm.controls['username'].value,
+      password: this.firstForm.controls['password'].value,
+      gender: this.firstForm.controls['gender'].value,
+      alias: this.firstForm.controls['alias'].value,
+      hometown: this.firstForm.controls['hometown'].value,
+      city: this.firstForm.controls['city'].value,
+      state: this.firstForm.controls['state'].value,
+      country: this.firstForm.controls['country'].value,
+      zip: this.firstForm.controls['zip'].value,
+      vocalist: this.firstForm.controls['vocalist'].value,
+      instrumentalist: this.firstForm.controls['instrumentalist'].value,
+      dj: this.firstForm.controls['dj'].value,
+      producer: this.firstForm.controls['producer'].value,
+      sound_engineer: this.firstForm.controls['sound_engineer'].value,
+      song_writer: this.firstForm.controls['song_writer'].value,
+      // parent: this.parent,
+      // mediaid: this.mediaid,
+      dancer: 0,
+      model: 0,
+      musicians: 0,
+      fan: 0,
+      signupaffiliate: 0,
+      publicval: 0,
+      privateval: 0
+
+    };
+
+    if (this.firstForm.controls['publicval'].value) {
+      data.publicval = 1;
+    }
+    if (this.firstForm.controls['privateval'].value) {
+      data.privateval = 1;
+    }
+    if (this.firstForm.controls['dancer'].value) {
+      data.dancer = 1;
+    }
+    if (this.firstForm.controls['model'].value) {
+      data.model = 1;
+    }
+    if (this.firstForm.controls['musicians'].value) {
+      data.musicians = 1;
+    }
+    if (this.firstForm.controls['fan'].value) {
+      data.fan = 1;
+    }
+    if (this.firstForm.controls['signupaffiliate'].value) {
+      data.signupaffiliate = 1;
+    }
+
+    // this._http.post(link, data)
+    this.apiservice.postDatawithoutToken('signupartistxp', data)
+      .subscribe(res => {
+        let result: any;
+        result = res;
+        if (result.status == 'success') {
+          // this.agreecookiemodal = false; // modal close here
+          // this.termsmodal.onNoClick();
+          // console.log(this.agreeval);
+          this.dialog.closeAll();
+          // setTimeout(()=>{
+          //   this.myStepper.next();
+          // },2000);
+          
+          let udetails = result.result.ops[0];
+          this.userdata.set('firstname', data.firstname);
+          this.userdata.set('lastname', data.lastname);
+          this.userdata.set('email', data.email);
+          this.userdata.set('dancer', this.firstForm.controls['dancer'].value);
+          this.userdata.set('fan', this.firstForm.controls['fan'].value);
+          this.userdata.set('producer', this.firstForm.controls['producer'].value);
+          this.userdata.set('musicians', this.firstForm.controls['musicians'].value);
+          this.userdata.set('model', this.firstForm.controls['model'].value);
+          this.userdata.set('signupaffiliate', this.firstForm.controls['signupaffiliate'].value);
+          this.userdata.set('vocalist', this.firstForm.controls['vocalist'].value);
+          this.userdata.set('instrumentalist', this.firstForm.controls['signupaffiliate'].value);
+          this.userdata.set('dj', this.firstForm.controls['dj'].value);
+          this.userdata.set('producer', this.firstForm.controls['producer'].value);
+          this.userdata.set('sound_engineer', this.firstForm.controls['sound_engineer'].value);
+          this.userdata.set('song_writer', this.firstForm.controls['song_writer'].value);
+          //this.userdata.set('blastorpass','true');
+
+          if (udetails.musicians == 1 || udetails.dancer == 1 || udetails.model == 1 || udetails.producer == 1 || udetails.fan == 1) {
+
+            // this.userdata.set('signupuserdata',JSON.stringify(udetails));
+            // this.router.navigateByUrl('/signupflow3/'+udetails._id);    //next step
+          } else {
+            // this.modalRef = this.modalService.show(template);
+
+            this.firstForm.controls['firstname'].setValue('');
+            this.firstForm.controls['lastname'].setValue('');
+            this.firstForm.controls['phone'].setValue('');
+            this.firstForm.controls['email'].setValue('');
+            // this.dataForm.controls['username'].setValue('');
+            this.firstForm.controls['password'].setValue('');
+            this.firstForm.controls['confirmpassword'].setValue('');
+            this.firstForm.controls['gender'].setValue('');
+            // this.firstForm.controls['height'].setValue('');
+            // this.firstForm.controls['weight'].setValue('');
+            // this.firstForm.controls['bust'].setValue('');
+            // this.firstForm.controls['waist'].setValue('');
+            // this.firstForm.controls['ethnicity'].setValue('');
+
+            this.firstForm.controls['musicians'].setValue(false);
+            this.firstForm.controls['producer'].setValue(false);
+            this.firstForm.controls['dancer'].setValue(false);
+            this.firstForm.controls['model'].setValue(false);
+            this.firstForm.controls['signupaffiliate'].setValue(false);
+            this.firstForm.controls['fan'].setValue(true);
+
+            for (let x in this.firstForm.controls) {
+              this.firstForm.controls[x].markAsUntouched();
+            }
+          }
+
+
+        } else {                  //for development.artistxp
+          // this.is_error= result.msg;
+        }
+      }, error => {
+        console.log("Oooops!");
+      });
+    // }
+  }
+
+
+
+
+
+
   dosubmit1() {
     this.is_error = 0;
     this.chkerror = 0;
@@ -175,117 +385,117 @@ export class BlastorpassComponent implements OnInit {
       }
     }
   }
-  agreetotermsFunc(){
-    this.agreedtoterms = true;
-    if(this.agreedtoterms == true){
+  // agreetotermsFunc(){
+  //   this.agreedtoterms = true;
+  //   if(this.agreedtoterms == true){
       
-      // var link = this._commonservices.nodesslurl1+'signupartistxp';
-      var data = {
-        firstname: this.dataForm.controls['firstname'].value,
-        lastname: this.dataForm.controls['lastname'].value,
-        phone: this.dataForm.controls['phone'].value,
-        email: this.dataForm.controls['email'].value,
-        username: this.dataForm.controls['username'].value,
-        password: this.dataForm.controls['password'].value,
-        gender: this.dataForm.controls['gender'].value,
-        height: this.dataForm.controls['height'].value,
-        weight: this.dataForm.controls['weight'].value,
-        bust: this.dataForm.controls['bust'].value,
-        waist: this.dataForm.controls['waist'].value,
-        hips: this.dataForm.controls['hips'].value,
-        ethnicity: this.dataForm.controls['ethnicity'].value,
-        /*height:[''],
-         weight:[''],
-         bust:[''],
-         waist:[''],
-         hips:[''],
-         ethnicity:[''],*/
-        parent: this.parent,
-        mediaid: this.mediaid,
-        dancer: 0,
-        producer: 0,
-        model: 0,
-        musicians: 0,
-        fan: 0,
-        signupaffiliate: 0,
-      };
+  //     // var link = this._commonservices.nodesslurl1+'signupartistxp';
+  //     var data = {
+  //       firstname: this.dataForm.controls['firstname'].value,
+  //       lastname: this.dataForm.controls['lastname'].value,
+  //       phone: this.dataForm.controls['phone'].value,
+  //       email: this.dataForm.controls['email'].value,
+  //       username: this.dataForm.controls['username'].value,
+  //       password: this.dataForm.controls['password'].value,
+  //       gender: this.dataForm.controls['gender'].value,
+  //       height: this.dataForm.controls['height'].value,
+  //       weight: this.dataForm.controls['weight'].value,
+  //       bust: this.dataForm.controls['bust'].value,
+  //       waist: this.dataForm.controls['waist'].value,
+  //       hips: this.dataForm.controls['hips'].value,
+  //       ethnicity: this.dataForm.controls['ethnicity'].value,
+  //       /*height:[''],
+  //        weight:[''],
+  //        bust:[''],
+  //        waist:[''],
+  //        hips:[''],
+  //        ethnicity:[''],*/
+  //       parent: this.parent,
+  //       mediaid: this.mediaid,
+  //       dancer: 0,
+  //       producer: 0,
+  //       model: 0,
+  //       musicians: 0,
+  //       fan: 0,
+  //       signupaffiliate: 0,
+  //     };
 
-      if(this.dataForm.controls['dancer'].value){
-        data.dancer = 1;
-      }
-      if(this.dataForm.controls['model'].value){
-        data.model = 1;
-      }
-      if(this.dataForm.controls['musicians'].value){
-        data.musicians = 1;
-      }
-      if(this.dataForm.controls['producer'].value){
-        data.producer = 1;
-      }
-      if(this.dataForm.controls['fan'].value){
-        data.fan = 1;
-      }
-      if(this.dataForm.controls['signupaffiliate'].value){
-        data.signupaffiliate = 1;
-      }
-      this.apiservice.postDatawithoutToken('signupartistxp',data)
-      // this._http.post(link, data)
-          .subscribe(res => {
-            let result:any;
-            result = res;
-            // this.modalRef = this.modalService.show(template);
-            if(result.status=='success'){
-              this.agreecookiemodal = false;
+  //     if(this.dataForm.controls['dancer'].value){
+  //       data.dancer = 1;
+  //     }
+  //     if(this.dataForm.controls['model'].value){
+  //       data.model = 1;
+  //     }
+  //     if(this.dataForm.controls['musicians'].value){
+  //       data.musicians = 1;
+  //     }
+  //     if(this.dataForm.controls['producer'].value){
+  //       data.producer = 1;
+  //     }
+  //     if(this.dataForm.controls['fan'].value){
+  //       data.fan = 1;
+  //     }
+  //     if(this.dataForm.controls['signupaffiliate'].value){
+  //       data.signupaffiliate = 1;
+  //     }
+  //     this.apiservice.postDatawithoutToken('signupartistxp',data)
+  //     // this._http.post(link, data)
+  //         .subscribe(res => {
+  //           let result:any;
+  //           result = res;
+  //           // this.modalRef = this.modalService.show(template);
+  //           if(result.status=='success'){
+  //             this.agreecookiemodal = false;
 
-              console.log(this.agreeval);
-              let udetails = result.result.ops[0];
-              this.userdata.set('blastorpass','true');
+  //             console.log(this.agreeval);
+  //             let udetails = result.result.ops[0];
+  //             this.userdata.set('blastorpass','true');
               
-              if(udetails.musicians == 1 || udetails.dancer == 1 || udetails.model == 1 || udetails.producer == 1 || udetails.fan == 1){
+  //             if(udetails.musicians == 1 || udetails.dancer == 1 || udetails.model == 1 || udetails.producer == 1 || udetails.fan == 1){
 
-                // this.userdata.set('signupuserdata',JSON.stringify(udetails));
-                this.router.navigateByUrl('/signupflow3/'+udetails._id);
-              }else
-              {
-                // this.modalRef = this.modalService.show(template);
+  //               // this.userdata.set('signupuserdata',JSON.stringify(udetails));
+  //               this.router.navigateByUrl('/signupflow3/'+udetails._id);
+  //             }else
+  //             {
+  //               // this.modalRef = this.modalService.show(template);
 
-                this.dataForm.controls['firstname'].setValue('');
-                this.dataForm.controls['lastname'].setValue('');
-                this.dataForm.controls['phone'].setValue('');
-                this.dataForm.controls['email'].setValue('');
-                this.dataForm.controls['username'].setValue('');
-                this.dataForm.controls['password'].setValue('');
-                this.dataForm.controls['confirmpassword'].setValue('');
-                this.dataForm.controls['gender'].setValue('');
-                this.dataForm.controls['height'].setValue('');
-                this.dataForm.controls['weight'].setValue('');
-                this.dataForm.controls['bust'].setValue('');
-                this.dataForm.controls['waist'].setValue('');
-                this.dataForm.controls['ethnicity'].setValue('');
+  //               this.dataForm.controls['firstname'].setValue('');
+  //               this.dataForm.controls['lastname'].setValue('');
+  //               this.dataForm.controls['phone'].setValue('');
+  //               this.dataForm.controls['email'].setValue('');
+  //               this.dataForm.controls['username'].setValue('');
+  //               this.dataForm.controls['password'].setValue('');
+  //               this.dataForm.controls['confirmpassword'].setValue('');
+  //               this.dataForm.controls['gender'].setValue('');
+  //               this.dataForm.controls['height'].setValue('');
+  //               this.dataForm.controls['weight'].setValue('');
+  //               this.dataForm.controls['bust'].setValue('');
+  //               this.dataForm.controls['waist'].setValue('');
+  //               this.dataForm.controls['ethnicity'].setValue('');
 
-                this.dataForm.controls['accepttermscond'].setValue(false);
-                this.dataForm.controls['ageandolder'].setValue(false);
-                this.dataForm.controls['musicians'].setValue(false);
-                this.dataForm.controls['producer'].setValue(false);
-                this.dataForm.controls['dancer'].setValue(false);
-                this.dataForm.controls['model'].setValue(false);
-                this.dataForm.controls['signupaffiliate'].setValue(false);
-                this.dataForm.controls['fan'].setValue(true);
+  //               this.dataForm.controls['accepttermscond'].setValue(false);
+  //               this.dataForm.controls['ageandolder'].setValue(false);
+  //               this.dataForm.controls['musicians'].setValue(false);
+  //               this.dataForm.controls['producer'].setValue(false);
+  //               this.dataForm.controls['dancer'].setValue(false);
+  //               this.dataForm.controls['model'].setValue(false);
+  //               this.dataForm.controls['signupaffiliate'].setValue(false);
+  //               this.dataForm.controls['fan'].setValue(true);
 
-                for (let x in this.dataForm.controls) {
-                  this.dataForm.controls[x].markAsUntouched();
-                }
-              }
+  //               for (let x in this.dataForm.controls) {
+  //                 this.dataForm.controls[x].markAsUntouched();
+  //               }
+  //             }
 
 
-            }else{                  //for development.artistxp
-              this.is_error= result.msg;
-            }
-          }, error => {
-            console.log("Oooops!");
-          });
-    }
-  }
+  //           }else{                  //for development.artistxp
+  //             this.is_error= result.msg;
+  //           }
+  //         }, error => {
+  //           console.log("Oooops!");
+  //         });
+  //   }
+  // }
   addNoOfClick(){
     var link =this.serverurl+'addNoOfClick';
 
@@ -357,5 +567,60 @@ export class BlastorpassComponent implements OnInit {
           return;
         })
   }
+  openQueryDialog() {            //demo for dialog 
+    const dialogQueryRef = this.dialog.open(QueryDialogBlastComponent);
+    dialogQueryRef.afterClosed().subscribe(result => {
+      console.log('QueryDialog was closed');
+    });
+  }
+  openTermsDialog() {            //demo for dialog 
+    const dialogTermsRef = this.dialog.open(TermsDialogBlastComponent, {
+      data: { agreeterms: 0 }
+    });
+    dialogTermsRef.afterClosed().subscribe(result => {
+      console.log('TermsDialog was closed');
+      console.log(result);
+    });
+  }
+  openTermsDialogAgree() {            //demo for dialog 
+    const dialogTermsRef = this.dialog.open(TermsDialogBlastComponent, {
+      data: { agreeterms: 1 }
+    });
+    dialogTermsRef.afterClosed().subscribe(result => {
+      console.log('TermsDialog was closed');
+      console.log(result);
+      if(result == 1){
 
+        this.agreetotermsFunc();
+      }
+    });
+  }
+
+}
+
+// query for english speaking country dialog component
+
+@Component({
+  selector: 'query-dialog',
+  templateUrl: '../signupflow/english-speaking-country-reason.component.html',
+})
+export class QueryDialogBlastComponent {
+  constructor(public dialogRef: MatDialogRef<QueryDialogBlastComponent>) { }
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
+// terms and conditions agreement policy dialog component
+@Component({
+  selector: 'agree-terms-dialog',
+  templateUrl: '../signupflow/terms-condition-agree.component.html',
+})
+export class TermsDialogBlastComponent {
+ 
+  constructor(public dialogRef: MatDialogRef<TermsDialogBlastComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  public onNoClick(): void {
+    this.dialogRef.close();
+  }
+  
 }
