@@ -14,13 +14,16 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { CookieService } from 'ngx-cookie-service';
 // authguard import statements here
 import { AuthGuard } from './services/auth.guard';
+// ngx-facebook import statements here
+import { FacebookModule } from 'ngx-facebook';
 // component import statements here
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignupheaderComponent } from './components/signupheader/signupheader.component';
-import { SignupflowComponent } from './components/signupflow/signupflow.component';
+import { SignupflowComponent, QueryDialogComponent } from './components/signupflow/signupflow.component';
 import { ApiService } from './services/api-service';
+import { BlastorpassComponent } from './components/blastorpass/blastorpass.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,9 @@ import { ApiService } from './services/api-service';
     SignupComponent,
     FooterComponent,
     SignupheaderComponent,
-    SignupflowComponent
+    SignupflowComponent,
+    QueryDialogComponent,
+    BlastorpassComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -41,9 +46,11 @@ import { ApiService } from './services/api-service';
     NgtUniversalModule,
     FormsModule, 
     ReactiveFormsModule,
+    FacebookModule.forRoot()
     // CookieService 
   ],
   providers: [AuthGuard,CookieService,ApiService],
+  entryComponents: [SignupflowComponent, QueryDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

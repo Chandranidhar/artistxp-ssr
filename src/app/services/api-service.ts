@@ -63,6 +63,10 @@ export class ApiService {
         var result = this._http.get(this.api_url + endpoint, httpOptions).pipe(map(res => res));
         return result;
     }
+    getJsonObject(path:any){
+        var result = this._http.get(path).pipe(map(res => res));
+        return result;
+    }
 
     
     getEndpoint(endpoint: any) {

@@ -6,12 +6,14 @@ import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignupheaderComponent } from './components/signupheader/signupheader.component';
 import {SignupflowComponent} from './components/signupflow/signupflow.component';
+import { BlastorpassComponent } from './components/blastorpass/blastorpass.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'signupheader', component: SignupheaderComponent },
   { path: 'signupflow', component: SignupflowComponent },
+  { path: 'blastorpass', component: BlastorpassComponent },
   // demo example for resolve and auth guard along with can activate
   
   // { path: "recentSignUp", component: RecentSignUpComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: 'admindashboard'}},

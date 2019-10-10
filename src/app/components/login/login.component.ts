@@ -27,6 +27,20 @@ export class LoginComponent implements OnInit {
   }
 
   loginsubmit() {
+
+            if (this.loginForm.valid) 
+            {
+         // console.log(this.loginForm.value);
+          this.api_service.postDatawithoutToken('loginasuser',this.loginForm.value).subscribe(res=> {
+            let result:any;
+            result = res;
+            console.log(result);
+          });
+        } 
+        else 
+        {
+          this.loginForm.controls['email'].markAsTouched();
+          this.loginForm.controls['password'].markAsTouched();
     for (let x in this.loginForm.controls) {
       console.log(this.loginForm.controls[x]);
       this.loginForm.controls[x].markAsTouched();
@@ -57,5 +71,6 @@ export class LoginComponent implements OnInit {
     else {
       console.log('error in form validation');
     }
+  }
   }
 }
