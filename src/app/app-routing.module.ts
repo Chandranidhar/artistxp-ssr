@@ -9,6 +9,12 @@ import {SignupflowComponent} from './components/signupflow/signupflow.component'
 import { BlastorpassComponent } from './components/blastorpass/blastorpass.component';
 import { CompetitionComponent } from './components/competition/competition.component';
 import { CommunityComponent } from './components/community/community.component';
+import { HelpcenterComponent } from './components/helpcenter/helpcenter.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
+import { TermsandconditionsComponent } from './components/termsandconditions/termsandconditions.component';
+import { CompetitionrulesComponent } from './components/competitionrules/competitionrules.component';
+import { RefundpolicyComponent } from './components/refundpolicy/refundpolicy.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
@@ -18,6 +24,12 @@ const routes: Routes = [
   { path: 'blastorpass', component: BlastorpassComponent },
   { path: 'competition', component: CompetitionComponent },
   { path: 'community', component: CommunityComponent },
+  { path: 'helpcenter', component: HelpcenterComponent },
+  { path: 'contactus', component: ContactusComponent },
+  { path: 'privacypolicy', component: PrivacypolicyComponent },
+  { path: 'termsandconditions', component: TermsandconditionsComponent },
+  { path: 'competitionrules', component: CompetitionrulesComponent },
+  { path: 'refundpolicy', component: RefundpolicyComponent },
   // demo example for resolve and auth guard along with can activate
   
   // { path: "recentSignUp", component: RecentSignUpComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: 'admindashboard'}},

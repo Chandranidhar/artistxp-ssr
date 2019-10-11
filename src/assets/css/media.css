@@ -73,6 +73,7 @@
 .mat-icon-button.mat-animation-noopable.cdk-touch-focused .smlmenudiv.ng-star-inserted {display: block !important;}
 }
 @media only screen and (max-width: 620px) {
+    .signupflowstepper {width: 97%;}
     .loginform .formgroup input {width: 200px;margin:0 5px;}
     .loginbuttoncon .errormsgred {left: -179px;}
     .loginbuttoncon .errormsgred {left: 0;position: inherit;bottom: 0;width: 100%;padding: 10px 0 20px;}
@@ -89,6 +90,9 @@
     .loginform .formgroup input {width: 168px}
 }
 @media only screen and (max-width: 440px) {
+    .signupflowstepper .mat-horizontal-stepper-header {width: 16%;}
+    .signupflowstepper .mat-horizontal-stepper-header:before {right: -17px; width: 47px;}
+        .mat-step-header[aria-selected="true"]:after{right: -17px; width: 47px;}
     .logoimgwrapper {
         width: 220px;
         display: inline-block;

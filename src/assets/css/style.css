@@ -170,13 +170,14 @@ text-transform: uppercase;}
 .footermainwrapper .logoimgwrapper {margin: 0 auto !important}
 .footermainwrapper {background-color: #000 !important;display: inline-block !important;text-align: center;width: 100%;padding-top: 27px !important;border-top: 1px solid #292929;}
 .footertop {margin: 0 !important}
-.footertop mat-list mat-list-item {
+.footertop mat-list mat-list-item, .footertop mat-list mat-list-item a {
     color: #989595 !important;
     width: auto !important;
     font-size: 16px !important;
     line-height: 21px;
     cursor: pointer;
     padding: 0 5px !important;
+    text-decoration: none;
 }
 .footertop mat-list mat-list-item .mat-list-item-content {padding: 0 5px !important}
 .footertop mat-list mat-list-item:hover {color: #f27300 !important}
@@ -342,7 +343,7 @@ text-transform: uppercase;}
     .activeafter{background: #000;
         color: #fff;}
         .mat-step-header[aria-selected="true"]:nth-child(1){border-radius: 5px;}
-        .mat-step-header[aria-selected="true"] {
+        .mat-step-header[aria-selected="true"], .mat-step-header[aria-selected="true"]:hover {
             background: rgba(255,149,0,1);
             background: -moz-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
             background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,149,0,1)), color-stop(48%, rgba(251,138,0,1)), color-stop(51%, rgba(246,123,0,1)), color-stop(100%, rgba(237,99,0,1)));
@@ -408,6 +409,117 @@ text-transform: uppercase;}
             z-index: 99;
         }
         .signupflowstepper .mat-horizontal-stepper-header:nth-last-child(1):before{display: none;}
+        .step3formwrapper{display: flex; flex-wrap: wrap;}
+        .step3formwrapper mat-form-field .mat-form-field-label {
+            margin-top: 8px;
+        }
+        .step3formwrapper mat-form-field{
+            width: 29%;
+            padding: 0 5px;
+            display: block;
+            margin: 0 5px;}
+        .step3formwrapper mat-form-field.mat-form-field-appearance-legacy .mat-form-field-infix {
+            padding: 0;
+        }
+         .singlecol {
+            width: 144px !important;
+            background-color: #171717;
+            position: relative;
+            border: 4px solid #4a4a4a;
+            padding-bottom: 40px;
+            -webkit-box-shadow: 2px 4px 28px -8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 2px 4px 28px -8px rgba(0,0,0,0.75);
+            box-shadow: 2px 4px 28px -8px rgba(0,0,0,0.75);
+            margin-top: 10px;
+            margin: 3px;
+        }
+        .singlecol .imgwrapper {
+            width: 100%;
+            height: 160px;
+            margin: 0 auto;
+        }
+        .singlecol .imgwrapper img{width: 100%;}
+        .singlecollistswrapper .singlecollists {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-height: 325px;
+            overflow-y: scroll;
+        }
+        .singlecollistswrapper .singlecollists::-webkit-scrollbar {
+            width: 5px;
+          }
+          
+          /* Track */
+          .singlecollistswrapper .singlecollists::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px #6e6e6e; 
+            border-radius: 4px;
+          }
+           
+          /* Handle */
+          .singlecollistswrapper .singlecollists::-webkit-scrollbar-thumb {
+            background: #1e2223; 
+            border-radius: 10px;
+          }
+          
+          /* Handle on hover */
+          .singlecollistswrapper .singlecollists::-webkit-scrollbar-thumb:hover {
+            background: #1e2223; 
+          }
+        .singlecollistscontent h1 {
+            color: #adaeaf;
+            font-family: "RobotoRegular";
+            font-size: 14px;
+            line-height: 20px;
+            text-transform: capitalize;
+            margin: 7px 2px 0;
+        }
+        .singlecollistscontent h1 strong {
+            text-transform: uppercase;
+            color: #df8003;
+            font-family: "RobotoMedium";
+            font-weight: normal;
+        }
+        .singlecollistscontent h4 {
+            color: #f6f6f6;
+            font-family: "RobotoRegular";
+            font-size: 14px;
+            line-height: 20px;
+            text-transform: capitalize;
+            margin: 2px;
+            font-weight: normal;
+        }
+        .mat-list-item-content{flex-wrap: wrap;}
+        
+        .singlecol span{
+            width: 100%;
+            display: block;
+            padding: 5px 0;
+            text-align: center;
+        }
+        .singlecol span.imgwrapper{padding: 0;}
+        .singlecol span.singlecollistbtn{padding-bottom: 15px;}
+        .singlecol span.singlecollistbtn a button{
+            flex: 1;
+            background: rgba(255,255,255,1);
+            background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+            background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+            cursor: pointer;
+            padding: 3px 5px;
+            border-radius: 5px;
+            border: 0;
+            width: 89%;
+            font-size: 18px;
+        }
+        .signupflow3  .mat-expansion-panel-header{border-bottom: 1px solid rgb(30, 34, 35);
+            margin-bottom: 20px;
+            border-radius: 0px;
+            height: 40px !important;}
 /*------------------------------------ signup css end ------------------------------------ */
 
 /*------------------------------------ signupheader css start ------------------------------------ */
@@ -578,7 +690,8 @@ text-transform: uppercase;}
     color: #ddd;
 }
 
-
+.iframewrapper iframe a{pointer-events:none !important;}
+.iframewrapper{display: inline-block; height: 100%; width: 100%;}
 
 
 
