@@ -99,8 +99,19 @@ export class SignupflowComponent implements OnInit {
 
 
   // 2nd form 
-  public musicgenreList:any = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato', 'Mushroom', 'Onion', 'Pepper'];  
-  // demo data above
+  public instrument_list = ['Accordion', 'Bagpipes', 'Banjo', 'Bass guitar', 'Bassoon', 'Berimbau', 'Bongo', 'Cello', 'Clarinet', 'Clavichord' , 'Coranglais', 'Cornet', 'Cymbal', 'Didgeridoo', 'DJ Controller', 'Double bass', 'Drum kit', 'Euphonium', 'Flute', 'French horn', 'Glass harmonica', 'Glockenspiel', 'Gong', 'Guitar', 'Hang', 'Harmonica', 'Harp', 'Harpsichord', 'Hammered dulcimer', 'Hurdy gurdy', 'Jew’s harp', 'Kalimba', 'Lute', 'Lyre', 'Mandolin', 'Marimba', 'Melodica', 'Mixing Software', 'Oboe', 'Ocarina', 'Octobass', 'Organ', 'Oud', 'Pan Pipes', 'Pennywhistle', 'Piano', 'Piccolo', 'Pungi', 'Recorder', 'Saxophone', 'Sitar', 'Synthesizer', 'Tambourine', 'Timpani', 'Triangle', 'Trombone', 'Trumpet', 'Theremin', 'Tuba', 'Ukulele', 'Viola', 'Violin', 'Whamola', 'Xylophone', 'Zither'];
+
+  public musicgenreList:any = ['Hip Hop', 'Rap', 'Trap', 'Pop', 'EDM', 'Techno', 'Trance', 'Trap', 'Dubstep', 'Country', 'Blues', 'Grunge', 'Indie Rock', 'Classic Rock', 'Punk', 'Ska', 'Heavy Metal', 'Folk', 'Jazz', 'Reggae', 'Classical', 'Latin Pop', 'Latin Rock', 'Cumbia'];  
+
+  public dancegenrelist:any = [ 'Hip hop', 'Break Dance', 'Other Urban', 'Latin/Rhythm', 'Free and Improvised Dance', 'American Rhythm', 'Ballroom','EDM House', 'Disco', 'Historical', 'Bollywood Dance', 'Country Dance', 'Belly Dance', 'Ceremonial Dance', 'Ballet'];
+
+  public modelgenrelist:any = [ 'Fashion model','Editorial Fashion model','Fashion catalogue model','Runway model','Commercial model','Print model','Glamour model','Promotional model','Lingerie model','Catalog model','Petite  model','Mature model','Freelance model','Fitness model','Parts model','Plus-size model','Art model','Pinup model','Alternative model','Social influencer','Teen/Junior model','Black-tape model','Body paint model','Hiphop model','Instagram model'];
+  public webarr:any = [];
+  public website:any = [];
+  public image;
+  public selectedFile:File;
+
+
   constructor(public _formBuilder: FormBuilder, public f: FormService, public apiService: ApiService, public _http: HttpClient, public dialog: MatDialog, public userdata: CookieService,public FBS: FacebookService, public activeRoute:ActivatedRoute, public router:Router) {
     this.fstgen();
     this.secgen();
@@ -242,6 +253,7 @@ export class SignupflowComponent implements OnInit {
   ngOnInit() {
 
     this.getCountryStateCityList();
+    this.getUserList();
     this.filteredCountryOptions = this.firstForm.controls['country'].valueChanges
       .pipe(
         startWith(''),
@@ -259,6 +271,20 @@ export class SignupflowComponent implements OnInit {
     // );
 
   }
+  getUserList(){
+    let data :any = {};
+    data = {"source":"all_users"}
+    this.apiService.postDatawithoutToken('datalist',data)
+    .subscribe(res=>{
+      let result:any = {};
+      result = res;
+      console.log('result in userlist call');
+      console.log(result);
+    })
+
+  }
+
+
   private _filter(array: any, value: string): string[] {
     const filterValue = value.toLowerCase();
 
@@ -272,6 +298,7 @@ export class SignupflowComponent implements OnInit {
       firstname: [null, [Validators.required]],
       lastname: [null, [Validators.required]],
       gender: [null, [Validators.required]],
+      // username:[null],
       email: [null, [Validators.required, Validators.pattern('[a-z0-9._%+-]{1,40}[@]{1}[a-z]{1,10}[.]{1}[a-z]{3}')]],
       password: [null, [Validators.required, Validators.minLength(6)]],
       confirmpassword: [null, [Validators.required, Validators.minLength(6)]],
@@ -377,7 +404,7 @@ export class SignupflowComponent implements OnInit {
       lastname: this.firstForm.controls['lastname'].value,
       phone: this.firstForm.controls['phone'].value,
       email: this.firstForm.controls['email'].value,
-      // username: this.dataForm.controls['username'].value,
+      username: this.firstForm.controls['email'].value,
       password: this.firstForm.controls['password'].value,
       gender: this.firstForm.controls['gender'].value,
       alias: this.firstForm.controls['alias'].value,
@@ -436,16 +463,19 @@ export class SignupflowComponent implements OnInit {
           // this.termsmodal.onNoClick();
           // console.log(this.agreeval);
           this.dialog.closeAll();
+          console.log('this.myStepper');
+          console.log(this.myStepper);
             this.myStepper.next();
           
           
           let udetails = result.result.ops[0];
+          this.userdata.set('_id',result.result.ops[0]._id);
           this.userdata.set('firstname', data.firstname);
           this.userdata.set('lastname', data.lastname);
+          this.userdata.set('username', data.email);
           this.userdata.set('email', data.email);
           this.userdata.set('dancer', this.firstForm.controls['dancer'].value);
           this.userdata.set('fan', this.firstForm.controls['fan'].value);
-          this.userdata.set('producer', this.firstForm.controls['producer'].value);
           this.userdata.set('musicians', this.firstForm.controls['musicians'].value);
           this.userdata.set('model', this.firstForm.controls['model'].value);
           this.userdata.set('signupaffiliate', this.firstForm.controls['signupaffiliate'].value);
@@ -455,8 +485,8 @@ export class SignupflowComponent implements OnInit {
           this.userdata.set('producer', this.firstForm.controls['producer'].value);
           this.userdata.set('sound_engineer', this.firstForm.controls['sound_engineer'].value);
           this.userdata.set('song_writer', this.firstForm.controls['song_writer'].value);
-          //this.userdata.set('blastorpass','true');
-
+          this.userdata.set('blastorpass','false');
+          console.log(this.userdata.getAll());
           if (udetails.musicians == 1 || udetails.dancer == 1 || udetails.model == 1 || udetails.producer == 1 || udetails.fan == 1) {
 
             // this.userdata.set('signupuserdata',JSON.stringify(udetails));
@@ -502,19 +532,11 @@ export class SignupflowComponent implements OnInit {
   /**2nd form genarate */
   secgen() {
     this.secondForm = this._formBuilder.group({
-      // genre: false,
-      // heavymetal: false,
-      // edm: false,
-      // rap: false,
-      // blues: false,
-      // country: false,
-      // musical: false,
-      // rock: false,
-      // pop: false,
-      // hiphop: false,
+      
       musicgenre:[''],
-      dancergenre:[''],
-      instrumentalistgenre:[''],
+      dancegenre:[''],
+      modelgenre:[''],
+      instrumentgenre:[''],
       height: [null],
       waist: [null],
       weight: [null],
@@ -527,11 +549,41 @@ export class SignupflowComponent implements OnInit {
       junior: false,
       senior: false,
       private: false,
-
-      experiences: this._formBuilder.array([this.getUnit()]),
-      website: this._formBuilder.array([this.getweb()]),
+      website: this._formBuilder.array([this.createWebsite('')]),
     })
   }
+
+  createWebsite(defaultVal): FormGroup {
+    if (this.userdata.get('fan') == 'false') {
+
+      return this._formBuilder.group({name: [defaultVal]});
+      // return this.fb.group({name: [defaultVal, Validators.required]});
+    }
+    else {
+      return this._formBuilder.group({name: ['']});
+    }
+  }
+
+  get websites(): FormGroup {
+    return this.secondForm.get('website') as FormGroup;
+  }
+  addWebsite(defaultVal){
+    this.website = this.secondForm.get('website') as FormArray;
+    this.website.push(this.createWebsite(defaultVal));
+  }
+
+  delWebsite(index){
+    const control = <FormArray>this.secondForm.controls['website'];
+    if(control.length > 1)
+      control.removeAt(index);
+  }
+
+  get_instru_list(){
+    console.log(this.secondForm.controls['musicgenre'].value);
+  }
+
+
+
   /**2nd formcheckboxchange function */
   changeforexperienceddancerability() {
 
@@ -571,51 +623,81 @@ export class SignupflowComponent implements OnInit {
 
   }
 
-  /**array fields */
-  public getUnit() {
-    return this._formBuilder.group({
-      exper: [null, [Validators.required]],
-    });
-  }
-  addCreds() {
-    //console.log("hello");
-    const control = <FormArray>this.secondForm.controls['experiences'];
-    control.push(this.getUnit());
-  }
-  delCreds(i: number) {
-    //console.log(i);
-    if (i != 0) {
-      const control = <FormArray>this.secondForm.controls['experiences'];
-      control.removeAt(i);
-    }
-
-  }
+  
   /**array filds for website */
-  getweb() {
-    return this._formBuilder.group({
-      wsite: [null, [Validators.required]],
-    });
-  }
+  
+// upload function
+onFileChanged(event) {
+  this.selectedFile = event.target.files[0];
 
+  const uploadData = new FormData();
+  uploadData.append('file', this.selectedFile);
 
-  addweb() {
-    //console.log("hello");
-    const control = <FormArray>this.secondForm.controls['website'];
-    control.push(this.getweb());
-  }
+  // this._http.post(this.uploadurl, uploadData)
+  this.apiService.postDatawithoutToken('',uploadData)
+      .subscribe(event => {
+        let res:any;
+        res = event;
+        console.log(res);
 
-  delweb(k: number) {
-    //console.log(i);
-    if (k != 0) {
-      const control = <FormArray>this.secondForm.controls['website'];
-      control.removeAt(k);
-    }
+        if(res.error_code == 0){
+          this.image = res.filename;
 
-  }
-  /**2ns form submit */
+        }
+      });
+}
+
+  /**2nd form submit */
   secondsubmit() {
+    console.log(this.secondForm.value);
     if (this.secondForm.valid) {
       console.log(this.secondForm.value);
+      console.log("this.userdata.get('_id')");
+      console.log(this.userdata.get('_id'));
+      for(let n in this.secondForm.controls['website'].value){
+        this.webarr.push(this.secondForm.controls['website'].value.website[n].name);
+      }
+      
+      var data = {
+        _id: this.userdata.get('_id'),
+        musicgenre: this.secondForm.controls['musicgenre'].value,
+        dancegenre: this.secondForm.controls['dancegenre'].value,
+        modelgenre: this.secondForm.controls['modelgenre'].value,
+        instrumentgenre: this.secondForm.controls['instrumentgenre'].value,
+        height: this.secondForm.controls['height'].value,
+        waist: this.secondForm.controls['waist'].value,
+        weight: this.secondForm.controls['weight'].value,
+        hips: this.secondForm.controls['hips'].value,
+        bust: this.secondForm.controls['bust'].value,
+        ethnicity: this.secondForm.controls['ethnicity'].value,
+        beginning: this.secondForm.controls['beginning'].value,
+        elementary: this.secondForm.controls['elementary'].value,
+        junior: this.secondForm.controls['junior'].value,
+        senior: this.secondForm.controls['senior'].value,
+        private: this.secondForm.controls['private'].value,
+        images: this.image,
+        website: this.webarr,
+      };
+      this.apiService.postDatawithoutToken('signup2post',data)
+      .subscribe(res => {
+        let result:any;
+        result = res;
+        if(result.status=='success'){
+          console.log('success block--');
+          this.userdata.delete('affiliatename');
+          this.userdata.delete('mediaid');
+          this.userdata.delete('signupuserdata');
+          this.myStepper.next();
+         /* if(this.userdetails.signupaffiliate == 1){
+
+          }else{
+            this.router.navigateByUrl('/');
+            console.log('else success block--');
+          }*/
+        }
+      }, error => {
+        console.log("Oooops!");
+      });
 
     }
     else {

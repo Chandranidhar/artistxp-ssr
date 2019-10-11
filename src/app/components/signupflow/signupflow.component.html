@@ -3,7 +3,7 @@
 <app-signupheader></app-signupheader>
 
   <mat-horizontal-stepper class="signupflowstepper"  #stepper>
-    <mat-step [stepControl]="firstForm" editable="false"> 
+    <mat-step [stepControl]="firstForm" > 
         <ng-template matStepLabel>Step 1</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
@@ -197,14 +197,19 @@
                 </mat-card-title>
 
                 <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit()">
-                    <!-- <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Real Name" value="" formControlName="realname">
-                    </mat-form-field> -->
-                    <!-- <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Aliases" value="">
-                    </mat-form-field> -->
-
-                    <mat-form-field class="example-full-width fromgroup">
+                    
+                    <mat-form-field class="example-full-width fromgroup"  *ngIf="userdata.get('dancer')!=null && userdata.get('dancer') == 'true'">
+                      <mat-select placeholder="Select Genre" [formControl]="secondForm.controls['dancegenre']" multiple >
+                          <mat-select-trigger>
+                            {{secondForm.controls['dancegenre'].value ? secondForm.controls['dancegenre'].value[0] : ''}}
+                            <span *ngIf="secondForm.controls['dancegenre'].value?.length > 1" class="example-additional-selection">
+                              (+{{secondForm.controls['dancegenre'].value.length - 1}} {{secondForm.controls['dancegenre'].value?.length === 2 ? 'other' : 'others'}})
+                            </span>
+                          </mat-select-trigger>
+                          <mat-option *ngFor="let item of dancegenrelist" [value]="item">{{item}}</mat-option>
+                        </mat-select>
+                  </mat-form-field>
+                    <mat-form-field class="example-full-width fromgroup"  *ngIf="userdata.get('musicians')!=null && (userdata.get('musicians') == 'true' && (userdata.get('vocalist') == 'true' || userdata.get('dj') == 'true' || userdata.get('producer') == 'true' || userdata.get('sound_engineer') == 'true' || userdata.get('song_writer') == 'true')) ">
                         <mat-select placeholder="Select Genre" [formControl]="secondForm.controls['musicgenre']" multiple>
                             <mat-select-trigger>
                               {{secondForm.controls['musicgenre'].value ? secondForm.controls['musicgenre'].value[0] : ''}}
@@ -215,59 +220,33 @@
                             <mat-option *ngFor="let item of musicgenreList" [value]="item">{{item}}</mat-option>
                           </mat-select>
                     </mat-form-field>
-
-                    <!-- <span class="formlistwrapper">
-                        <mat-card-title>Performance Category/ Genre (Music):</mat-card-title>
-                        <mat-list role="list" class="scrolllight">
-                                
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="genre">Select Genre</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="heavymetal">Heavy Metal</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="edm">EDM</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="rap">Rap</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="blues">Blues</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="country">Country</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="musical">Musical</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="rock">Rock</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="pop">Pop</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="hiphop">Hip-Hop (Music)</mat-checkbox></mat-list-item>
-                          </mat-list>
-                    </span> -->
-
-                    <!-- <mat-form-field class="example-full-width fromgroup">
-                  <textarea matInput placeholder="Leave a comment"></textarea>
-                </mat-form-field> -->
-
-                <mat-card-subtitle>ABILITY: (CHOOSE ONE ONLY) <b>Enter by the Most Experienced Dancer's Ability Level</b></mat-card-subtitle>
-                <span class="fromgroupcols">
-                    <span class="fromgroupcol1">
-                        <section class="example-section">
-                            <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="beginning">
-                                
-                              Less than Two years in any Studio environment
-                              </mat-checkbox>
-                            <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="elementary">                 
-                                Two, Three or Four years of study
-                              </mat-checkbox>
-
-                              <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="junior">
-                                
-                                  Five, Six or Seven years of study
-                                </mat-checkbox>
-
-                                <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="senior">
-                        
-                                MORE than seven years of study
-                                  </mat-checkbox>
-                                  <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="private">
-                        
-                                        Keep This Private!
-                                          </mat-checkbox>
-                        </section>
-                    </span>
-                </span>
-           <!-- for model -->
-           <ng-container *ngIf="userdata.get('model')!=null && userdata.get('model') == true">
-            <mat-card-subtitle>EXPERTISE</mat-card-subtitle>
+                   
+                  <mat-form-field class="example-full-width fromgroup"  *ngIf="userdata.get('musicians')!=null && (userdata.get('musicians') == 'true' && userdata.get('instrumentalist') == 'true')">
+                    <mat-select placeholder="Select Genre" [formControl]="secondForm.controls['instrumentgenre']" multiple >
+                        <mat-select-trigger>
+                          {{secondForm.controls['instrumentgenre'].value ? secondForm.controls['instrumentgenre'].value[0] : ''}}
+                          <span *ngIf="secondForm.controls['instrumentgenre'].value?.length > 1" class="example-additional-selection">
+                            (+{{secondForm.controls['instrumentgenre'].value.length - 1}} {{secondForm.controls['instrumentgenre'].value?.length === 2 ? 'other' : 'others'}})
+                          </span>
+                        </mat-select-trigger>
+                        <mat-option *ngFor="let item of instrument_list" [value]="item">{{item}}</mat-option>
+                      </mat-select>
+                </mat-form-field>
+                <!-- for model -->
+                <mat-form-field class="example-full-width fromgroup"  *ngIf="userdata.get('model')!=null && userdata.get('model') == 'true'">
+                  <mat-select placeholder="Select Genre" [formControl]="secondForm.controls['modelgenre']" multiple >
+                      <mat-select-trigger>
+                        {{secondForm.controls['modelgenre'].value ? secondForm.controls['modelgenre'].value[0] : ''}}
+                        <span *ngIf="secondForm.controls['modelgenre'].value?.length > 1" class="example-additional-selection">
+                          (+{{secondForm.controls['modelgenre'].value.length - 1}} {{secondForm.controls['modelgenre'].value?.length === 2 ? 'other' : 'others'}})
+                        </span>
+                      </mat-select-trigger>
+                      <mat-option *ngFor="let item of modelgenrelist" [value]="item">{{item}}</mat-option>
+                    </mat-select>
+              </mat-form-field>
+               
+           <ng-container *ngIf="userdata.get('model')!=null && userdata.get('model') == 'true'">
+            <mat-card-subtitle>STATS</mat-card-subtitle>
                         <span class="fromgroupcols">
                             <span class="fromgroupcol3">
                                 <section class="example-section">
@@ -314,6 +293,57 @@
                                     </span>
                         </span>
                     </ng-container>
+                    <!-- <span class="formlistwrapper">
+                        <mat-card-title>Performance Category/ Genre (Music):</mat-card-title>
+                        <mat-list role="list" class="scrolllight">
+                                
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="genre">Select Genre</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="heavymetal">Heavy Metal</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="edm">EDM</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="rap">Rap</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="blues">Blues</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="country">Country</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="musical">Musical</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="rock">Rock</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="pop">Pop</mat-checkbox></mat-list-item>
+                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="hiphop">Hip-Hop (Music)</mat-checkbox></mat-list-item>
+                          </mat-list>
+                    </span> -->
+
+                    <!-- <mat-form-field class="example-full-width fromgroup">
+                  <textarea matInput placeholder="Leave a comment"></textarea>
+                </mat-form-field> -->
+                <ng-container *ngIf="(userdata.get('musicians')!=null && userdata.get('musicians') == 'true') || (userdata.get('dancer')!=null && userdata.get('dancer') == 'true')">
+                  <mat-card-subtitle>ABILITY: (CHOOSE ONE ONLY) <b>Enter by the Most Experienced Recording Artist/Dancer's Ability Level</b></mat-card-subtitle>
+                  <span class="fromgroupcols">
+                      <span class="fromgroupcol1">
+                          <section class="example-section">
+                              <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="beginning">
+                                  
+                                Less than Two years in any Studio environment
+                                </mat-checkbox>
+                              <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="elementary">                 
+                                  Two, Three or Four years of study
+                                </mat-checkbox>
+  
+                                <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="junior">
+                                  
+                                    Five, Six or Seven years of study
+                                  </mat-checkbox>
+  
+                                  <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="senior">
+                          
+                                  MORE than seven years of study
+                                    </mat-checkbox>
+                                    <mat-checkbox class="example-margin" (change)="changeforexperienceddancerability()" formControlName="private">
+                                          Keep This Private!
+                                            </mat-checkbox>
+                          </section>
+                      </span>
+                  </span>
+                </ng-container>
+               
+          
                 <!-- <div formArrayName="experiences" *ngFor="let creds of secondForm.controls.experiences['controls']; let i = index">
                         <div [formGroupName]="i">
                 <mat-form-field class="example-full-width fromgroup inputgroup">
@@ -330,7 +360,7 @@
                  </div>
                 </div> -->
 
-                <div formArrayName="website" *ngFor="let creds of secondForm.controls.website['controls']; let k = index">
+                <!-- <div formArrayName="website" *ngFor="let creds of secondForm.controls.website['controls']; let k = index">
                         <div [formGroupName]="k">
                   <mat-form-field class="example-full-width fromgroup inputgroup">
                       <mat-placeholder>Website</mat-placeholder>
@@ -344,41 +374,34 @@
                       </button>
                     </mat-form-field>
                 </div>
-            </div>
-
+            </div> -->
+            <ng-container class="form-group" *ngIf="userdata.get('musicians') == 'true' || userdata.get('dancer') == 'true' || userdetails.get('model') == 'true'">
+              <!--<label><span>Website:</span></label>-->
+              <div class="selectdiv" *ngFor="let item of websites.controls; let i = index;">
+                  <mat-form-field class="example-full-width fromgroup inputgroup">
+                      <mat-placeholder>Website</mat-placeholder>
+                <input matInput name="websites[]" class="form-control" type="url" [formControl]="item.controls['name']">
+                <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="addWebsite('')">
+                    <mat-icon>add</mat-icon>
+                </button>
+                <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="delWebsite(i)">
+                    <mat-icon>remove</mat-icon>
+                </button>
+              </mat-form-field>
+              </div>
+            </ng-container>
 
                     <mat-form-field class="example-full-width fromgroup inputgroup">
                         <mat-placeholder>Add Image:</mat-placeholder>
                           <input matInput type="Add Image:" disabled="disabled">
-                          <button mat-button matSuffix mat-stroked-button>
-                              Select File 
-                              <input type="file">
-                        </button>
+                          <button mat-button matSuffix mat-stroked-button  (click)="fileInput.click()">Select File 
+                             </button>
+                             <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
                         
                       </mat-form-field>
 
-                    <!-- <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Bio" value="" type="text">
-                    </mat-form-field> -->
-
-                    <!-- <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="City" value="" type="text">
-                    </mat-form-field> 
                     
-                    <mat-form-field class="example-full-width fromgroup">
-                        <mat-select aria-placeholder="">
-                            <mat-option value="male">Male</mat-option>
-                            <mat-option value="female">Female</mat-option>
-                        </mat-select>
-                        <mat-label>Select State</mat-label>
-                    </mat-form-field> -->
-
-                    <!-- <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Address" value="" type="text">
-                    </mat-form-field> -->
-                    <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Zip" value="" type="text">
-                    </mat-form-field>
+                    
                     <mat-card-actions class="signupbuttonwrapper">
                     <button mat-button class="btnbuyticket_genuserlan">
                         <span class="buttoncon">Next</span>
