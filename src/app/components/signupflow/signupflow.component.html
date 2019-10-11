@@ -81,7 +81,7 @@
                             
                             <mat-error *ngIf="firstForm.controls['country']?.touched && firstForm.controls['country'].errors && firstForm.controls['country'].errors.required" class="errormsgred">Country is required !</mat-error>
                           </mat-form-field>
-                          <span (click)="openQueryDialog()">Why is my country not listed<i class="material-icons">help_outline</i></span>
+                          <span class="signupflowsubtitle" (click)="openQueryDialog()">Why is my country not listed<i class="material-icons">help_outline</i></span>
                           <mat-form-field class="example-full-width fromgroup">
                                 <input type="text" matInput placeholder="State" formControlName="state" required [matAutocomplete]="autoGroup2" (keyup)="setCitylist()"  (blur)="f.inputBlur(firstForm,'state')">
                                   <mat-autocomplete #autoGroup2="matAutocomplete" >
