@@ -392,14 +392,16 @@
             </ng-container>
 
                     <mat-form-field class="example-full-width fromgroup inputgroup">
-                        <mat-placeholder>Add Image:</mat-placeholder>
+                        <mat-placeholder>Add Profile Picture:</mat-placeholder>
                           <input matInput type="Add Image:" disabled="disabled">
                           <button mat-button matSuffix mat-stroked-button  (click)="fileInput.click()">Select File 
                              </button>
                              <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
                         
                       </mat-form-field>
-
+                      <mat-card class="step2foimgwrapper" *ngIf="image!=null">
+                          <img mat-card-image [src]="image" alt="Photo of a Shiba Inu">
+                      </mat-card>
                     
                     
                     <mat-card-actions class="signupbuttonwrapper">
@@ -425,7 +427,7 @@
                         <mat-card-title class="fromtitle">
                             <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
                         </mat-card-title>        
-                        <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit()">
+                        <form class="signupflowform" [formGroup]="secondForm" >
                                 <mat-accordion class="example-headers-align signupflow3wrapper">
                                         <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
                                           <mat-expansion-panel-header>

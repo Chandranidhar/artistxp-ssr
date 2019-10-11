@@ -188,6 +188,30 @@ text-transform: uppercase;}
 /*------------------------------------ footer css end ------------------------------------ */
 
 /*------------------------------------ signup css start ------------------------------------ */
+.step2foimgwrapper{display: block;
+    display: block !important;
+    width: 200px;
+    height: 146px;
+    background: #161515 !important;
+    position: relative !important;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 7px solid #323232;    
+}
+    .step2foimgwrapper img{
+        margin: 0 !important;
+        width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    }
 .fromtitle span {margin: 0;padding: 0px;text-transform: uppercase;font-size: 28px;font-family: "TypoSlabIrregularDemo";color: #fff;text-shadow: 2px 3px 9px rgba(0,0,0,0.45);}
 .fromtitle {background-color: #fc8d00;padding: 11px 0;text-align: center;border: 1px solid #000;border-bottom: 0px !important;width: 100%;display: block;}
 .signupbody:after {content: '';background-image: url(../../assets/images/signupflow2wrapperbgoverlay.png) !important;background-position: left top;background-repeat: no-repeat;background-size: cover;position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
@@ -343,7 +367,7 @@ text-transform: uppercase;}
     .activeafter{background: #000;
         color: #fff;}
         .mat-step-header[aria-selected="true"]:nth-child(1){border-radius: 5px;}
-        .mat-step-header[aria-selected="true"], .mat-step-header[aria-selected="true"]:hover {
+        .mat-step-header[aria-selected="true"]{
             background: rgba(255,149,0,1);
             background: -moz-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
             background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,149,0,1)), color-stop(48%, rgba(251,138,0,1)), color-stop(51%, rgba(246,123,0,1)), color-stop(100%, rgba(237,99,0,1)));

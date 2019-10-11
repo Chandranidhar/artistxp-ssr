@@ -40,6 +40,12 @@ export class ApiService {
 
 
     }
+    postUploadFunction(upload_data:any,path:any){
+        console.log('upload_data');
+        console.log(upload_data);
+        var result = this._http.post('http://3.15.236.141:5005/uploads?path='+path+'&prefix=profile',upload_data).pipe(map(res => res));
+        return result;
+    }
 
     getclientip() {
 

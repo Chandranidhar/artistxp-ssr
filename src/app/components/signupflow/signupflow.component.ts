@@ -578,11 +578,6 @@ export class SignupflowComponent implements OnInit {
       control.removeAt(index);
   }
 
-  get_instru_list(){
-    console.log(this.secondForm.controls['musicgenre'].value);
-  }
-
-
 
   /**2nd formcheckboxchange function */
   changeforexperienceddancerability() {
@@ -627,22 +622,28 @@ export class SignupflowComponent implements OnInit {
   /**array filds for website */
   
 // upload function
-onFileChanged(event) {
+onFileChanged(event:any) {
+  console.log(event.target.files);
+  if(event.target.files!=null)
   this.selectedFile = event.target.files[0];
-
   const uploadData = new FormData();
   uploadData.append('file', this.selectedFile);
-
+  uploadData.append('type', 'profile-picture');
+  uploadData.append('prefix', 'profile-picture');
+  uploadData.append('conversion_needed', 'profile-picture');
+  uploadData.append('servername', 'artistxp');
+  uploadData.append('bucketname', 'file.audiodeadline.com');
+  uploadData.append('conversion_needed', '0');
+  console.log(uploadData);
   // this._http.post(this.uploadurl, uploadData)
-  this.apiService.postDatawithoutToken('',uploadData)
+  this.apiService.postUploadFunction(uploadData,'artistxp')
       .subscribe(event => {
         let res:any;
         res = event;
         console.log(res);
-
-        if(res.error_code == 0){
-          this.image = res.filename;
-
+        if(res.status == 'success'){
+          this.image = res.basepath+'/artistxp/'+res.data.fileservername;
+          console.log(this.image);
         }
       });
 }
