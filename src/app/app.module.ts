@@ -26,6 +26,12 @@ import { ApiService } from './services/api-service';
 import { BlastorpassComponent, QueryDialogBlastComponent, TermsDialogBlastComponent } from './components/blastorpass/blastorpass.component';
 import { CompetitionComponent } from './components/competition/competition.component';
 import { CommunityComponent } from './components/community/community.component';
+import { HelpcenterComponent } from './components/helpcenter/helpcenter.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy.component';
+import { TermsandconditionsComponent } from './components/termsandconditions/termsandconditions.component';
+import { CompetitionrulesComponent } from './components/competitionrules/competitionrules.component';
+import { RefundpolicyComponent } from './components/refundpolicy/refundpolicy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +47,13 @@ import { CommunityComponent } from './components/community/community.component';
     CompetitionComponent,
     CommunityComponent,
     TermsDialogBlastComponent,
-    QueryDialogBlastComponent
+    QueryDialogBlastComponent,
+    HelpcenterComponent,
+    ContactusComponent,
+    PrivacypolicyComponent,
+    TermsandconditionsComponent,
+    CompetitionrulesComponent,
+    RefundpolicyComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
