@@ -4,6 +4,9 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ApiService} from '../../services/api-service';
 import {CookieService} from "ngx-cookie-service";
 // import {BsModalRef, BsModalService} from "ngx-bootstrap";
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { FormService } from '../../form.service';
 import {Router, ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
@@ -39,9 +42,17 @@ export class BlastorpassComponent implements OnInit {
   public feature:any=0;
   public result:any;
   signup:any={};
+  public countrylistarray: any = [];
+  public statelistarray: any = [];
+  public citylistarray: any = [];
+  public selectedstatearray: any = [];
+  public selectedcityarray: any = [];
+  filteredCountryOptions: Observable<string[]>;
+  filteredStateOptions: Observable<string[]>;
+  filteredCityOptions: Observable<string[]>;
 
 
-  constructor(public FBS: FacebookService,fb: FormBuilder,private _http: HttpClient,private router: Router, public apiservice : ApiService,private route:ActivatedRoute, userdata: CookieService, public dialog: MatDialog) { 
+  constructor(public FBS: FacebookService,fb: FormBuilder,private _http: HttpClient,private router: Router, public apiservice : ApiService,private route:ActivatedRoute, userdata: CookieService, public dialog: MatDialog,  public f: FormService) { 
     this.fb = fb;
     this.chkerror = 0;
     this.chkerror1 = 0;
@@ -89,6 +100,63 @@ export class BlastorpassComponent implements OnInit {
         console.log('params blank');
       }
     });
+  }
+  /*for privacy validation */
+  statechangeforprivacy() {
+    if (this.firstForm.controls['privateval'].value == true) {
+      this.firstForm.controls['publicval'].setValue(false);
+    }
+
+    if (this.firstForm.controls['publicval'].value == true) {
+      this.firstForm.controls['privateval'].setValue(false);
+    }
+  }
+  private _filter(array: any, value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return array.filter(option => option.name.toLowerCase().includes(filterValue));
+  }
+  setStatelist() {
+    this.selectedstatearray = [];
+    let selectedcountry: any = {};
+    for (let i in this.countrylistarray) {
+      if (this.countrylistarray[i].name == this.firstForm.controls['country'].value) {
+        selectedcountry = this.countrylistarray[i];
+      }
+    }
+    for (let i in this.statelistarray) {
+      if (this.statelistarray[i].country_id == selectedcountry.id) {
+        this.selectedstatearray.push(this.statelistarray[i]);
+      }
+    }
+    this.filteredStateOptions = this.firstForm.controls['state'].valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(this.selectedstatearray, value))
+      );
+    console.log('this.selectedstatearray');
+    console.log(this.selectedstatearray);
+  }
+  setCitylist() {
+    this.selectedcityarray = [];
+    let selectedstate: any = {};
+    for (let i in this.statelistarray) {
+      if (this.statelistarray[i].name == this.firstForm.controls['state'].value) {
+        selectedstate = this.statelistarray[i];
+      }
+    }
+    for (let i in this.citylistarray) {
+      if (this.citylistarray[i].state_id == selectedstate.id) {
+        this.selectedcityarray.push(this.citylistarray[i]);
+      }
+    }
+    console.log('this.selectedcityarray');
+    console.log(this.selectedcityarray);
+    this.filteredCityOptions = this.firstForm.controls['city'].valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(this.selectedcityarray, value))
+      );
   }
   
 
@@ -156,6 +224,11 @@ export class BlastorpassComponent implements OnInit {
 
 
     },{validator: this.matchingPasswords('password', 'confirmpassword')});
+    this.filteredCountryOptions = this.firstForm.controls['country'].valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(this.countrylistarray, value))
+      );
   }
   scrollToTop(){
 
@@ -178,6 +251,19 @@ export class BlastorpassComponent implements OnInit {
       this.feature=1
     }else{
       this.feature=0;
+    }
+  }
+  /**for account type validation */
+  statechangeforaccounttype() {
+    if (this.firstForm.controls['fan'].value == true) {
+      this.firstForm.controls['model'].setValue(false);
+      this.firstForm.controls['signupaffiliate'].setValue(false);
+      this.firstForm.controls['dancer'].setValue(false);
+      this.firstForm.controls['musicians'].setValue(false);
+    }
+    if (this.firstForm.controls['musicians'].value == true || this.firstForm.controls['dancer'].value == true || this.firstForm.controls['model'].value == true) {
+      this.firstForm.controls['signupaffiliate'].setValue(true);
+      this.firstForm.controls['fan'].setValue(false);
     }
   }
 

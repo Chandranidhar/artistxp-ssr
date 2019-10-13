@@ -111,6 +111,13 @@ export class SignupflowComponent implements OnInit {
   public image;
   public selectedFile:File;
 
+  // 3rd step declaration
+  public step = 0;
+  public musicianlist:any =[];
+  public dancerlist:any =[];
+  public modellist:any =[];
+  public fanlist:any =[];
+
 
   constructor(public _formBuilder: FormBuilder, public f: FormService, public apiService: ApiService, public _http: HttpClient, public dialog: MatDialog, public userdata: CookieService,public FBS: FacebookService, public activeRoute:ActivatedRoute, public router:Router) {
     this.fstgen();
@@ -224,8 +231,7 @@ export class SignupflowComponent implements OnInit {
         startWith(''),
         map(value => this._filter(this.selectedstatearray, value))
       );
-    console.log('this.selectedstatearray');
-    console.log(this.selectedstatearray);
+    
   }
 
   setCitylist() {
@@ -241,8 +247,6 @@ export class SignupflowComponent implements OnInit {
         this.selectedcityarray.push(this.citylistarray[i]);
       }
     }
-    console.log('this.selectedcityarray');
-    console.log(this.selectedcityarray);
     this.filteredCityOptions = this.firstForm.controls['city'].valueChanges
       .pipe(
         startWith(''),
@@ -271,18 +275,7 @@ export class SignupflowComponent implements OnInit {
     // );
 
   }
-  getUserList(){
-    let data :any = {};
-    data = {"source":"all_users"}
-    this.apiService.postDatawithoutToken('datalist',data)
-    .subscribe(res=>{
-      let result:any = {};
-      result = res;
-      console.log('result in userlist call');
-      console.log(result);
-    })
-
-  }
+  
 
 
   private _filter(array: any, value: string): string[] {
@@ -706,9 +699,43 @@ onFileChanged(event:any) {
     }
   }
 
+// 3rd form functions
+// expansion panel functions
 
 
+  setStep(index: number) {
+    this.step = index;
+  }
 
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+
+// user list data 
+getUserList(){
+ 
+  this.apiService.postDatawithoutToken('expertisdata',{
+    "limit" : 30,
+    "skip" : 0
+})
+  .subscribe(res=>{
+    let result:any = {};
+    result = res;
+    console.log('result in userlist call');
+    console.log(result);
+    if(result.status == 'success'){
+      this.musicianlist = result.data.musicians_data;
+      this.dancerlist = result.data.dancer_data;
+      this.modellist = result.data.model_data;
+      this.fanlist = result.data.fan_data;
+    }
+  })
+
+}
 
 // fourth form development
 fourthFormGenerate() {
@@ -767,8 +794,7 @@ fourthFormGenerate() {
           }
         });
   }
-  postinfb2(username,media_id,image){
-    // this.apiService.postDatawithoutToken('artistxpemailsend', data)
+  postinfb2(username){
     // var link = this._commonservices.phpurlforshare+'sharetool2.php?media_id=ArtistXP_Social_Banner.jpg&username='+username+'&image=ArtistXP_Social_Banner.jpg&submittype=signup';
     
     let options: any = {};
