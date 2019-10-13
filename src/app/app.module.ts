@@ -32,6 +32,7 @@ import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy
 import { TermsandconditionsComponent } from './components/termsandconditions/termsandconditions.component';
 import { CompetitionrulesComponent } from './components/competitionrules/competitionrules.component';
 import { RefundpolicyComponent } from './components/refundpolicy/refundpolicy.component';
+import { AgreementComponent } from './components/agreement/agreement.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import { RefundpolicyComponent } from './components/refundpolicy/refundpolicy.co
     PrivacypolicyComponent,
     TermsandconditionsComponent,
     CompetitionrulesComponent,
-    RefundpolicyComponent
+    RefundpolicyComponent,
+    AgreementComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
