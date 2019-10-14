@@ -109,6 +109,7 @@ export class SignupflowComponent implements OnInit {
   public webarr:any = [];
   public website:any = [];
   public image;
+  public serverimagename:any ;
   public selectedFile:File;
 
   // 3rd step declaration
@@ -643,6 +644,7 @@ onFileChanged(event:any) {
         console.log(res);
         if(res.status == 'success'){
           this.image = res.basepath+'/artistxp/'+res.data.fileservername;
+          this.serverimagename = res.data.fileservername;
           console.log(this.image);
         }
       });
@@ -679,7 +681,7 @@ onFileChanged(event:any) {
         junior: this.secondForm.controls['junior'].value,
         senior: this.secondForm.controls['senior'].value,
         private: this.secondForm.controls['private'].value,
-        images: this.image,
+        images: this.serverimagename,
         website: this.webarr,
       };
       this.apiService.postDatawithoutToken('signup2post',data)
