@@ -39,24 +39,28 @@ export class AgreementComponent implements OnInit {
       this.signval = '';
       // this.serverurl=_commonservices.url;
       this.currentdate = new Date();
-      this.route.params.subscribe(params=>{
-          this.userid = params['userid'];
-          this.getUserDetails();
-      });
-        // let data:any;
-        // data = {"source": "invitationSystem","condition":{"_id_object":environment['invitation_id']}}
+      this.userid = this.route.snapshot.params.userid;
+      console.log('userid from route-'+this.userid);
+         
+      
+        let data:any;
+        data = {"source": "invitationSystem","condition":{"_id_object":environment['invitation_id']}}
         
-        // // this._http.post(link,({"source": "invitationSystem","condition":{"_id_object":"5d0c8819f09b0c4c69dff4e5"}}))
-        // // this._http.post(link,data)
-        // this.apiservice.postDatawithoutToken('datalist',data)
-        // .subscribe(res=>{
-        // let result:any;
-        // result = res;
-        // this.invitesystem = result.res[0].invitesystem;
-        // })
+        // this._http.post(link,({"source": "invitationSystem","condition":{"_id_object":"5d0c8819f09b0c4c69dff4e5"}}))
+        // this._http.post(link,data)
+        this.apiservice.postDatawithoutToken('datalist',data)
+        .subscribe(res=>{
+        let result:any;
+        result = res;
+        if(result.res.length>0){
+          this.invitesystem = result.res[0].invitesystem;
+        }
+        
+        })
   }
 
   ngOnInit() {
+    this.getUserDetails();
   }
 
     getUserDetails(){
@@ -112,12 +116,12 @@ export class AgreementComponent implements OnInit {
       for ( let i = 0; i < 10; i++ ) {                //generating a random string length of 10
           this.randcode += characters.charAt(Math.floor(Math.random() * charactersLength));
       }
-      
+      console.log(this.userid);
       //sending the random string in user collection to store it, later it'll be matched in audiodeadline autologin endpoint
       let data = {
           "source": "user",
           "data": {
-              "id": this.userdata.get('user_id'),
+              "id": this.userid,
               'login_token':this.randcode
           }
          
@@ -138,6 +142,7 @@ export class AgreementComponent implements OnInit {
           this.error = 1;
           return false;
       }else{
+        console.log(this.userid);
           var data = {_id: this.userid,sign: this.signval };
           this.apiservice.postDatawithoutToken('contractagrrement',data)
               .subscribe(res => {
@@ -150,13 +155,13 @@ export class AgreementComponent implements OnInit {
                       this.renderToDashboard();
                     
                       if(this.userdata.get('blastorpass')=='true'){
-                        this.router.navigateByUrl('/fbartistxpactive');
+                        this.router.navigateByUrl('/');
                       }
                       if(this.invitesystem == 'on'){
-                        this.router.navigateByUrl('/invitationforlaunchplan');
+                        this.router.navigateByUrl('/');
                       }
                       else{
-                        this.router.navigateByUrl('/profile');
+                        this.router.navigateByUrl('/');
                       }
                     
                   }
@@ -181,7 +186,9 @@ export class SignDialogComponent {
   public currentdate;
   constructor(public dialogRef: MatDialogRef<SignDialogComponent>,
     //@Optional() is used to prevent error if no data is passed
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+      if(this.signval2==null || this.signval2=='')this.signval = this.data.signupdata;
+     }
   public onNoClick(): void {
     this.dialogRef.close({event:'Cancel'});
   }
