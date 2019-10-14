@@ -653,9 +653,13 @@ onFileChanged(event:any) {
       console.log(this.secondForm.value);
       console.log("this.userdata.get('_id')");
       console.log(this.userdata.get('_id'));
-      for(let n in this.secondForm.controls['website'].value){
-        this.webarr.push(this.secondForm.controls['website'].value.website[n].name);
+      if(this.secondForm.controls['website'].value!=''){
+        for(let n in this.secondForm.controls['website'].value){
+          console.log(this.secondForm.controls['website'].value.website[n].name);
+          this.webarr.push(this.secondForm.controls['website'].value.website[n].name);
+        }
       }
+      
       
       var data = {
         _id: this.userdata.get('_id'),
@@ -723,7 +727,7 @@ onFileChanged(event:any) {
 // user list data 
 getUserList(){
  
-  this.apiService.postDatawithoutToken('expertisdata',{
+  this.apiService.postDatawithoutToken('roleuserdata',{
     "limit" : 30,
     "skip" : 0
 })
