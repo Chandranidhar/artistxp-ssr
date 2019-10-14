@@ -185,10 +185,15 @@ export class SignDialogComponent {
     this.dialogRef.close({event:'Cancel'});
   }
   onKey(ev){
+    console.log(ev.target.value);
     this.signval2 = ev.target.value;
   }
 agree(){
-  this.signval = this.signval2;
+  if(this.signval2==null || this.signval2=='')this.signval = this.data.signupdata;
+  else{
+    this.signval = this.signval2;
+  }
+  
   this.dialogRef.close({event:'agree',data:this.signval});
   
   // this.modalRef.hide();
