@@ -429,7 +429,7 @@
                         </mat-card-title>        
                         <form class="signupflowform" [formGroup]="secondForm" >
                                 <mat-accordion class="example-headers-align signupflow3wrapper">
-                                        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                                        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" >
                                           <mat-expansion-panel-header>
                                             <mat-panel-title>
                                               Recording Artist
@@ -499,7 +499,7 @@
                                           </mat-action-row> -->
                                         </mat-expansion-panel>
                                       
-                                        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                                        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
                                           <mat-expansion-panel-header>
                                             <mat-panel-title>
                                               Dancer
@@ -568,7 +568,7 @@
                                             <button mat-button color="primary" (click)="nextStep()">Next</button>
                                           </mat-action-row> -->
                                         </mat-expansion-panel>
-                                        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                                        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)">
                                           <mat-expansion-panel-header>
                                             <mat-panel-title>
                                               Model
@@ -637,7 +637,7 @@
                                             <button mat-button color="primary" (click)="nextStep()">Next</button>
                                           </mat-action-row> -->
                                         </mat-expansion-panel>
-                                        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                                        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
                                           <mat-expansion-panel-header>
                                             <mat-panel-title>
                                               Fan

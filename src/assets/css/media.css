@@ -44,6 +44,10 @@
     .loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 0px !important}
 }
 @media only screen and (max-width: 991px) {
+    .invitationforlaunchplanmainwrapper .signupfrwrapper {
+        width: 90%;
+        min-height: inherit;
+    }
     .modal-md {
         width: 68%;
     }
@@ -81,11 +85,16 @@
     .mat-icon-button.mat-animation-noopable.cdk-touch-focused .smlmenudiv.ng-star-inserted {display: block !important;}
 }
 @media only screen and (max-width: 767px) {
+    .invitationforlaunchplanmainwrapper .mat-form-field-infix input {
+        width: 94%;
+    }
     .modal-md {
         width: 100%;
     }
 }
 @media only screen and (max-width: 620px) {
+    .invitationforlaunchplanmainwrapper .mat-form-field-infix input {
+        width: 92%;}
     .signupflowstepper {width: 97%;}
     .loginform .formgroup input {width: 200px;margin:0 5px;}
     .loginbuttoncon .errormsgred {left: -179px;}
@@ -103,6 +112,16 @@
     .loginform .formgroup input {width: 168px}
 }
 @media only screen and (max-width: 480px) {
+    .invitationlogowrapper {
+        padding-bottom: 20px;
+    }
+    .invitationforlaunchplanmainwrapper .signupfrwrapper {
+        width: 97%;
+    }
+    .invitationforlaunchplanmainwrapper .mat-form-field-infix input {
+        width: 89%;
+    }
+    .invitationlogowrapper {width: 77%;}
     .privacywrapper {padding: 20px 20px;}
 }
 @media only screen and (max-width: 440px) {

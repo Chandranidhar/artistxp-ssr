@@ -16,6 +16,7 @@ import { TermsandconditionsComponent } from './components/termsandconditions/ter
 import { CompetitionrulesComponent } from './components/competitionrules/competitionrules.component';
 import { RefundpolicyComponent } from './components/refundpolicy/refundpolicy.component';
 import { AgreementComponent } from './components/agreement/agreement.component';
+import { InvitationforlaunchplanComponent } from './components/invitationforlaunchplan/invitationforlaunchplan.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'competitionrules', component: CompetitionrulesComponent },
   { path: 'refundpolicy', component: RefundpolicyComponent },
   { path: 'agreement/:userid', component: AgreementComponent },
+  { path: 'invitationforlaunchplan', component: InvitationforlaunchplanComponent },
   // demo example for resolve and auth guard along with can activate
   
   // { path: "recentSignUp", component: RecentSignUpComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: 'admindashboard'}},

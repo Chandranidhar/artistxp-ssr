@@ -33,6 +33,7 @@ import { TermsandconditionsComponent } from './components/termsandconditions/ter
 import { CompetitionrulesComponent } from './components/competitionrules/competitionrules.component';
 import { RefundpolicyComponent } from './components/refundpolicy/refundpolicy.component';
 import { AgreementComponent,SignDialogComponent } from './components/agreement/agreement.component';
+import { InvitationforlaunchplanComponent } from './components/invitationforlaunchplan/invitationforlaunchplan.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,7 @@ import { AgreementComponent,SignDialogComponent } from './components/agreement/a
     TermsandconditionsComponent,
     CompetitionrulesComponent,
     RefundpolicyComponent,
-    AgreementComponent,SignDialogComponent
+    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
