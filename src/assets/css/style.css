@@ -884,3 +884,67 @@ text-transform: uppercase;}
 .modal-md{width: 36%;}
 .agreementmodal {background-color: #f6faff!important; border-radius: 5px !important;border: 5px solid #5b5959 !important; box-shadow: -4px 7px 10px #000;}
 /*---------------- modal css end---------------------- */
+
+
+/* ------------------- invitationforlaunchplanmain css start --------------------- */
+
+.invitationforlaunchplanmainwrapper .signupfrwrapper{width: 767px;min-height: inherit;}
+.inputtitle{font-family: "OpenSans-Semibold";
+    font-size: 16px;
+    line-height: 30px;
+    color: #89898f;
+    text-transform: uppercase;}
+
+    .invitationforlaunchplanmainwrapper .mat-form-field-infix input{width: 95%;background-color: #fff;}
+    .invitationforlaunchplanmainwrapper .mat-form-field-suffix button.mat-stroked-button{
+        background: #ff0049 !important;
+        padding: 8px 11px;
+        font-family: 'RobotoBold';
+        font-size: 18px !important;
+        color: #fff !important;
+        text-transform: uppercase;
+        line-height: 18px;
+    }
+    .invitationtextwrapper p strong{
+        color: #f67d00;
+    }
+    .invitationtextwrapper p{
+        font-family: OpenSans;
+        font-size: 14px;
+        line-height: 16px;
+        color: rgb(208, 210, 215) !important;
+        margin-bottom: 8px;
+        display: block;
+    }
+    .invitationtextwrapper p a{text-decoration: none;}
+    .invitationlogowrapper img{max-width: 100%;}
+    .invitationlogowrapper {
+        padding: 30px 0;
+        width: 370px;
+        margin: 0 auto;
+        z-index: 9;
+        position: relative;
+        display: block;
+        padding-bottom: 65px;
+    }
+    .invitationforlaunchplanmainwrapper .signupbody:after{background-color: rgba(0,0,0,0.6);}
+    .invitationtextwrapper .fromgroup input{background: #fff !important;}
+    .btnpink{
+        background: #ff0049 !important;
+        padding: 8px 11px;
+        font-family: 'RobotoBold';
+        font-size: 18px !important;
+        color: #fff !important;
+        text-transform: uppercase;
+        line-height: 18px;
+        border-radius: 0 !important;
+    }
+    .invitationbuttonwrapper{
+    display: block;
+    width: 100%;
+    float: right;
+    padding: 13px 0 !important;
+    text-align: right;
+    }
+    .invitationforlaunchplanmainwrapper .signupbody{min-height: inherit;}
+/* ------------------- invitationforlaunchplanmain css end --------------------- */
