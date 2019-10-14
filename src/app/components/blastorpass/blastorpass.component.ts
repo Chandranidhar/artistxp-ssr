@@ -384,7 +384,8 @@ export class BlastorpassComponent implements OnInit {
           this.userdata.set('producer', this.firstForm.controls['producer'].value);
           this.userdata.set('sound_engineer', this.firstForm.controls['sound_engineer'].value);
           this.userdata.set('song_writer', this.firstForm.controls['song_writer'].value);
-          //this.userdata.set('blastorpass','true');
+          this.userdata.set('blastorpass','true');
+          this.router.navigateByUrl('/signupflow');
 
           if (udetails.musicians == 1 || udetails.dancer == 1 || udetails.model == 1 || udetails.producer == 1 || udetails.fan == 1) {
 

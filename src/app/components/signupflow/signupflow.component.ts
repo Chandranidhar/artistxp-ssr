@@ -130,6 +130,9 @@ export class SignupflowComponent implements OnInit {
   };
 
   FBS.init(initParams);
+  if(this.userdata.check('blastorpass') == true && this.userdata.get('blastorpass') == 'true'){
+    this.myStepper.next();
+  }
   }
   openQueryDialog() {            //demo for dialog 
     const dialogQueryRef = this.dialog.open(QueryDialogComponent);
@@ -1061,7 +1064,7 @@ export class TermsDialogComponent {
 })
 export class GenreDialogComponent {
  
-  constructor(public dialogRef: MatDialogRef<TermsDialogComponent>,
+  constructor(public dialogRef: MatDialogRef<GenreDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
   public onNoClick(): void {
     this.dialogRef.close();

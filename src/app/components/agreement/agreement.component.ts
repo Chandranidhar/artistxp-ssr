@@ -1,11 +1,17 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, OnInit, TemplateRef, Inject, Optional} from '@angular/core';
 import { ApiService } from '../../services/api-service';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
-// import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+
+// for dialog
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {CookieService} from 'ngx-cookie-service';
 import {environment} from '../../../environments/environment';
 
+export interface DialogData {
+
+  signupdata: any;
+}
 @Component({
   selector: 'app-agreement',
   templateUrl: './agreement.component.html',
@@ -26,7 +32,7 @@ export class AgreementComponent implements OnInit {
     private userdata: CookieService;
     public invitesystem:any;
 
-  constructor(public apiservice:ApiService ,public _http: HttpClient,public router: Router,public route:ActivatedRoute, userdata: CookieService) {
+  constructor(public apiservice:ApiService ,public _http: HttpClient,public router: Router,public route:ActivatedRoute, userdata: CookieService, public dialog: MatDialog) {
     window.scrollTo(0, 0);
       this.userdata = userdata;
     this.error = 0;
@@ -58,12 +64,13 @@ export class AgreementComponent implements OnInit {
         var data = {_id: this.userid};
 
         // this._http.post(link, data)
-        this.apiservice.postDatawithoutToken('dashboard',data)
+        this.apiservice.postDatawithoutToken('datalist', { "source": "user", "condition": { "_id": this.userid } })
             .subscribe(res => {
                 let result:any;
                 result = res;
-                if (result.status == 'success' && typeof(result.item) != 'undefined'){
-                    let userdet = result.item;
+                console.log(result);
+                if (result.resc>0 && typeof(result.res) != 'undefined'){
+                    let userdet = result.res[0];
                     this.fullname = userdet.firstname+' '+userdet.lastname;
                     this.signval2 = userdet.firstname+' '+userdet.lastname;
                 }
@@ -73,21 +80,29 @@ export class AgreementComponent implements OnInit {
 
     }
 
-    openSignModal(template: TemplateRef<any>) {
+    openSignModal() {
         // this.modalRef = this.modalService.show(template, {class: 'modal-md'});
+        const dialogQueryRef = this.dialog.open(SignDialogComponent, {
+          data: { signupdata: this.fullname }
+        });
+      dialogQueryRef.afterClosed().subscribe(result => {
+        console.log('QueryDialog was closed');
+        if(typeof(result)!='undefined' && result.event == 'agree'){
+         console.log(result);
+         this.signval = result.data;
+        }else {
+         console.log('cancel');
+         console.log(result);
+        }
+      });
     }
-
-    onKey(ev){
-        this.signval2 = ev.target.value;
-    }
+    
+    
 
     cancel(){
         // this.modalRef.hide();
     }
-    agree(){
-        this.signval = this.signval2;
-        // this.modalRef.hide();
-    }
+    
 
     renderToDashboard(){                    //Rendering to audiodeadline dashboard a/c to role of an user
       this.randcode= '';
@@ -152,4 +167,32 @@ export class AgreementComponent implements OnInit {
 
 
 
+}
+
+// terms and conditions agreement policy dialog component
+@Component({
+  selector: 'sign-dialog',
+  templateUrl: 'sign-dialog.component.html',
+})
+export class SignDialogComponent {
+  public signval;
+  public signval2;
+  public currentdate;
+  constructor(public dialogRef: MatDialogRef<SignDialogComponent>,
+    //@Optional() is used to prevent error if no data is passed
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  public onNoClick(): void {
+    this.dialogRef.close({event:'Cancel'});
+  }
+  onKey(ev){
+    this.signval2 = ev.target.value;
+  }
+agree(){
+  this.signval = this.signval2;
+  this.dialogRef.close({event:'agree',data:this.signval});
+  
+  // this.modalRef.hide();
+}
+
+  
 }

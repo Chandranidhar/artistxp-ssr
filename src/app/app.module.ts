@@ -32,7 +32,7 @@ import { PrivacypolicyComponent } from './components/privacypolicy/privacypolicy
 import { TermsandconditionsComponent } from './components/termsandconditions/termsandconditions.component';
 import { CompetitionrulesComponent } from './components/competitionrules/competitionrules.component';
 import { RefundpolicyComponent } from './components/refundpolicy/refundpolicy.component';
-import { AgreementComponent } from './components/agreement/agreement.component';
+import { AgreementComponent,SignDialogComponent } from './components/agreement/agreement.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +55,7 @@ import { AgreementComponent } from './components/agreement/agreement.component';
     TermsandconditionsComponent,
     CompetitionrulesComponent,
     RefundpolicyComponent,
-    AgreementComponent
+    AgreementComponent,SignDialogComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -72,7 +72,7 @@ import { AgreementComponent } from './components/agreement/agreement.component';
     // CookieService 
   ],
   providers: [AuthGuard,CookieService,ApiService],
-  entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent,GenreDialogComponent,BlastorpassComponent, TermsDialogComponent,QueryDialogBlastComponent],
+  entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent,GenreDialogComponent,BlastorpassComponent, TermsDialogComponent,QueryDialogBlastComponent,AgreementComponent, SignDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
