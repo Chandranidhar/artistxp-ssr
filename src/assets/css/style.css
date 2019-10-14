@@ -163,6 +163,7 @@ text-transform: uppercase;}
     background: #373b3b;
     color: rgba(185, 185, 185, 0.87);
 }
+.signupflow3wrapper .mat-expansion-panel .mat-expansion-panel-body{margin-top: 10px;}
 /*------------------------------------ login css end ------------------------------------ */
 
 
@@ -226,7 +227,7 @@ text-transform: uppercase;}
     display: block;
     z-index: 9;
     padding: 55px 0;
-    padding-top: 10px;}
+    padding-top: 10px;min-height: 867px;}
 .signupflow {background-color: #1e2223;padding-bottom: 25px !important;}
 .signupfrwrapper .signupcontainer {
     position: relative;
@@ -387,6 +388,7 @@ text-transform: uppercase;}
            position: relative;overflow: inherit;
 
         }
+        .mat-step-header[aria-selected="true"]:nth-child(1) .mat-step-header-ripple:before{display: none;}
         .mat-step-header[aria-selected="true"]:after {
             content: '';
             position: absolute;
@@ -403,6 +405,7 @@ text-transform: uppercase;}
             background: -ms-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
             background: linear-gradient(to bottom, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9500', endColorstr='#ed6300', GradientType=0 );
+            z-index: 999;
             
         }
         .mat-step-header[aria-selected="true"]:nth-last-child(1):after{display: none}
@@ -417,6 +420,7 @@ text-transform: uppercase;}
             position: relative;
             z-index: 9;
             margin-left: 25px;
+            z-index: 9999;
         }
         .mat-stepper-horizontal-line{min-width: 44px !important;display: none;}
         .signupflowstepper .mat-horizontal-content-container{padding: 0;    }
@@ -429,6 +433,27 @@ text-transform: uppercase;}
             display: flex;
             justify-content: center;
         }
+        .signupflowstepper .mat-horizontal-stepper-header .mat-step-header-ripple:before{
+            content: '';
+            position: absolute;
+            left: -79px;
+            bottom: 0;
+            width: 107px;
+            background: #f60101;
+            height: 100%;
+            z-index: 99;
+            clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+            background: rgba(48,47,48,1);
+            background: -moz-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(48,47,48,1)), color-stop(50%, rgba(36,36,36,1)), color-stop(51%, rgba(26,26,26,1)), color-stop(100%, rgba(0,0,0,1)));
+            background: -webkit-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            background: -o-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            background: -ms-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            background: linear-gradient(to bottom, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f30', endColorstr='#000000', GradientType=0 );
+            overflow: hidden;
+        }
+        /* .signupflowstepper .mat-horizontal-stepper-header .mat-step-header-ripple:nth-child(1):before{direction: none;} */
         .signupflowstepper .mat-horizontal-stepper-header:before {
             content: '';
             position: absolute;
@@ -548,10 +573,11 @@ text-transform: uppercase;}
             width: 89%;
             font-size: 18px;
         }
-        .signupflow3  .mat-expansion-panel-header{border-bottom: 1px solid rgb(30, 34, 35);
-            margin-bottom: 20px;
+        .signupflow3 .mat-expansion-panel-header{border-bottom: 1px solid rgb(30, 34, 35);
+            margin-bottom: 0px;
             border-radius: 0px;
             height: 40px !important;}
+            .signupflow3 .mat-expansion-panel-header:nth-last-child(1){border: none;}
 /*------------------------------------ signup css end ------------------------------------ */
 
 /*------------------------------------ signupheader css start ------------------------------------ */
@@ -850,6 +876,7 @@ text-transform: uppercase;}
     background: -o-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
     background: -ms-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
     background: linear-gradient(to bottom, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    z-index: 999;
 }
 
 
