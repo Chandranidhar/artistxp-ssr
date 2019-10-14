@@ -83,6 +83,7 @@ export class AgreementComponent implements OnInit {
     openSignModal() {
         // this.modalRef = this.modalService.show(template, {class: 'modal-md'});
         const dialogQueryRef = this.dialog.open(SignDialogComponent, {
+          panelClass:['modal-md', 'agreementmodal'],
           data: { signupdata: this.fullname }
         });
       dialogQueryRef.afterClosed().subscribe(result => {

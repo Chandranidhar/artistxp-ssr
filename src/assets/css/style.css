@@ -183,7 +183,7 @@ text-transform: uppercase;}
 .footertop mat-list mat-list-item:hover {color: #f27300 !important}
 .footertop mat-list {width: 95%;margin: 0 auto;display: flex;flex-wrap: wrap;justify-content: center;}
 .footerbottom p {color: #7d7979;font-size: 14px;text-align: center}
-.footerbottom {padding: 25px 20px;background-color: #292929;margin-top: 27px;}
+.footerbottom {padding: 25px 20px;background-color: #292929;margin-top: 27px;margin-bottom: 0 !important;}
 .footersolist {color: #aeaeae;font-size: 20px;text-align: center;text-transform: capitalize;font-weight: normal;}
 /*------------------------------------ footer css end ------------------------------------ */
 
@@ -712,7 +712,8 @@ text-transform: uppercase;}
 .iframewrapper iframe a{pointer-events:none !important;}
 .iframewrapper{display: inline-block; height: 100%; width: 100%;}
 
-/*-------------------start Privacypolicy css -------------------------*/.main_bg {background: rgba(0, 0, 0, 0.8); padding: 8px;width: 100%;margin: 0 auto;}
+/*-------------------start Privacypolicy css -------------------------*/
+.main_bg {background: rgba(0, 0, 0, 0.8); padding: 8px;margin: 0 auto;}
 .refundpolicysubwrapper {min-height: 99vh}
 .privacywrapper {background: #edf1f7;padding:20px 40px;}
 .privacywrapper .logo_wrapper {background: black;text-align: center;padding-bottom: 15px;padding-top: 40px;padding: 13px;}
@@ -786,5 +787,73 @@ text-transform: uppercase;}
 .assignwrapper {
     padding-left: 40px;
 }
+.newsignmodal .btn{text-align: center;margin-top: 15px;
+    height: 45px;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: RobotoBlack;
+    color: #000!important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0,0,0,.2);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    text-decoration: none!important;
+    white-space: normal;
+    word-wrap: break-word;
+    border: none!important;
+    outline: 0!important;
+    box-shadow: none!important;}
+/* .newsignmodal.newsignmodal {background-color: #f6faff!important; border-radius: 5px !important; border: 5px solid #5b5959 !important; box-shadow: -4px 7px 10px #000; } */
+.newsignmodal.asnewsignmodal h1 {padding: 5px 10px;text-transform: uppercase; margin-top: 0; background: #fe376d !important; color: #fff; border-radius: 0}
+.newsignmodal.asnewsignmodal h2 { color: #333333; }
+.newsignmodal.asnewsignmodal h3 {border-left: solid 5px #fe376d}
+.newsignmodal.asnewsignmodal .asAgree {background:#fe376d; border-radius: 0; color: #fff !important; margin-right: 10px;}
+.newsignmodal.asnewsignmodal .ascancel {background:#ff8400;  border-radius: 0; color: #fff !important;}
+.newsignmodal input[type=text] {
+    display: block;
+    width: 96%;
+    border: solid 1px #ddd!important;
+    box-shadow: none;
+    padding: 0 10px;
+    outline: 0;
+    min-height: 40px;
+    font-family: RobotoRegular;
+    font-size: 18px;
+}
+.newsignmodal h3 {
+    margin: 0 0 15px 0;
+    padding: 5px 0 5px 20px;
+    color: #000;
+    font-size: 54px;
+    font-family: notera_personal_use_onlyRg!important;font-weight: normal;}
+    .newsignmodal h5 {
+        font-family: RobotoRegular;
+        margin: 0;
+        padding: 5px 0;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: normal;
+        color: #111;
+    }
 /*-------------------end Privacypolicy css -------------------------*/
 
+.backtotopbtn{background: #f47800;
+    position: fixed !important;
+    right: 7px;
+    bottom: 19px;
+    color: #fff!important;
+    background: rgba(254,148,0,1) !important;
+    background: -moz-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,148,0,1)), color-stop(100%, rgba(231,85,0,1))) !important;
+    background: -webkit-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    background: -o-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+}
+
+
+/*---------------- modal css start---------------------- */
+.modal-md{width: 36%;}
+.agreementmodal {background-color: #f6faff!important; border-radius: 5px !important;border: 5px solid #5b5959 !important; box-shadow: -4px 7px 10px #000;}
+/*---------------- modal css end---------------------- */
