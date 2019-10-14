@@ -712,7 +712,8 @@ text-transform: uppercase;}
 .iframewrapper iframe a{pointer-events:none !important;}
 .iframewrapper{display: inline-block; height: 100%; width: 100%;}
 
-/*-------------------start Privacypolicy css -------------------------*/.main_bg {background: rgba(0, 0, 0, 0.8); padding: 8px;width: 100%;margin: 0 auto;}
+/*-------------------start Privacypolicy css -------------------------*/
+.main_bg {background: rgba(0, 0, 0, 0.8); padding: 8px;margin: 0 auto;}
 .refundpolicysubwrapper {min-height: 99vh}
 .privacywrapper {background: #edf1f7;padding:20px 40px;}
 .privacywrapper .logo_wrapper {background: black;text-align: center;padding-bottom: 15px;padding-top: 40px;padding: 13px;}
