@@ -183,7 +183,7 @@ text-transform: uppercase;}
 .footertop mat-list mat-list-item:hover {color: #f27300 !important}
 .footertop mat-list {width: 95%;margin: 0 auto;display: flex;flex-wrap: wrap;justify-content: center;}
 .footerbottom p {color: #7d7979;font-size: 14px;text-align: center}
-.footerbottom {padding: 25px 20px;background-color: #292929;margin-top: 27px;}
+.footerbottom {padding: 25px 20px;background-color: #292929;margin-top: 27px;margin-bottom: 0 !important;}
 .footersolist {color: #aeaeae;font-size: 20px;text-align: center;text-transform: capitalize;font-weight: normal;}
 /*------------------------------------ footer css end ------------------------------------ */
 
@@ -837,6 +837,22 @@ text-transform: uppercase;}
         color: #111;
     }
 /*-------------------end Privacypolicy css -------------------------*/
+
+.backtotopbtn{background: #f47800;
+    position: fixed !important;
+    right: 7px;
+    bottom: 19px;
+    color: #fff!important;
+    background: rgba(254,148,0,1) !important;
+    background: -moz-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,148,0,1)), color-stop(100%, rgba(231,85,0,1))) !important;
+    background: -webkit-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    background: -o-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+}
+
+
 /*---------------- modal css start---------------------- */
 .modal-md{width: 36%;}
 .agreementmodal {background-color: #f6faff!important; border-radius: 5px !important;border: 5px solid #5b5959 !important; box-shadow: -4px 7px 10px #000;}
