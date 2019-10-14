@@ -117,6 +117,8 @@ export class SignupflowComponent implements OnInit {
   public dancerlist:any =[];
   public modellist:any =[];
   public fanlist:any =[];
+  public fan :any ;
+  public isfriend:any = [];
 
 
   constructor(public _formBuilder: FormBuilder, public f: FormService, public apiService: ApiService, public _http: HttpClient, public dialog: MatDialog, public userdata: CookieService,public FBS: FacebookService, public activeRoute:ActivatedRoute, public router:Router) {
@@ -647,16 +649,15 @@ onFileChanged(event:any) {
 }
 
   /**2nd form submit */
-  secondsubmit() {
+  secondsubmit(formval:any) {
     console.log(this.secondForm.value);
     if (this.secondForm.valid) {
       console.log(this.secondForm.value);
       console.log("this.userdata.get('_id')");
       console.log(this.userdata.get('_id'));
-      if(this.secondForm.controls['website'].value!=''){
-        for(let n in this.secondForm.controls['website'].value){
-          console.log(this.secondForm.controls['website'].value.website[n].name);
-          this.webarr.push(this.secondForm.controls['website'].value.website[n].name);
+      if(formval.website!=''){
+        for(let n in formval.website){
+          this.webarr.push(formval.website[n].name);
         }
       }
       
@@ -738,12 +739,93 @@ getUserList(){
     console.log(result);
     if(result.status == 'success'){
       this.musicianlist = result.data.musicians_data;
+      for(let i of this.musicianlist){
+          this.isfriend[i._id] = 0;
+          //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
+       
+      }
       this.dancerlist = result.data.dancer_data;
+      for(let i of this.dancerlist){
+        this.isfriend[i._id] = 0;
+        //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
+     
+    }
       this.modellist = result.data.model_data;
+      for(let i of this.modellist){
+        this.isfriend[i._id] = 0;
+        //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
+     
+    }
       this.fanlist = result.data.fan_data;
+      for(let i of this.fanlist){
+        this.isfriend[i._id] = 0;
+        //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
+     
+    }
     }
   })
 
+}
+
+// friend request functions
+addfriend(userprofile_id:any){
+  this.fan = this.userdata.get('fan');
+  this.user_id = this.userdata.get('_id');
+console.log('this.fan='+this.fan);
+  let data:any={};
+  console.log(this.fan);
+  if(this.fan==true){
+
+    data = {'friend_id':userprofile_id,'user_id': this.user_id, type:'follow'};
+  }
+  if(this.fan=='false'){
+
+    data = {'friend_id':userprofile_id,'user_id': this.user_id, type:'friend'};
+  }
+  
+  console.log(data);
+  this.apiService.postDatawithoutToken('userfriendlist',data)
+      .subscribe(res=>{
+
+        let result:any = {};
+        result = res;
+        // console.log(result);
+        /*console.log('result of userfriend list');
+         console.log(result.item.ops[0]);*/
+        if(result.status == 'success'){
+          console.log(this.user_id);
+          console.log(userprofile_id);
+          console.log(result.status);
+          console.log(result);
+          this.isfriend[userprofile_id] = 1;
+          /* console.log(result);
+           console.log(result);
+           this.userfriendlist.push(result.item);
+           console.log('this.userfriendlist');
+           console.log(this.userfriendlist);*/
+          // this.checkuserfriendrelation();
+          // console.log('isfriend called');
+        }
+
+
+      });
+}
+deletefriend(userprofile_id){
+
+  let data={'friend_id':userprofile_id,'user_id': this.user_id};
+  this.apiService.postDatawithoutToken('deleteUserFriendListByUserId',data)
+      .subscribe(res=>{
+        let result:any={};
+        result=res;
+        if(result.status == 'success'){
+          this.isfriend[userprofile_id] = 0;
+        }
+        /*console.log('result of delete userfriendlist');
+         console.log(result);*/
+        // this.checkuserfriendrelation();
+
+
+      });
 }
 
 // fourth form development

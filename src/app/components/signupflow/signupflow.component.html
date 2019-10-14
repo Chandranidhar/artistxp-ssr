@@ -196,7 +196,7 @@
                     <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
                 </mat-card-title>
 
-                <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit()">
+                <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit(secondForm.value)">
                     
                     <mat-form-field class="example-full-width fromgroup"  *ngIf="userdata.get('dancer')!=null && userdata.get('dancer') == 'true'">
                       <mat-select placeholder="Select Genre" [formControl]="secondForm.controls['dancegenre']" multiple >
@@ -429,7 +429,7 @@
                         </mat-card-title>        
                         <form class="signupflowform" [formGroup]="secondForm" >
                                 <mat-accordion class="example-headers-align signupflow3wrapper">
-                                        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                                        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" >
                                           <mat-expansion-panel-header>
                                             <mat-panel-title>
                                               Recording Artist
@@ -472,8 +472,12 @@
                                           </mat-select>
                                         </mat-form-field>
                                         <mat-form-field  class="fromgroup">
+                                          <input matInput placeholder="Zip" type="text">
+                                        </mat-form-field>
+                                        <mat-form-field  class="fromgroup">
                                           <input matInput placeholder="Name" type="text">
                                         </mat-form-field>
+                                        
                                       </form>
                                       <span class="singlecollistswrapper">
                                           <mat-list class="singlecollists ">
@@ -488,7 +492,8 @@
                                                   </h4>
                                                 </span>
                                                 <span class="singlecollistbtn">
-                                                  <a><button matbuttom>ADD</button></a>
+                                                  <a *ngIf="isfriend[item._id] == 0" (click)="addfriend(item._id)"><button matbuttom>ADD</button></a>
+                                                  <a *ngIf="isfriend[item._id] == 1" (click)="deletefriend(item._id)"><button matbuttom>CANCEL</button></a>
                                                 </span>
                                               </mat-list-item>
                                              </mat-list>
@@ -499,7 +504,7 @@
                                           </mat-action-row> -->
                                         </mat-expansion-panel>
                                       
-                                        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                                        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" >
                                           <mat-expansion-panel-header>
                                             <mat-panel-title>
                                               Dancer
@@ -513,13 +518,7 @@
                                             <mat-option>2</mat-option>
                                           </mat-select>
                                         </mat-form-field>
-                                        <mat-form-field  class="fromgroup">
-                                            <mat-label>Expertise</mat-label>
-                                          <mat-select>
-                                            <mat-option>1</mat-option>
-                                            <mat-option>2</mat-option>
-                                          </mat-select>
-                                        </mat-form-field>
+                                        
                                         <mat-form-field  class="fromgroup">
                                             <mat-label>State</mat-label>
                                           <mat-select>
@@ -543,6 +542,9 @@
                                         </mat-form-field>
                                         <mat-form-field  class="fromgroup">
                                           <input matInput placeholder="Name" type="text">
+                                        </mat-form-field>
+                                        <mat-form-field  class="fromgroup">
+                                          <input matInput placeholder="Zip" type="text">
                                         </mat-form-field>
                                       </form>
                                       <span class="singlecollistswrapper">
@@ -558,7 +560,8 @@
                                                   </h4>
                                                 </span>
                                                 <span class="singlecollistbtn">
-                                                  <a><button matbuttom>ADD</button></a>
+                                                  <a *ngIf="isfriend[item._id] == 0" (click)="addfriend(item._id)"><button matbuttom>ADD</button></a>
+                                                  <a *ngIf="isfriend[item._id] == 1" (click)="deletefriend(item._id)"><button matbuttom>CANCEL</button></a>
                                                 </span>
                                               </mat-list-item>
                                              </mat-list>
@@ -568,7 +571,7 @@
                                             <button mat-button color="primary" (click)="nextStep()">Next</button>
                                           </mat-action-row> -->
                                         </mat-expansion-panel>
-                                        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                                        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" >
                                           <mat-expansion-panel-header>
                                             <mat-panel-title>
                                               Model
@@ -577,13 +580,6 @@
                                       <form class="step3formwrapper"> 
                                         <mat-form-field  class="fromgroup">
                                             <mat-label>Genre</mat-label>
-                                          <mat-select>
-                                            <mat-option>1</mat-option>
-                                            <mat-option>2</mat-option>
-                                          </mat-select>
-                                        </mat-form-field>
-                                        <mat-form-field  class="fromgroup">
-                                            <mat-label>Expertise</mat-label>
                                           <mat-select>
                                             <mat-option>1</mat-option>
                                             <mat-option>2</mat-option>
@@ -613,6 +609,9 @@
                                         <mat-form-field  class="fromgroup">
                                           <input matInput placeholder="Name" type="text">
                                         </mat-form-field>
+                                        <mat-form-field  class="fromgroup">
+                                          <input matInput placeholder="Zip" type="text">
+                                        </mat-form-field>
                                       </form>
                                       <span class="singlecollistswrapper">
                                           <mat-list class="singlecollists ">
@@ -627,7 +626,8 @@
                                                   </h4>
                                                 </span>
                                                 <span class="singlecollistbtn">
-                                                  <a><button matbuttom>ADD</button></a>
+                                                  <a *ngIf="isfriend[item._id] == 0" (click)="addfriend(item._id)"><button matbuttom>ADD</button></a>
+                                                  <a *ngIf="isfriend[item._id] == 1" (click)="deletefriend(item._id)"><button matbuttom>CANCEL</button></a>
                                                 </span>
                                               </mat-list-item>
                                              </mat-list>
@@ -637,27 +637,14 @@
                                             <button mat-button color="primary" (click)="nextStep()">Next</button>
                                           </mat-action-row> -->
                                         </mat-expansion-panel>
-                                        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                                        <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" >
                                           <mat-expansion-panel-header>
                                             <mat-panel-title>
                                               Fan
                                             </mat-panel-title>                                            
                                           </mat-expansion-panel-header>
                                       <form class="step3formwrapper"> 
-                                        <mat-form-field  class="fromgroup">
-                                            <mat-label>Genre</mat-label>
-                                          <mat-select>
-                                            <mat-option>1</mat-option>
-                                            <mat-option>2</mat-option>
-                                          </mat-select>
-                                        </mat-form-field>
-                                        <mat-form-field  class="fromgroup">
-                                            <mat-label>Expertise</mat-label>
-                                          <mat-select>
-                                            <mat-option>1</mat-option>
-                                            <mat-option>2</mat-option>
-                                          </mat-select>
-                                        </mat-form-field>
+                                        
                                         <mat-form-field  class="fromgroup">
                                             <mat-label>State</mat-label>
                                           <mat-select>
@@ -678,6 +665,9 @@
                                             <mat-option>1</mat-option>
                                             <mat-option>2</mat-option>
                                           </mat-select>
+                                        </mat-form-field>
+                                        <mat-form-field  class="fromgroup">
+                                          <input matInput placeholder="Zip" type="text">
                                         </mat-form-field>
                                         <mat-form-field  class="fromgroup">
                                           <input matInput placeholder="Name" type="text">
@@ -696,7 +686,8 @@
                                                   </h4>
                                                 </span>
                                                 <span class="singlecollistbtn">
-                                                  <a><button matbuttom>ADD</button></a>
+                                                  <a *ngIf="isfriend[item._id] == 0" (click)="addfriend(item._id)"><button matbuttom>ADD</button></a>
+                                                  <a *ngIf="isfriend[item._id] == 1" (click)="deletefriend(item._id)"><button matbuttom>CANCEL</button></a>
                                                 </span>
                                               </mat-list-item>
                                              </mat-list>
