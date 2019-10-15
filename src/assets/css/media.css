@@ -4,6 +4,9 @@
 @media only screen and (max-width: 1730px) {
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 18px 41px !important}
 }
+@media only screen and (max-width: 1680px) {
+    .modal-sm {width: 35%;}
+}
 @media only screen and (max-width: 1640px) {
     .loginbuttonwrapper button, .loginbuttonwrapper button:hover {font-size: 20px !important}
 }
@@ -24,6 +27,7 @@
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 26px !important;font-size: 18px !important;}
 }
 @media only screen and (max-width: 1199px) {
+    .modal-sm {width: 50%;}
     .modal-md {
         width: 50%;
     }
@@ -44,6 +48,9 @@
     .loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 0px !important}
 }
 @media only screen and (max-width: 991px) {
+    .modal-sm {
+        width: 65%;
+    }
     .invitationforlaunchplanmainwrapper .signupfrwrapper {
         width: 90%;
         min-height: inherit;
@@ -85,6 +92,9 @@
     .mat-icon-button.mat-animation-noopable.cdk-touch-focused .smlmenudiv.ng-star-inserted {display: block !important;}
 }
 @media only screen and (max-width: 767px) {
+    .modal-sm {
+        width: 75%;
+    }
     .invitationforlaunchplanmainwrapper .mat-form-field-infix input {
         width: 94%;
     }
@@ -93,6 +103,9 @@
     }
 }
 @media only screen and (max-width: 620px) {
+    .modal-sm {
+        width: 100%;
+    }
     .invitationforlaunchplanmainwrapper .mat-form-field-infix input {
         width: 92%;}
     .signupflowstepper {width: 97%;}
