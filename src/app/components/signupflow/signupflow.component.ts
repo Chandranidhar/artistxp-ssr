@@ -138,14 +138,14 @@ export class SignupflowComponent implements OnInit {
   }
   }
   openQueryDialog() {            //demo for dialog 
-    const dialogQueryRef = this.dialog.open(QueryDialogComponent,{panelClass:'modal-md'});
+    const dialogQueryRef = this.dialog.open(QueryDialogComponent,{panelClass:['modal-md','infomodal']});
     dialogQueryRef.afterClosed().subscribe(result => {
       console.log('QueryDialog was closed');
     });
   }
   openTermsDialog() {            //demo for dialog 
     const dialogTermsRef = this.dialog.open(TermsDialogComponent, {
-      panelClass:'modal-md',
+      panelClass:['modal-md','infomodal'],
       data: { agreeterms: 0 }
     });
     dialogTermsRef.afterClosed().subscribe(result => {
@@ -155,7 +155,7 @@ export class SignupflowComponent implements OnInit {
   }
   openTermsDialogAgree() {            //demo for dialog 
     const dialogTermsRef = this.dialog.open(TermsDialogComponent, {
-      panelClass:'modal-md',
+      panelClass:['modal-md','infomodal'],
       data: { agreeterms: 1 }
     });
     dialogTermsRef.afterClosed().subscribe(result => {
