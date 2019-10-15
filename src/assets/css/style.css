@@ -940,11 +940,11 @@ text-transform: uppercase;}
         border-radius: 0 !important;
     }
     .invitationbuttonwrapper{
-    display: block;
-    width: 100%;
-    float: right;
-    padding: 13px 0 !important;
-    text-align: right;
+        display: block;
+        width: 100%;
+        float: right;
+        padding: 13px 0 !important;
+        text-align: right;
     }
     .invitationforlaunchplanmainwrapper .signupbody{min-height: inherit;}
 /* ------------------- invitationforlaunchplanmain css end --------------------- */
