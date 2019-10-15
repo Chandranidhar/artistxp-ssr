@@ -953,8 +953,16 @@ text-transform: uppercase;}
     cursor: pointer !important;
     border: 1px solid #64717b !important;
 }
+.modalmainwrapper mat-card-subtitle a {
+    color: #f57a00 !important;
+    background-color: #ef6b00;
+    background: -webkit-linear-gradient(#fe9400,#ed6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.modalmainwrapper mat-card-subtitle a:focus{outline: none;}
 /*---------------- modal css end---------------------- */
-
+.mat-autocomplete-panel {background: #000 !important;}
 
 /* ------------------- invitationforlaunchplanmain css start --------------------- */
 
