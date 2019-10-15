@@ -138,7 +138,7 @@ export class SignupflowComponent implements OnInit {
   }
   }
   openQueryDialog() {            //demo for dialog 
-    const dialogQueryRef = this.dialog.open(QueryDialogComponent,{panelClass:['modal-md','infomodal']});
+    const dialogQueryRef = this.dialog.open(QueryDialogComponent,{panelClass:['modal-sm','infomodal']});
     dialogQueryRef.afterClosed().subscribe(result => {
       console.log('QueryDialog was closed');
     });

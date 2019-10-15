@@ -1,11 +1,13 @@
-<h2 mat-dialog-title>This is a Dialog title</h2>
 
-<mat-dialog-content>
-
-<p>By using Artist's properties, you agree to our use of cookies, including for analytics and targeted advertising, as described in our <a [routerLink]="['/']" target="_blank" class="linktxt">Cookie Policy</a>.</p>
-</mat-dialog-content>
-
-<mat-dialog-actions>
-    <button class="mat-raised-button" [mat-dialog-close]="data.agreeterms" >I Agree</button>
-    <button class="mat-raised-button" (click)="onNoClick()">Close</button>
-</mat-dialog-actions>
+<mat-card class="modalmainwrapper">
+    <span class="modallogowrapper">
+      <img src="../../../assets/images/artistheaderlogo.png">
+    </span>
+    <mat-card-title>This is a Dialog title</mat-card-title>
+    <mat-card-subtitle>By using Artist's properties, you agree to our use of cookies, including for analytics and targeted advertising, as described in our <a [routerLink]="['/']" target="_blank" class="linktxt">Cookie Policy</a>.</mat-card-subtitle>
+    <mat-card-actions class="modalbuttonwrapper"> 
+    <button class="mat-raised-button modalclosebtn" [mat-dialog-close]="data.agreeterms" >I Agree</button>
+    <button class="mat-raised-button modalclosebtn" (click)="onNoClick()">Close</button>
+    </mat-card-actions>
+    <button mat-button class="modalclosebtn"><i class="material-icons">close</i></button>
+</mat-card>
