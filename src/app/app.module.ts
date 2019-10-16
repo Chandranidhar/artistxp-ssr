@@ -16,12 +16,14 @@ import { CookieService } from 'ngx-cookie-service';
 import { AuthGuard } from './services/auth.guard';
 // ngx-facebook import statements here
 import { FacebookModule } from 'ngx-facebook';
+// meta data module import statement
+import { MetaModule } from '@ngx-meta/core';
 // component import statements here
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignupheaderComponent } from './components/signupheader/signupheader.component';
-import { SignupflowComponent, QueryDialogComponent, TermsDialogComponent, GenreDialogComponent } from './components/signupflow/signupflow.component';
+import { SignupflowComponent, QueryDialogComponent, TermsDialogComponent, SuccessDialogComponent } from './components/signupflow/signupflow.component';
 import { ApiService } from './services/api-service';
 import { BlastorpassComponent, QueryDialogBlastComponent, TermsDialogBlastComponent } from './components/blastorpass/blastorpass.component';
 import { CompetitionComponent } from './components/competition/competition.component';
@@ -44,7 +46,7 @@ import { InvitationforlaunchplanComponent } from './components/invitationforlaun
     SignupflowComponent,
     QueryDialogComponent,
     TermsDialogComponent,
-    GenreDialogComponent,
+    SuccessDialogComponent,
     BlastorpassComponent,
     CompetitionComponent,
     CommunityComponent,
@@ -69,11 +71,12 @@ import { InvitationforlaunchplanComponent } from './components/invitationforlaun
     NgtUniversalModule,
     FormsModule, 
     ReactiveFormsModule,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    MetaModule.forRoot()
     // CookieService 
   ],
   providers: [AuthGuard,CookieService,ApiService],
-  entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent,GenreDialogComponent,BlastorpassComponent, TermsDialogComponent,QueryDialogBlastComponent,AgreementComponent, SignDialogComponent],
+  entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent,SuccessDialogComponent,BlastorpassComponent, TermsDialogComponent,QueryDialogBlastComponent,AgreementComponent, SignDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators, FormArray, FormControl, FormGroupDirective, NgForm} from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators, FormArray, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { FormService } from '../../form.service';
 import { ApiService } from '../../services/api-service';
 import { HttpClient } from '@angular/common/http';
@@ -10,16 +10,16 @@ import { map, startWith } from 'rxjs/operators';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CookieService } from 'ngx-cookie-service';
 import { MatStepper } from '@angular/material';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';             /*for comma , and enter key codes from keyboard*/
-import {MatChipInputEvent} from '@angular/material/chips';
-import { FacebookService, InitParams,UIParams, UIResponse } from 'ngx-facebook';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';             /*for comma , and enter key codes from keyboard*/
+import { MatChipInputEvent } from '@angular/material/chips';
+import { FacebookService, InitParams, UIParams, UIResponse } from 'ngx-facebook';
 declare var FB: any;
 declare var twttr: any;
-declare var $:any;
-declare var gapi:any;
-import {ErrorStateMatcher} from '@angular/material/core';
+declare var $: any;
+declare var gapi: any;
+import { ErrorStateMatcher } from '@angular/material/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { MetaService } from '@ngx-meta/core';
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -39,7 +39,7 @@ export interface DialogData {
 
 export class SignupflowComponent implements OnInit {
 
-  @ViewChild('stepper',{static:true}) public myStepper: MatStepper;
+  @ViewChild('stepper', { static: true }) public myStepper: MatStepper;
   isLinear = false;
   firstForm: FormGroup;
   secondForm: FormGroup;
@@ -54,42 +54,68 @@ export class SignupflowComponent implements OnInit {
   filteredCityOptions: Observable<string[]>;
   signup: any = {};
   public err: any = 0;
-  public isOptional:any = false;
+  public isOptional: any = false;
 
   // fourthg form 
-  @ViewChild('gsharelink1',{static:true}) gsharelink1: ElementRef;
-  @ViewChild('gsharelink2',{static:true}) gsharelink2: ElementRef;
-  @ViewChild('gsharelink3',{static:true}) gsharelink3: ElementRef;
-  @ViewChild('gsharelink4',{static:true}) gsharelink4: ElementRef;
-  
-  public FB_APP_ID:any;
-  public FB_APP_SECRET:any;
-  public LI_CLIENT_ID:any;
-  public LI_CLIENT_SECRET:any;
-  public usercookie:any;
-  public affiliatename:any;
-  public username:any;
-  public userdetails:any;
-  public submitmodal:any = false;
-  public firstname:any;
-  public lastname:any;
-  public user_id:any;
-  public auth2 :any;
-  public admsg :any = 0;
-  public axmsg :any = 0;
-  public socialmediaerror:any = 0;
-  public dataForm: FormGroup;
-  private fb;
+  @ViewChild('gsharelink1', { static: true }) gsharelink1: ElementRef;
+  @ViewChild('gsharelink2', { static: true }) gsharelink2: ElementRef;
+  @ViewChild('gsharelink3', { static: true }) gsharelink3: ElementRef;
+  @ViewChild('gsharelink4', { static: true }) gsharelink4: ElementRef;
+
+  public FB_APP_ID: any;
+  public FB_APP_SECRET: any;
+  public LI_CLIENT_ID: any;
+  public LI_CLIENT_SECRET: any;
+  public usercookie: any;
+  public affiliatename: any;
+  public username: any;
+  public userdetails: any;
+  public submitmodal: any = false;
+  public firstname: any;
+  public lastname: any;
+  public user_id: any;
+
+
+
+
+  // 2nd form 
+  public instrument_list = ['Accordion', 'Bagpipes', 'Banjo', 'Bass guitar', 'Bassoon', 'Berimbau', 'Bongo', 'Cello', 'Clarinet', 'Clavichord', 'Coranglais', 'Cornet', 'Cymbal', 'Didgeridoo', 'DJ Controller', 'Double bass', 'Drum kit', 'Euphonium', 'Flute', 'French horn', 'Glass harmonica', 'Glockenspiel', 'Gong', 'Guitar', 'Hang', 'Harmonica', 'Harp', 'Harpsichord', 'Hammered dulcimer', 'Hurdy gurdy', 'Jew’s harp', 'Kalimba', 'Lute', 'Lyre', 'Mandolin', 'Marimba', 'Melodica', 'Mixing Software', 'Oboe', 'Ocarina', 'Octobass', 'Organ', 'Oud', 'Pan Pipes', 'Pennywhistle', 'Piano', 'Piccolo', 'Pungi', 'Recorder', 'Saxophone', 'Sitar', 'Synthesizer', 'Tambourine', 'Timpani', 'Triangle', 'Trombone', 'Trumpet', 'Theremin', 'Tuba', 'Ukulele', 'Viola', 'Violin', 'Whamola', 'Xylophone', 'Zither'];
+
+  public musicgenreList: any = ['Hip Hop', 'Rap', 'Trap', 'Pop', 'EDM', 'Techno', 'Trance', 'Trap', 'Dubstep', 'Country', 'Blues', 'Grunge', 'Indie Rock', 'Classic Rock', 'Punk', 'Ska', 'Heavy Metal', 'Folk', 'Jazz', 'Reggae', 'Classical', 'Latin Pop', 'Latin Rock', 'Cumbia'];
+
+  public dancegenrelist: any = ['Hip hop', 'Break Dance', 'Other Urban', 'Latin/Rhythm', 'Free and Improvised Dance', 'American Rhythm', 'Ballroom', 'EDM House', 'Disco', 'Historical', 'Bollywood Dance', 'Country Dance', 'Belly Dance', 'Ceremonial Dance', 'Ballet'];
+
+  public modelgenrelist: any = ['Fashion model', 'Editorial Fashion model', 'Fashion catalogue model', 'Runway model', 'Commercial model', 'Print model', 'Glamour model', 'Promotional model', 'Lingerie model', 'Catalog model', 'Petite  model', 'Mature model', 'Freelance model', 'Fitness model', 'Parts model', 'Plus-size model', 'Art model', 'Pinup model', 'Alternative model', 'Social influencer', 'Teen/Junior model', 'Black-tape model', 'Body paint model', 'Hiphop model', 'Instagram model'];
+  public webarr: any = [];
+  public website: any = [];
+  public image;
+  public serverimagename: any;
+  public selectedFile: File;
+
+  // 3rd step declaration
+  public step = 0;
+  public musicianlist: any = [];
+  public dancerlist: any = [];
+  public modellist: any = [];
+  public fanlist: any = [];
+  public fan: any;
+  public isfriend: any = [];
+
+  // 4th step declaration
   /*mat chip initialisation starts here*/
+  public auth2: any;
+  public admsg: any = 0;
+  public axmsg: any = 0;
+  public socialmediaerror: any = 0;
   visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  contactarray: any= [];
-  public userContacts: any=[];
+  contactarray: any = [];
+  public userContacts: any = [];
   public checkemail: any = 0;
-  public invitesystem:any;
+  public invitesystem: any;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -97,89 +123,70 @@ export class SignupflowComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   /*mat chip initialisation ends here*/
 
+  constructor(public _formBuilder: FormBuilder, public f: FormService, public apiService: ApiService, public _http: HttpClient, public dialog: MatDialog, public userdata: CookieService, public FBS: FacebookService, public activeRoute: ActivatedRoute, public router: Router, public readonly meta: MetaService) {
+    
+    this.meta.setTitle('ArtistXP');
+    this.meta.setTag('og:description', 'Musicians, Dancers, Models, Producers, Rappers, Affiliates and Fans can Sign up with ArtistXP to benefit from the advantages of the Social Network for Artists.');
+    this.meta.setTag('og:title', 'ArtistXP.com – Signup To Get Started With The Only Social Network For Artists');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:image', 'https://audiodeadline-serverless.s3.us-east-2.amazonaws.com/uploads/banner/ArtistXP_Social_Banner.jpg');
+    this.meta.setTag('og:keywords', 'Musicians, Artists, Producers, Dancers, Models, Affiliates, Rappers, Fans');
 
-  // 2nd form 
-  public instrument_list = ['Accordion', 'Bagpipes', 'Banjo', 'Bass guitar', 'Bassoon', 'Berimbau', 'Bongo', 'Cello', 'Clarinet', 'Clavichord' , 'Coranglais', 'Cornet', 'Cymbal', 'Didgeridoo', 'DJ Controller', 'Double bass', 'Drum kit', 'Euphonium', 'Flute', 'French horn', 'Glass harmonica', 'Glockenspiel', 'Gong', 'Guitar', 'Hang', 'Harmonica', 'Harp', 'Harpsichord', 'Hammered dulcimer', 'Hurdy gurdy', 'Jew’s harp', 'Kalimba', 'Lute', 'Lyre', 'Mandolin', 'Marimba', 'Melodica', 'Mixing Software', 'Oboe', 'Ocarina', 'Octobass', 'Organ', 'Oud', 'Pan Pipes', 'Pennywhistle', 'Piano', 'Piccolo', 'Pungi', 'Recorder', 'Saxophone', 'Sitar', 'Synthesizer', 'Tambourine', 'Timpani', 'Triangle', 'Trombone', 'Trumpet', 'Theremin', 'Tuba', 'Ukulele', 'Viola', 'Violin', 'Whamola', 'Xylophone', 'Zither'];
-
-  public musicgenreList:any = ['Hip Hop', 'Rap', 'Trap', 'Pop', 'EDM', 'Techno', 'Trance', 'Trap', 'Dubstep', 'Country', 'Blues', 'Grunge', 'Indie Rock', 'Classic Rock', 'Punk', 'Ska', 'Heavy Metal', 'Folk', 'Jazz', 'Reggae', 'Classical', 'Latin Pop', 'Latin Rock', 'Cumbia'];  
-
-  public dancegenrelist:any = [ 'Hip hop', 'Break Dance', 'Other Urban', 'Latin/Rhythm', 'Free and Improvised Dance', 'American Rhythm', 'Ballroom','EDM House', 'Disco', 'Historical', 'Bollywood Dance', 'Country Dance', 'Belly Dance', 'Ceremonial Dance', 'Ballet'];
-
-  public modelgenrelist:any = [ 'Fashion model','Editorial Fashion model','Fashion catalogue model','Runway model','Commercial model','Print model','Glamour model','Promotional model','Lingerie model','Catalog model','Petite  model','Mature model','Freelance model','Fitness model','Parts model','Plus-size model','Art model','Pinup model','Alternative model','Social influencer','Teen/Junior model','Black-tape model','Body paint model','Hiphop model','Instagram model'];
-  public webarr:any = [];
-  public website:any = [];
-  public image;
-  public serverimagename:any ;
-  public selectedFile:File;
-
-  // 3rd step declaration
-  public step = 0;
-  public musicianlist:any =[];
-  public dancerlist:any =[];
-  public modellist:any =[];
-  public fanlist:any =[];
-  public fan :any ;
-  public isfriend:any = [];
-
-
-  constructor(public _formBuilder: FormBuilder, public f: FormService, public apiService: ApiService, public _http: HttpClient, public dialog: MatDialog, public userdata: CookieService,public FBS: FacebookService, public activeRoute:ActivatedRoute, public router:Router) {
+    
+    this.meta.setTag('twitter:description', 'Musicians, Dancers, Models, Producers, Rappers, Affiliates and Fans can Sign up with ArtistXP to benefit from the advantages of the Social Network for Artists.');
+    this.meta.setTag('twitter:title', 'ArtistXP.com – Signup To Get Started With The Only Social Network For Artists');
+    this.meta.setTag('twitter:card', 'summary_large_image');
+    this.meta.setTag('twitter:image', 'https://audiodeadline-serverless.s3.us-east-2.amazonaws.com/uploads/banner/ArtistXP_Social_Banner.jpg');
+   
+    
     this.fstgen();
     this.secgen();
     this.fourthFormGenerate();
-    this.openTermsDialog();
     let initParams: InitParams = {
       appId: '2034821446556410',
       xfbml: true,
       version: 'v2.8'
-  };
+    };
 
-  FBS.init(initParams);
-  if(this.userdata.check('blastorpass') == true && this.userdata.get('blastorpass') == 'true'){
-    this.myStepper.next();
-  }
+    FBS.init(initParams);
+    if (this.userdata.check('blastorpass') == true && this.userdata.get('blastorpass') == 'true') {
+      this.myStepper.next();
+    }
   }
   openQueryDialog() {            //demo for dialog 
-    const dialogQueryRef = this.dialog.open(QueryDialogComponent,{panelClass:['modal-sm','infomodal']});
-    dialogQueryRef.afterClosed().subscribe(result => {
-      console.log('QueryDialog was closed');
-    });
+    const dialogQueryRef = this.dialog.open(QueryDialogComponent, { panelClass: ['modal-sm', 'infomodal'] });
+
   }
   openTermsDialog() {            //demo for dialog 
     const dialogTermsRef = this.dialog.open(TermsDialogComponent, {
-      panelClass:['modal-md','infomodal'],
+      panelClass: ['modal-md', 'infomodal'],
       data: { agreeterms: 0 }
     });
     dialogTermsRef.afterClosed().subscribe(result => {
       console.log('TermsDialog was closed');
-      console.log(result);
     });
   }
   openTermsDialogAgree() {            //demo for dialog 
     const dialogTermsRef = this.dialog.open(TermsDialogComponent, {
-      panelClass:['modal-md','infomodal'],
+      panelClass: ['modal-md', 'infomodal'],
       data: { agreeterms: 1 }
     });
     dialogTermsRef.afterClosed().subscribe(result => {
-      console.log('TermsDialog was closed');
-      console.log(result);
-      if(result == 1){
-
+      if (result == 1) {
         this.agreetotermsFunc();
       }
     });
   }
 
-  openGenreDialog() {            //demo for dialog 
-    const dialogGenreRef = this.dialog.open(GenreDialogComponent, {
-     panelClass:'myClass',
-      data: { agreeterms: 0 }
+  openSuccessDialog() {            //demo for dialog 
+    const dialogGenreRef = this.dialog.open(SuccessDialogComponent, {
+      panelClass: ['modal-sm', 'infomodal']
     });
     dialogGenreRef.afterClosed().subscribe(result => {
-      console.log('GenreDialog was closed');
-      console.log(result);
+      console.log('SuccessDialogComponent was closed');
     });
   }
-  
+
 
   emailcheck(email) {
     this.apiService.postDatawithoutToken('datalist', { "source": "user", "condition": { "email": email } })
@@ -187,8 +194,6 @@ export class SignupflowComponent implements OnInit {
         let result1: any = {};
         result1 = res;
         this.signup = result1.resc;
-        console.log(result1.resc);
-        console.log(this.signup);
         if (this.signup == 1) {
           this.err = 1;
           console.log(this.err);
@@ -201,21 +206,19 @@ export class SignupflowComponent implements OnInit {
 
   getCountryStateCityList() {
     // this._http.get("assets/json/country.json")
-    this.apiService.getJsonObject('assets/json/country.json')
+    this.apiService.getJsonObject('assets/json/country.json')     // json for english-speaking-country
       .subscribe(res => {
         let result: any;
         result = res;
-        console.log('result in Country----');
-        console.log(result);
         this.countrylistarray = result;
       });
-    this.apiService.getJsonObject('assets/json/state.json')
+    this.apiService.getJsonObject('assets/json/state.json')   // json for states of world
       .subscribe(res => {
         let result2: any;
         result2 = res;
         this.statelistarray = result2;
       });
-    this.apiService.getJsonObject('assets/json/cities.json')
+    this.apiService.getJsonObject('assets/json/cities.json')     // json for cities of world
       .subscribe(res => {
         let result3: any;
         result3 = res;
@@ -240,7 +243,7 @@ export class SignupflowComponent implements OnInit {
         startWith(''),
         map(value => this._filter(this.selectedstatearray, value))
       );
-    
+
   }
 
   setCitylist() {
@@ -284,7 +287,7 @@ export class SignupflowComponent implements OnInit {
     // );
 
   }
-  
+
 
 
   private _filter(array: any, value: string): string[] {
@@ -292,7 +295,7 @@ export class SignupflowComponent implements OnInit {
 
     return array.filter(option => option.name.toLowerCase().includes(filterValue));
   }
-  
+
 
   fstgen() {
     this.firstForm = this._formBuilder.group({
@@ -332,7 +335,21 @@ export class SignupflowComponent implements OnInit {
       ethnicity: [null],
 
 
-    });
+    },{validator: this.matchingPasswords('password', 'confirmpassword')});
+  }
+  public matchingPasswords(passwordKey: string, confirmPasswordKey: string){
+    return (group: FormGroup): {[key: string]: any} => {
+
+      let password = group.controls[passwordKey];
+      let confirmPassword = group.controls[confirmPasswordKey];
+
+      if (password.value !== confirmPassword.value){
+        confirmPassword.setErrors({'incorrect': true});
+        return {
+          mismatchedPasswords: true
+        };
+      }
+    }
   }
   accounttype() {
     if (this.firstForm.value.fans == true) {
@@ -368,7 +385,6 @@ export class SignupflowComponent implements OnInit {
 
   /**submit function */
   firstsubmit() {
-    // this.emailcheck(this.firstForm.controls['email'].value);
     this.firstForm.markAllAsTouched();
     if (this.firstForm.valid) {
       this.apiService.postDatawithoutToken('datalist', { "source": "user", "condition": { "email": this.firstForm.controls['email'].value } })
@@ -399,8 +415,6 @@ export class SignupflowComponent implements OnInit {
 
 
   agreetotermsFunc() {
-    // if(this.agreedtoterms == true){
-    // var link = this._commonservices.nodesslurl1+'signupartistxp';
     var data = {
       firstname: this.firstForm.controls['firstname'].value,
       lastname: this.firstForm.controls['lastname'].value,
@@ -421,8 +435,6 @@ export class SignupflowComponent implements OnInit {
       producer: this.firstForm.controls['producer'].value,
       sound_engineer: this.firstForm.controls['sound_engineer'].value,
       song_writer: this.firstForm.controls['song_writer'].value,
-      // parent: this.parent,
-      // mediaid: this.mediaid,
       dancer: 0,
       model: 0,
       musicians: 0,
@@ -455,23 +467,17 @@ export class SignupflowComponent implements OnInit {
       data.signupaffiliate = 1;
     }
 
-    // this._http.post(link, data)
     this.apiService.postDatawithoutToken('signupartistxp', data)
       .subscribe(res => {
         let result: any;
         result = res;
         if (result.status == 'success') {
-          // this.agreecookiemodal = false; // modal close here
-          // this.termsmodal.onNoClick();
-          // console.log(this.agreeval);
           this.dialog.closeAll();
-          console.log('this.myStepper');
-          console.log(this.myStepper);
-            this.myStepper.next();
-          
-          
+          this.myStepper.next();      //invoke function to go to the next step of element stepper 
+
+
           let udetails = result.result.ops[0];
-          this.userdata.set('_id',result.result.ops[0]._id);
+          this.userdata.set('_id', result.result.ops[0]._id);
           this.userdata.set('firstname', data.firstname);
           this.userdata.set('lastname', data.lastname);
           this.userdata.set('username', data.email);
@@ -487,8 +493,7 @@ export class SignupflowComponent implements OnInit {
           this.userdata.set('producer', this.firstForm.controls['producer'].value);
           this.userdata.set('sound_engineer', this.firstForm.controls['sound_engineer'].value);
           this.userdata.set('song_writer', this.firstForm.controls['song_writer'].value);
-          this.userdata.set('blastorpass','false');
-          console.log(this.userdata.getAll());
+          this.userdata.set('blastorpass', 'false');
           if (udetails.musicians == 1 || udetails.dancer == 1 || udetails.model == 1 || udetails.producer == 1 || udetails.fan == 1) {
 
             // this.userdata.set('signupuserdata',JSON.stringify(udetails));
@@ -534,17 +539,17 @@ export class SignupflowComponent implements OnInit {
   /**2nd form genarate */
   secgen() {
     this.secondForm = this._formBuilder.group({
-      
-      musicgenre:[''],
-      dancegenre:[''],
-      modelgenre:[''],
-      instrumentgenre:[''],
+
+      musicgenre: [''],
+      dancegenre: [''],
+      modelgenre: [''],
+      instrumentgenre: [''],
       height: [null],
       waist: [null],
       weight: [null],
       hips: [null],
       bust: [null],
-      ethnicity:[null],
+      ethnicity: [null],
 
       beginning: false,
       elementary: false,
@@ -558,25 +563,25 @@ export class SignupflowComponent implements OnInit {
   createWebsite(defaultVal): FormGroup {
     if (this.userdata.get('fan') == 'false') {
 
-      return this._formBuilder.group({name: [defaultVal]});
+      return this._formBuilder.group({ name: [defaultVal] });
       // return this.fb.group({name: [defaultVal, Validators.required]});
     }
     else {
-      return this._formBuilder.group({name: ['']});
+      return this._formBuilder.group({ name: [''] });
     }
   }
 
   get websites(): FormGroup {
     return this.secondForm.get('website') as FormGroup;
   }
-  addWebsite(defaultVal){
+  addWebsite(defaultVal) {
     this.website = this.secondForm.get('website') as FormArray;
     this.website.push(this.createWebsite(defaultVal));
   }
 
-  delWebsite(index){
+  delWebsite(index) {
     const control = <FormArray>this.secondForm.controls['website'];
-    if(control.length > 1)
+    if (control.length > 1)
       control.removeAt(index);
   }
 
@@ -620,51 +625,45 @@ export class SignupflowComponent implements OnInit {
 
   }
 
-  
+
   /**array filds for website */
-  
-// upload function
-onFileChanged(event:any) {
-  console.log(event.target.files);
-  if(event.target.files!=null)
-  this.selectedFile = event.target.files[0];
-  const uploadData = new FormData();
-  uploadData.append('file', this.selectedFile);
-  uploadData.append('type', 'profile-picture');
-  uploadData.append('prefix', 'profile-picture');
-  uploadData.append('conversion_needed', 'profile-picture');
-  uploadData.append('servername', 'artistxp');
-  uploadData.append('bucketname', 'file.audiodeadline.com');
-  uploadData.append('conversion_needed', '0');
-  console.log(uploadData);
-  // this._http.post(this.uploadurl, uploadData)
-  this.apiService.postUploadFunction(uploadData,'artistxp')
+
+  // upload function
+  onFileChanged(event: any) {
+    if (event.target.files != null)
+      this.selectedFile = event.target.files[0];
+    const uploadData = new FormData();
+    uploadData.append('file', this.selectedFile);
+    uploadData.append('type', 'profile-picture');
+    uploadData.append('prefix', 'profile-picture');
+    uploadData.append('conversion_needed', 'profile-picture');
+    uploadData.append('servername', 'artistxp');
+    uploadData.append('bucketname', 'file.audiodeadline.com');
+    uploadData.append('conversion_needed', '0');
+    console.log(uploadData);
+    // this._http.post(this.uploadurl, uploadData)
+    this.apiService.postUploadFunction(uploadData, 'artistxp')
       .subscribe(event => {
-        let res:any;
+        let res: any;
         res = event;
-        console.log(res);
-        if(res.status == 'success'){
-          this.image = res.basepath+'/artistxp/'+res.data.fileservername;
+        if (res.status == 'success') {
+          this.image = res.basepath + '/artistxp/' + res.data.fileservername;
           this.serverimagename = res.data.fileservername;
           console.log(this.image);
         }
       });
-}
+  }
 
   /**2nd form submit */
-  secondsubmit(formval:any) {
-    console.log(this.secondForm.value);
+  secondsubmit(formval: any) {
     if (this.secondForm.valid) {
-      console.log(this.secondForm.value);
-      console.log("this.userdata.get('_id')");
-      console.log(this.userdata.get('_id'));
-      if(formval.website!=''){
-        for(let n in formval.website){
+      if (formval.website != '') {
+        for (let n in formval.website) {
           this.webarr.push(formval.website[n].name);
         }
       }
-      
-      
+
+
       var data = {
         _id: this.userdata.get('_id'),
         musicgenre: this.secondForm.controls['musicgenre'].value,
@@ -685,26 +684,25 @@ onFileChanged(event:any) {
         images: this.serverimagename,
         website: this.webarr,
       };
-      this.apiService.postDatawithoutToken('signup2post',data)
-      .subscribe(res => {
-        let result:any;
-        result = res;
-        if(result.status=='success'){
-          console.log('success block--');
-          this.userdata.delete('affiliatename');
-          this.userdata.delete('mediaid');
-          this.userdata.delete('signupuserdata');
-          this.myStepper.next();
-         /* if(this.userdetails.signupaffiliate == 1){
-
-          }else{
-            this.router.navigateByUrl('/');
-            console.log('else success block--');
-          }*/
-        }
-      }, error => {
-        console.log("Oooops!");
-      });
+      this.apiService.postDatawithoutToken('signup2post', data)
+        .subscribe(res => {
+          let result: any;
+          result = res;
+          if (result.status == 'success') {
+            this.userdata.delete('affiliatename');
+            this.userdata.delete('mediaid');
+            this.userdata.delete('signupuserdata');
+            this.myStepper.next();
+            /* if(this.userdetails.signupaffiliate == 1){
+   
+             }else{
+               this.router.navigateByUrl('/');
+               console.log('else success block--');
+             }*/
+          }
+        }, error => {
+          console.log("Oooops!");
+        });
 
     }
     else {
@@ -712,8 +710,8 @@ onFileChanged(event:any) {
     }
   }
 
-// 3rd form functions
-// expansion panel functions
+  // 3rd form functions
+  // expansion panel functions starts here
 
 
   setStep(index: number) {
@@ -727,189 +725,166 @@ onFileChanged(event:any) {
   prevStep() {
     this.step--;
   }
+  // expansion panel functions ends here
+  // user list data 
+  getUserList() {
 
-// user list data 
-getUserList(){
- 
-  this.apiService.postDatawithoutToken('roleuserdata',{
-    "limit" : 30,
-    "skip" : 0
-})
-  .subscribe(res=>{
-    let result:any = {};
-    result = res;
-    console.log('result in userlist call');
-    console.log(result);
-    if(result.status == 'success'){
-      this.musicianlist = result.data.musicians_data;
-      for(let i of this.musicianlist){
-          this.isfriend[i._id] = 0;
-          //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
-       
-      }
-      this.dancerlist = result.data.dancer_data;
-      for(let i of this.dancerlist){
-        this.isfriend[i._id] = 0;
-        //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
-     
-    }
-      this.modellist = result.data.model_data;
-      for(let i of this.modellist){
-        this.isfriend[i._id] = 0;
-        //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
-     
-    }
-      this.fanlist = result.data.fan_data;
-      for(let i of this.fanlist){
-        this.isfriend[i._id] = 0;
-        //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
-     
-    }
-    }
-  })
-
-}
-
-// friend request functions
-addfriend(userprofile_id:any){
-  this.fan = this.userdata.get('fan');
-  this.user_id = this.userdata.get('_id');
-console.log('this.fan='+this.fan);
-  let data:any={};
-  console.log(this.fan);
-  if(this.fan==true){
-
-    data = {'friend_id':userprofile_id,'user_id': this.user_id, type:'follow'};
-  }
-  if(this.fan=='false'){
-
-    data = {'friend_id':userprofile_id,'user_id': this.user_id, type:'friend'};
-  }
-  
-  console.log(data);
-  this.apiService.postDatawithoutToken('userfriendlist',data)
-      .subscribe(res=>{
-
-        let result:any = {};
+    this.apiService.postDatawithoutToken('roleuserdata', {
+      "limit": 30,
+      "skip": 0
+    })
+      .subscribe(res => {
+        let result: any = {};
         result = res;
-        // console.log(result);
-        /*console.log('result of userfriend list');
-         console.log(result.item.ops[0]);*/
-        if(result.status == 'success'){
-          console.log(this.user_id);
-          console.log(userprofile_id);
-          console.log(result.status);
-          console.log(result);
+        if (result.status == 'success') {
+          this.musicianlist = result.data.musicians_data;
+          for (let i of this.musicianlist) {
+            this.isfriend[i._id] = 0;
+            //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
+
+          }
+          this.dancerlist = result.data.dancer_data;
+          for (let i of this.dancerlist) {
+            this.isfriend[i._id] = 0;
+            //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
+
+          }
+          this.modellist = result.data.model_data;
+          for (let i of this.modellist) {
+            this.isfriend[i._id] = 0;
+            //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
+
+          }
+          this.fanlist = result.data.fan_data;
+          for (let i of this.fanlist) {
+            this.isfriend[i._id] = 0;
+            //this.friendCheck(item._id);           //for checking if user already sent friendrequest or not
+
+          }
+        }
+      })
+
+  }
+
+  // friend request functions
+  addfriend(userprofile_id: any) {
+    this.fan = this.userdata.get('fan');
+    this.user_id = this.userdata.get('_id');
+    let data: any = {};
+    if (this.fan == true) {
+
+      data = { 'friend_id': userprofile_id, 'user_id': this.user_id, type: 'follow' };
+    }
+    if (this.fan == 'false') {
+
+      data = { 'friend_id': userprofile_id, 'user_id': this.user_id, type: 'friend' };
+    }
+    this.apiService.postDatawithoutToken('userfriendlist', data)
+      .subscribe(res => {
+
+        let result: any = {};
+        result = res;
+        if (result.status == 'success') {
           this.isfriend[userprofile_id] = 1;
-          /* console.log(result);
-           console.log(result);
-           this.userfriendlist.push(result.item);
-           console.log('this.userfriendlist');
-           console.log(this.userfriendlist);*/
-          // this.checkuserfriendrelation();
-          // console.log('isfriend called');
         }
 
 
       });
-}
-deletefriend(userprofile_id){
+  }
+  deletefriend(userprofile_id) {
 
-  let data={'friend_id':userprofile_id,'user_id': this.user_id};
-  this.apiService.postDatawithoutToken('deleteUserFriendListByUserId',data)
-      .subscribe(res=>{
-        let result:any={};
-        result=res;
-        if(result.status == 'success'){
+    let data = { 'friend_id': userprofile_id, 'user_id': this.user_id };
+    this.apiService.postDatawithoutToken('deleteUserFriendListByUserId', data)
+      .subscribe(res => {
+        let result: any = {};
+        result = res;
+        if (result.status == 'success') {
           this.isfriend[userprofile_id] = 0;
         }
-        /*console.log('result of delete userfriendlist');
-         console.log(result);*/
-        // this.checkuserfriendrelation();
 
 
       });
-}
+  }
 
-// fourth form development
-fourthFormGenerate() {
-  this.fourthForm = this._formBuilder.group({
-    /*fullname: ["", Validators.required],*/
-    socialinvite: [""],
-    socialcontact: [""],
-    /* emailcontact:  ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],*/
-    /*phoneno: ["", Validators.required],*/
-    audiodeadlinemsg: ["I just found an awesome online streaming show that I think you would be interested in! It is based on a quarterly live streamed show that will showcase artists of all kinds such as, musicians, dancers, producers, and rappers. The artists go head to head in a competition where they show their best work and we get to vote on our favorite artist! When the best of the best is picked by the community, we get to watch them go head to head and collaborate on an original song that they will have only 8-hours to complete! This is a chance to see artists in live action in a real time studio making their creativity come to life. Don’t miss out and check it out now!"],
-    artistxpmsg: ["Come join ArtistXP with me! I just joined this new social media that is full of fun and exciting features that I think you would enjoy too! They are all about a tight knit artist community where independent artists are even closer to their fans than ever before. As an artist you will be able to consolidate where all your work is located no matter what social media you use the most. They can do artist exchanges where it promotes all artists to work together by sharing each other’s artistry! As a fan we have front row seats to watch their creativity bloom. There is so much more it has to offer; all you need to do is come join me in this amazing community. Check it out now!"],
-  });
-}
+  // fourth form development
+  fourthFormGenerate() {
+    this.fourthForm = this._formBuilder.group({
+      /*fullname: ["", Validators.required],*/
+      socialinvite: [""],
+      socialcontact: [""],
+      /* emailcontact:  ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],*/
+      /*phoneno: ["", Validators.required],*/
+      audiodeadlinemsg: ["I just found an awesome online streaming show that I think you would be interested in! It is based on a quarterly live streamed show that will showcase artists of all kinds such as, musicians, dancers, producers, and rappers. The artists go head to head in a competition where they show their best work and we get to vote on our favorite artist! When the best of the best is picked by the community, we get to watch them go head to head and collaborate on an original song that they will have only 8-hours to complete! This is a chance to see artists in live action in a real time studio making their creativity come to life. Don’t miss out and check it out now!"],
+      artistxpmsg: ["Come join ArtistXP with me! I just joined this new social media that is full of fun and exciting features that I think you would enjoy too! They are all about a tight knit artist community where independent artists are even closer to their fans than ever before. As an artist you will be able to consolidate where all your work is located no matter what social media you use the most. They can do artist exchanges where it promotes all artists to work together by sharing each other’s artistry! As a fan we have front row seats to watch their creativity bloom. There is so much more it has to offer; all you need to do is come join me in this amazing community. Check it out now!"],
+    });
+  }
 
-  sendsocialinvite(){
+  sendsocialinvite() {
     console.log("this.fourthForm.controls['socialinvite'].value");
     console.log(this.fourthForm.controls['socialinvite'].value);
     this.socialmediaerror = 0;
-    if(this.fourthForm.controls['socialinvite'].value==""){
+    if (this.fourthForm.controls['socialinvite'].value == "") {
       this.socialmediaerror = 1;
     }
-    if(this.fourthForm.controls['socialinvite'].value=="twitter"){
-      setTimeout(()=> {
+    if (this.fourthForm.controls['socialinvite'].value == "twitter") {
+      setTimeout(() => {
         this.gsharelink1.nativeElement.click();
       }, 500);
     }
-    if(this.fourthForm.controls['socialinvite'].value=="linkedin"){
-      setTimeout(()=> {
+    if (this.fourthForm.controls['socialinvite'].value == "linkedin") {
+      setTimeout(() => {
         this.gsharelink3.nativeElement.click();
       }, 500);
     }
-    if(this.fourthForm.controls['socialinvite'].value=="tumblr"){
-      setTimeout(()=> {
+    if (this.fourthForm.controls['socialinvite'].value == "tumblr") {
+      setTimeout(() => {
         this.gsharelink4.nativeElement.click();
       }, 500);
     }
-    if(this.fourthForm.controls['socialinvite'].value=="facebook"){
-      setTimeout(()=> {
+    if (this.fourthForm.controls['socialinvite'].value == "facebook") {
+      setTimeout(() => {
         this.gsharelink2.nativeElement.click();
       }, 500);
     }
   }
 
-  sendartistxpmsg(){
-    
+  sendartistxpmsg() {
+
     // let link :any = this._commonservices.nodesslurl+'artistxpemailsend';
-    let data = {'artistxpmsg':this.fourthForm.controls['artistxpmsg'].value,emails:this.contactarray,'fullname':this.userdetails.firstname+' '+this.userdetails.lastname};
+    let data = { 'artistxpmsg': this.fourthForm.controls['artistxpmsg'].value, emails: this.contactarray, 'fullname': this.userdetails.firstname + ' ' + this.userdetails.lastname };
     console.log(data);
     this.apiService.postDatawithoutToken('artistxpemailsend', data)
-    // this._http.post(link,data)
-        .subscribe(res=>{
-          let result:any;
-          result = res;
-          if(result.status == "success"){
-            this.contactarray = [];
-          }
-        });
+      // this._http.post(link,data)
+      .subscribe(res => {
+        let result: any;
+        result = res;
+        if (result.status == "success") {
+          this.contactarray = [];
+        }
+      });
   }
-  postinfb2(username){
+  postinfb2(username) {
     // var link = this._commonservices.phpurlforshare+'sharetool2.php?media_id=ArtistXP_Social_Banner.jpg&username='+username+'&image=ArtistXP_Social_Banner.jpg&submittype=signup';
-    
+
     let options: any = {};
     options = {
       method: 'share',
 
       // href: this._commonservices.phpurlforshare+'sharetool2.php?media_id=ArtistXP_Social_Banner.jpg&username='+username+'&image=ArtistXP_Social_Banner.jpg&submittype=signup'
-  };
-  this.FBS.ui(options)
-                    .then((res: UIResponse) => {
-                        // console.log('Got the users profile', res);
-                    })
-                    .catch(this.handleError);
+    };
+    this.FBS.ui(options)
+      .then((res: UIResponse) => {
+        // console.log('Got the users profile', res);
+      })
+      .catch(this.handleError);
   }
   private handleError(error) {
     console.error('Error processing action', error);
-}
+  }
   /*-------------------mat chip functions-----------------*/
   /*function to add chip*/
   add(event: MatChipInputEvent): void {
-    if(this.emailFormControl.valid || (this.contactarray!=null && this.contactarray.length>0)){
+    if (this.emailFormControl.valid || (this.contactarray != null && this.contactarray.length > 0)) {
       const input = event.input;
       const value = event.value;
 
@@ -944,12 +919,11 @@ fourthFormGenerate() {
         client_id: '1036664457460-9o9ihhnjrnb3vqhklo72nu5mu7gbp84r.apps.googleusercontent.com',
         cookie_policy: 'single_host_origin',
         scope: 'profile email https://www.googleapis.com/auth/contacts.readonly'
-        // scope: 'profile email https://www.googleapis.com/auth/contacts.readonly'
       });
       this.auth2.attachClickHandler(document.getElementById('googleres'), {}, this.onSignIn, this.onFailure);
     })
   }
-  onFailure(data:any){
+  onFailure(data: any) {
     console.log('onFailure called');
     console.log(data);
   }
@@ -960,33 +934,28 @@ fourthFormGenerate() {
     console.log('onSignIn');
     console.log(data);
     console.log(data.Zi);
-    //console.log(data.WE.Zi);
   }
 
   handleAuthorization(authorizationResult) {
     if (authorizationResult && !authorizationResult.error) {
-      let link:any = "https://www.google.com/m8/feeds/contacts/default/thin?alt=json&access_token=" + authorizationResult.access_token + "&max-results=500&v=3.0";
+      let link: any = "https://www.google.com/m8/feeds/contacts/default/thin?alt=json&access_token=" + authorizationResult.access_token + "&max-results=500&v=3.0";
       this._http.get(link)
-          .subscribe(res=>{
-            this.contactarray=[];
-            //process the response here
-            let response:any={};
-            response = res;
-            console.log('response.gd$email');
-            /* console.log(response.feed.gd$email);
-             console.log(response.feed.entry);
-             console.log(response.feed);*/
-            for(let v in response.feed.entry){
-              console.log('response.feed.entry.gd$email');
-              if(typeof (response.feed.entry[v].gd$email)!='undefined'){
-                //console.log(response.feed.entry[v].gd$email[0].address);
-                this.contactarray.push(response.feed.entry[v].gd$email[0].address);
-              }
+        .subscribe(res => {
+          this.contactarray = [];
+          //process the response here
+          let response: any = {};
+          response = res;
+          console.log('response.gd$email');
+          for (let v in response.feed.entry) {
+            console.log('response.feed.entry.gd$email');
+            if (typeof (response.feed.entry[v].gd$email) != 'undefined') {
+              this.contactarray.push(response.feed.entry[v].gd$email[0].address);
             }
-            console.log('contactarray');
-            console.log(this.contactarray);
-            console.log(this.contactarray.length);
-          });
+          }
+          console.log('contactarray');
+          console.log(this.contactarray);
+          console.log(this.contactarray.length);
+        });
       /*function(response){
        var contactarray=[];
        //process the response here
@@ -1009,7 +978,6 @@ fourthFormGenerate() {
     }
   }
   fetchmail() {
-    console.log('fetchmail');
     gapi.load('client:auth2', () => {
       gapi.client.init({
         apiKey: 'H1qzKV7Q8iUciTn8arwZPcti',
@@ -1018,19 +986,18 @@ fourthFormGenerate() {
         scope: 'profile email https://www.googleapis.com/auth/contacts.readonly'
       }).then(() => {
         return gapi.client.people.people.connections.list({
-          resourceName:'people/me',
+          resourceName: 'people/me',
           personFields: 'emailAddresses,names'
         });
       }).then(
-          (res) => {
-            console.log("Res: " + JSON.stringify(res));         // to debug
-            this.userContacts.emit(this.transformToMailListModel(res.result));
-          },
-          error => console.log("ERROR " + JSON.stringify(error))
+        (res) => {
+          this.userContacts.emit(this.transformToMailListModel(res.result));
+        },
+        error => console.log("ERROR " + JSON.stringify(error))
       );
     });
   }
-  transformToMailListModel(item:any){
+  transformToMailListModel(item: any) {
     return item;
   }
 
@@ -1038,30 +1005,34 @@ fourthFormGenerate() {
 
   /*for google contacts api service*/
 
-  getcontacts(){
-    if(this.fourthForm.controls['socialcontact'].value == 'gmail'){
+  getcontacts() {
+    if (this.fourthForm.controls['socialcontact'].value == 'gmail') {
       console.log('gapi-------------------------');
       console.log(gapi);
-      setTimeout(()=>{
+      setTimeout(() => {
         this.signIn();
 
-      },2000);
-      if(this.contactarray == null || this.contactarray.length == 0){
+      }, 2000);
+      if (this.contactarray == null || this.contactarray.length == 0) {
         this.checkemail = 1;
       }
 
     }
   }
   /*functions to access google contacts*/
-  gotomainpage(){
-    this.submitmodal = true;
-    // let link2= this._commonservices.nodesslurl+"getalldetailsbyuserid";
-    //alert(this.userdata.get('user_id'));
-    //if(this.user_id=='' || this.user_id==null || this.user_id.length<5) return true;
-    let data = {'user_id':this.userdata.get('_id')};
-    this.router.navigateByUrl('/agreement/'+this.userdata.get('_id'));
+  gotomainpage() {
+    this.openSuccessDialog();
+
+    setTimeout(() => {
+      this.dialog.closeAll();
+    }, 3000);
+    if (this.userdata.get('signupaffiliate') == 'true') {
+      this.router.navigateByUrl('/agreement/' + this.userdata.get('_id'));
+    } else {
+      this.router.navigateByUrl('/invitationforlaunchplan');
+    }
+    // let data = {'user_id':this.userdata.get('_id')};
     // this.apiService.postDatawithoutToken('getalldetailsbyuserid', data)
-    // // this._http.post(link2,data)
     //     .subscribe(res=>{ 
     //       let result:any;
     //       result = res;
@@ -1084,7 +1055,7 @@ fourthFormGenerate() {
     //           }else{
     //             this.router.navigateByUrl('/invitationforlaunchplan');
     //           }
-              
+
     //         }
     //         else{
     //           if(result.item[0].signupaffiliate == 1){
@@ -1108,8 +1079,8 @@ fourthFormGenerate() {
     //         //     this.router.navigateByUrl('/profile');
     //         //   }
     //         // }
-            
-            
+
+
     //       },2000);
     //     });
     // this.usercookie.set('user_id',this.activeRoute.snapshot.params.id);
@@ -1140,28 +1111,28 @@ export class QueryDialogComponent {
   templateUrl: 'terms-condition-agree.component.html',
 })
 export class TermsDialogComponent {
- 
+
   constructor(public dialogRef: MatDialogRef<TermsDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
   public onNoClick(): void {
     this.dialogRef.close();
   }
-  
+
 }
 
-// genre dialog component
+// success dialog component
 @Component({
-  selector: 'genre-dialog',
-  templateUrl: 'genre.component.html',
+  selector: 'success-dialog',
+  templateUrl: 'sucessdialog.component.html',
 })
-export class GenreDialogComponent {
- 
-  constructor(public dialogRef: MatDialogRef<GenreDialogComponent>,
+export class SuccessDialogComponent {
+
+  constructor(public dialogRef: MatDialogRef<SuccessDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
   public onNoClick(): void {
     this.dialogRef.close();
   }
-  
+
 }
 
 
