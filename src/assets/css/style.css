@@ -377,7 +377,7 @@ text-transform: uppercase;}
     .activeafter{background: #000;
         color: #fff;}
         .mat-step-header[aria-selected="true"]:nth-child(1){border-radius: 5px;}
-        .mat-step-header[aria-selected="true"]{
+        .mat-step-header[aria-selected="true"], .mat-step-header[aria-selected="true"]:hover{
             background: rgba(255,149,0,1);
             background: -moz-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
             background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,149,0,1)), color-stop(48%, rgba(251,138,0,1)), color-stop(51%, rgba(246,123,0,1)), color-stop(100%, rgba(237,99,0,1)));
@@ -386,11 +386,11 @@ text-transform: uppercase;}
             background: -ms-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
             background: linear-gradient(to bottom, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9500', endColorstr='#ed6300', GradientType=0 );
-           position: relative;overflow: inherit;
+           position: relative;overflow: initial;
 
         }
         .mat-step-header[aria-selected="true"]:nth-child(1) .mat-step-header-ripple:before{display: none;}
-        .mat-step-header[aria-selected="true"]:after {
+        .mat-step-header[aria-selected="true"]:after, .mat-step-header[aria-selected="true"]:hover:after {
             content: '';
             position: absolute;
             right: -28px;

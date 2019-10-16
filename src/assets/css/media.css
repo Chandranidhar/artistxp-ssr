@@ -22,7 +22,7 @@
 @media only screen and (max-width: 1380px) {.loginbuttonwrapper button, .loginbuttonwrapper button:hover {padding: 12px 36px !important;}
 }
 @media only screen and (max-width: 1260px) {
-    .loginform .formgroup input {width: 174px}
+    .loginform .formgroup input {width: 174px !important; }
     .loginbuttoncon .errormsgred {left: -207px}
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 26px !important;font-size: 18px !important;}
 }
@@ -48,6 +48,12 @@
     .loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 0px !important}
 }
 @media only screen and (max-width: 991px) {
+    .logintopbarcontainer mat-list-item {
+        width: 100% !important;
+    }
+    .logintopleft  .logoimgwrapper {
+        margin: 0 auto !important;
+    }
     .modal-sm {
         width: 65%;
     }
@@ -109,7 +115,7 @@
     .invitationforlaunchplanmainwrapper .mat-form-field-infix input {
         width: 92%;}
     .signupflowstepper {width: 97%;}
-    .loginform .formgroup input {width: 200px;margin:0 5px;}
+    .loginform .formgroup input {width: 200px !important;margin:0 5px;}
     .loginbuttoncon .errormsgred {left: -179px;}
     .loginbuttoncon .errormsgred {left: 0;position: inherit;bottom: 0;width: 100%;padding: 10px 0 20px;}
     .loginform .loginbuttoncon {display: flex;align-items: center;justify-content: center;flex-wrap: wrap;width: 97%;padding-top: 10px;}
@@ -122,6 +128,10 @@
     .footertop mat-list {width: 96%;}
 }
 @media only screen and (max-width: 520px) {
+    .loginform .formgroup input {
+        width: 162px !important;
+        margin: 0 10px;
+    }
     .loginform .formgroup input {width: 168px}
 }
 @media only screen and (max-width: 480px) {
@@ -138,14 +148,15 @@
     .privacywrapper {padding: 20px 20px;}
 }
 @media only screen and (max-width: 440px) {
+    .signupflowstepper .mat-horizontal-stepper-header .mat-step-header-ripple:before{}
     .signupflowstepper .mat-horizontal-stepper-header {width: 16%;}
     .signupflowstepper .mat-horizontal-stepper-header:before {right: -17px; width: 47px;}
-    .mat-step-header[aria-selected="true"]:after{right: -17px; width: 47px;}
+    .mat-step-header[aria-selected="true"]:after, .mat-step-header[aria-selected="true"]:hover:after{right: -17px; width: 47px;}
     .logoimgwrapper {width: 220px;display: inline-block;}
     .loginbuttoncon .errormsgred {left: 0;position: inherit;bottom: 0;width: auto;}
     .loginform .loginbuttoncon {display: flex;align-items: center;justify-content: space-between;}
     .loginform {padding-bottom: 0;padding-top: 10px;}
-    .loginform .formgroup input {width: 95%;margin: 0;}
+    .loginform .formgroup input {width: 95% !important;margin: 0 !important;}
     .loginform .formgroup {width: 100%; padding: 5px 0}
     .loginform .formgroup .errormsgblue {padding-left: 0;}
     .logintopbarcontainer {padding: 27px 0 5px 0 !important}
