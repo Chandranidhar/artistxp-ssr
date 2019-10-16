@@ -155,7 +155,7 @@ export class AgreementComponent implements OnInit {
                       this.renderToDashboard();
                     
                       if(this.userdata.get('blastorpass')=='true'){
-                        this.router.navigateByUrl('/');
+                        this.router.navigateByUrl('/invitationforlaunchplan');
                       }
                       if(this.invitesystem == 'on'){
                         this.router.navigateByUrl('/');

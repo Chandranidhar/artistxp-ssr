@@ -196,7 +196,7 @@
                     <span>CHOOSE ACCOUNT TYPE/SETTINGS</span>
                 </mat-card-title>
 
-                <form class="signupflowform" [formGroup]="secondForm" (ngSubmit)="secondsubmit(secondForm.value)">
+                <form class="signupflowform" [formGroup]="secondForm">
                     
                     <mat-form-field class="example-full-width fromgroup"  *ngIf="userdata.get('dancer')!=null && userdata.get('dancer') == 'true'">
                       <mat-select placeholder="Select Genre" [formControl]="secondForm.controls['dancegenre']" multiple >
@@ -405,7 +405,7 @@
                     
                     
                     <mat-card-actions class="signupbuttonwrapper">
-                    <button mat-button class="btnbuyticket_genuserlan">
+                    <button mat-button class="btnbuyticket_genuserlan"  (click)="secondsubmit(secondForm.value)">
                         <span class="buttoncon">Next</span>
                     </button>
                     <button mat-button class="btnbuyticket_genuserlan" matStepperNext>

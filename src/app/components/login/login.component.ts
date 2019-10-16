@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
           this.cookieservice.set('signupaffiliate', result.msg.signupaffiliate);
           this.cookieservice.set('last_notify_id', result.msg.last_notify_id);
           // just to give it a render on homepage , later things will change
-          this.router.navigate(['/']);
+          this.router.navigate(['/invitationforlaunchplan']);
         }
 
       });

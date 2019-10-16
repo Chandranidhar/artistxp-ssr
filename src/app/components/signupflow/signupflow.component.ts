@@ -1058,59 +1058,60 @@ fourthFormGenerate() {
     // let link2= this._commonservices.nodesslurl+"getalldetailsbyuserid";
     //alert(this.userdata.get('user_id'));
     //if(this.user_id=='' || this.user_id==null || this.user_id.length<5) return true;
-    let data = {'user_id':this.activeRoute.snapshot.params.id};
-    this.apiService.postDatawithoutToken('getalldetailsbyuserid', data)
-    // this._http.post(link2,data)
-        .subscribe(res=>{
-          let result:any;
-          result = res;
-          // console.log(result);
-          this.usercookie.set('real_name',result.item[0].realname);
-          this.usercookie.set('user_name',result.item[0].username);
-          this.usercookie.set('user_id',result.item[0]._id);
-          this.usercookie.set('image',result.item[0].images);
-          this.usercookie.set('fan',result.item[0].fan);
-          this.usercookie.set('musicians',result.item[0].musicians);
-          this.usercookie.set('dancer',result.item[0].dancer);
-          this.usercookie.set('model',result.item[0].model);
-          this.usercookie.set('signupaffiliate',result.item[0].signupaffiliate);
-          this.usercookie.set('last_notify_id',result.item[0].last_notify_id);
-          console.log(this.usercookie);
-          setTimeout(()=>{
-            if(this.invitesystem == 'on'){
-              if(result.item[0].signupaffiliate == 1){
-                this.router.navigateByUrl('/agreement/'+result.item[0]._id);
-              }else{
-                this.router.navigateByUrl('/invitationforlaunchplan');
-              }
+    let data = {'user_id':this.userdata.get('_id')};
+    this.router.navigateByUrl('/agreement/'+this.userdata.get('_id'));
+    // this.apiService.postDatawithoutToken('getalldetailsbyuserid', data)
+    // // this._http.post(link2,data)
+    //     .subscribe(res=>{ 
+    //       let result:any;
+    //       result = res;
+    //       // console.log(result);
+    //       this.usercookie.set('real_name',result.item[0].realname);
+    //       this.usercookie.set('user_name',result.item[0].username);
+    //       this.usercookie.set('user_id',result.item[0]._id);
+    //       this.usercookie.set('image',result.item[0].images);
+    //       this.usercookie.set('fan',result.item[0].fan);
+    //       this.usercookie.set('musicians',result.item[0].musicians);
+    //       this.usercookie.set('dancer',result.item[0].dancer);
+    //       this.usercookie.set('model',result.item[0].model);
+    //       this.usercookie.set('signupaffiliate',result.item[0].signupaffiliate);
+    //       this.usercookie.set('last_notify_id',result.item[0].last_notify_id);
+    //       console.log(this.usercookie);
+    //       setTimeout(()=>{
+    //         if(this.invitesystem == 'on'){
+    //           if(result.item[0].signupaffiliate == 1){
+    //             this.router.navigateByUrl('/agreement/'+result.item[0]._id);
+    //           }else{
+    //             this.router.navigateByUrl('/invitationforlaunchplan');
+    //           }
               
-            }
-            else{
-              if(result.item[0].signupaffiliate == 1){
-                this.router.navigateByUrl('/agreement/'+result.item[0]._id);
-              }else
-                this.router.navigateByUrl('/profile');
-            }
+    //         }
+    //         else{
+    //           if(result.item[0].signupaffiliate == 1){
+    //             this.router.navigateByUrl('/agreement/'+result.item[0]._id);
+    //           }else
+    //             this.router.navigateByUrl('/invitationforlaunchplan');
+    //         }
 
 
 
 
 
-            // console.log(this.usercookie.get('blastorpass'));
-            // if(result.item[0].signupaffiliate == 1){
-            //   this.router.navigateByUrl('/agreement/'+result.item[0]._id);
-            // }else{
-            //   this.submitmodal = false;
-            //   if(this.usercookie.get('blastorpass')=='true'){
-            //     this.router.navigateByUrl('/fbartistxpactive');
-            //   }else{
-            //     this.router.navigateByUrl('/profile');
-            //   }
-            // }
+    //         // console.log(this.usercookie.get('blastorpass'));
+    //         // if(result.item[0].signupaffiliate == 1){
+    //         //   this.router.navigateByUrl('/agreement/'+result.item[0]._id);
+    //         // }else{
+    //         //   this.submitmodal = false;
+    //         //   if(this.usercookie.get('blastorpass')=='true'){
+    //         //     this.router.navigateByUrl('/fbartistxpactive');
+    //         //   }else{
+    //         //     this.router.navigateByUrl('/profile');
+    //         //   }
+    //         // }
             
             
-          },2000);
-        });
+    //       },2000);
+    //     });
     // this.usercookie.set('user_id',this.activeRoute.snapshot.params.id);
 
 
