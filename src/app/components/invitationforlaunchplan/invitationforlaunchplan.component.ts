@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-invitationforlaunchplan',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvitationforlaunchplanComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cookie:CookieService, public router:Router) { }
 
   ngOnInit() {
+  }
+  logout(){
+    this.cookie.deleteAll();
+    this.router.navigateByUrl('/');
   }
 
 }

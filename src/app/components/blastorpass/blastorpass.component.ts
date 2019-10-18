@@ -11,6 +11,7 @@ import {Router, ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { DialogData } from '../signupflow/signupflow.component';
+import { MetaService } from '@ngx-meta/core';
 declare var $:any;
 declare var FB: any;
 @Component({
@@ -52,7 +53,19 @@ export class BlastorpassComponent implements OnInit {
   filteredCityOptions: Observable<string[]>;
 
 
-  constructor(public FBS: FacebookService,fb: FormBuilder,private _http: HttpClient,private router: Router, public apiservice : ApiService,private route:ActivatedRoute, userdata: CookieService, public dialog: MatDialog,  public f: FormService) { 
+  constructor(public FBS: FacebookService,fb: FormBuilder,private _http: HttpClient,private router: Router, public apiservice : ApiService,private route:ActivatedRoute, userdata: CookieService, public dialog: MatDialog,  public f: FormService, public readonly meta: MetaService) { 
+    this.meta.setTitle('ArtistXP');
+    this.meta.setTag('og:description', ' Independent Artists can participate in the Blast or Pass program by posting their content for review by Alfa Blvck, and be featured as the Artist of the Week.');
+    this.meta.setTag('og:title', 'ArtistXP.com – Blast Or Pass');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:image', 'https://artistxp.com/assets/images/artistheaderlogo.png');
+    this.meta.setTag('og:keywords', 'ArtistXP Blast or Pass, Artist of the Week, Alfa Blvck, ArtistXP Music Network');
+   
+    this.meta.setTag('twitter:description', ' Independent Artists can participate in the Blast or Pass program by posting their content for review by Alfa Blvck, and be featured as the Artist of the Week.');
+    this.meta.setTag('twitter:title', 'ArtistXP.com – Blast Or Pass');
+    this.meta.setTag('twitter:card', 'summary');
+    this.meta.setTag('twitter:image', 'https://artistxp.com/assets/images/artistheaderlogo.png');
+
     this.fb = fb;
     this.chkerror = 0;
     this.chkerror1 = 0;
@@ -204,7 +217,7 @@ export class BlastorpassComponent implements OnInit {
       zip: [null, [Validators.required]],
       musicians: false,
       dancer: false,
-      signupaffiliate: false,
+      signupaffiliate: true,
       model: false,
       fan: false,
       vocalist: false,

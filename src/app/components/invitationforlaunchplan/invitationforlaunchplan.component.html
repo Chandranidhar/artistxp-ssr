@@ -34,8 +34,8 @@
                 </mat-list-item>
             </mat-list>
             <mat-card-actions class="invitationbuttonwrapper">
-                <button mat-button class="btnpink">Log out</button>
-                <button mat-button class="btnpink">Go Back to Home</button>
+                <button mat-button class="btnpink" routerLinkActive="router-link-active" (click)="logout()">Log out</button>
+                <button mat-button class="btnpink" [routerLink]="['/']">Go Back to Home</button>
             </mat-card-actions>
         </span>
     </mat-card-content>

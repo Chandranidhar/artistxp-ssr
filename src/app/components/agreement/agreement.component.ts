@@ -152,9 +152,11 @@ export class AgreementComponent implements OnInit {
                       this.userdata.set('userdetails', JSON.stringify(result.msg));
                       console.log('blastorpass');
                       console.log(this.userdata.get('blastorpass'));
-                      this.renderToDashboard();
+                      
                     
                       if(this.userdata.get('blastorpass')=='true'){
+                        this.renderToDashboard();
+                      }else{
                         this.router.navigateByUrl('/invitationforlaunchplan');
                       }
                       if(this.invitesystem == 'on'){
