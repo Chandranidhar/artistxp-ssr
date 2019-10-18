@@ -1026,3 +1026,296 @@ text-transform: uppercase;}
     }
     .invitationforlaunchplanmainwrapper .signupbody{min-height: inherit;}
 /* ------------------- invitationforlaunchplanmain css end --------------------- */
+
+
+
+
+
+/*****signup for block chain block1 css start****/
+.newwrapper {
+    width: 1780px;
+    margin: 0 auto;
+    display: block;
+}
+.toprightgradientbg {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: none;
+}
+.cslandingformheader {
+    background-color: #fc8d00;
+    padding: 11px 7px;
+    text-align: center;
+    border: 1px solid #000;
+    border-bottom: 0px !important;
+}
+.signupforblockchainblocktop {background-color:#1f1d1d; padding-top: 15px; padding-bottom:15px}
+.signupforblockchainblocktop p {text-align: center; color:#f3f3f3; font-family: "RalewayRegular"; font-size: 14px}
+.signupforblockchainblocknav {background-color:#000000 !important; padding-top: 15px; padding-bottom:15px}
+.signupforblockchainblocknavwrapper {width: 1304px; margin: 0 auto; display: block}
+.signupforblockchainblocknavwrapper .headernewclslogo {width: 310px; height: auto}
+.signupforblockchainblocknavwrapper.signupforblockchainblocknavwrappernew1.signupforblockchainblocknavnew1 .headernewclslogo {width: 400px}
+.signupforblockchainblocknavwrapper.signupforblockchainblocknavwrappernew1.signupforblockchainblocknavnew1 .new1 .headernewclslogo {width: auto !important}
+.fbartistxpnavwrapper .headernewcls .navbar-brand-wrapper .navbar-brand .headernewclslogo {width: 400px; }
+.signupforblockchainblocknavwrapper.signupforblockchainblocknavwrappernew1.contactusnew1 .headernewclslogo {width: auto !important}
+.signupforblockchainblocknavwrapper.signupforblockchainblocknavwrappernew1.contactusnew1 .navbarwrapperightnew1 .navlisthide.show .headernewnavbarcls li:last-child {display: none}
+.signupforblockchainblocknavwrapper .headernewclslogo img {max-width: 100%}
+.signupforblockchainblocknavwrapper .navbarnewclswrapper .headernewnavbarcls li a {color:#fff !important}
+.signupforblockchainblocknavwrapper .navbarnewclswrapper .headernewnavbarcls li a:hover {color:#000 !important}
+.signupforblockchainblocknavwrapper .navbar {margin-bottom: 0px;min-height: 60px}
+.signupforblockchainblocknavwrapper .headernewcls .navbar-brand {padding:0; height: auto}
+.signupforblockchainblocknavwrapper .navbar-collapse.collapse {padding-bottom: 0px !important}
+.signupforblockchainblock1 .titletxt1 {font-family: "Ralewaybold";font-size: 100px;color: #fff;padding: 0;margin: 10px 0 20px 0;line-height: 100px;letter-spacing: 0px;text-align: center !important;width: 100%;text-transform: uppercase;position: relative;z-index: 9999;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+/*.signupforblockchainblock1 .bannerleftnew {width: 100%}
+*/.signupforblockchainblock1 .bannerleftnew span.dtcls {float: right;font-family: "HelveticaNormal";font-size: 24px;color: #fff;padding: 0;font-weight: normal;}
+.signupforblockchainblock1 .bannerleftnew span.dtcls .span2 {background-color: transparent !important;display: inline-block;border: none !important;width: 60px;text-align: center;border-bottom: 1px dashed #fff !important;}
+.signupforblockchainblock1 .bannerleftnew span.dtcls .span1 {background-color: transparent !important;display: inline-block;border: none !important;width: 30px;text-align: center;border-bottom: 1px dashed #fff !important;}
+.signupforblockchainblock1 .bannerleftnew .titletxt2 {font-family: "Ralewaybold";font-size: 36px;color: #fff000;padding: 0;margin: 0px 0 20px 38%;line-height: 42px !important;letter-spacing: 0px;text-align: left !important;text-transform: none !important;position: relative;z-index: 9999;}
+.signupforblockchainblock1 .bannerleftnew .titletxt3 {font-family: "Ralewaybold";font-size: 36px;color: #fff;padding: 0;text-transform: uppercase !important;font-size: 36px;font-weight: bold;margin: 0 0 0 38%;margin-top: 48px;position: relative;z-index: 9999;}
+.signupforblockchainblock1 {background: #0e0517 url(../images/signupblockchainformbg.jpg) no-repeat left top !important;background-size: 100% 150% !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;padding-bottom: 25px;}
+.signupforblockchainblock1 .communitysignupnewblock1left {background-image: none !important;width: 72%}
+.signupforblockchainblock1 .toprightgradientbg img {opacity: 1 !important; max-width: 100%}
+.signupforblockchainblock1 .formtoptxt {font-family: "HelveticaBold";font-size: 44px;color: #fff000;padding: 0;margin: 78px 0 40px 0;line-height: 48px;letter-spacing: 0px;text-align: center !important;width: 100%;text-transform: uppercase;position: relative;z-index: 9;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+.signupforblockchainblock1 .communitysignupnewblock1inner {position: relative; display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: nowrap;justify-content: space-between;width: 79%;margin: 0 auto;}
+.communitysignupnewblock1.signupforblockchainblock1 .btnnewwrapper {background: rgba(21,21,25,1);background: -moz-linear-gradient(top, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21,21,25,1)), color-stop(100%, rgba(0,0,6,1)));background: -webkit-linear-gradient(top, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);background: -o-linear-gradient(top, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);background: -ms-linear-gradient(top, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);background: linear-gradient(to bottom, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#151519', endColorstr='#000006', GradientType=0 );-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;}
+.communitysignupnewblock1.signupforblockchainblock1 .btnbuyticket_genuserlan {
+    font-size: 24px;
+    margin: 0 !important;
+    border: 0;
+    height: 67px;
+}
+    .communitysignupnewblock1.signupforblockchainblock1 .btnbuyticket_genuserlan span{font-size: 24px !important;}
+.communitysignupnewblock1.signupforblockchainblock1 .newwrapper {width: 1755px;}
+.signupforblockchainblock1 .cslandingformheader h1 {margin: 0;padding: 0px;text-transform: uppercase;font-size: 44px;font-family: "Ralewaybold";color: #fff;text-shadow: 2px 3px 9px rgba(0,0,0,0.45);}
+.signupforblockchainblock1 .cslandingformheader h1 span {font-size: 36px;display: block;}
+.signupforblockchainblock1 .communitysignupnewblock1right {position: relative;z-index: 9999;width: 28%;}
+.signupforblockchainblock1 .communitysignupnewblock1right .formdiv {width: 380px;background: #15100d !important;padding: 13px 13px 20px;}
+.signupforblockchainblock1 .cslandingformwrapper {background-color: #15100d !important;}
+.signupforblockchainblock1 .cslandingformwrapper .mat-form-field-flex {
+    width: 94% !important;
+}
+.signupforblockchainblock1 .communitysignupnewblock1right .formdiv .form-control,.signupforblockchainblock1 .communitysignupnewblock1right .formdiv textarea.form-control {height: 40px;line-height: 40px;font-size: 18px;}
+.signupforblockchainblock1 .toprightgradientbg {right: -6px;z-index: 999;}
+.manimgwrapper {position: absolute;left: 0;top: -28%;z-index: 999;width: 100%;}
+.signupforblockchainblock1 .imgmanleft {position: absolute;left: -29%;top: 38px;z-index: 999;}
+.signupforblockchainblock1 .manhand {
+    position: absolute;
+    left: -42px;
+    top: 724px;
+    z-index: 9999;
+}
+/*.signupforblockchainblock1 .vbllist1 {margin-top: 11% !important;position: absolute;left: 6%;text-align: left;width: 840px;z-index: 9999;}
+*/.signupforblockchainblock1 .vbllist1 {/*margin-top: 72%!important;position: absolute;left: 48%;text-align: left;width: 840px;z-index: 9999;*/ display: flex; flex-wrap: wrap; position: absolute;left: 1%;width: 840px;z-index: 9999;margin-top: 53%;}
+.signupforblockchainblock1 .vbllist1 li {background: url(../images/signupforblockchainvbllist_arrow.png) no-repeat right bottom;background-size: 100% 100%;position: relative;height: 50px;width: 100%;margin-bottom: 10px;padding: 20px 6% 32px 11% !important;font-family: "Helvetica";font-weight: bold;font-size: 24px;line-height: normal;color: #203b70;display: inline-flex;justify-content: flex-start;}
+.signupforblockchainblock1 .vbllist1 li span {font-family: "Ralewaybold";font-size: 36px !important;color: #fff !important;padding: 0;line-height: 36px;letter-spacing: 0px;text-transform: uppercase;text-shadow: 2px 6px 7px rgba(0, 0, 0, 0.6);padding-right: 20px;}
+.signupforblockchainblock1 .iconblockchain {position: absolute;right: -10%;top: -35%;z-index: 99999;}
+.signupforblockchainblock1 .vblb6img5 {position: absolute;left: 0;top: 85%;z-index: 99999;background: url(../images/blockchainbtn_arrow.png) no-repeat right bottom;width: 924px;height: 125px;}
+.signupforblockchainblock1 .vblb6img5 h2 {font-family: "Ralewaybold";font-size: 48px;color: #0c0000 !important;padding: 0;line-height: 48px;letter-spacing: 0px;text-align: center !important;width: 90%;margin: 30px auto;text-transform: uppercase;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+.signupforblockchainblock1 .communitysignupnewblock1right {position: relative;z-index: 9999;width: 28%;}
+.signupforblockchainblock1 .communitysignupnewblock1right .formdiv .form-group {margin-bottom: 14px;display: inline-block;width: 100%;}
+.signupforblockchainblock1 .bannerleftnew {width: 100%;}
+.signupforblockchainblock1 .bannerleftnew .titletxt3 span {width: 337px;display: block;margin-left: 16%;margin-top: 2px;}
+.signupforblockchainblock1 .bannerleftnew .titletxt3 span img {max-width:100%}
+.signupforblockchainblock2 {background: #050505 url(../images/signupforblockchainblock2bg.jpg) no-repeat left top !important;background-size: 100% 48%!important;min-height: 1px;position: relative;overflow: hidden;padding-bottom: 0px;}
+.signupforblockchainblock2top {padding-top: 0px;position: relative;height: 100%;}
+.signupforblockchainblock2leftbg {position: absolute !important;top: 0px;left: -90.7%;width: 108%;height: 130%;background: rgba(252, 141, 0, 0.8);-webkit-transform: skew(-45.5deg, 0deg);-moz-transform: skew(-45.5deg, 0deg);-o-transform: skew(-45.5deg, 0deg);transform: skew(-45.5deg, 0deg);}
+.signupforblockchainblock2bottom {position: relative;height: 100%;margin-top: 80px;overflow: hidden;}
+.signupforblockchainblock2rightbg {position: absolute !important;top: 0;right: 0%;width: 100%;height: 100%;-webkit-clip-path: polygon(2% 0, 100% 0, 100% 100%, 0 100%, 0 4%);clip-path: polygon(2% 0, 100% 0, 100% 100%, 0 100%, 0 4%);background-color: rgba(234, 151, 25, 1);background-image: url(../images/signupforblockchainblock2bgbottom.png), url(../images/signupforblockchainblock2bgtopleft.png);background-position: center bottom, left top;background-repeat: no-repeat;z-index: 999;background-size: 100%, 32%;}
+/*.signupforblockchainblock2rightbg:after {position: absolute;content: '';left: -23%;top: 0;width: 100%;height: 100%;!* background: url(../images/signupforblockchainblock2bgbottom.png) no-repeat left bottom; *!!* background-size: cover !important; *!-ms-transform: skewX(48.5deg) !important;-webkit-transform: skewX(48.5deg) !important;transform: skewX(-45.5deg) !important;BACKGROUND: rgba(252, 141, 0, 1);}
+*//*.signupforblockchainblock2bottom:after {position: absolute;content: '';left: -23%;top: 0;width: 53%;height: 1000px;-ms-transform: skewX(48.5deg) !important;-webkit-transform: skewX(48.5deg) !important;transform: skewX(-45.5deg) !important;background-color: rgba(252, 141, 0, 1);background-image: url(../images/signupforblockchainblock2bgbottomlefttop.png);z-index: 99;}
+*/.signupforblockchainblock2bottomcontent {padding-left:26%; padding-top: 20px; padding-bottom: 30px}
+.signupforblockchainblock2bottom h2 {font-family: "HelveticaBold";font-size: 30px;color: #faf8f8 !important;padding: 0;line-height: 32px;letter-spacing: 0px;text-align: left !important;width: 100%;margin: 30px auto 10px;text-transform: uppercase;}
+.signupforblockchainblock2bottom p {color: #111111 !important;font-family: "HelveticaNormal";font-size: 24px;line-height: 26px;}
+/*.signupforblockchainblock2rightbg:before {position: absolute;content: '';left: 0;top:0;width: 100%;height: 100%;background:url(../images/signupforblockchainblock2bgtopleft.png) no-repeat left top;background-size: auto !important;-ms-transform: skew(48.5deg, 0deg) !important;-webkit-transform: skew(48.5deg, 0deg) !important;transform: skew(48.5deg, 0deg) !important;}
+*/.signupforblockchainblock2 .newwrapper {position: relative;z-index: 999999;}
+.newwrapperinner {width: 1300px;margin: 0 auto;display: block;}
+.signupforblockchainblock2 h1 {
+    font-family: "Ralewaybold";
+    font-size: 60px;
+    color: #fff !important;
+    padding: 0;
+    line-height: 60px;
+    letter-spacing: 0px;
+    text-align: center !important;
+    width: 90%;
+    margin: 0px auto !important;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+    padding: 50px 0;
+}
+.signupforblockchainimgright {width: 672px;}
+.signupforblockchainimgright img {max-width: 100%}
+.signupforblockchainblock2content {margin-top: 3%;display: inline-flex;width: 113%;}
+.signupforblockchainblock2content p {text-align: left; color:#f0f0f0; font-family: "HelveticaNormal"; font-size: 24px;padding-right: 24px}
+.signupforblockchainblock2content .btnyellownew {background-color: #fc8d00;padding: 14px 40px;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;font-family: "Ralewaybold";color: #fffffe;font-size: 48px;text-transform: uppercase;line-height: 48px;display: inline-block;border-radius: 10px;margin-top: 10%;margin-left: 10%;}
+.signupforblockchainblock2right {position: relative}
+.signupforblockchainblock2right .iconblockchain {position: absolute; bottom: -10px; left: -56px}
+.signupforblockchainblock2bottomcontent .btnyellownew {background-color: #fc8d00;padding: 14px 40px;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;font-family: "Ralewaybold";color: #fffffe;font-size: 48px;text-transform: uppercase;line-height: 48px;display: inline-block;border-radius: 10px;margin-top: 4%;margin-left: 0%;margin-bottom: 36px;}
+.signupforblockchainblock2bottomcontent .iconblockchain {position: absolute;left: 13%;bottom: 24%;}
+.signupforblockchainblock3 {background: #050505 url(../images/signupforblockchainblock3bg.jpg) no-repeat left top !important;background-size: 100% 102%!important;min-height: 1px;position: relative;overflow: hidden;padding-bottom: 25px;width: 100%;padding-top: 45px;}
+.signupforblockchainblock3 h1 {font-family: "Ralewaybold";font-size: 60px;color: #fff !important;padding: 0;line-height: 60px;letter-spacing: 0px;text-align: center !important;width: 100%;margin: 30px auto 48px;text-transform: uppercase;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+.signupforblockchainblock3 p {color: #fff;font-family: "HelveticaNormal";font-size: 24px;line-height: normal;font-weight: normal;}
+.signupforblockchainblock3 .signupforblockchainblock3lists:before {content: "";position: absolute;width: 7px;height: 83%;background-color: #fff;left: 0px;z-index: 9;}
+.signupforblockchainblock3 .signupforblockchainblock3lists {position: relative;margin-left: -15px;margin-top: 80px;}
+.signupforblockchainblock3 ul.signupforblockchainblock3lists {position: relative;width: 86%;}
+.signupforblockchainblock3 .signupforblockchainblock3lists li {list-style: none;position: relative;z-index: 999;margin-bottom: 40px;}
+.signupforblockchainblock3 .signupforblockchainblock3lists li:last-child .image,.signupforblockchainblock3 .signupforblockchainblock3lists li:nth-last-child(2) .image,.signupforblockchainblock3 .signupforblockchainblock3lists li:nth-last-child(3) .image {color: #000 !important;width: 100%;}
+.signupforblockchainblock3 .signupforblockchainblock3lists li .image {background-image: url(../images/signupforblockchainblock3listicon.png);list-style-type: none;text-transform: inherit;font-size: 24px;letter-spacing: 1px;font-weight: normal;margin: 0px 0px 0px -70px;background-repeat: no-repeat;padding-left: 80px;color: #fff;}
+.signupforblockchainblock3 .signupforblockchainblock3lists li .image span {font-family: "HelveticaNormal";font-size: 32px;color: #fffc00 !important;padding: 0;line-height: 36px;letter-spacing: 0px;text-align: left !important;text-transform: uppercase;display: block;margin-bottom: 5px;}
+.signupforblockchainblock3listsbottombg {position: absolute !important;bottom: -7%;left: -25%;width: 115%;height: 50%;background: rgba(252, 141, 0, 0.8);-webkit-transform: skew(-45.5deg, 0deg);-moz-transform: skew(-45.5deg, 0deg);-o-transform: skew(-45.5deg, 0deg);transform: skew(-45.5deg, 0deg);}
+.signupforblockchainblock3listsbottombg .iconblockchain {-webkit-transform: skew(45.5deg, 0deg);-moz-transform: skew(45.5deg, 0deg);-o-transform: skew(45.5deg, 0deg);transform: skew(45.5deg, 0deg);position: absolute !important;top: 2%;right: -11%;width: 234px;}
+.signupforblockchainblock3 .btnyellownew {background-color: #fc8d00;padding: 14px 40px;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;font-family: "Ralewaybold";color: #fffffe;font-size: 48px;text-transform: uppercase;line-height: 48px;display: inline-block;border-radius: 10px;margin-top: 5%;margin-left: 15%;margin-bottom: 70px;}
+.signupforblockchainblock3rightbottom {width:862px; position: absolute; bottom:0; right: 0}
+.signupforblockchainblock3rightbottom img {max-width:100%}
+.signupforblockchainblock4 {background: #14101e url(../images/signupforblockchainblock4bg.jpg) no-repeat left top !important;background-size: 100% 100%!important;min-height: 1px;position: relative;overflow: hidden;padding-bottom: 100px;width: 100%;padding-top: 45px;}
+.signupforblockchainblock4toprightyellowbg {position: absolute !important;top: 0%;right: -10%;width: 32%;height: 174px;background: rgba(252, 141, 0, 1);-webkit-transform: skew(60.5deg, 0deg);-moz-transform: skew(60.5deg, 0deg);-o-transform: skew(60.5deg, 0deg);transform: skew(60.5deg, 0deg);}
+.signupforblockchainblock4bottomleftyellowbg {position: absolute !important;bottom: 0%;left: -5%;width: 38%;height: 174px;background: rgba(252, 141, 0, 1);-webkit-transform: skew(-45.5deg, 0deg);-moz-transform: skew(-45.5deg, 0deg);-o-transform: skew(-45.5deg, 0deg);transform: skew(-45.5deg, 0deg);}
+.signupforblockchainblock4bottomleftyellowbg .iconblockchain {-webkit-transform: skew(45.5deg, 0deg);-moz-transform: skew(45.5deg, 0deg);-o-transform: skew(45.5deg, 0deg);transform: skew(45.5deg, 0deg);position: absolute !important;top: -18%;right: -28%;width: 211px;}
+.signupforblockchainblock4 h1 {font-family: "Ralewaybold";font-size: 60px;color: #fff !important;padding: 0;line-height: 60px;letter-spacing: 0px;text-align: center !important;width: 100%;margin: 30px auto 48px;text-transform: uppercase;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+.signupforblockchainblock4 p {color: #fff;font-family: "HelveticaNormal";font-size: 24px;line-height: normal;font-weight: normal;}
+.videoblockcontentright h2 {font-family: "HelveticaBold";font-size: 36px;color: #fff000 !important;padding: 0;line-height: 36px;letter-spacing: 0px;text-align: left !important;width: 100%;margin: 0px;text-transform: uppercase;}
+.videoblockcontentright p {margin-bottom: 35px;margin-top: 15px;}
+.signupforblockchainblock4 .videoWrapper {position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;border: 5px solid #000000;background: #252525;}
+.signupforblockchainblock4 .videoWrapper iframe, .signupforblockchainblock4 .videoWrapper video, .signupforblockchainblock4 .videoWrapper object, .signupforblockchainblock4 .videoWrapper embed, .signupforblockchainblock4 .videoWrapper img {position:absolute;top:0;left:0;width:100%;height:100%;background-color: transparent;}
+.signupforblockchainblock4 .videoblockcontent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 87%;
+    margin: 0 auto !important;
+    margin-left: 1%;
+    margin-top: 50px !important;
+    margin-bottom: 30px !important;
+}
+.signupforblockchainblock4 .videoblockcontent .col-md-6{width: 50%;;}
+.videoblockcontentright {padding-left: 5%}
+.signupforblockchainblock4 .btnyellownew {background-color: #fc8d00;padding: 14px 40px;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;font-family: "Ralewaybold";color: #fffffe;font-size: 48px;text-transform: uppercase;line-height: 48px;display: inline-block;border-radius: 10px;margin-top: 6%;margin-left: 34%;margin-bottom: 20px;}
+.signupforblockchainblock1.signupforblockchainstep2 .formdiv .form-group {margin-bottom: 5px;}
+.signupforblockchainstep2 {background: #0e0517 url(../images/signupforblockchainstep2bg.jpg) no-repeat left top !important;background-size: cover !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;padding-bottom: 25px;}
+.signupforblockchainstep2overlay {content:"";position: absolute;top:0;left:0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.6);z-index: 99;}
+.signupforblockchainstep2 .newwrapper {position: relative;z-index: 999;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .ddyy {display: flex;justify-content: space-between;margin-bottom: 0;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .cardlist.list-inline {text-align: center;margin-bottom: 10px;margin-top: 10px;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .cardlist.list-inline li {font-family: "OpenSans";color: #fffffe;font-size: 18px;text-transform: capitalize;line-height: 20px;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .list-inline.ddyy>li {width: 50%;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .list-inline.ddyy>li:nth-child(2) {padding-right: 0px !important}
+.signupforblockchainstep2 .formdiv .form-group label {line-height: normal;text-transform: inherit;font-weight: normal;}
+.signupforblockchainstep2 .formdiv .form-group label.checkcontainer {display: inline-block;}
+.signupforblockchainblock1.signupforblockchainstep2 .bannerleftnew .titletxt2 {font-family: "RalewayBold";font-size: 60px;color: #fff !important;padding: 0;line-height: normal;letter-spacing: 0px;text-align: left !important;width: 100%;margin: 0px;text-transform: uppercase !important;}
+.signupforblockchainblock1.signupforblockchainstep2 .bannerleftnew p {color: #fff;font-family: "HelveticaNormal";font-size: 24px;line-height: normal;font-weight: normal;margin-top: 20px;display: inline-block;width: 88%;}
+.signupforblockchainstep2 .cslandingformheader h1 {margin: 0;padding: 0px;text-transform: uppercase;font-size: 30px;font-family: "Ralewaybold";color: #fff;text-shadow: 2px 3px 9px rgba(0,0,0,0.45);text-align: center;}
+.signupforblockchainstep2 .cslandingformheader h1 span {display: block;font-size: 30px !important;}
+.signupforblockchainblock1.signupforblockchainstep2 .communitysignupnewblock1inner {width: 76%;margin: 0 auto;margin-bottom: 30px;}
+.signupforblockchainblock1.signupforblockchainstep2 .formdiv .form-group.termsandconditioncls {margin-top: 15px;margin-bottom: 0px;}
+.signupforblockchainblock1.signupforblockchainstep2 .cslandingforminnerwrapper {padding: 21px 19px 10px;}
+.blockchainprod {background-color: #fc8d00;padding: 0;margin-top: 12%;position: relative;height: 306px;}
+.blockchainprod table {width: 100%;height: 100%;margin:0;padding:0;border-collapse: collapse;border-spacing: 0;}
+.blockchainprod table tr {padding: 5px;}
+.blockchainprod table tr:last-child td:nth-last-child(1), .blockchainprod table tr:last-child td:nth-last-child(2) {border-top: 1px solid #fff;}
+.blockchainprod table th, .blockchainprod table td {padding: 10px;text-align: left;font-family:"HelveticaNormal";font-size: 30px;line-height: normal;color: #fff;vertical-align: top;}
+.blockchainprod table th {text-transform: uppercase;font-size: 14px;letter-spacing: 1px;}
+.blockchainprod {display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display:flex; flex-wrap: wrap; justify-content: space-between;}
+.blockchainprodleft {width: 360px;margin-top: -16px;margin-left: -15%;position: absolute;}
+.blockchainprodleft img {max-width: 100%;}
+.blockchainprodright {width: 80%;margin-left: 20%;padding: 15px 10px 15px 25px;}
+.signupforblockchainconfirm .communitysignupnewblock1left {width: 100% !important; padding-right: 0}
+.signupforblockchainconfirm .bannerleftnew p {width: 100% !important}
+.signupforblockchainconfirm .bannerleftnew h3.titletxth3 {font-family: "HelveticaNormal";font-size: 30px; color: #fff; padding: 0; line-height: normal; letter-spacing: 0px; text-align: left !important; width: 100%; margin: 0px;text-transform: uppercase !important; margin-top: 15px}
+.signupforblockchainconfirm .bannerleftnew h3.titletxth3 span {color:#1ab6ff !important}
+.signupforblockchainconfirm .blockchainprod {background-color: #fc8d00; padding: 20px; margin-top: 26px; position: relative; height: auto}
+.signupforblockchainconfirm .blockchainprodleft {width: 20%;position: inherit !important; margin: 0 !important; background-color: #fff; display: flex; align-items: center; justify-content: center; padding: 10px}
+.signupforblockchainconfirm .blockchainprodright {width: 80%; margin-left: 0; padding: 15px}
+.blockchainpordersummery {background-color: #ffffff; padding: 20px; margin-top: 30px; position: relative; height: auto}
+.blockchainpordersummery table {width: 100%; height: 100%; margin:0; padding: 0px; border-collapse: collapse; border-spacing: 0}
+.blockchainpordersummery table tr {padding: 5px}
+.blockchainpordersummery table th {padding: 10px; text-align: left; font-family:"HelveticaNormal";font-size: 30px; line-height: normal; color: #141414;vertical-align: middle}
+.blockchainpordersummery table td {padding: 10px; text-align: left; font-family:"HelveticaNormal";font-size: 18px; line-height: normal; color: #171717;vertical-align: middle}
+.blockchainpordersummery table thead {border-bottom: 2px solid #cacaca}
+.blockchainpordersummery table thead td {font-family: "HelveticaBold"; font-size: 20px; color: #141414 !important; padding: 0px 0px 10px; line-height: normal;letter-spacing: 0px; text-align: left !important; width: 100%;margin: 0px; text-transform: uppercase !important}
+.blockchainpordersummerytable {padding: 10px 15px; background-color: #f1f1f1; margin-top: 20px}
+.blockchainpordersummery h2.titletxt2 {font-family: "RalewayBold"; font-size: 36px; color: #fc8d00 !important; padding: 10px 30px; line-height: normal;letter-spacing: 0px; text-align: left !important; width: 100%;margin: 0px; text-transform: uppercase !important; background-color: #141618; display: inline-block}
+.blockchainpordersummerywrapper { margin-top: 28px}
+.blockchainpordersummerywrapper h5 {font-family: "HelveticaNormal"; font-size: 14px; color: #fff; padding: 0px; line-height: normal;letter-spacing: 0px; width: 100%;margin: 0px; display: inline-block; text-align: right; margin-top:17px}
+.blockchainpordersummerywrapper h5 span {color:#1ab6ff !important}
+.signupblockchainlogoicon {background-color: #000; width: 90px; height: auto; display: block; vertical-align: middle; padding: 10px}
+.signupblockchainlogoicon img {max-width:100%}
+.iconnew {width: 8%}
+.descnew {width: 45%}
+.kychowto {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: space-between}
+.kychowto .blockchainpordersummery {padding: 20px 5px; width: 50%;margin-top: 0px}
+.kychowto .blockchainpordersummerytable {margin-top: 0px; border-top: 5px solid #fff}
+.kychowtostep {}
+.kychowtostep h3 {font-family: "HelveticaNeueMedium"; font-size: 24px; color: #fd9000; padding: 0px; line-height: normal;letter-spacing: 0px; width: 100%;margin: 0px; display: inline-block; text-align: left; margin-top:3px;margin-bottom: 20px}
+.kychowtostep ul {text-align: left}
+.kychowtostep ul li {font-family: "HelveticaNormal"; font-size: 22px !important; color: #010101 !important; font-weight: normal; line-height: 24px !important; list-style: inherit; margin-bottom: 15px;background: url(../../assets/images/kychowtosteplisticon.png); background-position: top 4px left; background-repeat: no-repeat; padding-left: 24px}
+.kychowtostep .blockchainpordersummerytable {padding: 10px 15px; background-color: #f1f1f1; margin-top: 20px; height: 100%}
+.eqWrap {display: flex}
+.equalHW {flex: 1; flex-wrap: wrap}
+.kychowto h2.titletxt2 {font-family: "RalewayBold"; font-size: 36px; color: #fc8d00 !important; padding: 10px 30px; line-height: normal; letter-spacing: 0px; text-align: left !important; width: 100%;margin: 0px; text-transform: uppercase !important; background-color: #141618; display: inline-block}
+.signupforblockchainhowto .bannerleftnew.kyctipslistswrapper .titletxt2 {font-family: "HelveticaBold"; font-size: 36px; color: #ffffff !important; line-height: normal;letter-spacing: 0px; text-align: left !important; width: 100%;margin: 0px; text-transform: uppercase !important;  display: inline-block}
+.kyctipslists {margin-top: 20px}
+.kyctipslists ul {list-style: inherit}
+.kyctipslists ul li {font-family: "HelveticaNormal"; font-size: 22px !important; color: #fff !important; font-weight: normal; line-height: 32px !important; margin-bottom: 15px; margin-left: 0; padding: 8px 4px 8px 36px; list-style-position: outside; background: #f7941d url(../../assets/images/kychowtosteplisticon2.png); background-position: center left 10px; background-repeat: no-repeat;border-radius: 4px; display: flex; justify-content: space-between; position: relative; text-align: left; align-items: center}
+.kyctipslists ul li img {position: relative; margin-right: 5px; margin-top: 0px; height: 92px; width: auto; margin-left: 19%}
+.kychowto .blockchainpordersummery {padding: 0; width: 50%; background-color: #f1f1f1; border: 20px solid #fff}
+.kychowto .blockchainpordersummery:nth-child(odd) {border-right: 9px solid #fff !important}
+.kychowto .blockchainpordersummery:nth-child(even) {border-left: 9px solid #fff !important}
+.blockchainpordersummerywrapper.kychowto {background-color: #fff}
+.signupforblockchainblock1.blockchainstatusblock .communitysignupnewblock1left {background-image: none !important;width: 100%;}
+.statusinfoblock {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: space-between; margin-top: 20px; flex-wrap: wrap}
+.statusinfoblock h5 {font-family: "HelveticaNormal"; font-size: 24px; color: #fff; padding: 0px; line-height: normal;letter-spacing: 0px; margin-top: 10px}
+.statusinfoblock h5 span {color: #fe9200}
+.statusinfotableblockwrapper {margin-top: 30px; margin-bottom: 60px}
+.statusinfotablesearchbox {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: flex-start}
+.statusinfotablesearchbox h2.searchmediatitle {font-family: "HelveticaNormal"; font-size: 36px; color: #e28003; padding: 0px; line-height: normal;letter-spacing: 0px; margin: 0px; text-transform: uppercase}
+.statusinfotableblock {background-color: #ffffff; padding: 20px; margin-top: 30px; position: relative; height: auto}
+.statusinfotableblock table {width: 100%; height: 100%; margin:0; padding: 0px; border-collapse: collapse; border-spacing: 0; border:1px solid #dbdbdb; }
+.statusinfotableblock table tr {padding: 10px 5px}
+.statusinfotableblock table th {padding: 20px 10px; text-align: left; font-family:"HelveticaBold";font-size: 16px; line-height: normal; color: #ffffff;vertical-align: middle;text-transform: uppercase}
+.statusinfotableblock table td {padding: 15px 10px; text-align: left; font-family:"HelveticaNormal";font-size: 15px; line-height: normal; color: #171717;vertical-align: middle}
+.statusinfotableblock table thead {background-color: #141618; border-bottom: 5px solid #fff}
+.statusinfotableblock table thead tr {background-color: #141618 !important}
+.statusinfotableblock table tr:nth-child(odd) {background-color: #f1f1f1}
+.statusinfotableblock table tr:nth-child(even) {background-color: #ffffff}
+.statusinfotableblocktable {padding: 10px 15px; background-color: #f1f1f1; margin-top: 20px}
+.btnblockchainlink {background-color: #7d7d7d;border-radius: 50px;padding: 7px 33px 5px;font-family: "HelveticaNormal";font-size: 15px;text-transform: capitalize;white-space: normal;word-break: normal;color: #fff !important;}
+a.btnblockchainlink:hover {background-color: #494949}
+.statusinfotablesearchbox .search-container {margin-left: 20px;  border: 2px solid #fff}
+.statusinfotablesearchbox input[type=text] {padding: 6px;margin-top: 0;font-size: 17px;border: none;background: #d6d6d6;font-family: "HelveticaNormal";font-size: 24px;width: 86%;}
+.statusinfotablesearchbox .search-container button {float: right;padding: 7px 7px;margin-top: 0;margin-right: 0;background: #d6d6d6;font-size: 23px;border: none;cursor: pointer;color: #878786;width: 14%;}
+.statusinfotablesearchbox .search-container button:hover {background: #d6d6d6;}
+.statusinfotablesearchbox::-webkit-input-placeholder { /* Chrome/Opera/Safari */color: #3d3d3d;text-transform: capitalize;}
+.statusinfotablesearchbox::-moz-placeholder { /* Firefox 19+ */color: #3d3d3d;text-transform: capitalize;}
+.statusinfotablesearchbox:-ms-input-placeholder { /* IE 10+ */color: #3d3d3d;text-transform: capitalize;}
+.statusinfotablesearchbox:-moz-placeholder { /* Firefox 18- */color: #3d3d3d;text-transform: capitalize;}
+.signupblockchaincertificate {}
+.signupblockchaincertificate .blockchainpordersummerytable {margin-top: 0px !important}
+.signupblockchaincertificate .certificateform {}
+.signupblockchaincertificate .certificateform {display: flex; justify-content: space-between; flex-wrap: wrap;align-items: flex-end}
+.signupblockchaincertificate .certificateform .form-group {width:49%;text-align: left;margin-top: 17px}
+.signupblockchaincertificate .certificateform .form-group.form-group-100 {width:100%}
+.signupblockchaincertificate .certificateform .form-group .inputText {margin-bottom: 4px;text-transform: none;font-size: 18px;font-family: "HelveticaNormal";color: #030303;text-align: left;}
+.signupblockchaincertificate .certificateform .form-group .form-control {height: 38px;border:1px solid #a7a7a7;border-radius: 0 !important;background-color: #fff;color: #030303;font-family: "HelveticaNormal";font-size: 14px;line-height:30px;padding: 0 7px;resize: none;width: 100%;}
+.signupblockchaincertificate .certificateform .padding6 {padding-left: 6px; padding-right: 6px}
+.signupblockchaincertificate .certificateform .header-title-new {flex: 1 100%;margin-top: 25px;}
+.signupblockchaincertificate .certificateform h1 {margin: 0;padding: 0px;text-transform: capitalize;font-size: 30px;font-family: "HelveticaBold";color: #030303;text-align: left;}
+.signupeamilbodynewkb input::-webkit-input-placeholder, .signupeamilbodynewkb textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */color:#000000;text-transform: capitalize;}
+.signupeamilbodynewkb input::-moz-placeholder, .signupeamilbodynewkb textarea::-moz-placeholder { /* Firefox 19+ */color:#000000;text-transform: capitalize;}
+.signupeamilbodynewkb input:-ms-input-placeholder, .signupeamilbodynewkb textarea:-ms-input-placeholder { /* IE 10+ */color:#000000;text-transform: capitalize;}
+.signupeamilbodynewkb input:-moz-placeholder, .signupeamilbodynewkb textarea:-moz-placeholder { /* Firefox 18- */color:#000000;text-transform: capitalize;}
+@media screen and (max-width: 600px) {/*.statusinfotablesearchbox .search-container {float: none;}
+*//*.statusinfotablesearchbox a, .topnav2 input[type=text], .statusinfotablesearchbox .search-container button {float: none;display: block;text-align: left;width: 100%;margin: 0;padding: 14px;}
+*/}
+
+
+.fromgroup input::placeholder, .fromgroup textarea::placeholder, .fromgroup mat-select::placeholder {color: #89898f;  opacity: 1; }
+  
+  .fromgroup input::placeholder, .fromgroup textarea::placeholder, .fromgroup mat-select::placeholder  { color: #89898f;}
+  
+  .fromgroup input::placeholder, .fromgroup textarea::placeholder, .fromgroup mat-select::placeholder  { color: #89898f;}
+
+
+
+/*--------- End signupblockchain css ------------*/

@@ -1,23 +1,191 @@
 @media only screen and (max-width: 1880px) {
     .logincontainer {width: 96%}
 }
+
+@media only screen and (max-width: 1800px) {
+    .signupforblockchainblock3rightbottom {
+        width: 708px;}
+    .newwrapper {width: 100%;}
+}
 @media only screen and (max-width: 1730px) {
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 18px 41px !important}
+    .signupforblockchainblock2content {
+        width: 102%;
+    }
+}
+@media only screen and (max-width: 1700px) {
+   
 }
 @media only screen and (max-width: 1680px) {
+    .signupforblockchainblock2content p {
+        font-size: 20px;
+    }
+    .signupforblockchainblock2right .iconblockchain {
+        bottom: -69px;
+        left: -75px;
+    }
     .modal-sm {width: 35%;}
+}
+@media only screen and (max-width: 1660px) {
+    .signupforblockchainblock2content {
+        width: 100%;
+    }
+    .communitysignupnewblock1.signupforblockchainblock1 .newwrapper {
+        width: 1660px;
+    }
+    .signupforblockchainblock1 .manhand {
+        position: absolute;
+        left: -20px;}
+        .signupforblockchainblock1 .vbllist1 {
+            margin-top: 56%;
+        }
 }
 @media only screen and (max-width: 1640px) {
     .loginbuttonwrapper button, .loginbuttonwrapper button:hover {font-size: 20px !important}
 }
 @media only screen and (max-width: 1600px) {
+    .signupforblockchainblock4 p {
+        font-size: 20px;}
+    .signupforblockchainblock3 .signupforblockchainblock3lists li .image {font-size: 20px;}
+    .signupforblockchainblock3listsbottombg .iconblockchain {
+        top: 2%;
+        right: -3%;
+        width: 196px;
+    }
+    .signupforblockchainblock3rightbottom {
+        width: 665px;
+    }
+    .signupforblockchainblock3 .signupforblockchainblock3lists li {
+        margin-bottom: 15px;
+    }
+    .signupforblockchainblock2bottomcontent {padding-left: 33%;}
+    .signupforblockchainblock2 h1 {
+        font-size: 56px;
+        line-height: 57px;
+        width: 98%;
+        margin: 0px auto 5px !important;
+    }
+    .signupforblockchainblock1 .vbllist1 {
+        width: 690px;
+        left: 5%;
+        margin-top: 60%;
+    }
+    .signupforblockchainblock1 .titletxt1 {
+        font-size: 70px;
+        line-height: 70px;
+    }
+    .signupforblockchainblock1 .vbllist1 li span {font-size: 28px !important;}
+    .signupforblockchainblock1 .manhand {
+        left: 7px;
+    }
+    .signupforblockchainblock1 .bannerleftnew .titletxt2 {
+        font-size: 30px;
+        line-height: 34px !important;}
+
+        .signupforblockchainblock1 .vblb6img5 {
+            width: 809px;
+            background-size: contain;
+        }
+        .signupforblockchainblock1 .bannerleftnew .titletxt3 {font-size: 36px;margin: 0 0 0 43%;}
+        .signupforblockchainblock1 .vblb6img5 h2 {font-size: 36px;}
+
+    .signupforblockchainblock1 .vbllist1 li {
+        font-size: 20px;
+    }
+    .communitysignupnewblock1.signupforblockchainblock1 .newwrapper {
+        width: 1540px;
+    }
     .textwrapper mat-card-title {font-size: 28px}
     .textwrapper mat-card-subtitle {font-size: 18px}
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 35px !important;font-size: 21px !important;}
 }
+
+@media only screen and (max-width: 1560px) {
+    .signupforblockchainblock3rightbottom {
+        width: 513px;
+    }
+    .signupforblockchainblock3listsbottombg .iconblockchain {right: -8%;}
+}
 @media only screen and (max-width: 1500px) {
     .loginbodycontainer {-ms-flex-align: center; align-items: center}
     .loginbody {padding: 42px 10px 42px 2px}
+}
+@media only screen and (max-width: 1480px) {
+    .signupforblockchainblock4toprightyellowbg { right: -13%;}
+    .signupforblockchainblock4bottomleftyellowbg { left: -7%;}
+    .signupforblockchainblock4 p {
+        margin-bottom: 15px;
+    }
+    .newwrapperinner {
+        width: 85%;}
+        .signupforblockchainblock2right .iconblockchain {
+            bottom: -25px;
+            left: -48px;
+            width: 140px;
+        }
+    .communitysignupnewblock1.signupforblockchainblock1 .newwrapper {
+        width: 1461px;
+    }
+    .signupforblockchainblock1 .imgmanleft {left: -37%;}
+    .signupforblockchainblock1 .manhand {
+        left: -68px;
+    }
+    .signupforblockchainblock1 .vbllist1 {left: -2%;
+        margin-top: 63%;
+    }
+    .signupforblockchainblock1 .communitysignupnewblock1right .formdiv {
+        width: 100%;}
+        .signupforblockchainblock1 .formtoptxt {
+            font-size: 37px;}
+            .signupforblockchainblock1 .cslandingformheader h1 {
+                font-size: 40px;}
+                .signupforblockchainblock1 .cslandingformheader h1 span {font-size: 28px;}
+                .signupforblockchainblock1 .vblb6img5 {
+                    width: 731px;}
+                    .signupforblockchainblock1 .vblb6img5 h2 {
+                        line-height: 73px;
+                    }
+}
+@media only screen and (max-width: 1400px) {
+    .communitysignupnewblock1.signupforblockchainblock1 .newwrapper {
+        width: 1360px;
+    }
+    .signupforblockchainblock1 .manhand {
+        left: -39px;
+    }
+    .signupforblockchainblock1 .vbllist1 {
+        left: 1%;
+        margin-top: 69%;
+        width: 673px;
+    }
+}
+@media only screen and (max-width: 1360px) {
+    .signupforblockchainblocknavwrapper {width: 100%;}
+    .signupforblockchainblock3listsbottombg .iconblockchain {
+        right: -13%;
+    }
+}
+@media only screen and (max-width: 1340px) {
+    .signupforblockchainblock2content p {
+        font-size: 18px;
+        padding-right: 68px;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .signupforblockchainblock1 .cslandingformheader h1 {
+        font-size: 32px;
+    }
+    .signupforblockchainblock1 .cslandingformheader h1 span {
+        font-size: 22px;
+    }
+    .signupforblockchainblock2right .iconblockchain {
+        bottom: 12px;
+        left: -48px;
+        width: 140px;
+    }
+    .signupforblockchainimgright {
+        width: 608px;
+    }
 }
 @media only screen and (max-width: 1380px) {.loginbuttonwrapper button, .loginbuttonwrapper button:hover {padding: 12px 36px !important;}
 }

@@ -34,6 +34,9 @@ import { CompetitionrulesComponent } from './components/competitionrules/competi
 import { RefundpolicyComponent } from './components/refundpolicy/refundpolicy.component';
 import { AgreementComponent,SignDialogComponent } from './components/agreement/agreement.component';
 import { InvitationforlaunchplanComponent } from './components/invitationforlaunchplan/invitationforlaunchplan.component';
+import { SignupforblockchainComponent } from './components/signupforblockchain/signupforblockchain.component';
+import { Signupforblockchainstep2Component } from './components/signupforblockchainstep2/signupforblockchainstep2.component';
+import { SignupforblockchainconfirmationComponent } from './components/signupforblockchainconfirmation/signupforblockchainconfirmation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +59,7 @@ import { InvitationforlaunchplanComponent } from './components/invitationforlaun
     TermsandconditionsComponent,
     CompetitionrulesComponent,
     RefundpolicyComponent,
-    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent
+    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent, SignupforblockchainComponent, Signupforblockchainstep2Component, SignupforblockchainconfirmationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

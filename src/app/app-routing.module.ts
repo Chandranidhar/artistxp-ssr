@@ -17,6 +17,9 @@ import { CompetitionrulesComponent } from './components/competitionrules/competi
 import { RefundpolicyComponent } from './components/refundpolicy/refundpolicy.component';
 import { AgreementComponent } from './components/agreement/agreement.component';
 import { InvitationforlaunchplanComponent } from './components/invitationforlaunchplan/invitationforlaunchplan.component';
+import { SignupforblockchainComponent } from './components/signupforblockchain/signupforblockchain.component';
+import { SignupforblockchainconfirmationComponent } from './components/signupforblockchainconfirmation/signupforblockchainconfirmation.component';
+import { Signupforblockchainstep2Component } from './components/signupforblockchainstep2/signupforblockchainstep2.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
@@ -34,6 +37,9 @@ const routes: Routes = [
   { path: 'refundpolicy', component: RefundpolicyComponent },
   { path: 'agreement/:userid', component: AgreementComponent },
   { path: 'invitationforlaunchplan', component: InvitationforlaunchplanComponent },
+  { path: 'signupforblockchain', component: SignupforblockchainComponent },
+  { path: 'signupforblockchainconfirmation', component: SignupforblockchainconfirmationComponent },
+  { path: 'signupforblockchainstep2', component: Signupforblockchainstep2Component },
   // demo example for resolve and auth guard along with can activate
   
   // { path: "recentSignUp", component: RecentSignUpComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: 'admindashboard'}},
