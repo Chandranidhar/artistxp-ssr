@@ -56,20 +56,20 @@
           </div>
   
           <div class="communitysignupnewblock1right">
-            <form class="formdiv" [formGroup]="blockchainForm" (ngSubmit)="blockchainForm_Submit()">
+            <form class="formdiv signupflowform" [formGroup]="blockchainForm" (ngSubmit)="blockchainForm_Submit()">
               <div class="cslandingformwrapper" #destinationRef>
                 <div class="cslandingformheader">
                   <h1>Final Step Complete <span>your order</span></h1>
                 </div>
                 <div class="cslandingforminnerwrapper">
   
-                  <div class="form-group hide">
-                    <input name="_id" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" placeholder="_id">
-                    <input formControlName="email" type="hidden" />
+                  <mat-form-field class="fromgroup hide">
+                    <input matInput name="_id" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" placeholder="_id">
+                    <!-- <input matInput formControlName="email" type="text" /> -->
                     <span class="has-error"> First Name field can not be blank</span>
-                  </div>
-                  <div class="form-group">
-                    <input formControlName="firstname" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text"  placeholder="first name" />
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width fromgroup">
+                    <input matInput  formControlName="firstname" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text"  placeholder="first name" />
   
                     <!-- error message start here -->
                     <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.firstname.touched ) && blockchainForm_Validate.firstname.errors">
@@ -77,10 +77,10 @@
                       <span class="has-error" *ngIf="blockchainForm_Validate.firstname.errors.maxlength"> Please enter a valid First Name.</span>
                     </div>
                     <!-- error message end here -->
-                  </div>
+                  </mat-form-field>
   
-                  <div class="form-group">
-                    <input formControlName="lastname" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" placeholder="last name">
+                  <mat-form-field class="example-full-width fromgroup">
+                    <input matInput  formControlName="lastname" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" placeholder="last name">
                     
                     <!-- error message start here -->
                     <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.lastname.touched ) && blockchainForm_Validate.lastname.errors">
@@ -88,10 +88,10 @@
                       <span class="has-error" *ngIf="blockchainForm_Validate.lastname.errors.maxlength"> Please enter a valid Last Name.</span>
                     </div>
                     <!-- error message end here -->
-                  </div>
+                  </mat-form-field>
   
-                  <div class="form-group">
-                    <input formControlName="address" class="form-control" type="text" placeholder="Your Address">
+                  <mat-form-field class="example-full-width fromgroup">
+                    <input matInput  formControlName="address" class="form-control" type="text" placeholder="Your Address">
                     
                     <!-- error message start here -->
                     <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.address.touched ) && blockchainForm_Validate.address.errors">
@@ -99,9 +99,9 @@
                       <span class="has-error" *ngIf="blockchainForm_Validate.address.errors.maxlength"> Address cannot more than 1000 characters!</span>
                     </div>
                     <!-- error message end here -->
-                  </div>
+                  </mat-form-field>
   
-                  <div class="form-group">
+                  <mat-form-field class="example-full-width fromgroup">
                     <input formControlName="city" class="form-control" type="text"  placeholder="city">
                     
                     <!-- error message start here -->
@@ -110,16 +110,17 @@
                       <span class="has-error" *ngIf="blockchainForm_Validate.city.errors.maxlength"> City cannot more than 50 characters!</span>
                     </div>
                     <!-- error message end here -->
-                  </div>
+                </mat-form-field>
   
-                  <div class="form-group">
-                    <select formControlName="country" class="form-control classic">
-                      <option value="">Select country</option>
-                      <option value="USA">USA</option>
-                      <option value="UK">UK</option>
-                      <option value="Australia">Australia</option>
-                      <option value="Korea">Korea</option>
-                    </select>
+                  <mat-form-field class="example-full-width fromgroup">
+                    <mat-label>Select country</mat-label>
+                    <mat-select formControlName="country" class="form-control classic">
+                      <mat-option value="">Select country</mat-option>
+                      <mat-option value="USA">USA</mat-option>
+                      <mat-option value="UK">UK</mat-option>
+                      <mat-option value="Australia">Australia</mat-option>
+                      <mat-option value="Korea">Korea</mat-option>
+                    </mat-select>
   
                     <!-- error message start here -->
                     <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.country.touched ) && blockchainForm_Validate.country.errors">
@@ -127,10 +128,10 @@
                       <span class="has-error" *ngIf="blockchainForm_Validate.country.errors.maxlength"> Country cannot more than 50 characters!</span>
                     </div>
                     <!-- error message end here -->
-                  </div>
+                  </mat-form-field>
   
-                  <div class="form-group">
-                    <input formControlName="zip" class="form-control" type="text" placeholder="zip">
+                  <mat-form-field class="example-full-width fromgroup">
+                    <input matInput  formControlName="zip" class="form-control" type="text" placeholder="zip">
                     
                     <!-- error message start here -->
                     <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.zip.touched ) && blockchainForm_Validate.zip.errors">
@@ -138,13 +139,14 @@
                       <span class="has-error" *ngIf="blockchainForm_Validate.zip.errors.maxlength"> Zip cannot more than 10 characters!</span>
                     </div>
                     <!-- error message end here -->
-                  </div>
+                </mat-form-field>
   
-                  <div class="form-group">
-                    <select formControlName="state" class="form-control classic">
-                      <option value="">Select State</option>
-                      <option *ngFor="let state of states" value="{{ state.abbreviation }}">{{ state.name }}</option>
-                    </select>
+                  <mat-form-field class="example-full-width fromgroup">
+                        <mat-label>Select State</mat-label>
+                    <mat-select formControlName="state" class="form-control classic">
+                      <mat-option value="">Select State</mat-option>
+                      <mat-option *ngFor="let state of states" value="{{ state.abbreviation }}">{{ state.name }}</mat-option>
+                    </mat-select>
   
                     <!-- error message start here -->
                     <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.state.touched ) && blockchainForm_Validate.state.errors">
@@ -152,10 +154,10 @@
                       <span class="has-error" *ngIf="blockchainForm_Validate.state.errors.maxLength"> State cannot more than 100 characters!</span>
                     </div>
                     <!-- error message end here -->
-                  </div>
+                </mat-form-field>
   
-                  <div class="form-group">
-                    <ul class="cardlist list-inline">
+                  <mat-form-field class="example-full-width fromgroup">
+                    <ul class="cardlist list-inline paycardlist">
                       <li>We Accept</li>
                       <li>
                         <a href="javascript:void(0);"><img src="../../assets/images/img-card1.png"></a>
@@ -164,11 +166,11 @@
                         <a href="javascript:void(0);"><img src="../../assets/images/img-card4.png"></a>
                       </li>
                     </ul>
-                  </div>
+                </mat-form-field>
   
-                  <div class="form-group">
+                  <mat-form-field class="example-full-width fromgroup">
                     <span>
-                      <input formControlName="cardnumber" class="form-control" placeholder="Card Number*" type="text" />
+                      <input matInput  formControlName="cardnumber" class="form-control" placeholder="Card Number*" type="text" />
                     </span>
   
                     <!-- error message for card no start -->
@@ -183,15 +185,16 @@
                       <span class="has-error"> Invalid card details.</span>
                     </div>
                     <!-- error message for card no end -->
-                  </div>
+                </mat-form-field>
   
-                  <div class="form-group">
+                  <mat-form-field class="example-full-width fromgroup">
                     <ul class="list-inline ddyy">
                       <li>
-                        <select formControlName="cardValidMM" class="form-control classic" name="expmon">
-                          <option value="" selected>--MM--</option>
-                          <option *ngFor="let month of cardValidDateSetup.validMM" value="{{ month }}">{{ month }}</option>
-                        </select>
+                        <mat-label>--MM--</mat-label>
+                        <mat-select formControlName="cardValidMM" class="form-control classic" name="expmon">
+                          <mat-option value="" selected>--MM--</mat-option>
+                          <mat-option *ngFor="let month of cardValidDateSetup.validMM" value="{{ month }}">{{ month }}</mat-option>
+                        </mat-select>
   
                         <!-- error message start here -->
                         <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.cardValidMM.touched ) && blockchainForm_Validate.cardValidMM.errors">
@@ -203,10 +206,12 @@
                       </li>
   
                       <li>
-                        <select formControlName="cardValidYY" class="form-control classic" name="expyear">
-                          <option value="" selected>--YYYY--</option>
-                          <option *ngFor="let year of cardValidDateSetup.validYY" value="{{ year }}">{{ year }}</option>
-                        </select>
+                        <mat-label>--YYYY--</mat-label>
+                        <mat-select formControlName="cardValidYY" class="form-control classic" name="expyear">
+                           
+                          <mat-option value="" selected>--YYYY--</mat-option>
+                          <mat-option *ngFor="let year of cardValidDateSetup.validYY" value="{{ year }}">{{ year }}</mat-option>
+                        </mat-select>
   
                         <!-- error message start here -->
                         <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.cardValidYY.touched ) && blockchainForm_Validate.cardValidYY.errors">
@@ -217,11 +222,11 @@
                         <!-- error message end here -->
                       </li>
                     </ul>
-                  </div>
+                </mat-form-field>
   
-                  <div class="form-group">
+                  <mat-form-field class="example-full-width fromgroup">
                     <span>
-                      <input formControlName="cvv" class="form-control" placeholder="CVV*" type="text" />
+                      <input matInput  formControlName="cvv" class="form-control" placeholder="CVV*" type="text" />
                     </span>
   
                     <!-- error message start here -->
@@ -231,11 +236,11 @@
                       <span class="has-error" *ngIf="blockchainForm_Validate.cvv.errors.maxlength"> Invalid CVV number!</span>
                     </div>
                     <!-- error message end here -->
-                  </div>
+                </mat-form-field>
   
-                  <div class="form-group">
+                  <mat-form-field class="example-full-width fromgroup">
                     <span>
-                      <input formControlName="promocode" class="form-control" placeholder="Do you have a promo code?" type="text" />
+                      <input matInput  formControlName="promocode" class="form-control" placeholder="Do you have a promo code?" type="text" />
                     </span>
                     <!-- <span class="wpcf7-not-valid-tip">{{ promomsg }}</span>
                     <span class="wpcf7-not-valid-tip" style="color: #00ff00">{{ promomsg }}</span> -->
@@ -245,20 +250,26 @@
                       <span class="has-error" *ngIf="blockchainForm_Validate.promocode.errors.maxlength"> Promocode is not valid!</span>
                     </div>
                     <!-- error message end here -->
-                  </div>
+                </mat-form-field>
   
-                  <div class="form-group termsandconditioncls">
-                    <label class="checkcontainer">
+                  <mat-form-field class="example-full-width fromgroup">
+                      <span class="fromgroupcol1">
+                            <section class="example-section">
+                        <mat-checkbox (change)="acceptTermsAndConditions()" name="accept-tc" value="Accept Terms And Conditions" >Accept Terms And Conditions</mat-checkbox>
+                    <!-- <label class="checkcontainer">
                       Accept Terms And Conditions
-                      <input (change)="acceptTermsAndConditions()" name="accept-tc" value="Accept Terms And Conditions" type="checkbox">
+                      <input matInput  (change)="acceptTermsAndConditions()" name="accept-tc" value="Accept Terms And Conditions" type="checkbox">
                       <span class="checkmark"></span>
                       <span *ngIf="blockchainForm_submit && acceptTermsAndConditionsFlag == false" class="wpcf7-not-valid-tip"> You have to accept the Terms and Conditions !</span>
-                    </label>
-                  </div>
+                    </label> -->
+                    </section>
+                </span>
+                  </mat-form-field>
   
                 </div>
                 <div class="btnnewwrapper">
-                  <input class="btnbuyticket_genuserlan" value="Order now" type="submit">
+                  <!-- <input matInput  class="btnbuyticket_genuserlan" value="Order now" type="submit"> -->
+                  <button mat-button class="btnbuyticket_genuserlan"><span class="buttoncon">Order now</span></button>
                 </div>
               </div>
               <div class="landingformfooter_genuserlan"></div>

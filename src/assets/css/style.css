@@ -1196,10 +1196,19 @@ text-transform: uppercase;}
 .signupforblockchainstep2 {background: #0e0517 url(../images/signupforblockchainstep2bg.jpg) no-repeat left top !important;background-size: cover !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;padding-bottom: 25px;}
 .signupforblockchainstep2overlay {content:"";position: absolute;top:0;left:0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.6);z-index: 99;}
 .signupforblockchainstep2 .newwrapper {position: relative;z-index: 999;}
-.signupforblockchainstep2 .cslandingforminnerwrapper .ddyy {display: flex;justify-content: space-between;margin-bottom: 0;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .ddyy {padding: 0; display: flex;justify-content: space-between;margin-bottom: 0;}
 .signupforblockchainstep2 .cslandingforminnerwrapper .cardlist.list-inline {text-align: center;margin-bottom: 10px;margin-top: 10px;}
-.signupforblockchainstep2 .cslandingforminnerwrapper .cardlist.list-inline li {font-family: "OpenSans";color: #fffffe;font-size: 18px;text-transform: capitalize;line-height: 20px;}
-.signupforblockchainstep2 .cslandingforminnerwrapper .list-inline.ddyy>li {width: 50%;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .cardlist.list-inline li {list-style: none; font-family: "OpenSans";color: #fffffe;font-size: 18px;text-transform: capitalize;line-height: 20px;}
+.paycardlist{display: flex; justify-content: center;padding: 0; margin: 0 !important;}
+.paycardlist li{padding: 0 10px;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .list-inline.ddyy>li {width: 45%; list-style: none; position: relative;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .list-inline.ddyy>li mat-label {
+    color: #89898f;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+}
+.signupforblockchainstep2 .mat-form-field-infix{padding: 0;}
 .signupforblockchainstep2 .cslandingforminnerwrapper .list-inline.ddyy>li:nth-child(2) {padding-right: 0px !important}
 .signupforblockchainstep2 .formdiv .form-group label {line-height: normal;text-transform: inherit;font-weight: normal;}
 .signupforblockchainstep2 .formdiv .form-group label.checkcontainer {display: inline-block;}
@@ -1226,7 +1235,7 @@ text-transform: uppercase;}
 .signupforblockchainconfirm .bannerleftnew h3.titletxth3 span {color:#1ab6ff !important}
 .signupforblockchainconfirm .blockchainprod {background-color: #fc8d00; padding: 20px; margin-top: 26px; position: relative; height: auto}
 .signupforblockchainconfirm .blockchainprodleft {width: 20%;position: inherit !important; margin: 0 !important; background-color: #fff; display: flex; align-items: center; justify-content: center; padding: 10px}
-.signupforblockchainconfirm .blockchainprodright {width: 80%; margin-left: 0; padding: 15px}
+.signupforblockchainconfirm .blockchainprodright {width: 75%; margin-left: 0; padding: 15px}
 .blockchainpordersummery {background-color: #ffffff; padding: 20px; margin-top: 30px; position: relative; height: auto}
 .blockchainpordersummery table {width: 100%; height: 100%; margin:0; padding: 0px; border-collapse: collapse; border-spacing: 0}
 .blockchainpordersummery table tr {padding: 5px}
@@ -1241,6 +1250,17 @@ text-transform: uppercase;}
 .blockchainpordersummerywrapper h5 span {color:#1ab6ff !important}
 .signupblockchainlogoicon {background-color: #000; width: 90px; height: auto; display: block; vertical-align: middle; padding: 10px}
 .signupblockchainlogoicon img {max-width:100%}
+.signupforblockchainblock4 .videoblockcontent a, .signupforblockchainblock4 .videoblockcontentright a:hover, .signupforblockchainconfirm .bannerleftnew h3.titletxth3 span a, .signupforblockchainconfirm .bannerleftnew h3.titletxth3 span a:hover {
+    background: #f28d02;
+    border: 1px solid #a7a7a7;
+    padding: 7px 20px 4px;
+    color: #030303;
+    font-family: HelveticaNormal!important;
+    font-size: 18px!important;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+}
 .iconnew {width: 8%}
 .descnew {width: 45%}
 .kychowto {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: space-between}
