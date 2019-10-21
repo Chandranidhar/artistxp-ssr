@@ -1,1 +1,277 @@
-<p>signupforblockchainstep2 works!</p>
+<!--<div class="signupforblockchainblocktop">
+  <p>Lorem Ipsum is simply dummy text of</p>
+</div>-->
+
+<div class="signupforblockchainblocknav">
+    <div class="signupforblockchainblocknavwrapper">
+      <app-signupheader></app-signupheader>
+    </div>
+  </div>
+  
+  <div class="container-fluid communitysignupnewblock1 signupforblockchainblock1 signupforblockchainstep2">
+    <div class="row signupforblockchainstep2row">
+      <div class="container newwrapper">
+        <div class="communitysignupnewblock1inner">
+          <div class="communitysignupnewblock1left">
+            <div class="bannerleftnew">
+              <h2 class="titletxt2">Blockchain technology</h2>
+              <p>now offers a simple, secure way to create a blockchain-based trail of records proving the existence and integrity of your creative piece of work. Our easy-to-use certification process helps you generate evidence of your creative process, giving you strong authorship proof. </p>
+            </div>
+            <div class="blockchainprod">
+                <div class="blockchainprodleft">
+                    <img src="../../assets/images/signupblockchainstep2icon.png">
+                </div>
+                <div class="blockchainprodright">
+                  <table>
+                    <!--<thead>
+                    <tr>
+                      <th>Payment</th>
+                      <th>Issue Date</th>
+                      <th>Amount</th>
+                      <th>Period</th>
+                    </tr>
+                    </thead>-->
+                    <tbody>
+                    <tr>
+                      <td data-label="Img"><img src="../../assets/images/signupblockchainstep2tickicon.png"></td>
+                      <td data-label="Item">KYC Identity Verification <br>One Time Process <br>NOT REFUNDABLE</td>
+                      <td data-label="Amount">$10.00</td>
+                    </tr>
+                    <tr>
+                      <td data-label="Img"><img src="../../assets/images/signupblockchainstep2tickicon.png"></td>
+                      <td data-label="Item">10 BlockChain Credits</td>
+                      <td data-label="Amount">$19.95</td>
+                    </tr>
+  
+                    <tr>
+                      <td data-label="" class="gtotal"></td>
+                      <td data-label="" class="gtotal">Grand Total</td>
+                      <td data-label="Grand Total">$29.95</td>
+                    </tr>
+  
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+          </div>
+  
+          <div class="communitysignupnewblock1right">
+            <form class="formdiv" [formGroup]="blockchainForm" (ngSubmit)="blockchainForm_Submit()">
+              <div class="cslandingformwrapper" #destinationRef>
+                <div class="cslandingformheader">
+                  <h1>Final Step Complete <span>your order</span></h1>
+                </div>
+                <div class="cslandingforminnerwrapper">
+  
+                  <div class="form-group hide">
+                    <input name="_id" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" placeholder="_id">
+                    <input formControlName="email" type="hidden" />
+                    <span class="has-error"> First Name field can not be blank</span>
+                  </div>
+                  <div class="form-group">
+                    <input formControlName="firstname" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text"  placeholder="first name" />
+  
+                    <!-- error message start here -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.firstname.touched ) && blockchainForm_Validate.firstname.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.firstname.errors.required"> First Name field is required.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.firstname.errors.maxlength"> Please enter a valid First Name.</span>
+                    </div>
+                    <!-- error message end here -->
+                  </div>
+  
+                  <div class="form-group">
+                    <input formControlName="lastname" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" placeholder="last name">
+                    
+                    <!-- error message start here -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.lastname.touched ) && blockchainForm_Validate.lastname.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.lastname.errors.required"> Last Name field is required.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.lastname.errors.maxlength"> Please enter a valid Last Name.</span>
+                    </div>
+                    <!-- error message end here -->
+                  </div>
+  
+                  <div class="form-group">
+                    <input formControlName="address" class="form-control" type="text" placeholder="Your Address">
+                    
+                    <!-- error message start here -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.address.touched ) && blockchainForm_Validate.address.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.address.errors.required"> Address field is required.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.address.errors.maxlength"> Address cannot more than 1000 characters!</span>
+                    </div>
+                    <!-- error message end here -->
+                  </div>
+  
+                  <div class="form-group">
+                    <input formControlName="city" class="form-control" type="text"  placeholder="city">
+                    
+                    <!-- error message start here -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.city.touched ) && blockchainForm_Validate.city.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.city.errors.required"> City field is required.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.city.errors.maxlength"> City cannot more than 50 characters!</span>
+                    </div>
+                    <!-- error message end here -->
+                  </div>
+  
+                  <div class="form-group">
+                    <select formControlName="country" class="form-control classic">
+                      <option value="">Select country</option>
+                      <option value="USA">USA</option>
+                      <option value="UK">UK</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Korea">Korea</option>
+                    </select>
+  
+                    <!-- error message start here -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.country.touched ) && blockchainForm_Validate.country.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.country.errors.required"> Country field is required.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.country.errors.maxlength"> Country cannot more than 50 characters!</span>
+                    </div>
+                    <!-- error message end here -->
+                  </div>
+  
+                  <div class="form-group">
+                    <input formControlName="zip" class="form-control" type="text" placeholder="zip">
+                    
+                    <!-- error message start here -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.zip.touched ) && blockchainForm_Validate.zip.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.zip.errors.required"> Zip field is required.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.zip.errors.maxlength"> Zip cannot more than 10 characters!</span>
+                    </div>
+                    <!-- error message end here -->
+                  </div>
+  
+                  <div class="form-group">
+                    <select formControlName="state" class="form-control classic">
+                      <option value="">Select State</option>
+                      <option *ngFor="let state of states" value="{{ state.abbreviation }}">{{ state.name }}</option>
+                    </select>
+  
+                    <!-- error message start here -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.state.touched ) && blockchainForm_Validate.state.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.state.errors.required"> State field is required.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.state.errors.maxLength"> State cannot more than 100 characters!</span>
+                    </div>
+                    <!-- error message end here -->
+                  </div>
+  
+                  <div class="form-group">
+                    <ul class="cardlist list-inline">
+                      <li>We Accept</li>
+                      <li>
+                        <a href="javascript:void(0);"><img src="../../assets/images/img-card1.png"></a>
+                        <a href="javascript:void(0);"><img src="../../assets/images/img-card2.png"></a>
+                        <a href="javascript:void(0);"><img src="../../assets/images/img-card3.png"></a>
+                        <a href="javascript:void(0);"><img src="../../assets/images/img-card4.png"></a>
+                      </li>
+                    </ul>
+                  </div>
+  
+                  <div class="form-group">
+                    <span>
+                      <input formControlName="cardnumber" class="form-control" placeholder="Card Number*" type="text" />
+                    </span>
+  
+                    <!-- error message for card no start -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.cardnumber.touched ) && blockchainForm_Validate.cardnumber.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.cardnumber.errors.required"> Card Number field can not be blank.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.cardnumber.errors.minlength"> Card is not valid.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.cardnumber.errors.maxlength"> Card is not valid.</span>
+                    </div>
+  
+                    <!-- error message from server site -->
+                    <div *ngIf="invalidCard_serverSiteMessage != null">
+                      <span class="has-error"> Invalid card details.</span>
+                    </div>
+                    <!-- error message for card no end -->
+                  </div>
+  
+                  <div class="form-group">
+                    <ul class="list-inline ddyy">
+                      <li>
+                        <select formControlName="cardValidMM" class="form-control classic" name="expmon">
+                          <option value="" selected>--MM--</option>
+                          <option *ngFor="let month of cardValidDateSetup.validMM" value="{{ month }}">{{ month }}</option>
+                        </select>
+  
+                        <!-- error message start here -->
+                        <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.cardValidMM.touched ) && blockchainForm_Validate.cardValidMM.errors">
+                          <span class="has-error" *ngIf="blockchainForm_Validate.cardValidMM.errors.required"> Required.</span>
+                          <span class="has-error" *ngIf="blockchainForm_Validate.cardValidMM.errors.max"> Invalid.</span>
+                          <span class="has-error" *ngIf="blockchainForm_Validate.cardValidMM.errors.min"> Invalid.</span>
+                        </div>
+                        <!-- error message end here -->
+                      </li>
+  
+                      <li>
+                        <select formControlName="cardValidYY" class="form-control classic" name="expyear">
+                          <option value="" selected>--YYYY--</option>
+                          <option *ngFor="let year of cardValidDateSetup.validYY" value="{{ year }}">{{ year }}</option>
+                        </select>
+  
+                        <!-- error message start here -->
+                        <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.cardValidYY.touched ) && blockchainForm_Validate.cardValidYY.errors">
+                          <span class="has-error" *ngIf="blockchainForm_Validate.cardValidYY.errors.required"> Required.</span>
+                          <span class="has-error" *ngIf="blockchainForm_Validate.cardValidYY.errors.min"> Invalid.</span>
+                          <span class="has-error" *ngIf="blockchainForm_Validate.cardValidYY.errors.max"> Invalid.</span>
+                        </div>
+                        <!-- error message end here -->
+                      </li>
+                    </ul>
+                  </div>
+  
+                  <div class="form-group">
+                    <span>
+                      <input formControlName="cvv" class="form-control" placeholder="CVV*" type="text" />
+                    </span>
+  
+                    <!-- error message start here -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.cvv.touched ) && blockchainForm_Validate.cvv.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.cvv.errors.required"> CVV field is required.</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.cvv.errors.minlength"> Invalid CVV number!</span>
+                      <span class="has-error" *ngIf="blockchainForm_Validate.cvv.errors.maxlength"> Invalid CVV number!</span>
+                    </div>
+                    <!-- error message end here -->
+                  </div>
+  
+                  <div class="form-group">
+                    <span>
+                      <input formControlName="promocode" class="form-control" placeholder="Do you have a promo code?" type="text" />
+                    </span>
+                    <!-- <span class="wpcf7-not-valid-tip">{{ promomsg }}</span>
+                    <span class="wpcf7-not-valid-tip" style="color: #00ff00">{{ promomsg }}</span> -->
+  
+                    <!-- error message start here -->
+                    <div *ngIf="( blockchainForm_submit || blockchainForm_Validate.promocode.touched ) && blockchainForm_Validate.promocode.errors">
+                      <span class="has-error" *ngIf="blockchainForm_Validate.promocode.errors.maxlength"> Promocode is not valid!</span>
+                    </div>
+                    <!-- error message end here -->
+                  </div>
+  
+                  <div class="form-group termsandconditioncls">
+                    <label class="checkcontainer">
+                      Accept Terms And Conditions
+                      <input (change)="acceptTermsAndConditions()" name="accept-tc" value="Accept Terms And Conditions" type="checkbox">
+                      <span class="checkmark"></span>
+                      <span *ngIf="blockchainForm_submit && acceptTermsAndConditionsFlag == false" class="wpcf7-not-valid-tip"> You have to accept the Terms and Conditions !</span>
+                    </label>
+                  </div>
+  
+                </div>
+                <div class="btnnewwrapper">
+                  <input class="btnbuyticket_genuserlan" value="Order now" type="submit">
+                </div>
+              </div>
+              <div class="landingformfooter_genuserlan"></div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+      <div class="signupforblockchainstep2overlay"></div>
+    </div>
+  
+  </div>
+  
+  
+  <app-footer></app-footer>
+  
