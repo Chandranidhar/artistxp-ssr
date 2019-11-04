@@ -40,7 +40,9 @@
         margin-top: 56%;
     }
 }
+
 @media only screen and (max-width: 1640px) {
+    .axplandingformwrapper_signup {right: 13%;}
     .loginbuttonwrapper button, .loginbuttonwrapper button:hover {font-size: 20px !important}
 }
 @media only screen and (max-width: 1600px) {
@@ -155,6 +157,10 @@
         line-height: 73px;
     }
 }
+@media only screen and (max-width: 1460px) {
+    .axplandingformwrapper_signup {right: 7%;}
+    .axpcontactusleftdiv .bg img {left: -64px;}
+}
 @media only screen and (max-width: 1400px) {
     .signupforblockchainconfirm .blockchainprodright {width: 73%;}
     .blockchainprod table th, .blockchainprod table td {
@@ -211,6 +217,12 @@
     }
 }
 @media only screen and (max-width: 1260px) {
+    .axpcontactusleftdiv .bg img {
+        left: -156px;
+    }
+    .axplandingformwrapper_signup {
+        right: 5%;
+    }
     .communitysignupnewblock1.signupforblockchainblock1 .newwrapper {
         width: 1240px;
     }
@@ -240,6 +252,32 @@
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 26px !important;font-size: 18px !important;}
 }
 @media only screen and (max-width: 1199px) {
+    .axplandingforminnerwrapper_signup {padding: 42px 44px 40px 19px;}
+    .axpcontactusleftdiv .bg img {
+        position: inherit;
+        width: 150%;
+        height: auto;
+        left: 0;
+        min-width: inherit;
+        min-height: inherit;
+    }
+    
+    .axplandingformwrapper_signup {
+        margin-right: auto;
+        width: 100%;
+        padding: 0px;
+        margin-top: 0;
+        border-radius: 0px;
+        position: inherit;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+    .axpcontactusleftdiv {
+        width: 100%;
+        height: auto;
+    }
+    .axpcontactusblock1 .row{display: block;}
     .signupforblockchainblock1 .titletxt1 {
         font-size: 60px;
         line-height: normal;
@@ -564,6 +602,7 @@
     .loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 0px !important}
 }
 @media only screen and (max-width: 991px) {
+    .axplandingforminnerwrapper_signup {padding: 42px 37px 40px 19px;}
     .signupforblockchainblock3rightbottom {
         width: 210px;
     }
@@ -698,6 +737,7 @@
     .mat-icon-button.mat-animation-noopable.cdk-touch-focused .smlmenudiv.ng-star-inserted {display: block !important;}
 }
 @media only screen and (max-width: 767px) {
+    .axplandingforminnerwrapper_signup {padding: 42px 31px 40px 19px;}
     .signupforblockchainblock3 h1 {
         font-size: 36px;
         line-height: normal;
