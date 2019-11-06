@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CookieService} from 'ngx-cookie-service';
+import {FormService} from '../../form.service';
 @Component({
   selector: 'app-signupforblockchain',
   templateUrl: './signupforblockchain.component.html',
@@ -22,7 +23,7 @@ export class SignupforblockchainComponent implements OnInit {
   public errormodal:any = false;
   public clickHereUrl: any = '/signupforblockchainkychowto';
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder,_commonservices:FormService) {
     this.fb = fb;
    }
 
