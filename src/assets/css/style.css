@@ -209,7 +209,22 @@ text-transform: uppercase;}
 .footerbottom {padding: 25px 20px;background-color: #292929;margin-top: 27px;margin-bottom: 0 !important;}
 .footersolist {color: #aeaeae;font-size: 20px;text-align: center;text-transform: capitalize;font-weight: normal;}
 .footersolist span{display: block;padding-top: 20px;}
-.footersoicons a{padding: 0 10px;cursor: pointer;color: #bdbdbd;text-decoration: none;}
+.footersoicons a{padding: 0 10px;cursor: pointer;color: #bdbdbd;text-decoration: none;height: 41px;
+    width: 41px;   
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all 1s; /* Safari prior 6.1 */
+    transition: all 1s;
+}
+
+
+.footersoicons a:hover{text-decoration: none; color: #ffffff; background: #ed6119;
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Safari prior 9.0 */
+    transform: rotate(360deg); /* Standard syntax */
+}
 /*------------------------------------ footer css end ------------------------------------ */
 
 /*------------------------------------ signup css start ------------------------------------ */
