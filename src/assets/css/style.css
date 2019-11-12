@@ -220,10 +220,15 @@ text-transform: uppercase;}
 }
 
 
-.footersoicons a:hover{text-decoration: none; color: #ffffff; background: #ed6119;
-    -ms-transform: rotate(360deg); /* IE 9 */
-    -webkit-transform: rotate(360deg); /* Safari prior 9.0 */
-    transform: rotate(360deg); /* Standard syntax */
+.footersoicons a:hover{
+    text-decoration: none;
+    color: #ffffff;
+    background: #ffffff40;
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    border: 1px solid #797979;
+    
 }
 /*------------------------------------ footer css end ------------------------------------ */
 
@@ -653,7 +658,7 @@ text-transform: uppercase;}
 .vpheaderwrapper.mat-card {background-color: transparent !important;box-shadow: none !important;}
 .vpheaderwrapper .mat-toolbar{background: none !important;color: rgba(0,0,0,.87);width: 100% !important;}
 .vpheaderwrapper .mat-nav-list {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;justify-content: space-between; align-items: center;}
-.vpheaderwrapper .mat-nav-list a {font-family: "OpenSansSemibold";color: #fff;text-transform: uppercase !important;padding: 6px 15px;display: inline-block;font-size: 14px;}
+.vpheaderwrapper .mat-nav-list a {height: auto; font-family: "OpenSansSemibold";color: #fff;text-transform: uppercase !important;padding: 6px 15px;display: inline-block;font-size: 14px;}
 .vpheaderwrapper .mat-nav-list a:hover{color: #000 !important;background: #fff; border-radius: 50px;}
 .vpheaderwrapper .mat-nav-list a.logoimgwrapper:hover{background:none !important;}
 .vpheaderwrapper .mat-nav-list .mat-list-item:not(.mat-list-item-disabled):hover {background: none;}
@@ -1392,7 +1397,7 @@ a.btnblockchainlink:hover {background-color: #494949}
 .axpcontactusleftdiv .bg {position: relative;top: 0%;left: 0%;width: 100%;height: 100%;z-index: 99;}
 .axpcontactusleftdiv .bg img {position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: auto;min-width: 100%;min-height: 100%;}
 .axpcontactusblock1 {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;flex-wrap: wrap;justify-content: space-between;}
-.axpcontactusblock1 .row {display: flex;justify-content: space-between;width: 100%;}
+.axpcontactusblock1 .row {margin: 0; display: flex;justify-content: space-between;width: 100%;}
 .axpcontactusblock1 .competitionrightdiv {/*width: 17.5%;*/display: flex;flex-wrap: wrap;flex: 1 17.5%;z-index: 99;height: 100%;border-bottom: 0px solid #1c3349 !important;border-right: 7px solid #1c3349 !important;display: block;background: #000;position: relative;vertical-align: -webkit-baseline-middle;}
 .axpcontactusblock1 .competitionrightdiv .rightbannerdivwrapper {border: 0px solid #1c3349 !important;position: relative;padding: 0px;margin: 0;top: 0px;right: 0;width: 100% !important;height: 100% !important;/*border-bottom: 7px solid #1c3349 !important;*/display: block;background: #000;overflow: hidden;border-top: 7px solid #1c3349 !important;border-left: 0px !important;}
 .axplandingformwrapper_signup {width: 494px;padding: 0px;z-index: 999;position: absolute;top: 8%;right: 24%;float: right;border-radius: 68px;background: -moz-linear-gradient(145deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* ff3.6+ */background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(254,106,60,1)), color-stop(100%, rgba(255,26,134,1))); /* safari4+,chrome */background: -webkit-linear-gradient(145deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* safari5.1+,chrome10+ */background: -o-linear-gradient(145deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* opera 11.10+ */background: -ms-linear-gradient(145deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* ie10+ */background: linear-gradient(305deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* w3c */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe6a3c', endColorstr='#ff1a86',GradientType=1 ); /* ie6-9 */}
@@ -1419,7 +1424,7 @@ a.btnblockchainlink:hover {background-color: #494949}
 .btnformsubmitnew {background: #ffffff;padding: 8px 10px;border: 0px solid #0f2532;text-decoration: none;margin-top: 35px;width: 100%;white-space: normal;word-wrap: break-word;border-radius: 3px;text-align: center;}
 .btnformsubmitnew span {font-family: RobotoBold;text-transform: uppercase;background: -webkit-linear-gradient(#454444,#010202);-webkit-background-clip: text;-webkit-text-fill-color: transparent;font-size: 30px;}
 .artistxpcontactusformbg {position: absolute;top: 50%;left: 20%;-webkit-transform: translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-o-transform:  translate(-50%, -50%);transform: translate(-50%, -50%);z-index: 99;}
-
+.contactusheader .vpheaderwrapper .mat-toolbar.mat-primary {background: black!important;}
 
 
 /* --------------- contact us css end ----------------- */
