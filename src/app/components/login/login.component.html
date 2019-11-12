@@ -13,17 +13,15 @@
 
                         <form [formGroup]="loginForm" (ngSubmit)="loginsubmit()" class="loginform">
                             <div class="formgroup">
-
                                 <input matInput type="email" placeholder="Email" formControlName="email" (blur)="f.inputBlur(loginForm,'email')"/>
-                                <mat-error *ngIf="loginForm.controls['email']?.touched && loginForm.controls['email'].errors && loginForm.controls['email'].errors.required" class="errormsgblue">Email is required !</mat-error>
-                                <mat-error *ngIf="loginForm.controls['email']?.touched && loginForm.controls['email'].errors && loginForm.controls['email'].errors.pattern" class="errormsgblue">Please Check Your Email !</mat-error>
+                                <mat-error *ngIf="loginForm.controls['email']?.touched && loginForm.controls['email'].errors && loginForm.controls['email'].errors.required" class="errormsgred">Email is required !</mat-error>
+                                <mat-error *ngIf="loginForm.controls['email']?.touched && loginForm.controls['email'].errors && loginForm.controls['email'].errors.pattern" class="errormsgred">Please Check Your Email !</mat-error>
 
                             </div>
                             <div class="formgroup">
-
                                 <input matInput type="password" placeholder="Password" formControlName="password" (blur)="f.inputBlur(loginForm,'password')"/>
-                                <mat-error *ngIf="loginForm.controls['password']?.touched && loginForm.controls['password'].errors && loginForm.controls['password'].errors.required" class="errormsgblue">Password is required !</mat-error>
-                                <mat-error *ngIf="loginForm.controls['password']?.touched && loginForm.controls['password'].errors && loginForm.controls['password'].errors.minlength" class="errormsgblue">Password is too short !</mat-error>
+                                <mat-error *ngIf="loginForm.controls['password']?.touched && loginForm.controls['password'].errors && loginForm.controls['password'].errors.required" class="errormsgred">Password is required !</mat-error>
+                                <mat-error *ngIf="loginForm.controls['password']?.touched && loginForm.controls['password'].errors && loginForm.controls['password'].errors.minlength" class="errormsgred">Password is too short !</mat-error>
   
                             </div>
                             <div class="formgroup loginbuttoncon">
@@ -72,9 +70,7 @@
                         <p>Participate in regular competitions and win exciting REAL Prizes</p>
                     </span>
                     <mat-action-list class="loginbuttonwrapper">
-                            <button mat-button matTooltip="Info about ArtistXP"
-                            matTooltipClass="example-tooltip-red"
-                            aria-label="Button that shows a tooltip" class="blackgradientbutton"> ArtistXP Info </button>
+                            <button routerLink="/artistxpinfo" mat-button matTooltip="Info about ArtistXP" matTooltipClass="example-tooltip-red"  aria-label="Button that shows a tooltip" class="blackgradientbutton"> ArtistXP Info </button>
                             <button mat-button class="orangegradientbutton" routerLink="/signupflow"> join now </button>
                     </mat-action-list>
                 </mat-list-item>

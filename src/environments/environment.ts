@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api_url:"https://utyms919d3.execute-api.us-east-2.amazonaws.com/production/api/",
+  invitation_id : "5d0c8819f09b0c4c69dff4e5",
+  audiodeadline_url : "https://development.audiodeadline.com",
+  
+  url: 'https://api.audiodeadline.com/server3.php?q=',
+  fileurl: 'https://api.audiodeadline.com/nodeserver/uploads/',
+  videofileupload: 'https://api.audiodeadline.com/videofileupload.php',
+  imagefileupload: 'https://api.audiodeadline.com/imagefileupload.php',
 };
 
 /*

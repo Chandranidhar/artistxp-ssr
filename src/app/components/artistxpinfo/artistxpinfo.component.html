@@ -1,0 +1,358 @@
+<!--
+<div class="container-fluid communitysignupnewblock1">
+  <div class="row">
+    <div class="container newwrapper">
+      <div class="communitysignupnewblock1inner">
+        <div class="communitysignupnewblock1left">
+          <app-newsignupheader></app-newsignupheader>
+          <div class="bannerleftnew">
+            <h2>ARTISTXP IS A NEW AND EXCITING SOCIAL EXPERIENCE CONNECTING ENTERTAINMENT INDUSTRY ARTISTS WITH THEIR FANS.</h2>
+            <h1>ArtistXP is a full, Social Experience that engages</h1>
+            <ul class="topbannerlistnew">
+              <li>Fans of music, dance, and modeling</li>
+              <li>Musicians of any genre and type <span>(guitarists, pianists, etc)</span></li>
+              <li>Vocalists and Rappers</li>
+              <li>Hip-Hop and Video Dancers</li>
+              <li>DJ’s and Producers</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="communitysignupnewblock1right">
+          <form class="formdiv" name="dancingform" novalidate [formGroup]="dataForm" (ngSubmit)="openagree()">   &lt;!&ndash;for development site&ndash;&gt;
+          &lt;!&ndash;<form class="formdiv" name="dancingform" novalidate [formGroup]="dataForm" (ngSubmit)="dosubmit1(templatedemo)">&ndash;&gt;
+            <div class="cslandingformwrapper" #destinationRef>
+              <div class="cslandingformheader">
+                <h1>Create Account </h1>
+              </div>
+              <div class="cslandingforminnerwrapper">
+                <div *ngIf="is_error" class="singleerror" style="font-family: 'OpenSans' !important; text-align: left;">{{is_error}}</div>
+                <div class="form-group">
+                  <input name="first-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(dataForm,'firstname')" [formControl]="dataForm.controls['firstname']" placeholder="first name">
+                  <span class="has-error" *ngIf ="dataForm.controls['firstname'].touched && !dataForm.controls['firstname'].valid"> First Name field can not be blank</span>
+                </div>
+                <div class="form-group">
+                  <input name="last-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(dataForm,'lastname')" [formControl]="dataForm.controls['lastname']" placeholder="last name">
+                  <span class="has-error" *ngIf ="dataForm.controls['lastname'].touched && !dataForm.controls['lastname'].valid"> Last Name field can not be blank</span>
+                </div>
+                <div class="form-group">
+                  <select class="form-control classic"  name="gender" (blur)="_commonservices.inputUntouch(dataForm,'gender')" [formControl]="dataForm.controls['gender']">
+                    <option value="">Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <span class="has-error" *ngIf ="dataForm.controls['gender'].touched && !dataForm.controls['gender'].valid"> Gender field can not be blank</span>
+                </div>
+                <div class="form-group">
+                  <input name="your-email" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(dataForm,'email')" [formControl]="dataForm.controls['email']" placeholder="email">
+                  <span class="has-error" *ngIf ="dataForm.controls['email'].touched && !dataForm.controls['email'].valid"> Email field can not be blank</span>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="username" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" [formControl]="dataForm.controls['username']" (blur)="_commonservices.inputUntouch(dataForm,'username')" placeholder="username">
+                  <span class="has-error" *ngIf ="dataForm.controls['username'].touched && !dataForm.controls['username'].valid"> Username field can not be blank</span>
+                </div>
+                <div class="form-group">
+                  <input type="password" name="password" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" [formControl]="dataForm.controls['password']" (blur)="_commonservices.inputUntouch(dataForm,'password')" placeholder="password">
+                  <span class="has-error" *ngIf ="dataForm.controls['password'].touched && !dataForm.controls['password'].valid">Password field can not be blank</span>
+                </div>
+                <div class="form-group">
+                  <input type="password" name="confirmpassword" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" [formControl]="dataForm.controls['confirmpassword']" (blur)="_commonservices.inputUntouch(dataForm,'confirmpassword')" placeholder="confirm password">
+                  <span class="has-error"*ngIf ="dataForm.controls['confirmpassword'].touched && !dataForm.controls['confirmpassword'].valid"> Confirm Password field can not be blank</span>
+                  <span class="has-error" *ngIf ="dataForm.hasError('mismatchedPasswords') && dataForm.controls['confirmpassword'].valid "> Passwords must match</span>
+                </div>
+                <div class="form-group">
+                  <input name="your-phone" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" [formControl]="dataForm.controls['phone']" (blur)="_commonservices.inputUntouch(dataForm,'phone')"  placeholder="phone">
+                  <span class="has-error" *ngIf ="dataForm.controls['phone'].touched && !dataForm.controls['phone'].valid"> Phone field can not be blank</span>
+                </div>
+                <div class="form-group">
+                  <p>Select Account Type. If you are here to enjoy the artistry, please select fan.</p>
+                  <ul class="formdivinnerlist">
+                    <li class="formdivinnerlistinner">
+                      <div>
+                        <input type="checkbox" name="name1" value=""  checked [formControl]="dataForm.controls['musicians']" (blur)="_commonservices.inputUntouch(dataForm,'musicians')" (change)="onChangeCategory()"><label>Musician!</label>
+
+                        &lt;!&ndash;<input type="checkbox" name="name1" value="" > Musician!&ndash;&gt;</div>
+                    </li>
+                    <li class="formdivinnerlistinner">
+                      <div>
+                        <input type="checkbox" name="name2" value=""  checked [formControl]="dataForm.controls['dancer']" (blur)="_commonservices.inputUntouch(dataForm,'dancer')" (change)="onChangeCategory()"><label>dancer!</label>
+                        &lt;!&ndash;<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['dancer']" (change)="onChangeCategory()"> Dancers!&ndash;&gt;</div>
+                    </li>
+                    <li class="formdivinnerlistinner">
+                      <div>
+                        <input type="checkbox" name="name3" value=""  (blur)="_commonservices.inputUntouch(dataForm,'model')" checked [formControl]="dataForm.controls['model']" (change)="onChangeCategory()"><label>Models!</label>
+                        &lt;!&ndash;<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['model']" (change)="onChangeCategory()"> Models!&ndash;&gt;
+                      </div>
+                    </li>
+                    <li class="formdivinnerlistinner">
+                      <div>
+                        <input type="checkbox" name="name4" value="" (blur)="_commonservices.inputUntouch(dataForm,'producer')"  checked [formControl]="dataForm.controls['producer']" (change)="onChangeCategory()"><label>Producer!</label>
+
+                        &lt;!&ndash;<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['signupaffiliate']" (change)="onChangeCategory()"> Affiliates!&ndash;&gt;
+                      </div>
+
+                    </li>
+
+                    <li class="formdivinnerlistinner">
+                      <div>
+                        <input type="checkbox" name="name5" value="" (blur)="_commonservices.inputUntouch(dataForm,'signupaffiliate')"  checked [formControl]="dataForm.controls['signupaffiliate']" (change)="onChangeCategory()"><label>Affiliates!</label>
+
+                        &lt;!&ndash;<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['signupaffiliate']" (change)="onChangeCategory()"> Affiliates!&ndash;&gt;
+                      </div>
+
+                    </li>
+                    <li class="formdivinnerlistinner">
+                      <div>
+                        <input type="checkbox" name="name6" value="" (blur)="_commonservices.inputUntouch(dataForm,'fan')" checked [formControl]="dataForm.controls['fan']" (change)="onChangeCategory()"><label>Fans!</label>
+                        &lt;!&ndash;<input type="checkbox" name="name1" value="" checked [formControl]="dataForm.controls['fan']" (change)="onChangeCategory()"> Fans!&ndash;&gt;
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+
+                <div class="form-group accept-tc-wrapper">
+                  <label>
+                        <span class="accept-tc">
+                          <div>
+                            <input type="checkbox" name="accept-tc[]" value="Accept Terms And Conditions" [formControl]="dataForm.controls['accepttermscond']" (blur)="_commonservices.inputUntouch(dataForm,'accepttermscond')" ><label>Accept <a (click)="open_termsandconditions()"> Terms And Conditions</a></label>
+                          </div>
+                          &lt;!&ndash;<input name="accept-tc[]" value="" type="checkbox" >
+                          <span></span>&ndash;&gt;
+                        </span>
+                    <span class="has-error" *ngIf="chkerror"> You have to accept the <a (click)="artistfooterComponentlist.open_termsandconditions()">Terms and Conditions</a> !</span>
+                  </label>
+
+                  <label>
+                        <span class="accept-tc">
+                           <div>
+                            <input type="checkbox" name="accept-ageandolder[]" value="I certify that I am 18 years of age or older" [formControl]="dataForm.controls['ageandolder']" (blur)="_commonservices.inputUntouch(dataForm,'ageandolder')">
+                             <label>I certify that I am 18 years of age or older</label>
+                          </div>
+
+
+                          &lt;!&ndash;<input name="accept-ageandolder[]" value="I certify that I am 18 years of age or older" type="checkbox" [formControl]="dataForm.controls['ageandolder']">
+                          <span>Accept <a> I certify that I am 18 years of age or older</a></span>&ndash;&gt;
+                        </span>
+                    <span class="has-error" *ngIf="chkerror1"> You have to accept your age or older!</span>
+                  </label>
+
+                </div>
+                <div class="btnnewwrapper">
+                  <input class="btnbuyticket_genuserlan" value="Submit" type="submit">
+                </div>
+
+              </div>
+              <div class="landingformfooter_genuserlan"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toprightgradientbg">
+    <img src="../../assets/images/toprightgradientbg.png">
+  </div>
+
+</div>
+-->
+
+<div class="container-fluid communitysignupnewblock1 communitysignupnewblock1new">
+    <div class="row">
+      <div class="newwrapper">
+        <div class="communitysignupnewblock1inner">
+          <div class="communitysignupnewblock1left">
+            <!--<app-newsignupheader></app-newsignupheader>-->
+            <app-signupheader></app-signupheader>
+  
+            <div class="bannerleftnew">
+              <div class="bannerleftnewinner">
+                <h2>The Artist Experience Social Network is the NEW way for artists and fans to connect!</h2>
+                <h1>ArtistXP is a full, Social Experience that engages artists of all kinds and their fans</h1>
+  
+                <ul class="topbannerlistnew">
+                  <li>Fans of music, dance, and modeling</li>
+                  <li>Musicians of any genre and type <span>(guitarists, pianists, etc)</span></li>
+                  <li>Vocalists and Rappers</li>
+                  <li>Hip-Hop and Video Dancers</li>
+                  <li>DJs and Producers</li>
+                </ul>
+                <div class="btndivnew">
+                  <a class="btn btnorangenew"  [routerLink]="['/signupflow2']">join now</a>
+                </div>
+  
+              </div>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="toprightgradientbg">
+      <img src="../../assets/images/toprightgradientbg.png">
+    </div>
+  
+  </div>
+  
+  <div class="competitionblockmainwrapper signupblock2mainwrapper">
+    <div class="signupblock2subwrapper">
+      <!-- <div class="comtextwrapper signuptextwrappertitles">
+        <h1>Who Should Join ArtistXP</h1>
+        <p><span>Musician</span> -The ArtistXP is an opportunity like no other to express your music, interact with fans and best of all, trade traffic with other artists. Plus, you can compete to be on the AudioDeadline.com live broadcast!</p>
+        <p><span>Dancer</span> - The ArtistXP will get you in front of the kind of fans that will enjoy your work and help create credibility behind your dance career. Plus, you can compete to be on the AudioDeadline.com live broadcast!</p>
+        <p><span>Model</span> - The ArtistXP is a place you can interact with other artists, trade traffic and build a fan base
+          around your work. Plus, you can compete to be on the AudioDeadline.com live broadcast!</p>
+        <p><span>Producer</span> - The ArtistXP will allow you to be introduced to a variety of artists that you can interact with and expose exactly what you have to offer. There will even be competitions that you will be able to compete in to even further gain the exposure that you have been waiting for!</p>
+        <p><span>Affiliate</span> - You can sign up to sell streaming tickets as well as invite members to the AudioDeadline.com and Artist XP. Earn 10% on streaming ticket sales and a 5% on our soon to come Artist Ad display rev share on signed up artists!</p>
+        <p><span>Fan</span>  - If you are into checking out musicians, dancers, models and other artistry, this is the place to be! We have all kinds of available content and there is always our show the AudioDeadline.com where the magic really happens!</p>
+      </div> -->
+      <div class="comtextwrapper signuptextwrappertitles">
+        <h1>Who Should Join ArtistXP?</h1>
+        <p><span>Musicians:</span>  Share your music, interact with fans, and best of all, trade traffic with other artists. Plus, compete to be on the AudioDeadline.com competitions for even more exposure!</p>
+        <p><span>Dancers:</span> Get in front of the right fans and build your dance career. Then take it up another level and compete for a spot on the AudioDeadline.com competitions to be discovered by even more people!</p>
+        <p><span>Model:</span> - Be seen, build your fan base, and interact and trade traffic with other artists through ArtistXp’s new social experience. Compete to be on the AudioDeadline.com live broadcast for even more reach!</p>
+        <p><span>Models:</span> Be seen, build your fan base, and interact and trade traffic with other artists through ArtistXp’s new social experience. Compete to be on the AudioDeadline.com competitions for even more reach!</p>
+        <p><span>Producers:</span> Find artists, share your work, and build your brand for future collaborations. Enter competitions to gain the exposure you’ve been waiting for!</p>
+        <p><span>Affiliates:</span>  Earn 5-10% on streaming tickets and the soon-to-come Artist Ad display rev share. It’s natural to share with others; you might as well get paid for it. </p>
+        <p><span>Fans:</span>  Who doesn’t want to find hot new musicians, dancers, models, and more? ArtistXP is the place to be! And the AudioDeadline.com competitions is where the magic really happens!</p>
+      </div>
+      <div class="btndivnew">
+        <a class="btn btnorangenew"  [routerLink]="['/signupflow2']">join now</a>
+      </div>
+    </div>
+  </div>
+  <div class="competitionblockmainwrapper signupblock3mainwrapper">
+    <div class="signupblock3subwrapper">
+      <div class="comtextwrapper">
+        <h1>The ArtistXP Social Network Experience</h1>
+        <!-- <p>Calling all recording artists, producers, djs, dancers, models, and fans.  Come join in on all the action ArtistXP has to offer.  Discover and publish new music, insane music, and dance videos, as well as
+          building long-lasting meaningful relationships with other talented artists. Whether it’s listening to music, making music, dancing to music, or being in front of a camera, we have just what you are
+          looking for.</p>
+        <p>We are breaking new ground with ArtistXP! This cutting-edge social media platform finally lets you do exactly what you’ve been wanting with your social media accounts.  Post to your Facebook, Instagram, Twitter, YouTube, ReverbNation, and more from ONE place. Fans and followers will have a place to explore tons of new music and media along with interacting and staying up-to-date with their favorite artist and influencer!
+        </p> -->
+        <p>Join in the action of ArtistXP! Music, dance videos, model portfolios--we got it all! Discover new artists or reach new fans while building relationships with other talented artists. </p>
+        <p>The Artist Experience social network: a ground-breaking, versatile social media platform for artists and fans to connect in a new way! Facebook, Instagram, Twitter, YouTube, ReverbNation, and more in ONE place.</p>
+      </div>
+      <div class="btndivnew">
+        <a class="btn btnorangenew"  [routerLink]="['/signupflow2']">join now</a>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="competitionblockmainwrapper signupblock4mainwrapper">
+    <div class="signupblock4subwrapper">
+  
+      <div class="comtextwrapper">
+        <h1>The Artist Exchange - Gain Massive Exposure With Our Traffic Trading Feature</h1>
+        <p>Experience the power of ArtistXP’s exclusive Artist Exchange. You share an artist with your fans and followers, and they share your media with theirs. It’s a win-win. With Traffic Trading, reaching new audiences has never been easier! </p>
+      </div>
+      <div class="signinimgwrapper">
+        <img src="../../assets/images/signupbannerupbgnew.png">
+      </div>
+      <div class="btndivnew">
+        <a class="btn btnorangenew"  [routerLink]="['/signupflow2']">join now</a>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="container-fluid signupblock5">
+    <div class="row no-gutter">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 signupblock5contentwrapper">
+        <div class="signupblock5content">
+          <h1>AudioDeadline’s Groundbreaking Competition</h1>
+          <p>The Deadline is a variety of competitions that run every month. Artists of all kinds have the opportunity to compete for prizes like cash money and exclusive trips!  </p>
+          <!-- <h3>THE COMPETITIONS ARE ALL ACCESSED HERE AT<br>ARTISTXPCOM AND RUN FOR 45 DAYS, 4 TIMES A YEAR</h3> -->
+          <h3>The Deadline is accessed here at <br>ArtistXP.com</h3>
+          <h3>AUDIODEADLINE COMPETITIONS</h3>
+          <ul class="signupblock5lists">
+            <li>Competition Enrollment Dates are always on the 20th of each month.
+              Enrollment closes on the 1st of the following month.
+              Competitions start on the 5th of each month!
+              The Deadline: On the 19th of each month competitions will end
+            </li>
+            <!--<li><span>Vocalist Competition:</span> Submission Entry Starts  July 1st, 2019 and runs through July 15th, 2019</li>
+            <li><span>Producer Competition:</span> Submission Entry Starts July 1st, 2019 and runs through July 15th, 2019</li>
+            <li><span>Rapper Competition:</span> Submission Entry Starts July 1st, 2019 and runs through July 15th, 2019</li>
+            <li><span>Dancer Competition (2 Winners):</span> Submission Entry Starts July 1st, 2019 and runs through July 15th, 2019</li>-->
+          </ul>
+          <div class="signupblock5comp">
+            <h2>
+              <span>
+                * Competitions Start <br> August 5th, 2019! *
+              </span>
+              WE LOOK FORWARD TO HAVING YOU JOIN THE ARTISTXP AND AUDIODEADLINE FAMILY JOIN US AS WE ALL RISE TOGETHER (ART)!
+            </h2>
+          </div>
+          <div class="btndivnew">
+            <a class="btn btnorangenew"  [routerLink]="['/signupflow2']">join now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <app-footer></app-footer>
+  
+  <ng-template #template>
+    <div class="modal-body text-center signupeamilbody">
+  
+      <button type="button" class="close" (click)="closep()">&times;</button>
+      <img src="../../assets/images/logo.png" alt="logo">
+      <p><span>Sign up begin Aug 27th After our company opening webinar. <a href="https://registerforwebinar.audiodeadline.com" target="_blank">Sign up for the webinar</a></span></p>
+  
+    </div>
+  </ng-template>
+  
+  <div *ngIf="termsandconditionsmodal" class="modal fade modalVideoUpload" (onHidden)="onHidden()" data-backdrop="static" bsModal #staticModal="bs-modal" [config]="{ show: true}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header deletemodal" style="border: none">
+  
+          <button type="button" class="close pull-right" aria-label="Close" (click)="termsandconditionsmodal=false">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- <div class="modal-body">
+  
+          <app-termsandconditions></app-termsandconditions>
+        </div> -->
+      </div>
+    </div>
+  
+  </div>
+  
+  <div *ngIf="agreecookiemodal" class="modal fade modalVideoUpload agreecookiemodal" (onHidden)="onHidden()" data-backdrop="static" bsModal #staticModal="bs-modal" [config]="{ show: true}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header deletemodal" style="border: none">
+  
+          <button type="button" class="close pull-right" aria-label="Close" (click)="agreecookiemodal=false">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>By using Artist's properties, you agree to our use of cookies, including for analytics and targeted advertising, as described in our <a [routerLink]="['/cookiepolicy']" target="_blank" class="linktxt">Cookie Policy</a>.</p>
+          <a (click)="dosubmit1(template)" class="btnpink">Agree</a>
+  
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  <ng-template #templatedemo>
+    <div class="modal-body text-center signupeamilbody">
+  
+      <button type="button" class="close" (click)="closep()">&times;</button>
+      <img src="../../assets/images/artistheaderlogo.png" alt="logo" style="width: 55%;">
+      <p><span style="display: block; color: #FFDA00; font-size: 25px; line-height: 30px; margin-bottom: 15px;">Congratulations!<br>You have successfully signed up.</span><span>The ArtistXP.com portal will be launching Saturday, June 22nd, 2019! Please be sure to keep an eye on your email for when we are live so you can come in and complete your sign up! <br><br>Get the AudioDeadline.com Quarterly Streaming Show and ArtistXP.com Social Network Presentation with CEO Beto Paredes. <br><a href="https://register.gotowebinar.com/rt/8536107297064123916" target="_blank" style="display: inline-block; width: auto !important;">Sign up for the webinar</a></span></p>
+  
+    </div>
+  </ng-template>
