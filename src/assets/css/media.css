@@ -308,7 +308,7 @@
         font-size: 16px;
     }
     .loginform .formgroup input {width: 174px !important; }
-    .loginbuttoncon .errormsgred {left: -207px}
+    .loginbuttoncon .errormsgred {left: -194px}
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 26px !important;font-size: 18px !important;}
 }
 @media only screen and (max-width: 1199px) {
