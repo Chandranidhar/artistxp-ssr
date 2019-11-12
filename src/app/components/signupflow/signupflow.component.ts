@@ -129,6 +129,7 @@ export class SignupflowComponent implements OnInit {
     this.meta.setTag('og:description', 'Musicians, Dancers, Models, Producers, Rappers, Affiliates and Fans can Sign up with ArtistXP to benefit from the advantages of the Social Network for Artists.');
     this.meta.setTag('og:title', 'ArtistXP.com – Signup To Get Started With The Only Social Network For Artists');
     this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:url', 'https://testbed.artistxp.com/signupflow');
     this.meta.setTag('og:image', 'https://audiodeadline-serverless.s3.us-east-2.amazonaws.com/uploads/banner/ArtistXP_Social_Banner.jpg');
     this.meta.setTag('og:keywords', 'Musicians, Artists, Producers, Dancers, Models, Affiliates, Rappers, Fans');
 
