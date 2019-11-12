@@ -64,32 +64,11 @@
             </div>
           </div>
         </div>
-      </div>
-      <!--<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 competitionrightdiv competitionrightdivtop">
-        <div class="rightbannerdivwrapper">
-          <div class="rightbannerdiv">
-            <div class="rightbannerdivimg">
-              <div class="rightbannerdivimgwrapper">
-                <img src="../../assets/images/artistrightbannerdiv_screen6.jpg" alt="rightbannerdiv screen6">
-              </div>
-            </div>
-            <div class="rightbannerdivimg">
-              <div class="rightbannerdivimgwrapper">
-                <img src="../../assets/images/artistrightbannerdiv_screen3.jpg" alt="rightbannerdiv screen3">
-              </div>
-            </div>
-            <div class="rightbannerdivimg">
-              <div class="rightbannerdivimgwrapper">
-                <img src="../../assets/images/artistrightbannerdiv_screen9.jpg" alt="rightbannerdiv screen9">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>-->
+      </div>      
     </div>
   </div>
   
-  <app-newsignupfooter></app-newsignupfooter>
+  <app-footer></app-footer>
   
   <!--<app-artistfooter></app-artistfooter>-->
   
@@ -100,142 +79,7 @@
       <p><span>This is currently a concept page to give you and idea of what the ArtistXP Experience is going to be all about. When we launch you will have access to these incredible features. <br><br>Get the ArtistXP Experience NOW!  <a style="cursor: pointer; width: 360px;" (click)="gotoSignUp()">Get back to Pre Launch Sign Up</a></span></p>
     </div>
   </ng-template>
-  
-  <!---Previous Active Signuptemplate Koushik 29-05-2019--->
-  <!--<ng-template #signuptemplate>
-    <div class="modal-body text-center signupeamilbody">
-      <button type="button" class="close" (click)="closep()">&times;</button>
-      <img src="../../assets/images/artistheaderlogo.png" alt="logo" class="newsignup_logo">
-      <div class="newsignup_wrapper">
-        <form [formGroup]="dataForm" (ngSubmit)="dosubmit(dataForm.value,loadingtemplate,successtemplate)">
-          <h2 style="font-size: 36px;">Signup for <span style="color: #F98221;">{{selectedcomp.competitionname}}</span></h2>
-          <div class="form-group" id="namediv">
-            <label>Name*</label>
-            <input type="text" class="form-control" [formControl]="dataForm.controls['name']">
-            <div class="has-error" *ngIf ="dataForm.controls['name'].touched && !dataForm.controls['name'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your name.</div>
-          </div>
-          <div class="form-group" id="emaildiv">
-            <label>Email*</label>
-            <input type="email" class="form-control" [formControl]="dataForm.controls['email']">
-            <div class="has-error" *ngIf ="dataForm.controls['email'].touched && !dataForm.controls['email'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your email.</div>
-          </div>
-          <div class="form-group" id="genrediv">
-            <label>Genre*</label>
-            <select class="form-control" [formControl]="dataForm.controls['genre']">
-              <option value="">Select Genre</option>
-              <option *ngFor="let item of genrelist" value="{{item._id}}">{{item.genrename}}</option>
-            </select>
-            <div class="has-error" *ngIf ="dataForm.controls['genre'].touched && !dataForm.controls['genre'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please select genre.</div>
-          </div>
-          <div class="form-group" id="biodiv">
-            <label>Bio*</label>
-            <textarea class="form-control"[formControl]="dataForm.controls['bio']"></textarea>
-            <div class="has-error" *ngIf ="dataForm.controls['bio'].touched && !dataForm.controls['bio'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about you.</div>
-          </div>
-          <div class="form-group" id="whydoyouwantdiv">
-            <label>why do you want to join this?*</label>
-            <textarea class="form-control"[formControl]="dataForm.controls['whydoyouwant']"></textarea>
-            <div class="has-error" *ngIf ="dataForm.controls['whydoyouwant'].touched && !dataForm.controls['whydoyouwant'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about why do you want to join this.</div>
-          </div>
-          <div class="upload-btn-wrapper" *ngIf="selectedcomp.backstoryrequired" id="backstorytypediv">
-            <label>Back Story Video*</label>
-            <select class="form-control" [formControl]="dataForm.controls['backstorytype']" (change)="cngbackstorytype($event)">
-              <option value="">Select Video Type</option>
-              <option value="Youtube">Youtube</option>
-              <option value="Vimeo">Vimeo</option>
-              <option value="Upload">Upload Video</option>
-            </select>
-            <div *ngIf="backstorytype == 'Youtube' || backstorytype == 'Vimeo'" style="position: relative">
-              <input *ngIf="backstorytype == 'Youtube'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Youtube URL" style="margin-top:15px;">
-              <input *ngIf="backstorytype == 'Vimeo'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Vimeo URL" style="margin-top:15px;">
-              <input *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && !loading" type="button" value="Search" (click)="searchvideo()" class="signupnewsub" style="margin: 0; position: absolute; top: 0; right: 0; width: auto; height: 40px; line-height: 10px; font-size: 14px; padding: 10px 7px;">
-              <img *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && loading" src="../../assets/images/ajax_loading.gif" style="position: absolute; top: 0; right: 10px;">
-              <div class="clearfix"></div>
-            </div>
-            <input type="file" name="myfile1" style="display: none" (change)="backstoryfileupload($event)" accept=".mp4" #fileInput1 />
-            <button [hidden]="backstorytype != 'Upload'" class="btn" style="margin-top:15px;" type="button" (click)="fileInput1.click()">Upload Video</button>
-            <div class="has-error" *ngIf ="dataForm.controls['backstorytype'].touched && !dataForm.controls['backstorytype'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please upload back story video.</div>
-            <div class="has-error" *ngIf ="backstoryerror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{backstoryerror}}</div>
-          </div>
-          <div class="uploadimg" *ngIf="backstoryval">
-            <iframe *ngIf="backstorytype == 'Youtube'" class="embed-responsive-item" [src]="iframevimeourl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
-            <iframe *ngIf="backstorytype == 'Vimeo'" class="embed-responsive-item" [src]="iframevimeourl" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
-            <video *ngIf="backstorytype == 'Upload'" style="width: 50vw;" controls>
-              <source [src]="iframevimeourl" type="video/mp4">
-            </video>
-            <div class="clearfix"></div>
-          </div>
-          <div style="clear: both"></div>
-          <div class="upload-btn-wrapper" *ngIf="selectedcomp.photorequired" id="photovaldiv">
-            <label>Image</label>
-            <input type="file" name="myfile2" style="display: none" (change)="photofileuploadfunc($event)" accept=".png,.jpeg,.jpg" #fileInput2 />
-            <button *ngIf="!imageuploading" class="btn" type="button" (click)="fileInput2.click()" style="display: inline-block; float: left;">Upload Image</button>
-            <span *ngIf="!imageuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofphoto}} {{(selectedcomp.noofphoto > 1)?'images':'image'}}</span>
-            <div *ngIf="imageuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
-            <div style="clear: both;"></div>
-            <div class="has-error" *ngIf ="imageuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{imageuploaderror}}</div>
-          </div>
-          <div class="uploadimg">
-            <div class="uploadimg_box" *ngFor="let item of images">
-  
-              <div class="uploadimg_boxcon_wrapper">
-                <div class="uploadimg_boxcon"> <img src="{{fileurl}}{{imageuploadfolder}}{{item}}"></div>
-  
-              </div>
-              <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'images')">
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="upload-btn-wrapper" *ngIf="selectedcomp.videorequired" id="videovaldiv">
-            <label>Video</label>
-            <input type="file" name="myfile3" style="display: none" (change)="videofileuploadfunc($event)" accept=".mp4" #fileInput3 />
-            <button *ngIf="!videouploading" class="btn" type="button" (click)="fileInput3.click()" style="display: inline-block; float: left;">Upload Video</button>
-            <span *ngIf="!videouploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofvideo}} {{(selectedcomp.noofvideo > 1)?'videos':'video'}}</span>
-            <div *ngIf="videouploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
-            <div style="clear: both;"></div>
-            <div class="has-error" *ngIf ="videoeuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{videoeuploaderror}}</div>
-          </div>
-          <div class="uploadimg">
-            <div class="uploadvideo_box" *ngFor="let item of iframevideourls">
-  
-              <div class="uploadvideo_boxcon_wrapper">
-                <div class="uploadvideo_boxcon">
-                  <video style="width: 50vw;" controls>
-                    <source [src]="item" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'videos')">
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="upload-btn-wrapper" *ngIf="selectedcomp.musicrequired" id="musicvaldiv">
-            <label>Music</label>
-            <input type="file" name="myfile4" style="display: none" (change)="musicfileuploadfunc($event)" accept=".mp3" #fileInput4 />
-            <button *ngIf="!musicuploading" class="btn" type="button" (click)="fileInput4.click()" style="display: inline-block; float: left;">Upload Music</button>
-            <span *ngIf="!musicuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofmusic}} {{(selectedcomp.noofmusic > 1)?'musics':'music'}}</span>
-            <div *ngIf="musicuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
-            <div style="clear: both;"></div>
-            <div class="has-error" *ngIf ="musiceuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{musiceuploaderror}}</div>
-          </div>
-          <div class="uploadimg">
-            <div *ngFor="let item of iframemusicurls">
-              <audio style="width: 50vw;" controls>
-                <source [src]="item" type="audio/mpeg">
-              </audio>
-              <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'musics')">
-            </div>
-          </div>
-          <input type="submit" value="Submit" class="signupnewsub">
-        </form>
-      </div>
-    </div>
-  </ng-template>-->
-  <!---Previous Active Signuptemplate Koushik 29-05-2019--->
-  
-  
+ 
   
   <ng-template #signuptemplate>
     <div class="modal-body text-center signupeamilbody signupeamilbodynewkb">

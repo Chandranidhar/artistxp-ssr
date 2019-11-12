@@ -215,8 +215,8 @@ text-transform: uppercase;}
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    -webkit-transition: all 1s; /* Safari prior 6.1 */
-    transition: all 1s;
+    -webkit-transition: all 1s; 
+    transition: all 1s;margin: 0 2px;
 }
 
 
