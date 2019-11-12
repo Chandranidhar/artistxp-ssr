@@ -13,6 +13,10 @@ export class ApiService {
 
     public loginurl = environment['loginurl'];
     public api_url = environment["api_url"];
+    public url = environment["url"];
+    public fileurl = environment["fileurl"];
+    public videofileupload = environment["videofileupload"];
+    public imagefileupload = environment["imagefileupload"];
     public jwttoken: any;
 
 

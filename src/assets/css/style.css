@@ -1382,8 +1382,7 @@ a.btnblockchainlink:hover {background-color: #494949}
 .axplandingformwrapper_signup .form label {font-weight: normal;color: #06070e; font-family: "RobotoRegular"; font-size: 18px; font-style: normal}
 .axplandingformwrapper_signup .form .form-group {margin-bottom: 5px}
 .axplandingforminnerwrapper_signup form .has-error {color:#fff80d}
-/*.axplandingformwrapper_signup .wpcf7-list-item input[type="checkbox"] {background: rgba(255, 255, 255, 0.6);color: #06070e;font-family: "RobotoRegular";font-size: 18px;font-style: normal;height: 19px;border: 1px solid rgba(255, 255, 255, 0.6);padding: 5px;margin: 5px 8px 3px 0px;width: 19px;display: inline-block;float: left;}
-*/.axplandingformwrapper_signup .your-accept-tc {display: inline-block;margin-top: 10px;margin-bottom: 10px;}
+.axplandingformwrapper_signup .your-accept-tc {display: inline-block;margin-top: 10px;margin-bottom: 10px;}
 .your-accept-rsvp, .your-accept-signupaffiliate {margin-top: 5px;display: inline-block;}
 .axplandingformwrapper_signup label {width: 100%;margin-bottom: 10px;}
 .axplandingformwrapper_signup .your-accept-tc .wpcf7-list-item {width:100%;}
@@ -1404,6 +1403,135 @@ a.btnblockchainlink:hover {background-color: #494949}
 
 /* --------------- contact us css end ----------------- */
 
+.navbarnewclswrapper .headernewnavbarcls li.active {background: #fff;border-radius: 50px;}
+.navbarnewclswrapper .headernewnavbarcls li:hover {color:#000 !important;}
+.navbarnewclswrapper .headernewnavbarcls li:hover a {color:#000 !important;}
+.navbarnewclswrapper .headernewnavbarcls li.active a {color:#000 !important;}
+.navbarnewclswrapper .headernewnavbarcls li:hover {background: #fff;border-radius: 50px;}
+.navbarnewclswrapper .headernewnavbarcls li a {font-family: "OpenSansSemibold";color: #fff;text-transform: uppercase !important;padding: 6px 15px;display: inline-block;}
+.bannerleftnew {width: 53%;margin-top: 60px;display: inline-block;}
+.bannerleftnew h1 {font-family: "Adobe-Garamond-Pro-Bold";color:#8a8a8e;text-transform: uppercase !important;font-size: 44px;font-weight: bold;margin: 0;margin-top: 48px;}
+.bannerleftnew h2 {font-family: "Adobe-Garamond-Pro-Bold";color:#8a8a8e;text-transform: uppercase !important;font-size: 26px;font-weight: bold;margin: 0;}
+.bannerleftnew h3 {font-family: "Adobe-Garamond-Pro-Bold";color:#8a8a8e;text-transform: uppercase !important;font-size: 26px;font-weight: bold;margin: 0;}
+.bannerleftnew h4 {font-family: "Adobe-Garamond-Pro-Bold";color:#8a8a8e;text-transform: uppercase !important;font-size: 33px;font-weight: bold;margin: 14px 0px;}
+.bannerleftnew h5 {font-family: "Myriad Pro";color:#c96c02;text-transform: inherit !important;font-size: 24px;font-weight: normal;margin: 0;margin-top: 20px;}
+.bannerleftnew p {font-family: "Adobe-Garamond-Pro-Bold";color: #8a8a8e;font-size: 24px;font-weight: normal;margin: 0;line-height: 24px;}
+.topbannerlistnew.topbannerlistnew1 {width: 100%;padding: 0px;margin: 0px;padding-left: 0px;margin-top: 18px;margin-bottom: 30px;}
+.cslandingformheader {background-color: #fc8d00;padding: 11px 7px;text-align: center;border: 1px solid #000;border-bottom: 0px !important;}
+.cslandingformwrapper {background-color: #1e2223;}
+.cslandingformheader h1 {margin: 0;padding: 0px;text-transform: uppercase;font-size: 36px;font-family: "TypoSlabIrregularDemo";color: #fff;text-shadow: 2px 3px 9px rgba(0,0,0,0.45);}
+.cslandingformheader h3 {margin: 0;padding: 0px;text-transform: uppercase;font-size: 17px;font-family: "TypoSlabIrregularDemo";color: #000;}
+.cslandingforminnerwrapper {padding: 21px 19px;}
+.communitysignupnewblock1right .formdiv .form-control, .communitysignupnewblock1right .formdiv textarea.form-control {height: 30px;border:1px solid #2e3234;border-radius: 0 !important;background-color: #000000;color: #fff;font-family: "OpenSans";font-size: 14px;line-height:30px;padding: 0 7px;resize: none;}
+.communitysignupnewblock1right .formdiv textarea.form-control {height: 68px}
+.communitysignupnewblock1right .formdiv .form-group p {color: #999795;font-family: "OpenSans";font-size: 14px;line-height: 20px;margin-bottom: 9px;}
+.communitysignupnewblock1right .formdiv select {color:#89898f !important;font-family: "OpenSans";font-size: 14px;line-height:30px;}
+.communitysignupnewblock1right .formdiv input[type=checkbox] {margin: 0px 0 0;left: 0;top: 3px;}
+.communitysignupnewblock1right .formdiv input::-webkit-input-placeholder { /* Chrome/Opera/Safari */color:#89898f;text-transform: capitalize;}
+.communitysignupnewblock1right .formdiv input::-moz-placeholder { /* Firefox 19+ */color:#89898f;text-transform: capitalize;}
+.communitysignupnewblock1right .formdiv input:-ms-input-placeholder { /* IE 10+ */color:#89898f;text-transform: capitalize;}
+.communitysignupnewblock1right .formdiv input:-moz-placeholder { /* Firefox 18- */color:#89898f;text-transform: capitalize;}
+.communitysignupnewblock1 .formdivinnerlist {border-bottom: 1px solid #404548}
+.communitysignupnewblock1 .formdivinnerlistinner:nth-of-type(1) {background: transparent !important}
+.communitysignupnewblock1 .formdivinnerlistinner:nth-last-of-type(1) {background: transparent !important}
+.communitysignupnewblock1 .formdivinnerlistinner label {margin: 0px;font-family: "OpenSans";font-size: 14px;color: #999795;text-transform: capitalize;}
+.communitysignupnewblock1 .formdivinnerlistinner label:before {display: none !important;}
+.communitysignupnewblock1 .formdivinnerlistinner label:after {display: none !important;}
+.communitysignupnewblock1 .formdivinnerlistinner {display: inline-block;width: 49%;margin-bottom: 4px;padding: 0;padding-left: 20px;}
+.communitysignupnewblock1right .formdiv .form-group {margin-bottom: 10px;display: inline-block;width: 100%;}
+.communitysignupnewblock1 input[type=checkbox]:not(old),.communitysignupnewblock1 input[type=radio]:not(old) {width: 20px;margin  : 0;padding : 0;opacity : 0;}
+.communitysignupnewblock1 input[type=checkbox]:not(old) + label,.communitysignupnewblock1 input[type=radio]:not(old) + label {display: inline-block;margin-left: -20px;padding-left: 24px;background: url(../images/newchecks.png) no-repeat 0 0;line-height: 24px;position: inherit;font-family: "OpenSans";font-size: 14px;color: #999795;margin-bottom: 0;}
+.communitysignupnewblock1 input[type=checkbox]:not(old) + label a, .communitysignupnewblock1 input[type=radio]:not(old) + label a {color: #999795;font-family: "OpenSans";font-size: 14px;cursor: pointer;}
+.communitysignupnewblock1 input[type=checkbox]:not(old):checked + label {background-position : 0 -24px;}
+.communitysignupnewblock1 input[type=radio]:not(old):checked + label {background-position : 0 -48px;}
+.communitysignupnewblock1 .formdiv .imageuploaddiv {background: #000000;color: #e8e7e5;font-family: "OpenSans";font-size: 14px;font-style: normal;border: 1px solid #2e3234;padding: 1px;margin: 0px 0px;width: 100%;resize: none;text-align: right;}
+.communitysignupnewblock1 .formdiv .imageuploaddiv div.file {position: relative;overflow: hidden;background: #fc8d00 !important;padding: 4px 6px;font-family: "OpenSansBold";font-size: 14px;color: #fff;border-radius: 0px;text-decoration: none;/* margin-top: 24px !important; */width: 100px;white-space: normal;word-wrap: break-word;text-transform: uppercase;margin: 0;display: inline-block;}
+.communitysignupnewblock1 .formdiv .imageuploaddiv div.file input {position: absolute;font-size: 18px;opacity: 0;right: 0;top: 0;cursor: pointer;}
+.communitysignupnewblock1 .btnbuyticket_genuserlan, .signupflow4wrapper .btnbuyticket_genuserlan {width: 100%;font-family: "VerminVibesSlant";font-size: 36px;background: -webkit-linear-gradient(#f3f3f1, #8c8d8c);-webkit-background-clip: text;-webkit-text-fill-color: transparent;margin: 0px;line-height: 36px;letter-spacing: 0px;text-transform: uppercase;border: 0;text-align: center;padding: 16px 8px 6px;}
+.signupflow4wrapper .btnbuyticket_genuserlan {padding: 16px 32px 6px;}
+.btnnewwrapper {background: rgba(0,0,6,1);background: -moz-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,6,1)), color-stop(100%, rgba(21,21,25,1)));background: -webkit-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);background: -o-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);background: -ms-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);background: linear-gradient(to bottom, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000006', endColorstr='#151519', GradientType=0 );-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;}
+.topbannerlistnew {width: 100%;padding: 0px;margin: 0px;padding-left: 0px;margin-top: 40px;}
+.topbannerlistnew li {font-family: "BitterRegular";font-size: 24px;color: #c96c02;padding: 0px;margin: 0px;letter-spacing: 0px;background: url(../images/text2listsblock1left.png) no-repeat left top 8px;list-style-type: none;padding-left: 15px;line-height: 24px;margin-bottom: 8px;background-size: 9px;width: 100%;display: inline-block;vertical-align: top;}
+.topbannerlistnew li span {color: #979799;display: block;}
+.topbannerlistnew.topbannerlistnew1 li {font-family: 18px !important;color: #8a8a8e !important;}
 
 
 
+
+/*------------------------ start competition css --------------------------*/.competitionblock1mainwrapper {background: #0e0517 url(../images/competitionblock1mainwrapperbg.jpg) no-repeat left top !important;background-size: cover !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;}
+.competitionblock1mainwrapper .navbarnewclswrapper .headernewnavbarcls li a {color: #fff;}
+.competitionblock1mainwrapper .communitysignupnewblock1left {background: transparent !important;}
+.competitionblock1mainwrapper .communitysignupnewblock1right .formdiv {background-color: transparent !important;}
+.competitionblockmainwrapper {background-size: cover;display: inline-block;width: 100%;background-repeat: no-repeat;position: relative;/*z-index: 999;*/}
+.competitionblock2mainwrapper {background-image: url("../../assets/images/com_banner2.jpg"); min-height: 300px; background-position: left top; padding: 0px 314px}
+.comtextwrapper {text-align: left;color: #ffffff; width: 100%; margin: 0 auto}
+.competitionblock2mainwrapper .comtextwrapper {text-align: center; padding-bottom: 168px}
+.combuttonwrapper {text-align: right}
+.competitionblock2mainwrapper .combuttonwrapper {text-align: center}
+.competitionblock2mainwrapper:after {content: url("../../assets/images/com_bannericon.png"); position: absolute; left: 50.3%; bottom: -34px; transform: translatex(-50%); z-index: 99}
+.competitionblock3subwrapper .btncom {border: 1px solid #373b43 !important}
+.btncom {background-image: linear-gradient(#1f2223, #000000);border: none;text-transform: uppercase;color: #aba9a9;font-size: 18px;padding: 10px 20px;border-radius: 30px;margin: 10px 0px;border: 1px solid #4b4c4e !important;}
+.btncom:hover {background-image: linear-gradient(#000000, #1f2223);  color: #aba9a9; border: 1px solid #373b43 !important}
+.competitionblock2mainwrapper .combuttonwrapper {background-image: url(../../assets/images/btnbackground.png);background-position: center top;min-height: 158px;background-repeat: no-repeat;position: absolute;left: 50%;transform: translateX(-50%);min-width: 317px;bottom: -22px;z-index: 999;}
+.competitionblock2mainwrapper .combuttonwrapper .btncom {margin-top: 31px}
+.comtextwrapper h3 {font-family: 'ACaslonProSemibold'; font-size: 25px;font-weight: 600; color: #c6c6c9}
+.comtextwrapper h2 {font-family: 'ACaslonProBold'; font-size: 47px;font-weight: bold; color: #c6c6c9}
+.comtextwrapper h1 {font-family: 'ACaslonProRegular'; font-size: 44px; color: #c6c6c9;font-weight: normal;}
+.comtextwrapper p {font-family: 'opensans'; font-size: 18px; color: #a7a7a8; padding-bottom: 20px}
+.comtextwrapper h4 {font-family: 'opensans'; font-size: 24px; color: #ffffff; }
+/*.competitionblock3mainwrapper {background-image: url("../../assets/images/com_banner3.jpg"); min-height: 300px; background-position: left top}
+*/.competitionblock3subwrapper {background-image: url("../../assets/images/com_banner003.png"); background-position: right top;padding: 40px 891px 30px 90px;  background-repeat: no-repeat; background-size: cover}
+.competitionblock4subwrapper {background-image: url("../../assets/images/com_banner4.jpg"); background-position: left top;padding: 40px 90px 30px 891px;   background-repeat: no-repeat; background-size: cover}
+.competitionblock5subwrapper {background-image: url("../../assets/images/com_banner05.png"); background-position: right top;padding: 40px 891px 30px 90px;  background-repeat: no-repeat; background-size: cover;background-color: #141828}
+.competitionblock6subwrapper {background-image: url("../../assets/images/com_banner06.png"); background-position: left top;padding: 40px 90px 30px 891px;   background-repeat: no-repeat; background-size: cover}
+.comfooterblock1 {background-color: #000; display: inline-block; text-align: center; width: 100%; padding: 27px 0px;border-top: 1px solid #292929}
+.comfootermenuwrapper {width: 450px; margin: 0 auto}
+.comfootermenuwrapper .list-inline li a {color: #989595; cursor: pointer}
+.comfootersocialmenuwrapper {width: 450px; margin: 0 auto}
+.comfootersocialmenuwrapper h2 {color: #fff; font-size: 20px; text-align: center; text-transform: capitalize}
+.comfootersocialmenuwrapper .list-inline li a {color: #989595; cursor: pointer}
+.comfootersocialmenuwrapper .list-inline li a:hover {color: #989595}
+.comfootersocialmenuwrapper .list-inline li a .fa {color: #989595; font-size: 24px}
+.comfooterblock2 h2 {color: #7d7979; font-size: 14px; text-align: center}
+.comfooterblock2 {padding: 10px 0px; background-color: #292929}
+.comlogowrapper img {width: auto; max-width: 100%}
+.signupblock2subwrapper {background-image: url(../../assets/images/signupbanner2.png);background-position: left 0% top;padding: 50px 90px 50px 820px;background-repeat: no-repeat;background-size: 100%;}
+.signuptextwrappertitles p span {color: #fde239}
+.signuptextwrappertitles p {padding: 7px 10px !important;margin: 2px 0px !important;background-image: linear-gradient(#151519, #000006);color: #aba9a9;font-size: 18px;border: 1px solid #2c3436;}
+.signuptextwrappertitles h1 {font-weight: bold; text-align: center; margin: 0; margin-bottom: 25px}
+.signupblock2mainwrapper {background-image: linear-gradient(to right, #0a0a0a, #0c0c0c,#0e0e0e, #000000, #050505);}
+.signupblock2mainwrapper:before {content: url(../../assets/images/bannerborder1.png);position: absolute;left: 0;top: -7px;z-index: 99;}
+.signupblock2mainwrapper:after {content: url(../../assets/images/bannerborder2.png);position: absolute;right: 0;bottom: -5px;z-index: 99;}
+.signupblock3subwrapper {background-image: url(../../assets/images/signupbanner3.png);background-position: right 15% top;padding:40px 1080px 30px 90px;background-repeat: no-repeat;background-size: cover;background-color: #141828;}
+.competitionblock1mainwrapper .bannerleftnew {width:51%;}
+.bannerleftnew1 .combuttonwrapper {margin-top: -14%;margin-bottom: 6%;}
+.signupblock5 {background: url(../images/signupblock5bannerbgnew.jpg) no-repeat left top; background-size: cover;  height: 657px; position: relative; overflow: hidden}
+.signupblock5 .row {height: 100%}
+.signupblock5contentwrapper {height: 100%}
+.signupblock5content {position: absolute; top:50%; left:29%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); width: 834px; text-align: left}
+.signupblock5 h1 {font-family: "ACaslonProRegular";font-size: 36px; text-transform: capitalize; color:#fff;  padding: 0;  margin: 0px; line-height: 36px; letter-spacing: 0px}
+.signupblock5 h3 {font-family: "ACaslonProRegular";font-size: 28px;text-transform: uppercase;color: #fff;padding: 0;margin: 25px 0px 0px;line-height: 30px;letter-spacing: 0px;display: inline-block;width: 100%;}
+.signupblock5 p {font-family: "OpenSans";font-size: 18px;color: #fff;padding: 0;margin: 25px 0px 0;line-height: 20px;letter-spacing: 0px;display: inline-block;width: 100%;}
+.signupblock5lists {width: 100%;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-items: flex-start;justify-content: end;margin-top: 10px;}
+.signupblock5lists li {width: 40%;font-family: "OpenSans";font-size: 14px;color: #ffffff;line-height: 20px;margin-top: 15px;margin-right: 15px;}
+.signupblock5lists li span {display: block;font-family: "OpenSansSemibold";font-size: 18px;color: #fff600;text-transform: uppercase;line-height: 20px;}
+.signupblock5comp {width: 502px;height: 502px;background: -moz-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(248,134,35,1)), color-stop(100%, rgba(222,49,6,1)));background: -webkit-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: -o-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: -ms-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: linear-gradient(51deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f88623', endColorstr='#de3106',GradientType=1 );border-radius: 100%;position: absolute;right: -42%;top: 45%;}
+.signupblock5comp h2 {font-family: "TypoSlabIrregularDemo";font-size: 30px;color: #fff600;text-transform: uppercase;display: inline-block;-webkit-transform: rotate(-20deg);-moz-transform: rotate(-20deg);-ms-transform: rotate(-20deg);-o-transform: rotate(-20deg);transform: rotate(-15deg);width: 90%;margin: 57px auto;line-height: 28px;text-align: center;}
+.signupblock5comp h2 span {color:#fff;font-size:24px;text-transform: none !important;display: inline-block;margin-bottom: 20px;width: 100%;line-height: 24px;}
+/*------------------------ end competition css --------------------------*/
+
+.signupblock4subwrapper {background-image: url("../../assets/images/signupbanner4.jpg"); background-position: left 15% top;padding: 80px 90px 80px 1020px;   background-repeat: no-repeat; background-size: cover}
+.artistsexchangeblock1bodybloc1 .sectionheaderinner .btnpink {padding: 8px 9px; margin: 0px 4px !important}
+.soiconmainwrapper .soiconstyle {height: 40px !important;width: 40px !important;border-radius: 50%;background-color: #605e5e;position: relative;display: inline-block;color: #bbb9b9;font-size: 19px;line-height: 38px;text-align: center;border: 1px solid #696868;filter: drop-shadow(-2px 9px 3px #000);box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);cursor: pointer;}
+.soiconmainwrapper .fa-plus {position: absolute;bottom: 57%;left: 54%;background-color: #d06e0a;height: 20px;width: 20px;line-height: 22px;border-radius: 50%;color: #dddddd;background-image: linear-gradient(#fe9201, #ed6600);}
+.competitionblock1mainwrapper.comrupetitionblock1mainwrapper .bannerleftnew1 p {width: 89%}
+.competitionblock1mainwrapper.comrupetitionblock1mainwrapper .combuttonwrapper {text-align: left; padding: 60px 0px; margin-top: 0%; margin-bottom: 0%}
+.competitionblock1mainwrapper.comrupetitionblock1mainwrapper {padding-bottom: 184px}
+.comrupetitionblock2subwrapper {background-image: url(../../assets/images/comre_banner002.jpg);background-position: right top;padding: 40px 40px 30px 90px;background-repeat: no-repeat; background-size: cover}
+.comrupetitionblock2subwrapper .combuttonwrapper {text-align: left; padding: 20px 0px; display: flex;  flex-wrap: wrap;}
+.comrupetitionblock2subwrapper .comtextwrapper p {width: 46%}
+.orangebtn:hover {color: #fff}
+.orangebtn {background-color: #f78000;color: #fff; font-size: 24px; padding: 10px 30px; border-radius: 0; margin:5px; font-family: 'OpenSans'; width: 367px}
+.communitysignupnewblock1inner{display: block; padding: 0 30px;}
+
+.comtextwrapper h4 { font-weight: normal;margin: 0;}

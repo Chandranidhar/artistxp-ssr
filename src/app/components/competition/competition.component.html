@@ -1,7 +1,1165 @@
+<!--
+<app-artistheader></app-artistheader>
+<div class="container-fluid competitionblock1">
+  <div class="row no-gutter">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 competitionblock1contentwrapper">
+      <div class="competitionblock1content">
+        <h1>AUDIO DEADLINE COMPETITIONS</h1>
+        <h3>Vote for your Favorite Artists to Appear on Audio Deadline</h3>
+        <p>The following competitions are currently running for artists that will be appearing on AudioDeadline.com’s next episode! They will have the opportunity to be flown to Las Vegas, NV and work with our A-List Artist to create a new song. You can vote 5 times a day for each competition category. Invite people from your social networks to come vote for your favorite artist as well!  Keep an eye on this page to see who is ahead! Competitions end 15 days before the AudioDeadline.com live streaming show and we will announce the winners right here!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid pageheaderblock">
+  <div class="row no-gutter">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h1>June Audiodeadline.com Competition</h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid competitionblock2">
+  <div class="row no-gutter">
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 artistsexchangeleftdiv">
+      <div class="sectionbody">
+        <div class="row no-gutter sectionheaderinner col-container competitionblock competitionblocknew" *ngFor="let item of competitionlist">
+          <div class="container-fluid compnewblock2" [style.background-image]="getbgimg(item.image1)" [style.background-size]="'cover'" [style.background-repeat]="'no-repeat'"  [style.background-position]="'center'">
+            <div class="compnewblock2wrapperimg">
+              <img src="{{fileurl}}{{item.image2}}">
+            </div>
+            <div class="row compnewblock2contentwrapper">
+              <div class="compnewblock2content">
+                <h2>{{item.competitionname}}</h2>
+                <h3>{{item.description | charlimit:400}}</h3>
+                <h4>STARTS ON: <span>{{getDateT(item.startdate)}}</span> AND ENDS ON: <span>{{getDateT(item.enddate)}}</span>.</h4>
+                <h5><a class="btnpink" (click)="signupcompetition(signuptemplate,item)">SIGN UP FOR COMPETITION</a></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 competitionrightdiv competitionrightdivtop">
+      <div class="rightbannerdivwrapper">
+        <div class="rightbannerdiv">
+          <div class="rightbannerdivimg">
+            <div class="rightbannerdivimgwrapper">
+              <img src="../../assets/images/artistrightbannerdiv_screen6.jpg" alt="rightbannerdiv screen6">
+            </div>
+          </div>
+          <div class="rightbannerdivimg">
+            <div class="rightbannerdivimgwrapper">
+              <img src="../../assets/images/artistrightbannerdiv_screen3.jpg" alt="rightbannerdiv screen3">
+            </div>
+          </div>
+          <div class="rightbannerdivimg">
+            <div class="rightbannerdivimgwrapper">
+              <img src="../../assets/images/artistrightbannerdiv_screen9.jpg" alt="rightbannerdiv screen9">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-artistfooter></app-artistfooter>
 
-<iframe style="width: 100%;display: block;border: none;"  width="100%" height="100%" sandbox="allow-same-origin allow-scripts" src="https://artistxp.com/competition"></iframe> 
-<!-- <div class="iframewrapper">
-<iframe src="https://artistxp.com/competition" width="100%" height="100%" style="width: 100%;display: block;border: none;" frameborder="0"
-    webkitallowfullscreen mozallowfullscreen allowfullscreen>
-</iframe>
-</div> -->
+<ng-template #commingsoontemplate>
+  <div class="modal-body text-center signupeamilbody">
+    <button type="button" class="close" (click)="closep()">&times;</button>
+    <img src="../../assets/images/artistheaderlogo.png" alt="logo">
+    <p><span>This is currently a concept page to give you and idea of what the ArtistXP Experience is going to be all about. When we launch you will have access to these incredible features. <br><br>Get the ArtistXP Experience NOW!  <a style="cursor: pointer; width: 360px;" (click)="gotoSignUp()">Get back to Pre Launch Sign Up</a></span></p>
+  </div>
+</ng-template>
+<ng-template #signuptemplate>
+  <div class="modal-body text-center signupeamilbody">
+    <button type="button" class="close" (click)="closep()">&times;</button>
+    <img src="../../assets/images/artistheaderlogo.png" alt="logo" class="newsignup_logo">
+    <div class="newsignup_wrapper">
+      <form [formGroup]="dataForm" (ngSubmit)="dosubmit(dataForm.value,loadingtemplate,successtemplate)">
+        <h2 style="font-size: 36px;">Signup for <span style="color: #F98221;">{{selectedcomp.competitionname}}</span></h2>
+        <div class="form-group" id="namediv">
+          <label>Name*</label>
+          <input type="text" class="form-control" [formControl]="dataForm.controls['name']">
+          <div class="has-error" *ngIf ="dataForm.controls['name'].touched && !dataForm.controls['name'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your name.</div>
+        </div>
+        <div class="form-group" id="emaildiv">
+          <label>Email*</label>
+          <input type="email" class="form-control" [formControl]="dataForm.controls['email']">
+          <div class="has-error" *ngIf ="dataForm.controls['email'].touched && !dataForm.controls['email'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your email.</div>
+        </div>
+        <div class="form-group" id="genrediv">
+          <label>Genre*</label>
+          <select class="form-control" [formControl]="dataForm.controls['genre']">
+            <option value="">Select Genre</option>
+            <option *ngFor="let item of genrelist" value="{{item._id}}">{{item.genrename}}</option>
+          </select>
+          <div class="has-error" *ngIf ="dataForm.controls['genre'].touched && !dataForm.controls['genre'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please select genre.</div>
+        </div>
+        <div class="form-group" id="biodiv">
+          <label>Bio*</label>
+          <textarea class="form-control"[formControl]="dataForm.controls['bio']"></textarea>
+          <div class="has-error" *ngIf ="dataForm.controls['bio'].touched && !dataForm.controls['bio'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about you.</div>
+        </div>
+        <div class="form-group" id="whydoyouwantdiv">
+          <label>why do you want to join this?*</label>
+          <textarea class="form-control"[formControl]="dataForm.controls['whydoyouwant']"></textarea>
+          <div class="has-error" *ngIf ="dataForm.controls['whydoyouwant'].touched && !dataForm.controls['whydoyouwant'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about why do you want to join this.</div>
+        </div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.backstoryrequired" id="backstorytypediv">
+          <label>Back Story Video*</label>
+          <select class="form-control" [formControl]="dataForm.controls['backstorytype']" (change)="cngbackstorytype($event)">
+            <option value="">Select Video Type</option>
+            <option value="Youtube">Youtube</option>
+            <option value="Vimeo">Vimeo</option>
+            <option value="Upload">Upload Video</option>
+          </select>
+          <div *ngIf="backstorytype == 'Youtube' || backstorytype == 'Vimeo'" style="position: relative">
+            <input *ngIf="backstorytype == 'Youtube'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Youtube URL" style="margin-top:15px;">
+            <input *ngIf="backstorytype == 'Vimeo'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Vimeo URL" style="margin-top:15px;">
+            <input *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && !loading" type="button" value="Search" (click)="searchvideo()" class="signupnewsub" style="margin: 0; position: absolute; top: 0; right: 0; width: auto; height: 40px; line-height: 10px; font-size: 14px; padding: 10px 7px;">
+            <img *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && loading" src="../../assets/images/ajax_loading.gif" style="position: absolute; top: 0; right: 10px;">
+            <div class="clearfix"></div>
+          </div>
+          <input type="file" name="myfile1" style="display: none" (change)="backstoryfileupload($event)" accept=".mp4" #fileInput1 />
+          <button [hidden]="backstorytype != 'Upload'" class="btn" style="margin-top:15px;" type="button" (click)="fileInput1.click()">Upload Video</button>
+          <div class="has-error" *ngIf ="dataForm.controls['backstorytype'].touched && !dataForm.controls['backstorytype'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please upload back story video.</div>
+          <div class="has-error" *ngIf ="backstoryerror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{backstoryerror}}</div>
+        </div>
+        <div class="uploadimg" *ngIf="backstoryval">
+          <iframe *ngIf="backstorytype == 'Youtube'" class="embed-responsive-item" [src]="iframevimeourl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+          <iframe *ngIf="backstorytype == 'Vimeo'" class="embed-responsive-item" [src]="iframevimeourl" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+          <video *ngIf="backstorytype == 'Upload'" style="width: 50vw;" controls>
+            <source [src]="iframevimeourl" type="video/mp4">
+          </video>
+          <div class="clearfix"></div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.photorequired" id="photovaldiv">
+          <label>Image</label>
+          <input type="file" name="myfile2" style="display: none" (change)="photofileuploadfunc($event)" accept=".png,.jpeg,.jpg" #fileInput2 />
+          <button *ngIf="!imageuploading" class="btn" type="button" (click)="fileInput2.click()" style="display: inline-block; float: left;">Upload Image</button>
+          <span *ngIf="!imageuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofphoto}} {{(selectedcomp.noofphoto > 1)?'images':'image'}}</span>
+          <div *ngIf="imageuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+          <div style="clear: both;"></div>
+          <div class="has-error" *ngIf ="imageuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{imageuploaderror}}</div>
+        </div>
+        <div class="uploadimg">
+          <div class="uploadimg_box" *ngFor="let item of images">
+
+            <div class="uploadimg_boxcon_wrapper">
+            <div class="uploadimg_boxcon"> <img src="{{fileurl}}{{imageuploadfolder}}{{item}}"></div>
+
+            </div>
+            <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'images')">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.videorequired" id="videovaldiv">
+          <label>Video</label>
+          <input type="file" name="myfile3" style="display: none" (change)="videofileuploadfunc($event)" accept=".mp4" #fileInput3 />
+          <button *ngIf="!videouploading" class="btn" type="button" (click)="fileInput3.click()" style="display: inline-block; float: left;">Upload Video</button>
+          <span *ngIf="!videouploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofvideo}} {{(selectedcomp.noofvideo > 1)?'videos':'video'}}</span>
+          <div *ngIf="videouploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+          <div style="clear: both;"></div>
+          <div class="has-error" *ngIf ="videoeuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{videoeuploaderror}}</div>
+        </div>
+        <div class="uploadimg">
+          <div class="uploadvideo_box" *ngFor="let item of iframevideourls">
+
+            <div class="uploadvideo_boxcon_wrapper">
+            <div class="uploadvideo_boxcon">
+              <video style="width: 50vw;" controls>
+                <source [src]="item" type="video/mp4">
+              </video>
+            </div>
+            </div>
+            <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'videos')">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.musicrequired" id="musicvaldiv">
+          <label>Music</label>
+          <input type="file" name="myfile4" style="display: none" (change)="musicfileuploadfunc($event)" accept=".mp3" #fileInput4 />
+          <button *ngIf="!musicuploading" class="btn" type="button" (click)="fileInput4.click()" style="display: inline-block; float: left;">Upload Music</button>
+          <span *ngIf="!musicuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofmusic}} {{(selectedcomp.noofmusic > 1)?'musics':'music'}}</span>
+          <div *ngIf="musicuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+          <div style="clear: both;"></div>
+          <div class="has-error" *ngIf ="musiceuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{musiceuploaderror}}</div>
+        </div>
+        <div class="uploadimg">
+          <div *ngFor="let item of iframemusicurls">
+            <audio style="width: 50vw;" controls>
+              <source [src]="item" type="audio/mpeg">
+            </audio>
+            <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'musics')">
+          </div>
+        </div>
+        <input type="submit" value="Submit" class="signupnewsub">
+      </form>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #loadingtemplate>
+  <div class="modal-body text-center signupeamilbody">
+    <p style="margin: 0;"><img src="../../assets/images/loader.gif" style="width: 100px;"></p>
+  </div>
+</ng-template>
+
+<ng-template #successtemplate>
+  <div class="modal-body text-center signupeamilbody">
+    <h2 style="margin: 0; font-size: 30px;"><span>Signup form submitted successfully.</span></h2>
+  </div>
+</ng-template>-->
+<!--
+<app-artistheader></app-artistheader>
+<div class="container-fluid competitionblock1">
+  <div class="row no-gutter">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 competitionblock1contentwrapper">
+      <div class="competitionblock1content">
+        <h1>AUDIO DEADLINE COMPETITIONS</h1>
+        <h3>Vote for your Favorite Artists to Appear on Audio Deadline</h3>
+        <p>The following competitions are currently running for artists that will be appearing on AudioDeadline.com’s next episode! They will have the opportunity to be flown to Las Vegas, NV and work with our A-List Artist to create a new song. You can vote 5 times a day for each competition category. Invite people from your social networks to come vote for your favorite artist as well!  Keep an eye on this page to see who is ahead! Competitions end 15 days before the AudioDeadline.com live streaming show and we will announce the winners right here!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid pageheaderblock">
+  <div class="row no-gutter">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h1>June Audiodeadline.com Competition</h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid competitionblock2">
+  <div class="row no-gutter">
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 artistsexchangeleftdiv">
+      <div class="sectionbody">
+        <div class="row no-gutter sectionheaderinner col-container competitionblock competitionblocknew" *ngFor="let item of competitionlist">
+          <div class="container-fluid compnewblock2" [style.background-image]="getbgimg(item.image1)" [style.background-size]="'cover'" [style.background-repeat]="'no-repeat'"  [style.background-position]="'center'">
+            <div class="compnewblock2wrapperimg">
+              <img src="{{fileurl}}{{item.image2}}">
+            </div>
+            <div class="row compnewblock2contentwrapper">
+              <div class="compnewblock2content">
+                <h2>{{item.competitionname}}</h2>
+                <h3>{{item.description | charlimit:400}}</h3>
+                <h4>STARTS ON: <span>{{getDateT(item.startdate)}}</span> AND ENDS ON: <span>{{getDateT(item.enddate)}}</span>.</h4>
+                <h5><a class="btnpink" (click)="signupcompetition(signuptemplate,item)">SIGN UP FOR COMPETITION</a></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 competitionrightdiv competitionrightdivtop">
+      <div class="rightbannerdivwrapper">
+        <div class="rightbannerdiv">
+          <div class="rightbannerdivimg">
+            <div class="rightbannerdivimgwrapper">
+              <img src="../../assets/images/artistrightbannerdiv_screen6.jpg" alt="rightbannerdiv screen6">
+            </div>
+          </div>
+          <div class="rightbannerdivimg">
+            <div class="rightbannerdivimgwrapper">
+              <img src="../../assets/images/artistrightbannerdiv_screen3.jpg" alt="rightbannerdiv screen3">
+            </div>
+          </div>
+          <div class="rightbannerdivimg">
+            <div class="rightbannerdivimgwrapper">
+              <img src="../../assets/images/artistrightbannerdiv_screen9.jpg" alt="rightbannerdiv screen9">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-artistfooter></app-artistfooter>
+
+<ng-template #commingsoontemplate>
+  <div class="modal-body text-center signupeamilbody">
+    <button type="button" class="close" (click)="closep()">&times;</button>
+    <img src="../../assets/images/artistheaderlogo.png" alt="logo">
+    <p><span>This is currently a concept page to give you and idea of what the ArtistXP Experience is going to be all about. When we launch you will have access to these incredible features. <br><br>Get the ArtistXP Experience NOW!  <a style="cursor: pointer; width: 360px;" (click)="gotoSignUp()">Get back to Pre Launch Sign Up</a></span></p>
+  </div>
+</ng-template>
+<ng-template #signuptemplate>
+  <div class="modal-body text-center signupeamilbody">
+    <button type="button" class="close" (click)="closep()">&times;</button>
+    <img src="../../assets/images/artistheaderlogo.png" alt="logo" class="newsignup_logo">
+    <div class="newsignup_wrapper">
+      <form [formGroup]="dataForm" (ngSubmit)="dosubmit(dataForm.value,loadingtemplate,successtemplate)">
+        <h2 style="font-size: 36px;">Signup for <span style="color: #F98221;">{{selectedcomp.competitionname}}</span></h2>
+        <div class="form-group" id="namediv">
+          <label>Name*</label>
+          <input type="text" class="form-control" [formControl]="dataForm.controls['name']">
+          <div class="has-error" *ngIf ="dataForm.controls['name'].touched && !dataForm.controls['name'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your name.</div>
+        </div>
+        <div class="form-group" id="emaildiv">
+          <label>Email*</label>
+          <input type="email" class="form-control" [formControl]="dataForm.controls['email']">
+          <div class="has-error" *ngIf ="dataForm.controls['email'].touched && !dataForm.controls['email'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your email.</div>
+        </div>
+        <div class="form-group" id="genrediv">
+          <label>Genre*</label>
+          <select class="form-control" [formControl]="dataForm.controls['genre']">
+            <option value="">Select Genre</option>
+            <option *ngFor="let item of genrelist" value="{{item._id}}">{{item.genrename}}</option>
+          </select>
+          <div class="has-error" *ngIf ="dataForm.controls['genre'].touched && !dataForm.controls['genre'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please select genre.</div>
+        </div>
+        <div class="form-group" id="biodiv">
+          <label>Bio*</label>
+          <textarea class="form-control"[formControl]="dataForm.controls['bio']"></textarea>
+          <div class="has-error" *ngIf ="dataForm.controls['bio'].touched && !dataForm.controls['bio'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about you.</div>
+        </div>
+        <div class="form-group" id="whydoyouwantdiv">
+          <label>why do you want to join this?*</label>
+          <textarea class="form-control"[formControl]="dataForm.controls['whydoyouwant']"></textarea>
+          <div class="has-error" *ngIf ="dataForm.controls['whydoyouwant'].touched && !dataForm.controls['whydoyouwant'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about why do you want to join this.</div>
+        </div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.backstoryrequired" id="backstorytypediv">
+          <label>Back Story Video*</label>
+          <select class="form-control" [formControl]="dataForm.controls['backstorytype']" (change)="cngbackstorytype($event)">
+            <option value="">Select Video Type</option>
+            <option value="Youtube">Youtube</option>
+            <option value="Vimeo">Vimeo</option>
+            <option value="Upload">Upload Video</option>
+          </select>
+          <div *ngIf="backstorytype == 'Youtube' || backstorytype == 'Vimeo'" style="position: relative">
+            <input *ngIf="backstorytype == 'Youtube'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Youtube URL" style="margin-top:15px;">
+            <input *ngIf="backstorytype == 'Vimeo'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Vimeo URL" style="margin-top:15px;">
+            <input *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && !loading" type="button" value="Search" (click)="searchvideo()" class="signupnewsub" style="margin: 0; position: absolute; top: 0; right: 0; width: auto; height: 40px; line-height: 10px; font-size: 14px; padding: 10px 7px;">
+            <img *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && loading" src="../../assets/images/ajax_loading.gif" style="position: absolute; top: 0; right: 10px;">
+            <div class="clearfix"></div>
+          </div>
+          <input type="file" name="myfile1" style="display: none" (change)="backstoryfileupload($event)" accept=".mp4" #fileInput1 />
+          <button [hidden]="backstorytype != 'Upload'" class="btn" style="margin-top:15px;" type="button" (click)="fileInput1.click()">Upload Video</button>
+          <div class="has-error" *ngIf ="dataForm.controls['backstorytype'].touched && !dataForm.controls['backstorytype'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please upload back story video.</div>
+          <div class="has-error" *ngIf ="backstoryerror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{backstoryerror}}</div>
+        </div>
+        <div class="uploadimg" *ngIf="backstoryval">
+          <iframe *ngIf="backstorytype == 'Youtube'" class="embed-responsive-item" [src]="iframevimeourl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+          <iframe *ngIf="backstorytype == 'Vimeo'" class="embed-responsive-item" [src]="iframevimeourl" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+          <video *ngIf="backstorytype == 'Upload'" style="width: 50vw;" controls>
+            <source [src]="iframevimeourl" type="video/mp4">
+          </video>
+          <div class="clearfix"></div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.photorequired" id="photovaldiv">
+          <label>Image</label>
+          <input type="file" name="myfile2" style="display: none" (change)="photofileuploadfunc($event)" accept=".png,.jpeg,.jpg" #fileInput2 />
+          <button *ngIf="!imageuploading" class="btn" type="button" (click)="fileInput2.click()" style="display: inline-block; float: left;">Upload Image</button>
+          <span *ngIf="!imageuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofphoto}} {{(selectedcomp.noofphoto > 1)?'images':'image'}}</span>
+          <div *ngIf="imageuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+          <div style="clear: both;"></div>
+          <div class="has-error" *ngIf ="imageuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{imageuploaderror}}</div>
+        </div>
+        <div class="uploadimg">
+          <div class="uploadimg_box" *ngFor="let item of images">
+
+            <div class="uploadimg_boxcon_wrapper">
+            <div class="uploadimg_boxcon"> <img src="{{fileurl}}{{imageuploadfolder}}{{item}}"></div>
+
+            </div>
+            <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'images')">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.videorequired" id="videovaldiv">
+          <label>Video</label>
+          <input type="file" name="myfile3" style="display: none" (change)="videofileuploadfunc($event)" accept=".mp4" #fileInput3 />
+          <button *ngIf="!videouploading" class="btn" type="button" (click)="fileInput3.click()" style="display: inline-block; float: left;">Upload Video</button>
+          <span *ngIf="!videouploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofvideo}} {{(selectedcomp.noofvideo > 1)?'videos':'video'}}</span>
+          <div *ngIf="videouploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+          <div style="clear: both;"></div>
+          <div class="has-error" *ngIf ="videoeuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{videoeuploaderror}}</div>
+        </div>
+        <div class="uploadimg">
+          <div class="uploadvideo_box" *ngFor="let item of iframevideourls">
+
+            <div class="uploadvideo_boxcon_wrapper">
+            <div class="uploadvideo_boxcon">
+              <video style="width: 50vw;" controls>
+                <source [src]="item" type="video/mp4">
+              </video>
+            </div>
+            </div>
+            <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'videos')">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.musicrequired" id="musicvaldiv">
+          <label>Music</label>
+          <input type="file" name="myfile4" style="display: none" (change)="musicfileuploadfunc($event)" accept=".mp3" #fileInput4 />
+          <button *ngIf="!musicuploading" class="btn" type="button" (click)="fileInput4.click()" style="display: inline-block; float: left;">Upload Music</button>
+          <span *ngIf="!musicuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofmusic}} {{(selectedcomp.noofmusic > 1)?'musics':'music'}}</span>
+          <div *ngIf="musicuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+          <div style="clear: both;"></div>
+          <div class="has-error" *ngIf ="musiceuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{musiceuploaderror}}</div>
+        </div>
+        <div class="uploadimg">
+          <div *ngFor="let item of iframemusicurls">
+            <audio style="width: 50vw;" controls>
+              <source [src]="item" type="audio/mpeg">
+            </audio>
+            <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'musics')">
+          </div>
+        </div>
+        <input type="submit" value="Submit" class="signupnewsub">
+      </form>
+    </div>
+  </div>
+</ng-template>
+<ng-template #signuptemplate>
+  <div class="modal-body text-center signupeamilbody">
+    <button type="button" class="close" (click)="closep()">&times;</button>
+    <img src="../../assets/images/artistheaderlogo.png" alt="logo" class="newsignup_logo">
+    <div class="newsignup_wrapper">
+      <form [formGroup]="dataForm" (ngSubmit)="dosubmit(dataForm.value,loadingtemplate,successtemplate)">
+        <h2 style="font-size: 36px;">Signup for <span style="color: #F98221;">{{selectedcomp.competitionname}}</span></h2>
+        <div class="form-group" id="namediv">
+          <label>Name*</label>
+          <input type="text" class="form-control" [formControl]="dataForm.controls['name']">
+          <div class="has-error" *ngIf ="dataForm.controls['name'].touched && !dataForm.controls['name'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your name.</div>
+        </div>
+        <div class="form-group" id="emaildiv">
+          <label>Email*</label>
+          <input type="email" class="form-control" [formControl]="dataForm.controls['email']">
+          <div class="has-error" *ngIf ="dataForm.controls['email'].touched && !dataForm.controls['email'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your email.</div>
+        </div>
+        <div class="form-group" id="genrediv">
+          <label>Genre*</label>
+          <select class="form-control" [formControl]="dataForm.controls['genre']">
+            <option value="">Select Genre</option>
+            <option *ngFor="let item of genrelist" value="{{item._id}}">{{item.genrename}}</option>
+          </select>
+          <div class="has-error" *ngIf ="dataForm.controls['genre'].touched && !dataForm.controls['genre'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please select genre.</div>
+        </div>
+        <div class="form-group" id="biodiv">
+          <label>Bio*</label>
+          <textarea class="form-control"[formControl]="dataForm.controls['bio']"></textarea>
+          <div class="has-error" *ngIf ="dataForm.controls['bio'].touched && !dataForm.controls['bio'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about you.</div>
+        </div>
+        <div class="form-group" id="whydoyouwantdiv">
+          <label>why do you want to join this?*</label>
+          <textarea class="form-control"[formControl]="dataForm.controls['whydoyouwant']"></textarea>
+          <div class="has-error" *ngIf ="dataForm.controls['whydoyouwant'].touched && !dataForm.controls['whydoyouwant'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about why do you want to join this.</div>
+        </div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.backstoryrequired" id="backstorytypediv">
+          <label>Back Story Video*</label>
+          <select class="form-control" [formControl]="dataForm.controls['backstorytype']" (change)="cngbackstorytype($event)">
+            <option value="">Select Video Type</option>
+            <option value="Youtube">Youtube</option>
+            <option value="Vimeo">Vimeo</option>
+            <option value="Upload">Upload Video</option>
+          </select>
+          <div *ngIf="backstorytype == 'Youtube' || backstorytype == 'Vimeo'" style="position: relative">
+            <input *ngIf="backstorytype == 'Youtube'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Youtube URL" style="margin-top:15px;">
+            <input *ngIf="backstorytype == 'Vimeo'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Vimeo URL" style="margin-top:15px;">
+            <input *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && !loading" type="button" value="Search" (click)="searchvideo()" class="signupnewsub" style="margin: 0; position: absolute; top: 0; right: 0; width: auto; height: 40px; line-height: 10px; font-size: 14px; padding: 10px 7px;">
+            <img *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && loading" src="../../assets/images/ajax_loading.gif" style="position: absolute; top: 0; right: 10px;">
+            <div class="clearfix"></div>
+          </div>
+          <input type="file" name="myfile1" style="display: none" (change)="backstoryfileupload($event)" accept=".mp4" #fileInput1 />
+          <button [hidden]="backstorytype != 'Upload'" class="btn" style="margin-top:15px;" type="button" (click)="fileInput1.click()">Upload Video</button>
+          <div class="has-error" *ngIf ="dataForm.controls['backstorytype'].touched && !dataForm.controls['backstorytype'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please upload back story video.</div>
+          <div class="has-error" *ngIf ="backstoryerror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{backstoryerror}}</div>
+        </div>
+        <div class="uploadimg" *ngIf="backstoryval">
+          <iframe *ngIf="backstorytype == 'Youtube'" class="embed-responsive-item" [src]="iframevimeourl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+          <iframe *ngIf="backstorytype == 'Vimeo'" class="embed-responsive-item" [src]="iframevimeourl" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+          <video *ngIf="backstorytype == 'Upload'" style="width: 50vw;" controls>
+            <source [src]="iframevimeourl" type="video/mp4">
+          </video>
+          <div class="clearfix"></div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.photorequired" id="photovaldiv">
+          <label>Image</label>
+          <input type="file" name="myfile2" style="display: none" (change)="photofileuploadfunc($event)" accept=".png,.jpeg,.jpg" #fileInput2 />
+          <button *ngIf="!imageuploading" class="btn" type="button" (click)="fileInput2.click()" style="display: inline-block; float: left;">Upload Image</button>
+          <span *ngIf="!imageuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofphoto}} {{(selectedcomp.noofphoto > 1)?'images':'image'}}</span>
+          <div *ngIf="imageuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+          <div style="clear: both;"></div>
+          <div class="has-error" *ngIf ="imageuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{imageuploaderror}}</div>
+        </div>
+        <div class="uploadimg">
+          <div class="uploadimg_box" *ngFor="let item of images">
+
+            <div class="uploadimg_boxcon_wrapper">
+              <div class="uploadimg_boxcon"> <img src="{{fileurl}}{{imageuploadfolder}}{{item}}"></div>
+
+            </div>
+            <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'images')">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.videorequired" id="videovaldiv">
+          <label>Video</label>
+          <input type="file" name="myfile3" style="display: none" (change)="videofileuploadfunc($event)" accept=".mp4" #fileInput3 />
+          <button *ngIf="!videouploading" class="btn" type="button" (click)="fileInput3.click()" style="display: inline-block; float: left;">Upload Video</button>
+          <span *ngIf="!videouploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofvideo}} {{(selectedcomp.noofvideo > 1)?'videos':'video'}}</span>
+          <div *ngIf="videouploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+          <div style="clear: both;"></div>
+          <div class="has-error" *ngIf ="videoeuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{videoeuploaderror}}</div>
+        </div>
+        <div class="uploadimg">
+          <div class="uploadvideo_box" *ngFor="let item of iframevideourls">
+
+            <div class="uploadvideo_boxcon_wrapper">
+              <div class="uploadvideo_boxcon">
+                <video style="width: 50vw;" controls>
+                  <source [src]="item" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'videos')">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="upload-btn-wrapper" *ngIf="selectedcomp.musicrequired" id="musicvaldiv">
+          <label>Music</label>
+          <input type="file" name="myfile4" style="display: none" (change)="musicfileuploadfunc($event)" accept=".mp3" #fileInput4 />
+          <button *ngIf="!musicuploading" class="btn" type="button" (click)="fileInput4.click()" style="display: inline-block; float: left;">Upload Music</button>
+          <span *ngIf="!musicuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofmusic}} {{(selectedcomp.noofmusic > 1)?'musics':'music'}}</span>
+          <div *ngIf="musicuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+          <div style="clear: both;"></div>
+          <div class="has-error" *ngIf ="musiceuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{musiceuploaderror}}</div>
+        </div>
+        <div class="uploadimg">
+          <div *ngFor="let item of iframemusicurls">
+            <audio style="width: 50vw;" controls>
+              <source [src]="item" type="audio/mpeg">
+            </audio>
+            <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'musics')">
+          </div>
+        </div>
+        <input type="submit" value="Submit" class="signupnewsub">
+      </form>
+    </div>
+  </div>
+</ng-template>
+<ng-template #loadingtemplate>
+  <div class="modal-body text-center signupeamilbody">
+    <p style="margin: 0;"><img src="../../assets/images/loader.gif" style="width: 100px;"></p>
+  </div>
+</ng-template>
+
+<ng-template #successtemplate>
+  <div class="modal-body text-center signupeamilbody">
+    <h2 style="margin: 0; font-size: 30px;"><span>Signup form submitted successfully.</span></h2>
+  </div>
+</ng-template>-->
+<!--<app-artistheader></app-artistheader>
+<div class="container-fluid competitionblock1">
+  <div class="row no-gutter">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 competitionblock1contentwrapper">
+      <div class="competitionblock1content">
+        <h1>AUDIO DEADLINE COMPETITIONS</h1>
+        <h3>Vote for your Favorite Artists to Appear on Audio Deadline</h3>
+        <p>The following competitions are currently running for artists that will be appearing on AudioDeadline.com’s next episode! They will have the opportunity to be flown to Las Vegas, NV and work with our A-List Artist to create a new song. You can vote 5 times a day for each competition category. Invite people from your social networks to come vote for your favorite artist as well!  Keep an eye on this page to see who is ahead! Competitions end 15 days before the AudioDeadline.com live streaming show and we will announce the winners right here!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid pageheaderblock">
+  <div class="row no-gutter">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h1>March  Audiodeadline.com Competition</h1>
+    </div>
+  </div>
+</div>-->
+
+
+
+
+
+
+<div class="container-fluid communitysignupnewblock1 competitionblock1mainwrapper">
+    <div class="row">
+      <div class="container newwrapper">
+        <div class="communitysignupnewblock1inner">
+          <div class="communitysignupnewblock1left">
+            <app-newsignupheadersignup></app-newsignupheadersignup>
+            <div class="bannerleftnew bannerleftnew1">
+              <h3>AudioDeadline Competitions </h3>
+              <h4>VOTE FOR YOUR FAVORITE ARTISTS TO<br> WIN THE DEADLINE</h4>
+              <p>We have a variety of competitions running monthly for artists to compete to win real prizes! They will have the opportunity to show the world what they’ve got in a whole new way! You can vote 5 times a day for each competition category. Invite people from your social networks to come vote for your favorite artist as well! Keep an eye on this page to see who is ahead! Competitions end on the 19th of every month and we will announce the winners right here!</p>
+              <h5>Please keep in mind some general rules while you vote for<br> your favorites! The judging criteria is </h5>
+              <ul class="topbannerlistnew topbannerlistnew1">
+                <li>The quality of Performance</li>
+                <li>Artistic Merit</li>
+                <li>Originality</li>
+                <li>And Personality</li>
+              </ul>
+            </div>
+          </div>
+          <div class="communitysignupnewblock1right">
+            <div class="formdiv"></div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="competitionblockmainwrapper competitionblock2mainwrapper">
+    <div class="competitionblock2subwrapper">
+      <div class="comtextwrapper">
+        <h3>AudioDeadline Competitions will officially start August 5th, 2019!</h3>
+        <h2>Be sure to review the Competition Rules before entering.</h2>
+      </div>
+      <div class="combuttonwrapper">
+        <a [routerLink]="['/competitionrules']" class="btn btncom">Competition Rules</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid competitionblock2 ascompetitionblock2new">
+    <div class="row no-gutter">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 artistsexchangeleftdiv">
+        <div class="sectionbody newmodifieddiv">
+  
+          <div class="row no-gutter sectionheaderinner col-container competitionblock competitionblocknew " *ngFor="let item of competitionlist">
+            <div class="container-fluid compnewblock2" [style.background-image]="getbgimg(item.image1)" [style.background-size]="'cover'" [style.background-repeat]="'no-repeat'"  [style.background-position]="'center'">
+              <div class="compnewblock2wrapperimg">
+                <img src="{{fileurl}}{{item.image2}}">
+              </div>
+              <div  class="row compnewblock2contentwrapper" id="compwrapper1">
+                <div class="compnewblock2content" [ngClass]="item.putcontentright == '1' ? 'compnewblock2content classforcomppreview' : 'compnewblock2content'">
+                  <h2>{{item.competitionname}}</h2>
+                  <p>{{item | json }}</p>
+                  <!-- <h3>{{item.description | charlimit:400}}</h3> -->
+                  <!-- <h4>Submission Entry Starts {{getDateT(item.startdate)}} and runs through {{getDateT(item.enddate)}}.</h4> -->
+                  <h5>
+                    <!-- <a class="btnpink" (click)="signupcompetition(signuptemplate,item)">SIGN UP FOR COMPETITION</a> -->
+                  <a class="btnpink" [routerLink]="['/competitionrules']">Competition Rules</a>
+                </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 competitionrightdiv competitionrightdivtop">
+        <div class="rightbannerdivwrapper">
+          <div class="rightbannerdiv">
+            <div class="rightbannerdivimg">
+              <div class="rightbannerdivimgwrapper">
+                <img src="../../assets/images/artistrightbannerdiv_screen6.jpg" alt="rightbannerdiv screen6">
+              </div>
+            </div>
+            <div class="rightbannerdivimg">
+              <div class="rightbannerdivimgwrapper">
+                <img src="../../assets/images/artistrightbannerdiv_screen3.jpg" alt="rightbannerdiv screen3">
+              </div>
+            </div>
+            <div class="rightbannerdivimg">
+              <div class="rightbannerdivimgwrapper">
+                <img src="../../assets/images/artistrightbannerdiv_screen9.jpg" alt="rightbannerdiv screen9">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </div>
+  
+  <app-newsignupfooter></app-newsignupfooter>
+  
+  <!--<app-artistfooter></app-artistfooter>-->
+  
+  <ng-template #commingsoontemplate>
+    <div class="modal-body text-center signupeamilbody">
+      <button type="button" class="close" (click)="closep()">&times;</button>
+      <img src="../../assets/images/artistheaderlogo.png" alt="logo">
+      <p><span>This is currently a concept page to give you and idea of what the ArtistXP Experience is going to be all about. When we launch you will have access to these incredible features. <br><br>Get the ArtistXP Experience NOW!  <a style="cursor: pointer; width: 360px;" (click)="gotoSignUp()">Get back to Pre Launch Sign Up</a></span></p>
+    </div>
+  </ng-template>
+  
+  <!---Previous Active Signuptemplate Koushik 29-05-2019--->
+  <!--<ng-template #signuptemplate>
+    <div class="modal-body text-center signupeamilbody">
+      <button type="button" class="close" (click)="closep()">&times;</button>
+      <img src="../../assets/images/artistheaderlogo.png" alt="logo" class="newsignup_logo">
+      <div class="newsignup_wrapper">
+        <form [formGroup]="dataForm" (ngSubmit)="dosubmit(dataForm.value,loadingtemplate,successtemplate)">
+          <h2 style="font-size: 36px;">Signup for <span style="color: #F98221;">{{selectedcomp.competitionname}}</span></h2>
+          <div class="form-group" id="namediv">
+            <label>Name*</label>
+            <input type="text" class="form-control" [formControl]="dataForm.controls['name']">
+            <div class="has-error" *ngIf ="dataForm.controls['name'].touched && !dataForm.controls['name'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your name.</div>
+          </div>
+          <div class="form-group" id="emaildiv">
+            <label>Email*</label>
+            <input type="email" class="form-control" [formControl]="dataForm.controls['email']">
+            <div class="has-error" *ngIf ="dataForm.controls['email'].touched && !dataForm.controls['email'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your email.</div>
+          </div>
+          <div class="form-group" id="genrediv">
+            <label>Genre*</label>
+            <select class="form-control" [formControl]="dataForm.controls['genre']">
+              <option value="">Select Genre</option>
+              <option *ngFor="let item of genrelist" value="{{item._id}}">{{item.genrename}}</option>
+            </select>
+            <div class="has-error" *ngIf ="dataForm.controls['genre'].touched && !dataForm.controls['genre'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please select genre.</div>
+          </div>
+          <div class="form-group" id="biodiv">
+            <label>Bio*</label>
+            <textarea class="form-control"[formControl]="dataForm.controls['bio']"></textarea>
+            <div class="has-error" *ngIf ="dataForm.controls['bio'].touched && !dataForm.controls['bio'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about you.</div>
+          </div>
+          <div class="form-group" id="whydoyouwantdiv">
+            <label>why do you want to join this?*</label>
+            <textarea class="form-control"[formControl]="dataForm.controls['whydoyouwant']"></textarea>
+            <div class="has-error" *ngIf ="dataForm.controls['whydoyouwant'].touched && !dataForm.controls['whydoyouwant'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about why do you want to join this.</div>
+          </div>
+          <div class="upload-btn-wrapper" *ngIf="selectedcomp.backstoryrequired" id="backstorytypediv">
+            <label>Back Story Video*</label>
+            <select class="form-control" [formControl]="dataForm.controls['backstorytype']" (change)="cngbackstorytype($event)">
+              <option value="">Select Video Type</option>
+              <option value="Youtube">Youtube</option>
+              <option value="Vimeo">Vimeo</option>
+              <option value="Upload">Upload Video</option>
+            </select>
+            <div *ngIf="backstorytype == 'Youtube' || backstorytype == 'Vimeo'" style="position: relative">
+              <input *ngIf="backstorytype == 'Youtube'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Youtube URL" style="margin-top:15px;">
+              <input *ngIf="backstorytype == 'Vimeo'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Vimeo URL" style="margin-top:15px;">
+              <input *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && !loading" type="button" value="Search" (click)="searchvideo()" class="signupnewsub" style="margin: 0; position: absolute; top: 0; right: 0; width: auto; height: 40px; line-height: 10px; font-size: 14px; padding: 10px 7px;">
+              <img *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && loading" src="../../assets/images/ajax_loading.gif" style="position: absolute; top: 0; right: 10px;">
+              <div class="clearfix"></div>
+            </div>
+            <input type="file" name="myfile1" style="display: none" (change)="backstoryfileupload($event)" accept=".mp4" #fileInput1 />
+            <button [hidden]="backstorytype != 'Upload'" class="btn" style="margin-top:15px;" type="button" (click)="fileInput1.click()">Upload Video</button>
+            <div class="has-error" *ngIf ="dataForm.controls['backstorytype'].touched && !dataForm.controls['backstorytype'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please upload back story video.</div>
+            <div class="has-error" *ngIf ="backstoryerror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{backstoryerror}}</div>
+          </div>
+          <div class="uploadimg" *ngIf="backstoryval">
+            <iframe *ngIf="backstorytype == 'Youtube'" class="embed-responsive-item" [src]="iframevimeourl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+            <iframe *ngIf="backstorytype == 'Vimeo'" class="embed-responsive-item" [src]="iframevimeourl" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+            <video *ngIf="backstorytype == 'Upload'" style="width: 50vw;" controls>
+              <source [src]="iframevimeourl" type="video/mp4">
+            </video>
+            <div class="clearfix"></div>
+          </div>
+          <div style="clear: both"></div>
+          <div class="upload-btn-wrapper" *ngIf="selectedcomp.photorequired" id="photovaldiv">
+            <label>Image</label>
+            <input type="file" name="myfile2" style="display: none" (change)="photofileuploadfunc($event)" accept=".png,.jpeg,.jpg" #fileInput2 />
+            <button *ngIf="!imageuploading" class="btn" type="button" (click)="fileInput2.click()" style="display: inline-block; float: left;">Upload Image</button>
+            <span *ngIf="!imageuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofphoto}} {{(selectedcomp.noofphoto > 1)?'images':'image'}}</span>
+            <div *ngIf="imageuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+            <div style="clear: both;"></div>
+            <div class="has-error" *ngIf ="imageuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{imageuploaderror}}</div>
+          </div>
+          <div class="uploadimg">
+            <div class="uploadimg_box" *ngFor="let item of images">
+  
+              <div class="uploadimg_boxcon_wrapper">
+                <div class="uploadimg_boxcon"> <img src="{{fileurl}}{{imageuploadfolder}}{{item}}"></div>
+  
+              </div>
+              <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'images')">
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="upload-btn-wrapper" *ngIf="selectedcomp.videorequired" id="videovaldiv">
+            <label>Video</label>
+            <input type="file" name="myfile3" style="display: none" (change)="videofileuploadfunc($event)" accept=".mp4" #fileInput3 />
+            <button *ngIf="!videouploading" class="btn" type="button" (click)="fileInput3.click()" style="display: inline-block; float: left;">Upload Video</button>
+            <span *ngIf="!videouploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofvideo}} {{(selectedcomp.noofvideo > 1)?'videos':'video'}}</span>
+            <div *ngIf="videouploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+            <div style="clear: both;"></div>
+            <div class="has-error" *ngIf ="videoeuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{videoeuploaderror}}</div>
+          </div>
+          <div class="uploadimg">
+            <div class="uploadvideo_box" *ngFor="let item of iframevideourls">
+  
+              <div class="uploadvideo_boxcon_wrapper">
+                <div class="uploadvideo_boxcon">
+                  <video style="width: 50vw;" controls>
+                    <source [src]="item" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'videos')">
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="upload-btn-wrapper" *ngIf="selectedcomp.musicrequired" id="musicvaldiv">
+            <label>Music</label>
+            <input type="file" name="myfile4" style="display: none" (change)="musicfileuploadfunc($event)" accept=".mp3" #fileInput4 />
+            <button *ngIf="!musicuploading" class="btn" type="button" (click)="fileInput4.click()" style="display: inline-block; float: left;">Upload Music</button>
+            <span *ngIf="!musicuploading" style="float: left; margin: 11px 0 0 8px;">*Upload minimum {{selectedcomp.noofmusic}} {{(selectedcomp.noofmusic > 1)?'musics':'music'}}</span>
+            <div *ngIf="musicuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+            <div style="clear: both;"></div>
+            <div class="has-error" *ngIf ="musiceuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{musiceuploaderror}}</div>
+          </div>
+          <div class="uploadimg">
+            <div *ngFor="let item of iframemusicurls">
+              <audio style="width: 50vw;" controls>
+                <source [src]="item" type="audio/mpeg">
+              </audio>
+              <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'musics')">
+            </div>
+          </div>
+          <input type="submit" value="Submit" class="signupnewsub">
+        </form>
+      </div>
+    </div>
+  </ng-template>-->
+  <!---Previous Active Signuptemplate Koushik 29-05-2019--->
+  
+  
+  
+  <ng-template #signuptemplate>
+    <div class="modal-body text-center signupeamilbody signupeamilbodynewkb">
+      <button type="button" class="close" (click)="closep()">&times;</button>
+     <!-- <img src="../../assets/images/artistheaderlogo.png" alt="logo" class="newsignup_logo">-->
+      <div class="newsignup_wrapper">
+        <form [formGroup]="dataForm" (ngSubmit)="dosubmit(dataForm.value,loadingtemplate,successtemplate)">
+          <h2> <span style="color: #F98221;">{{selectedcomp.competitionname}}</span> Sign-up Form</h2>
+          <div class="form-group" id="namediv">
+            <input type="text" class="form-control" [formControl]="dataForm.controls['name']" placeholder="Full Name*">
+            <div class="has-error" *ngIf ="dataForm.controls['name'].touched && !dataForm.controls['name'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your name.</div>
+          </div>
+          <div class="form-group" id="artistnamediv">
+            <input type="text" class="form-control" placeholder="Artist Name">
+            <div class="has-error" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your artist name.</div>
+          </div>
+  
+          <div class="form-group" id="birthdatediv">
+            <input type="text" class="form-control" placeholder="birth date">
+            <div class="has-error" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your date of birth.</div>
+          </div>
+  
+          <div class="form-group" id="emaildiv">
+            <input type="email" class="form-control" [formControl]="dataForm.controls['email']" placeholder="Email*">
+            <div class="has-error" *ngIf ="dataForm.controls['email'].touched && !dataForm.controls['email'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your email.</div>
+          </div>
+  
+          <div class="form-group" id="phonenumberdiv">
+            <input type="email" class="form-control" placeholder="Phone Number*">
+            <div class="has-error" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your phone number.</div>
+          </div>
+  
+          <div class="form-group" id="statediv">
+            <input type="email" class="form-control" placeholder="State*">
+            <div class="has-error" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please enter your state.</div>
+          </div>
+  
+  
+          <div class="form-group" id="genrediv">
+            <select class="form-control" [formControl]="dataForm.controls['genre']">
+              <option value=""><!--Select Genre-->Genre</option>
+              <option *ngFor="let item of genrelist" value="{{item._id}}">{{item.genrename}}</option>
+            </select>
+            <div class="has-error" *ngIf ="dataForm.controls['genre'].touched && !dataForm.controls['genre'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please select genre.</div>
+          </div>
+          <div class="doublecolumn">
+            <h3>Bio Video<span>*</span></h3>
+            <h4>( <span>*</span>You will need to upload a Video about why you want to join the AudioDeadline Competition and a short bio about yourself and what has brought you to this industry. This needs to be a minimum of 30 seconds and no longer than 5 minutes<span>*</span>)</h4>
+            <div class="form-group" id="biodiv">
+              <textarea class="form-control"[formControl]="dataForm.controls['bio']" placeholder="bio*"></textarea>
+              <div class="has-error" *ngIf ="dataForm.controls['bio'].touched && !dataForm.controls['bio'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about you.</div>
+            </div>
+            <div class="form-group" id="whydoyouwantdiv">
+              <textarea class="form-control"[formControl]="dataForm.controls['whydoyouwant']" placeholder="why do you want to join this?*"></textarea>
+              <div class="has-error" *ngIf ="dataForm.controls['whydoyouwant'].touched && !dataForm.controls['whydoyouwant'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Say something about why do you want to join this.</div>
+            </div>
+          </div>
+          <div class="singlecolumnkb">
+            <div class="form-group upload-btn-wrapper" *ngIf="selectedcomp.backstoryrequired" id="backstorytypediv">
+              <!--<label>Back Story Video*</label>-->
+              <select class="form-control" [formControl]="dataForm.controls['backstorytype']" (change)="cngbackstorytype($event)">
+                <option value="">Select Video Type</option>
+                <option value="Youtube">Youtube</option>
+                <option value="Vimeo">Vimeo</option>
+                <option value="Upload">Upload Video</option>
+              </select>
+              <div *ngIf="backstorytype == 'Youtube' || backstorytype == 'Vimeo'" class="backstorytypecls" style="position: relative">
+                <input *ngIf="backstorytype == 'Youtube'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Youtube URL" style="margin-top:15px;">
+                <input *ngIf="backstorytype == 'Vimeo'" type="text" class="form-control" [formControl]="dataForm.controls['backstoryval']" placeholder="Please Enter Vimeo URL" style="margin-top:15px;">
+                <input *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && !loading" type="button" value="Search" (click)="searchvideo()" class="signupnewsub">
+                <img *ngIf="(backstorytype == 'Youtube' || backstorytype == 'Vimeo') && loading" src="../../assets/images/ajax_loading.gif" style="position: absolute; top: 0; right: 10px;">
+                <div class="clearfix"></div>
+              </div>
+              <input type="file" name="myfile1" style="display: none" (change)="backstoryfileupload($event)" accept=".mp4" #fileInput1 />
+              <button [hidden]="backstorytype != 'Upload'" class="btn" style="margin-top:15px;" type="button" (click)="fileInput1.click()">Upload Video</button>
+              <div class="has-error" *ngIf ="dataForm.controls['backstorytype'].touched && !dataForm.controls['backstorytype'].valid" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">*Please upload back story video.</div>
+              <div class="has-error" *ngIf ="backstoryerror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{backstoryerror}}</div>
+            </div>
+            <div class="uploadimg" *ngIf="backstoryval">
+              <iframe *ngIf="backstorytype == 'Youtube'" class="embed-responsive-item" [src]="iframevimeourl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+              <iframe *ngIf="backstorytype == 'Vimeo'" class="embed-responsive-item" [src]="iframevimeourl" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width: 50vw; height: 28.13vw"></iframe>
+              <video *ngIf="backstorytype == 'Upload'" style="width: 50vw;" controls>
+                <source [src]="iframevimeourl" type="video/mp4">
+              </video>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <div style="clear: both"></div>
+          <div class="singlecolumnkb">
+            <h3>Upload 2 complete original performances<span>*</span></h3>
+  
+            <div class="triplecolumn">
+              <div class="triplecolumnsingleblock">
+                <div class="upload-btn-wrapper" *ngIf="selectedcomp.photorequired" id="photovaldiv">
+                  <label>Image</label>
+                  <input type="file" name="myfile2" style="display: none" (change)="photofileuploadfunc($event)" accept=".png,.jpeg,.jpg" #fileInput2 />
+                  <button *ngIf="!imageuploading" class="btn" type="button" (click)="fileInput2.click()">Upload Image</button>
+                  <span *ngIf="!imageuploading" class="uploadimagesqty">*Upload minimum {{selectedcomp.noofphoto}} {{(selectedcomp.noofphoto > 1)?'images':'image'}}</span>
+                  <div *ngIf="imageuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+                  <div style="clear: both;"></div>
+                  <div class="has-error" *ngIf ="imageuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{imageuploaderror}}</div>
+                </div>
+                <div class="uploadimg">
+                  <div class="uploadimg_box" *ngFor="let item of images">
+  
+                    <div class="uploadimg_boxcon_wrapper">
+                      <div class="uploadimg_boxcon"> <img src="{{fileurl}}{{imageuploadfolder}}{{item}}"></div>
+  
+                    </div>
+                    <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'images')">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <div class="triplecolumnsingleblock">
+                <div class="upload-btn-wrapper" *ngIf="selectedcomp.videorequired" id="videovaldiv">
+                  <label>Video</label>
+                  <input type="file" name="myfile3" style="display: none" (change)="videofileuploadfunc($event)" accept=".mp4" #fileInput3 />
+                  <button *ngIf="!videouploading" class="btn" type="button" (click)="fileInput3.click()">Upload Video</button>
+                  <span *ngIf="!videouploading" class="uploadimagesqty">*Upload minimum {{selectedcomp.noofvideo}} {{(selectedcomp.noofvideo > 1)?'videos':'video'}}</span>
+                  <div *ngIf="videouploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+                  <div style="clear: both;"></div>
+                  <div class="has-error" *ngIf ="videoeuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{videoeuploaderror}}</div>
+                </div>
+                <div class="uploadimg">
+                  <div class="uploadvideo_box" *ngFor="let item of iframevideourls">
+  
+                    <div class="uploadvideo_boxcon_wrapper">
+                      <div class="uploadvideo_boxcon">
+                        <video style="width: 50vw;" controls>
+                          <source [src]="item" type="video/mp4">
+                        </video>
+                      </div>
+                    </div>
+                    <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'videos')">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <div class="triplecolumnsingleblock">
+                <div class="upload-btn-wrapper" *ngIf="selectedcomp.musicrequired" id="musicvaldiv">
+                  <label>Music</label>
+                  <input type="file" name="myfile4" style="display: none" (change)="musicfileuploadfunc($event)" accept=".mp3" #fileInput4 />
+                  <button *ngIf="!musicuploading" class="btn" type="button" (click)="fileInput4.click()">Upload Music</button>
+                  <span *ngIf="!musicuploading"  class="uploadimagesqty">*Upload minimum {{selectedcomp.noofmusic}} {{(selectedcomp.noofmusic > 1)?'musics':'music'}}</span>
+                  <div *ngIf="musicuploading" style="width: 140px; height: 20px; overflow: hidden; margin: 2px auto;"><img src="../../assets/images/line-loader.gif" style="width: 100%; margin-top: -32px;"></div>
+                  <div style="clear: both;"></div>
+                  <div class="has-error" *ngIf ="musiceuploaderror" style="text-align: left; margin-top: 6px; color: #ff0000; font-size: 16px;">{{musiceuploaderror}}</div>
+                </div>
+                <div class="uploadimg">
+                  <div *ngFor="let item of iframemusicurls">
+                    <audio style="width: 50vw;" controls>
+                      <source [src]="item" type="audio/mpeg">
+                    </audio>
+                    <input type="button" class="signupnewsub" value="Delete" (click)="deleteAssests(item,'musics')">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="singlecolumnkb accepttcwrapper">
+  
+            <div class="form-group accept-tc-wrapper">
+  
+              <label class="container">Accept <a (click)="open_termsandconditions()">Terms And Conditions</a>
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+  
+              <label class="container">Certify that I have completely read and understand <a href="/competitionrules">AudioDeadlines Competition Rules</a>
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+  
+  
+              <!--<label>
+                <span class="accept-tc">
+                  <div>
+                    <input type="checkbox" name="accept-tc[]" value="Accept Terms And Conditions">
+                    <label>Accept <a (click)="open_termsandconditions()"> Terms And Conditions</a></label>
+                  </div>
+                </span>
+                <span class="has-error"> You have to accept the Terms and Conditions!</span>
+              </label>
+  
+              <label>
+                <span class="accept-tc">
+                  <div>
+                    <input type="checkbox" name="accept-ageandolder[]" value="I certify that I am 18 years of age or older">
+                    <label>Certify that I have completely read and understand <a href="/competitionrules">AudioDeadlines Competition Rules</a></label>
+                  </div>
+                </span>
+                <span class="has-error"> Certify that I have completely read and understand AudioDeadlines Competition Rules</span>
+              </label>-->
+  
+            </div>
+  
+          </div>
+  
+          <div class="singlecolumnkb automaticdisqualificationtxt">
+            <h4><span>**</span> Automatic disqualification will take place if submissions do not follow ALL of the AudioDeadline Official Rules and Terms and Conditions<span>**</span></h4>
+          </div>
+  
+          <div class="singlecolumnkb text-right submitbtnclsnew">
+            <input type="submit" value="Submit Sign-Up" class="signupnewsub">
+            <input type="submit" value="Cancel" class="signupnewsub">
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-template>
+  
+  <ng-template #loadingtemplate>
+    <div class="modal-body text-center signupeamilbody">
+      <p style="margin: 0;"><img src="../../assets/images/loader.gif" style="width: 100px;"></p>
+    </div>
+  </ng-template>
+  
+  <ng-template #successtemplate>
+    <div class="modal-body text-center signupeamilbody">
+      <h2 style="margin: 0; font-size: 30px;"><span>Signup form submitted successfully.</span></h2>
+    </div>
+  </ng-template>
+  
+  <div *ngIf="termsandconditionsmodal" class="modal fade modalVideoUpload" (onHidden)="onHidden()" data-backdrop="static" bsModal #staticModal="bs-modal" [config]="{ show: true}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header deletemodal" style="border: none">
+  
+          <button type="button" class="close pull-right" aria-label="Close" (click)="termsandconditionsmodal=false">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  
+          <app-termsandconditions></app-termsandconditions>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  
+  <!--
+  <div class="container-fluid communitysignupnewblock1 competitionblock1mainwrapper">
+    <div class="row">
+      <div class="container newwrapper">
+        <div class="communitysignupnewblock1inner">
+          <div class="communitysignupnewblock1left">
+            <app-newsignupheader></app-newsignupheader>
+            <div class="bannerleftnew bannerleftnew1">
+              <h3>AudioDeadline Competitions </h3>
+              <h4>VOTE FOR YOUR FAVORITE ARTISTS TO<br> APPEAR ON AUDIODEADLINE</h4>
+              <p>The following competitions are currently running for artists that will be appearing on AudioDeadline.com’s next episode! They will have the opportunity to be flown to Los Angeles, CA and work with our A-List Artist to create a new song. You can vote 5 times a day for each competition category. Invite people from your social networks to come vote for your favorite artist as well! Keep an eye on this page to see who is ahead! Competitions end 15 days before the AudioDeadline.com live streaming show and we will announce the winners right here!</p>
+              <h5>Please keep in mind some general rules while you vote for<br> your favorites! The judging criteria is </h5>
+              <ul class="topbannerlistnew topbannerlistnew1">
+                <li>The quality of Performance</li>
+                <li>Artistic Merit</li>
+                <li>Originality</li>
+                <li>And Personality</li>
+              </ul>
+            </div>
+  
+          </div>
+          <div class="communitysignupnewblock1right">
+            <div class="formdiv"></div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+  </div>-->
+  <!--<div class="competitionblockmainwrapper competitionblock2mainwrapper">
+    <div class="competitionblock2subwrapper">
+      <div class="comtextwrapper">
+        <h3>July AudioDeadline.com Competitions will officially start July 20th, 2019 and run through September 1st, 2019.</h3>
+        <h2>Be sure to review the Competition Rules before entering.</h2>
+      </div>
+      <div class="combuttonwrapper">
+        <a [routerLink]="['/competitionrules']" class="btn btncom">Competition Rules</a>
+      </div>
+    </div>
+  </div>-->
+  <!--
+  
+  <div class="competitionblockmainwrapper competitionblock3mainwrapper">
+    <div class="competitionblock3subwrapper">
+      <div class="comtextwrapper">
+        <h1>DANCER COMPETITION</h1>
+        <p>Dancers Will Be Able To Compete Against Each Other For A Spot On The Audiodeadline.Com Live Streamed Show Where They Will Get The Exciting Chance To Join As A Co-Host Next To The Epic Flii Stylz! To Gain Entry, Dancers Will Have To Upload Two Videos Of Their Own Original Choreography And A Video Bio. They Will Be Voted On By The ARTISTXP Community For A Spot On The Flii Couch! This Will Include Be...</p>
+        <h4>Submission Entry Starts July 1st, 2019 and runs through July 15th, 2019</h4>
+      </div>
+      <div class="combuttonwrapper">
+        <a [routerLink]="['/dancercompetitionrules']" class="btn btncom">Competition Rules</a>
+      </div>
+    </div>
+  </div>
+  <div class="competitionblockmainwrapper competitionblock4mainwrapper">
+    <div class="competitionblock4subwrapper">
+      <div class="comtextwrapper">
+        <h1>PRODUCER COMPETITION</h1>
+        <p>Aspiring Producers Will Have The Exciting Opportunity To Add Three Songs They Produced As Well As A Video Bio Onto The ARTISTXP Website To Be Voted On! Winners Of The Producer Competition Will Be Entered In The Audiodeadline.Com Show Where They Will Have To Come Up With A Completely New Song Live Within An 8-Hour Timespan. They Will Be Flown Out To LA, With Paid For Meals And Hotel! If They Win Th...Submission Entry Starts April 1st 2019 and runs through April 15th 2019</p>
+        <h4>Submission Entry Starts July 1st, 2019 and runs through July 15th, 2019</h4>
+      </div>
+      <div class="combuttonwrapper">
+        <a [routerLink]="['/producercompetitionrules']" class="btn btncom">Competition Rules</a>
+      </div>
+    </div>
+  </div>
+  <div class="competitionblockmainwrapper competitionblock5mainwrapper">
+    <div class="competitionblock5subwrapper">
+      <div class="comtextwrapper">
+        <h1>RAPPER COMPETITION</h1>
+        <p>Rappers Will Need To Enter Two Original Songs, As Well As A Music Video And A Video Bio. Winners Will Be Voted Onto The Audiodeadline.Com Show Where They Will Be Flown Out To LA With A Paid For Hotel And Food! This Is A One-Of-A-Kind Opportunity For Rappers To Showcase Their Talent In Front Of Millions Of People, Including A-List Artists! At The End Of The Year, They Will Get The Chance To Win A 1…</p>
+        <h4>Submission Entry Starts July 1st, 2019 and runs through July 15th, 2019</h4>
+      </div>
+      <div class="combuttonwrapper">
+        <a [routerLink]="['/rappercompetitionrules']" class="btn btncom">Competition Rules</a>
+      </div>
+    </div>
+  </div>
+  <div class="competitionblockmainwrapper competitionblock6mainwrapper">
+    <div class="competitionblock6subwrapper">
+      <div class="comtextwrapper">
+        <h1>VOCALIST COMPETITION</h1>
+        <p>Vocalists Will Need To Enter Two Songs, A Music Video, And A Video Bio To Be Voted On By The
+          ARTISTXP Community. Competition Winners Will Be Flown Out To LA, With Hotel And Food Paid For! They Will Get To Come Onto The Audiodeadline.Com Show To Make A Completely New Song Within An 8-Hour Timespan. In Addition To This, They Will Also Get The Chance To Be Voted On At The End Of The Year To Win A 12,...</p>
+        <h4>Submission Entry Starts June 1st, 2019 and runs through June 15th, 2019</h4>
+      </div>
+      <div class="combuttonwrapper">
+        <a [routerLink]="['/vocalistcompetitionrules']" class="btn btncom">Competition Rules</a>
+      </div>
+    </div>
+  </div>
+  
+  <app-newsignupfooter></app-newsignupfooter>-->
+  
+  
+  

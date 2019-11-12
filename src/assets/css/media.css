@@ -6,6 +6,7 @@
     .signupforblockchainblock3rightbottom {
         width: 708px;}
     .newwrapper {width: 100%;}
+    .competitionblock1mainwrapper .newwrapper{width: 94%;}
 }
 @media only screen and (max-width: 1730px) {
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 18px 41px !important}
@@ -13,8 +14,8 @@
         width: 102%;
     }
 }
-@media only screen and (max-width: 1700px) {
-   
+@media only screen and (max-width: 1720px) {
+    .orangebtn {padding: 10px 14px;width: 314px; text-align: center;}
 }
 @media only screen and (max-width: 1680px) {
     .signupforblockchainblock2content p {
@@ -46,6 +47,8 @@
     .loginbuttonwrapper button, .loginbuttonwrapper button:hover {font-size: 20px !important}
 }
 @media only screen and (max-width: 1600px) {
+    .comrupetitionblock2subwrapper {padding: 40px 527px 30px 90px;}
+    .competitionblock1mainwrapper.comrupetitionblock1mainwrapper {padding-bottom: 37px;}
     .signupforblockchainblock4 p {
         font-size: 20px;}
     .signupforblockchainblock3 .signupforblockchainblock3lists li .image {font-size: 20px;}
@@ -113,6 +116,12 @@
     .loginbody {padding: 42px 10px 42px 2px}
 }
 @media only screen and (max-width: 1480px) {
+    .comtextwrapper h1 {
+        font-size: 38px;
+    }
+    .comtextwrapper h4 {
+        font-size: 19px;
+    }
     .blockchainprod table th, .blockchainprod table td {
         font-size: 24px;
     }
@@ -211,6 +220,11 @@
 }
 @media only screen and (max-width: 1380px) {.loginbuttonwrapper button, .loginbuttonwrapper button:hover {padding: 12px 36px !important;}
 }
+@media only screen and (max-width: 1320px) {
+    .comrupetitionblock2subwrapper {
+        padding: 40px 214px 30px 90px;
+    }
+}
 @media only screen and (max-width: 1300px) {
     .signupforblockchainblock1.signupforblockchainstep2.signupforblockchainconfirm .communitysignupnewblock1inner {
         width: 90%;
@@ -252,6 +266,24 @@
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 26px !important;font-size: 18px !important;}
 }
 @media only screen and (max-width: 1199px) {
+    .comrupetitionblock2subwrapper {
+        background-size: 200%;
+        padding: 30px;
+        padding-top: 44%;
+    }
+    .comrupetitionblock2subwrapper .comtextwrapper p {
+        width: 100%;
+        text-align: center;
+    }
+    .comtextwrapper h1 {
+        text-align: center;
+    }
+    .comtextwrapper h4 {
+        text-align: center;
+    }
+    .comrupetitionblock2subwrapper .combuttonwrapper {
+        justify-content: center;
+    }
     .axplandingforminnerwrapper_signup {padding: 42px 44px 40px 19px;}
     .axpcontactusleftdiv .bg img {
         position: inherit;
@@ -602,6 +634,13 @@
     .loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 0px !important}
 }
 @media only screen and (max-width: 991px) {
+    .competitionblock1mainwrapper.comrupetitionblock1mainwrapper {
+        padding-bottom: 0px;
+    }
+    .competitionblock1mainwrapper .bannerleftnew {
+        width: 58%;
+        margin-top: 20px;
+    }
     .axplandingforminnerwrapper_signup {padding: 42px 37px 40px 19px;}
     .signupforblockchainblock3rightbottom {
         width: 210px;
@@ -736,7 +775,46 @@
     .mat-icon-button.mat-animation-noopable .smlmenudiv.ng-star-inserted {display: none !important;}
     .mat-icon-button.mat-animation-noopable.cdk-touch-focused .smlmenudiv.ng-star-inserted {display: block !important;}
 }
+@media only screen and (max-width: 840px) {
+    .competitionblock1mainwrapper .bannerleftnew {width: 72%;}
+}
 @media only screen and (max-width: 767px) {
+    .competitionblock1mainwrapper {
+        background: #0e0517 url(../images/competitionblock1mainwrapperbg.jpg) no-repeat right 60% top !important;
+        position: relative;
+        background-image: none !important;
+    }
+    .competitionblock1mainwrapper:after {
+        content: "";
+        background: -moz-linear-gradient(182deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(40%, rgba(0,0,0,0.8)), color-stop(100%, rgba(153,218,255,0)));
+        background: -webkit-linear-gradient(182deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);
+        background: -o-linear-gradient(182deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);
+        background: -ms-linear-gradient(182deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(268deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#99DAFF',GradientType=1 );
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: inherit !important;
+    }
+    .communitysignupnewblock1inner {
+        position: relative;
+        z-index: 999;
+    }
+    .competitionblock1mainwrapper .bannerleftnew {
+        width: 100%;text-align: center;
+    }
+    .comrupetitionblock1mainwrapper .topmenuiconlogo .logowrappersml .logoimgwrapper {
+        width: 270px;
+    }
+    .bannerleftnew h4 {
+        font-size: 30px;
+    }
+    .competitionblock1mainwrapper.comrupetitionblock1mainwrapper .combuttonwrapper {text-align: center;}
+    .competitionblock1mainwrapper.comrupetitionblock1mainwrapper .bannerleftnew1 p {width: 100%;}
     .axplandingforminnerwrapper_signup {padding: 42px 31px 40px 19px;}
     .signupforblockchainblock3 h1 {
         font-size: 36px;
@@ -784,6 +862,11 @@
     }
 }
 @media only screen and (max-width: 620px) {
+    .orangebtn {
+        margin: 5px 0;
+        width: 100%;
+        font-size: 20px;
+    }
     .signupforblockchainblock4 .videoblockcontent a, .signupforblockchainblock4 .videoblockcontentright a:hover, .signupforblockchainconfirm .bannerleftnew h3.titletxth3 span a, .signupforblockchainconfirm .bannerleftnew h3.titletxth3 span a:hover {
         margin: 11px auto;
         display: block;
@@ -821,6 +904,7 @@
     .loginform .formgroup input {width: 168px}
 }
 @media only screen and (max-width: 480px) {
+    .comrupetitionblock1mainwrapper .topmenuiconlogo .logowrappersml .logoimgwrapper {width: 211px;}
     .invitationlogowrapper {
         padding-bottom: 20px;
     }

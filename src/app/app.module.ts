@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,14 @@ import { AuthGuard } from './services/auth.guard';
 import { FacebookModule } from 'ngx-facebook';
 // meta data module import statement
 import { MetaModule } from '@ngx-meta/core';
+// ngx-bootstrap moment
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { TabsModule } from 'ngx-bootstrap';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import {ModalModule} from 'ngx-bootstrap/modal';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 // component import statements here
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -75,11 +83,19 @@ import { SignupforblockchainconfirmationComponent } from './components/signupfor
     FormsModule, 
     ReactiveFormsModule,
     FacebookModule.forRoot(),
-    MetaModule.forRoot()
+    MetaModule.forRoot(),
+    TabsModule.forRoot(),
+    PopoverModule.forRoot(),
+    ModalModule.forRoot(),
+    NgbModule,
+    CarouselModule.forRoot(),
+    TooltipModule.forRoot(),
+    ScrollToModule.forRoot()
     // CookieService 
   ],
   providers: [AuthGuard,CookieService,ApiService],
   entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent,SuccessDialogComponent,BlastorpassComponent, TermsDialogComponent,QueryDialogBlastComponent,AgreementComponent, SignDialogComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
