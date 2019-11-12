@@ -53,40 +53,40 @@
                 <!-- </mat-form-field> -->
                   <mat-form-field class="example-full-width fromgroup">
                     <span class="has-error" *ngIf ="existmsg!='' "> {{existmsg}}</span>
-                    <input matInput  placeholder="first name" name="first-name" value="" size="40" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'firstname')" [formControl]="blockchainForm.controls['firstname']">
+                    <input matInput  placeholder="first name" name="first-name" value="" size="40" type="text" (blur)="inputBlur('firstname')" [formControl]="blockchainForm.controls['firstname']">
                     <span class="has-error" *ngIf ="blockchainForm.controls['firstname'].touched && !blockchainForm.controls['firstname'].valid"> First Name field can not be blank</span>
                   </mat-form-field>
 
                   <mat-form-field class="example-full-width fromgroup">
-                    <input matInput  name="last-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'lastname')" [formControl]="blockchainForm.controls['lastname']" placeholder="last name">
+                    <input matInput  name="last-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="inputBlur('lastname')" [formControl]="blockchainForm.controls['lastname']" placeholder="last name">
                     <span class="has-error" *ngIf ="blockchainForm.controls['lastname'].touched && !blockchainForm.controls['lastname'].valid"> Last Name field can not be blank</span>
                   </mat-form-field>
   
                   <mat-form-field class="example-full-width fromgroup">
-                    <input matInput  name="your-email" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'email')" [formControl]="blockchainForm.controls['email']" placeholder="email">
+                    <input matInput  name="your-email" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="inputBlur('email')" [formControl]="blockchainForm.controls['email']" placeholder="email">
                     <span class="has-error" *ngIf ="blockchainForm.controls['email'].touched && !blockchainForm.controls['email'].valid"> Email field can not be blank</span>
                 </mat-form-field>
   
                   <mat-form-field class="example-full-width fromgroup">
-                    <input name="your-phone" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" [formControl]="blockchainForm.controls['phone']" (blur)="_commonservices.inputUntouch(blockchainForm,'phone')"  placeholder="phone">
+                    <input name="your-phone" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" [formControl]="blockchainForm.controls['phone']" (blur)="inputBlur('phone')"  placeholder="phone">
                     <span class="has-error" *ngIf ="blockchainForm.controls['phone'].touched && !blockchainForm.controls['phone'].valid"> Phone field can not be blank</span>
                 </mat-form-field>
   
                   <mat-form-field class="example-full-width fromgroup">
-                    <input name="address" class="form-control" type="text" [formControl]="blockchainForm.controls['address']" (blur)="_commonservices.inputUntouch(blockchainForm,'address')" placeholder="Your Address">
+                    <input name="address" class="form-control" type="text" [formControl]="blockchainForm.controls['address']" (blur)="inputBlur('address')" placeholder="Your Address">
                     <span class="has-error" *ngIf ="blockchainForm.controls['address'].touched && !blockchainForm.controls['address'].valid"> Address field can not be blank</span>
                 </mat-form-field>
   
                   <mat-form-field class="example-full-width fromgroup">
                     <!--<label><span>Hometown:</span> </label>-->
-                    <input name="city" class="form-control" type="text" [formControl]="blockchainForm.controls['city']" (blur)="_commonservices.inputUntouch(blockchainForm,'city')"  placeholder="city">
+                    <input name="city" class="form-control" type="text" [formControl]="blockchainForm.controls['city']" (blur)="inputBlur('city')"  placeholder="city">
                     <span class="has-error" *ngIf ="blockchainForm.controls['city'].touched && !blockchainForm.controls['city'].valid"> Hometown field can not be blank</span>
                 </mat-form-field>
   
   
                   <mat-form-field class="example-full-width fromgroup hide">
-                    <!--<input name="country" class="form-control" type="text" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputUntouch(blockchainForm,'country')"  placeholder="country">-->
-                    <!--<select name="country" class="form-control classic" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputUntouch(blockchainForm,'country')">
+                    <!--<input name="country" class="form-control" type="text" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputBlur(blockchainForm,'country')"  placeholder="country">-->
+                    <!--<select name="country" class="form-control classic" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputBlur(blockchainForm,'country')">
                       <option value="">Select country</option>
                       <option value="USA">USA</option>
                       <option value="UK">UK</option>
@@ -94,14 +94,14 @@
                       <option value="Korea">Korea</option>
                       &lt;!&ndash;<option *ngFor="let item of country" value="{{item.abbreviation}}">{{item.name}}</option>&ndash;&gt;
                     </select>-->
-                    <input name="country" class="form-control" type="text" [formControl]="blockchainForm.controls['country']" (blur)="_commonservices.inputUntouch(blockchainForm,'country')"  placeholder="country">
+                    <input name="country" class="form-control" type="text" [formControl]="blockchainForm.controls['country']" (blur)="inputBlur('country')"  placeholder="country">
                     <span class="has-error" *ngIf ="blockchainForm.controls['country'].touched && !blockchainForm.controls['country'].valid"> Country field can not be blank</span>
                 </mat-form-field>
   
   
                   <mat-form-field class="example-full-width fromgroup">
                     <!--<label><span>State/Province:</span></label>-->
-                    <mat-select name="state" class="form-control classic" [formControl]="blockchainForm.controls['state']" (blur)="_commonservices.inputUntouch(blockchainForm,'state')">
+                    <mat-select name="state" class="form-control classic" [formControl]="blockchainForm.controls['state']" (blur)="inputBlur('state')">
                       <mat-option value="">Select State</mat-option>
                       <mat-option *ngFor="let item of state" value="{{item.abbreviation}}">{{item.name}}</mat-option>
                     </mat-select>
@@ -114,7 +114,7 @@
   
                   <mat-form-field class="example-full-width fromgroup">
                     <!--<label><span>ZipCode:</span> </label>-->
-                    <input name="zip" class="form-control" type="text" [formControl]="blockchainForm.controls['zip']" (blur)="_commonservices.inputUntouch(blockchainForm,'zip')" placeholder="zip">
+                    <input name="zip" class="form-control" type="text" [formControl]="blockchainForm.controls['zip']" (blur)="inputBlur('zip')" placeholder="zip">
                     <span class="has-error" *ngIf ="blockchainForm.controls['zip'].touched && !blockchainForm.controls['zip'].valid"> ZipCode field can not be blank</span>
                 </mat-form-field>
   
@@ -136,19 +136,19 @@
                 <div class="cslandingforminnerwrapper">
   
                   <mat-form-field class="example-full-width fromgroup hide">
-                    <input name="_id" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'_id')" [formControl]="blockchainForm.controls['_id']" placeholder="_id">
+                    <input name="_id" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputBlur(blockchainForm,'_id')" [formControl]="blockchainForm.controls['_id']" placeholder="_id">
                     <span class="has-error" *ngIf ="blockchainForm.controls['_id'].touched && !blockchainForm.controls['_id'].valid"> First Name field can not be blank</span>
                   </div>
                   <mat-form-field class="example-full-width fromgroup">
-                    <input name="first-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'firstname')" [formControl]="blockchainForm.controls['firstname']" placeholder="first name">
+                    <input name="first-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputBlur(blockchainForm,'firstname')" [formControl]="blockchainForm.controls['firstname']" placeholder="first name">
                     <span class="has-error" *ngIf ="blockchainForm.controls['firstname'].touched && !blockchainForm.controls['firstname'].valid"> First Name field can not be blank</span>
                  </mat-form-field>
                   <mat-form-field class="example-full-width fromgroup">
-                    <input name="last-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'lastname')" [formControl]="blockchainForm.controls['lastname']" placeholder="last name">
+                    <input name="last-name" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputBlur(blockchainForm,'lastname')" [formControl]="blockchainForm.controls['lastname']" placeholder="last name">
                     <span class="has-error" *ngIf ="blockchainForm.controls['lastname'].touched && !blockchainForm.controls['lastname'].valid"> Last Name field can not be blank</span>
                  </mat-form-field>
                   <mat-form-field class="example-full-width fromgroup">
-                    <input name="your-email" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputUntouch(blockchainForm,'email')" [formControl]="blockchainForm.controls['email']" placeholder="email">
+                    <input name="your-email" value="" size="40" class="form-control" aria-required="true" aria-invalid="false" type="text" (blur)="_commonservices.inputBlur(blockchainForm,'email')" [formControl]="blockchainForm.controls['email']" placeholder="email">
                     <span class="has-error" *ngIf ="blockchainForm.controls['email'].touched && !blockchainForm.controls['email'].valid"> Email field can not be blank</span>
                   </mat-form-field>
   

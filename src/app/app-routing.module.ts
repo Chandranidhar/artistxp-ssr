@@ -20,9 +20,11 @@ import { InvitationforlaunchplanComponent } from './components/invitationforlaun
 import { SignupforblockchainComponent } from './components/signupforblockchain/signupforblockchain.component';
 import { SignupforblockchainconfirmationComponent } from './components/signupforblockchainconfirmation/signupforblockchainconfirmation.component';
 import { Signupforblockchainstep2Component } from './components/signupforblockchainstep2/signupforblockchainstep2.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'forgot-password', component:ForgotPasswordComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'signupheader', component: SignupheaderComponent },
   { path: 'signupflow', component: SignupflowComponent },

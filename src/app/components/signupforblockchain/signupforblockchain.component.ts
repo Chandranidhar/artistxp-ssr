@@ -51,4 +51,10 @@ export class SignupforblockchainComponent implements OnInit {
     }
   }
 
+  scrollToTop(){
+    
+  }
+  inputBlur(val: any) {
+    this.blockchainForm.controls[val].markAsUntouched();
+  }
 }

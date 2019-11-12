@@ -39,6 +39,7 @@ import { InvitationforlaunchplanComponent } from './components/invitationforlaun
 import { SignupforblockchainComponent } from './components/signupforblockchain/signupforblockchain.component';
 import { Signupforblockchainstep2Component } from './components/signupforblockchainstep2/signupforblockchainstep2.component';
 import { SignupforblockchainconfirmationComponent } from './components/signupforblockchainconfirmation/signupforblockchainconfirmation.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,7 @@ import { SignupforblockchainconfirmationComponent } from './components/signupfor
     TermsandconditionsComponent,
     CompetitionrulesComponent,
     RefundpolicyComponent,
-    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent, SignupforblockchainComponent, Signupforblockchainstep2Component, SignupforblockchainconfirmationComponent
+    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent, SignupforblockchainComponent, Signupforblockchainstep2Component, SignupforblockchainconfirmationComponent, ForgotPasswordComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
