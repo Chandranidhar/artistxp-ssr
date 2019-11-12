@@ -215,8 +215,8 @@ text-transform: uppercase;}
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    -webkit-transition: all 1s; /* Safari prior 6.1 */
-    transition: all 1s;
+    -webkit-transition: all 1s; 
+    transition: all 1s;margin: 0 2px;
 }
 
 
@@ -1540,8 +1540,18 @@ a.btnblockchainlink:hover {background-color: #494949}
 .competitionblock2mainwrapper .combuttonwrapper {text-align: center}
 .competitionblock2mainwrapper:after {content: url("../../assets/images/com_bannericon.png"); position: absolute; left: 50.3%; bottom: -34px; transform: translatex(-50%); z-index: 99}
 .competitionblock3subwrapper .btncom {border: 1px solid #373b43 !important}
-.btncom {background-image: linear-gradient(#1f2223, #000000);border: none;text-transform: uppercase;color: #aba9a9;font-size: 18px;padding: 10px 20px;border-radius: 30px;margin: 10px 0px;border: 1px solid #4b4c4e !important;}
-.btncom:hover {background-image: linear-gradient(#000000, #1f2223);  color: #aba9a9; border: 1px solid #373b43 !important}
+.btncom {
+    background-image: linear-gradient(#1f2223, #000000) !important;
+    border: none !important;
+    text-transform: uppercase;
+    color: #aba9a9;
+    font-size: 18px !important;
+    padding: 10px 20px !important;
+    border-radius: 30px !important;
+    margin: 10px 0px;
+    border: 1px solid #4b4c4e !important;
+}
+.btncom:hover {color:#fff !important;background-image: linear-gradient(#000000, #1f2223);  color: #aba9a9; border: 1px solid #373b43 !important}
 .competitionblock2mainwrapper .combuttonwrapper {background-image: url(../../assets/images/btnbackground.png);background-position: center top;min-height: 158px;background-repeat: no-repeat;position: absolute;left: 50%;transform: translateX(-50%);min-width: 317px;bottom: -22px;z-index: 999;}
 .competitionblock2mainwrapper .combuttonwrapper .btncom {margin-top: 31px}
 .comtextwrapper h3 {font-family: 'ACaslonProSemibold'; font-size: 25px;font-weight: 600; color: #c6c6c9}
@@ -1601,8 +1611,17 @@ a.btnblockchainlink:hover {background-color: #494949}
 .comrupetitionblock2subwrapper {background-image: url(../../assets/images/comre_banner002.jpg);background-position: right top;padding: 40px 40px 30px 90px;background-repeat: no-repeat; background-size: cover}
 .comrupetitionblock2subwrapper .combuttonwrapper {text-align: left; padding: 20px 0px; display: flex;  flex-wrap: wrap;}
 .comrupetitionblock2subwrapper .comtextwrapper p {width: 46%}
-.orangebtn:hover {color: #fff}
-.orangebtn {background-color: #f78000;color: #fff; font-size: 24px; padding: 10px 30px; border-radius: 0; margin:5px; font-family: 'OpenSans'; width: 367px}
+.orangebtn:hover {color: #fff !important;}
+.orangebtn {
+    background-color: #f78000;
+    color: #fff;
+    font-size: 24px !important;
+    padding: 10px 30px !important;
+    border-radius: 0 !important;
+    margin: 5px;
+    font-family: 'OpenSans';
+    width: 367px;
+}
 .communitysignupnewblock1inner{display: block; padding: 0 30px;}
 
 .comtextwrapper h4 { font-weight: normal;margin: 0;}
