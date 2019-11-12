@@ -15,6 +15,7 @@
     }
 }
 @media only screen and (max-width: 1720px) {
+    .signupblock2subwrapper {padding: 50px 90px 50px 667px;}
     .orangebtn {padding: 10px 14px;width: 314px; text-align: center;}
 }
 @media only screen and (max-width: 1680px) {
@@ -105,11 +106,31 @@
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 35px !important;font-size: 21px !important;}
 }
 
+
+@media only screen and (max-width: 1580px) {
+    .signupblock4subwrapper .signinimgwrapper {
+        left: -1%;
+    }
+    .signupblock4subwrapper {background-position: left 24% top;padding: 80px 90px 80px 888px;}
+}
 @media only screen and (max-width: 1560px) {
+    .signupblock5content {left: 32%;}
+    .signupblock5comp{right: -20%;}
+    .signupblock3subwrapper {background-position: right 41% top; padding: 40px 907px 30px 90px;}
     .signupforblockchainblock3rightbottom {
         width: 513px;
     }
     .signupforblockchainblock3listsbottombg .iconblockchain {right: -8%;}
+}
+@media only screen and (max-width: 1540px) {
+    .signuptextwrappertitles p {
+        font-size: 15px;
+    }
+    .signupblock2subwrapper {
+        padding: 50px 90px 50px 577px;
+        background-size: 142%;
+        background-position: left 47% top;
+    }
 }
 @media only screen and (max-width: 1500px) {
     .loginbodycontainer {-ms-flex-align: center; align-items: center}
@@ -171,6 +192,22 @@
     .axpcontactusleftdiv .bg img {left: -64px;}
 }
 @media only screen and (max-width: 1400px) {
+    .signupblock5content {
+        left: 34%;
+    }
+    .signupblock5comp { width: 441px;height: 441px;right: -11%;}
+    .signupblock5comp h2{font-size: 26px;}
+    .signupblock4subwrapper .signinimgwrapper { 
+        width: 461px;
+    }
+    .comtextwrapper h1 {
+        font-size: 32px;
+    }
+    .signupblock4subwrapper {padding: 40px 40px 40px 751px;}
+    .signupblock3subwrapper {
+        background-position: right 41% top;
+        padding: 40px 769px 30px 40px;
+    }
     .signupforblockchainconfirm .blockchainprodright {width: 73%;}
     .blockchainprod table th, .blockchainprod table td {
         font-size: 24px;
@@ -203,6 +240,7 @@
     }
 }
 @media only screen and (max-width: 1400px) {
+    .signupblock2subwrapper {background-size: 172%;background-position: left 34% top;padding: 50px 50px 50px 577px;}
     .signupforblockchainblock1 .cslandingformheader h1 {
         font-size: 32px;
     }
@@ -226,8 +264,16 @@
     }
 }
 @media only screen and (max-width: 1300px) {
+    .signupblock5content {
+        left: 36%;
+    }
     .signupforblockchainblock1.signupforblockchainstep2.signupforblockchainconfirm .communitysignupnewblock1inner {
         width: 90%;
+    }
+}
+@media only screen and (max-width: 1240px) {
+    .signupblock5content {
+        left: 38%;
     }
 }
 @media only screen and (max-width: 1260px) {
@@ -266,6 +312,78 @@
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 26px !important;font-size: 18px !important;}
 }
 @media only screen and (max-width: 1199px) {
+    .communitysignupnewblock1new .topbannerlistnew{
+        position: inherit;
+        left: inherit;
+        top: inherit;
+        width: 100%;
+    }
+    .signupblock2subwrapper {
+        background-size: 230%;
+        background-position: left top;
+        padding: 80% 30px 30px 30px;
+    }
+    .btndivnew {
+        text-align: center;
+    }
+    .signupblock3subwrapper {
+        background-position: right top;
+        padding: 42% 30px 30px 30px;
+        background-size: 193%;
+    }
+    .signupblock4subwrapper {
+        padding: 59% 30px 30px 30px;
+        background-size: 273%;
+        background-color: #040f0f;
+    }
+    .comtextwrapper p {
+        text-align: center;
+    }
+    .signupblock4mainwrapper .comtextwrapper, .signupblock4mainwrapper .btndivnew{position: relative; z-index: 9;}
+    .signupblock4subwrapper .signinimgwrapper {
+        width: 100%;
+        position: inherit;
+        left: inherit;
+        top: inherit;
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: -6%;margin-bottom: -54px;
+    }
+    .signupblock5 {
+        background-size: 200%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        background-position: right top;
+        padding-top: 72%;
+        background-color: #0073ac;padding-bottom: 30px;
+    }
+    .signupblock2mainwrapper:before{display: none;}
+    .signupblock5content {
+        left: 0;
+        position: relative;
+        display: inline-block;
+        top: inherit;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        transform: inherit;
+    }
+    .signupblock5lists li { width: 100%;}
+    .signupblock5comp {
+        width: 100%;
+        height: auto;
+        right: inherit;
+        position: relative;
+        background: none;
+    }
+    .signupblock5comp h2 {
+        font-size: 26px;
+        transform: inherit;
+        margin: 0;
+        padding-top: 30px;
+    }
     .comrupetitionblock2subwrapper {
         background-size: 200%;
         padding: 30px;
@@ -634,6 +752,16 @@
     .loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 0px !important}
 }
 @media only screen and (max-width: 991px) {
+    .communitysignupnewblock1left{background: none !important;}
+    .bannerleftnew h1 {
+        margin-top: 20px; font-size: 28px;
+    }
+    .bannerleftnew h2 {
+        font-size: 20px;
+       
+    }
+    .communitysignupnewblock1new .topbannerlistnew li{text-align: center;background-position: center top; padding-top: 18px;}
+    .communitysignupnewblock1new .bannerleftnewinner {width: 100%;}
     .competitionblock1mainwrapper.comrupetitionblock1mainwrapper {
         padding-bottom: 0px;
     }

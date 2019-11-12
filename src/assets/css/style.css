@@ -144,10 +144,16 @@ text-transform: uppercase;}
 .loginbuttonwrapper {width: 100%;display: flex !important;align-items: center;justify-content: center}
 .loginbuttonwrapper button, .loginbuttonwrapper button:hover {font-size: 26px !important;line-height: 30px !important;height: auto;padding: 18px 55px !important;width: auto; margin: 0 10px}
 .loginbodycontainer .blackgradientbutton .mat-list-item-content, .loginbodycontainer .orangegradientbutton .mat-list-item-content {padding-left: 0 !important}
-.errormsgred {color: #eb6000}
+.errormsgred {color: #eb6000 !important;display: block;}
 .errormsgblue {color: #01cbee !important;display: block;padding-top: 7px; text-align: left}
 .loginbuttoncon {position: relative}
-.loginbuttoncon .errormsgred {position: absolute;left: -285px;bottom: -26px;cursor: pointer;}
+.loginbuttoncon .errormsgred {
+    position: absolute;
+    left: -267px;
+    bottom: -26px;
+    cursor: pointer;
+    color: #c3c3c3 !important;
+}
 .formsubtitle {
     color: #89898f;
     font-family: "OpenSans-Semibold";
@@ -203,7 +209,7 @@ text-transform: uppercase;}
 .footerbottom {padding: 25px 20px;background-color: #292929;margin-top: 27px;margin-bottom: 0 !important;}
 .footersolist {color: #aeaeae;font-size: 20px;text-align: center;text-transform: capitalize;font-weight: normal;}
 .footersolist span{display: block;padding-top: 20px;}
-.footersoicons a{padding: 0 10px; cursor: pointer;}
+.footersoicons a{padding: 0 10px;cursor: pointer;color: #bdbdbd;text-decoration: none;}
 /*------------------------------------ footer css end ------------------------------------ */
 
 /*------------------------------------ signup css start ------------------------------------ */
@@ -1455,9 +1461,53 @@ a.btnblockchainlink:hover {background-color: #494949}
 .topbannerlistnew li span {color: #979799;display: block;}
 .topbannerlistnew.topbannerlistnew1 li {font-family: 18px !important;color: #8a8a8e !important;}
 
+.communitysignupnewblock1 {background: #0e0517 url(../images/communitysignupnewblock1bg.jpg) no-repeat left top !important;background-size: 100% 100% !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;padding-bottom: 25px;}
+.communitysignupnewblock1.communitysignupnewblock1step2 {background: #0e0517 url(../images/communitysignupnewblock1bgstep2.jpg) no-repeat left top !important;background-size: 100% 100% !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;padding-bottom: 25px;border-bottom: 1px solid #2c2c2c;}
+.newwrapper {width: 1780px;margin: 0 auto;display: block;}
+.communitysignupnewblock1inner {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: nowrap;justify-content: space-between;width: 98%;margin: 0 auto;}
+.communitysignupnewblock1left {background: url(../images/csnewblock1leftbg.png) no-repeat right top !important;min-height: 1px;padding-right: 1%;margin-bottom: -30px;position: relative;}
+.communitysignupnewblock1left.communitysignupnewblock1leftstep2 {background: url(../images/csnewblock1leftbgstep2.png) no-repeat right top !important;min-height: 1px;padding-right: 1%;margin-bottom: -30px;/* padding-left: 2%;*/}
+.communitysignupnewblock1leftstep2 .bannerleftnew {margin-top: 94px;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h2 {font-size: 30px;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h1 {font-family: "Adobe-Garamond-Pro-Bold";color:#f68000 !important;text-transform: uppercase !important;font-size: 64px;font-weight: bold;margin: 0;margin-top: 60px;white-space: normal;word-break: break-word;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h3 {font-family: "Adobe-Garamond-Pro-Bold";color: #8a8a8e;text-transform: uppercase !important;font-size: 48px;font-weight: bold;margin: 0;margin-top: 60px !important;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h3 span {font-size: 130px;display: block;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h3 span.txtorangenew {color:#fc8f00 !important;display: inline-block !important;}
+.communitysignupnewblock1.communitysignupnewblock1step2 .btnbuyticket_genuserlan {font-size: 28px;padding: 6px 8px 10px;}
+.communitysignupnewblock1.communitysignupnewblock1step2 .formdivinnerlist {border-bottom: 0px !important;display: flex;flex-wrap: wrap;align-items: flex-start;}
+.communitysignupnewblock1 .btnbuyticket_genuserlan span {display: block;font-size: 14px;}
 
-
-
+.communitysignupnewblock1new .bannerleftnew {width: 100%;margin-top: 30px !important;display: inline-block;margin-bottom: 60px !important;text-align: center;}
+.communitysignupnewblock1new .topbannerlistnew li {margin-bottom: 15px;font-size: 20px;}
+.communitysignupnewblock1new .bannerleftnewinner {width: 50%;margin: 0 auto;display: block;}
+.communitysignupnewblock1new .topbannerlistnew {text-align: left;display: inline-block;background: transparent !important;padding: 19px;-webkit-clip-path: polygon(0 0, 100% 0%, 81% 100%, 0% 100%);clip-path: polygon(0 0, 100% 0%, 81% 100%, 0% 100%);width: 24%;position: absolute;left: 0;top:30%;border-top: 3px solid #e85600;border-left: 3px solid #e85600;border-bottom: 3px solid #e85600;}
+.btnorangenew, .btnorangenew:hover {
+    padding: 18px 55px !important;
+    background: rgba(254,148,0,1) !important;
+    background: -moz-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,148,0,1)), color-stop(100%, rgba(231,85,0,1))) !important;
+    background: -webkit-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    background: -o-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    background: -ms-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%)  !important;
+    background: linear-gradient(to bottom, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9400', endColorstr='#e75500', GradientType=0 ) !important;
+    border: 0px solid #2f3237 !important;
+    color: #fffefe !important;
+    border-radius: 50px !important;
+    font-family: "OpenSans-Bold";
+    font-size: 26px !important;
+    line-height: 30px !important;
+    text-transform: uppercase;
+}
+.btndivnew {
+    margin-top: 35px;
+}
+.signupblock4subwrapper .signinimgwrapper {
+    position: absolute;
+    bottom: -87px;
+    left: 4%;
+    z-index: 99;
+}
 /*------------------------ start competition css --------------------------*/.competitionblock1mainwrapper {background: #0e0517 url(../images/competitionblock1mainwrapperbg.jpg) no-repeat left top !important;background-size: cover !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;}
 .competitionblock1mainwrapper .navbarnewclswrapper .headernewnavbarcls li a {color: #fff;}
 .competitionblock1mainwrapper .communitysignupnewblock1left {background: transparent !important;}
@@ -1512,12 +1562,13 @@ a.btnblockchainlink:hover {background-color: #494949}
 .signupblock5 h1 {font-family: "ACaslonProRegular";font-size: 36px; text-transform: capitalize; color:#fff;  padding: 0;  margin: 0px; line-height: 36px; letter-spacing: 0px}
 .signupblock5 h3 {font-family: "ACaslonProRegular";font-size: 28px;text-transform: uppercase;color: #fff;padding: 0;margin: 25px 0px 0px;line-height: 30px;letter-spacing: 0px;display: inline-block;width: 100%;}
 .signupblock5 p {font-family: "OpenSans";font-size: 18px;color: #fff;padding: 0;margin: 25px 0px 0;line-height: 20px;letter-spacing: 0px;display: inline-block;width: 100%;}
-.signupblock5lists {width: 100%;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-items: flex-start;justify-content: end;margin-top: 10px;}
-.signupblock5lists li {width: 40%;font-family: "OpenSans";font-size: 14px;color: #ffffff;line-height: 20px;margin-top: 15px;margin-right: 15px;}
+.signupblock5lists {padding-left:0; width: 100%;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-items: flex-start;justify-content: end;margin-top: 10px;}
+.signupblock5lists li {list-style: none; width: 40%;font-family: "OpenSans";font-size: 14px;color: #ffffff;line-height: 20px;margin-top: 15px;margin-right: 15px;}
 .signupblock5lists li span {display: block;font-family: "OpenSansSemibold";font-size: 18px;color: #fff600;text-transform: uppercase;line-height: 20px;}
 .signupblock5comp {width: 502px;height: 502px;background: -moz-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(248,134,35,1)), color-stop(100%, rgba(222,49,6,1)));background: -webkit-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: -o-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: -ms-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: linear-gradient(51deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f88623', endColorstr='#de3106',GradientType=1 );border-radius: 100%;position: absolute;right: -42%;top: 45%;}
 .signupblock5comp h2 {font-family: "TypoSlabIrregularDemo";font-size: 30px;color: #fff600;text-transform: uppercase;display: inline-block;-webkit-transform: rotate(-20deg);-moz-transform: rotate(-20deg);-ms-transform: rotate(-20deg);-o-transform: rotate(-20deg);transform: rotate(-15deg);width: 90%;margin: 57px auto;line-height: 28px;text-align: center;}
 .signupblock5comp h2 span {color:#fff;font-size:24px;text-transform: none !important;display: inline-block;margin-bottom: 20px;width: 100%;line-height: 24px;}
+.signupblock4subwrapper .signinimgwrapper img{max-width: 100%;}
 /*------------------------ end competition css --------------------------*/
 
 .signupblock4subwrapper {background-image: url("../../assets/images/signupbanner4.jpg"); background-position: left 15% top;padding: 80px 90px 80px 1020px;   background-repeat: no-repeat; background-size: cover}

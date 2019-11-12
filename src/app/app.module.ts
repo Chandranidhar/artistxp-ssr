@@ -47,6 +47,7 @@ import { InvitationforlaunchplanComponent } from './components/invitationforlaun
 import { SignupforblockchainComponent } from './components/signupforblockchain/signupforblockchain.component';
 import { Signupforblockchainstep2Component } from './components/signupforblockchainstep2/signupforblockchainstep2.component';
 import { SignupforblockchainconfirmationComponent } from './components/signupforblockchainconfirmation/signupforblockchainconfirmation.component';
+import { ArtistxpinfoComponent } from './components/artistxpinfo/artistxpinfo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,7 @@ import { SignupforblockchainconfirmationComponent } from './components/signupfor
     TermsandconditionsComponent,
     CompetitionrulesComponent,
     RefundpolicyComponent,
-    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent, SignupforblockchainComponent, Signupforblockchainstep2Component, SignupforblockchainconfirmationComponent
+    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent, SignupforblockchainComponent, Signupforblockchainstep2Component, SignupforblockchainconfirmationComponent, ArtistxpinfoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
