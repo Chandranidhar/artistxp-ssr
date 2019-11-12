@@ -16,7 +16,7 @@
 }
 @media only screen and (max-width: 1720px) {
     .signupblock2subwrapper {padding: 50px 90px 50px 667px;}
-    .orangebtn {padding: 10px 14px;width: 314px; text-align: center;}
+    .orangebtn {padding: 10px 14px !important;width: 343px; text-align: center !important;}
 }
 @media only screen and (max-width: 1680px) {
     .signupforblockchainblock2content p {
@@ -388,6 +388,7 @@
         background-size: 200%;
         padding: 30px;
         padding-top: 44%;
+        background-color: #281f20;
     }
     .comrupetitionblock2subwrapper .comtextwrapper p {
         width: 100%;
