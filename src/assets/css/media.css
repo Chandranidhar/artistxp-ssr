@@ -106,9 +106,10 @@
         padding: 0px 77px;
         padding-left: 624px;
     }
-}
-.competitionblock2mainwrapper .combuttonwrapper{left: 69%;}
+    .competitionblock2mainwrapper .combuttonwrapper{left: 69%;}
 .competitionblock2mainwrapper:after{left: 69.3%;}
+}
+
 @media only screen and (max-width: 1400px) {
     .signupblock5content {left: 34%;}
     .signupblock5comp { width: 441px;height: 441px;right: -11%}
@@ -169,7 +170,7 @@
         padding: 0px 77px;
         background-size: 406%;
         padding-top: 64%;
-        background-color: #0e181e;
+        background-color: #0e2c36;
     }
     .competitionblock2mainwrapper .combuttonwrapper {
         left: inherit;

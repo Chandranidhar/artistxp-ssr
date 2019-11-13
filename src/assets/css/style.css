@@ -166,15 +166,15 @@ text-transform: uppercase;}
     display: inline-block;
     width: 100%;
     text-align: right;
-    padding: 10px 21px;
+    padding: 10px 0px;
 }
-.rightbutton .orangegradientbutton{
+.rightbutton .orangegradientbutton, .rightbutton .orangegradientbutton:hover{
     padding: 8px 20px !important;
     font-size: 22px !important;
     border-radius: 5px !important;
 }
 .rightbutton.rightbutton2 {
-    padding: 10px 0;
+    padding: 10px 21px;
     padding-top: 0;
 }
 .signupflow3wrapper .mat-expansion-indicator::after, .mat-expansion-panel-header-description { color: rgba(216, 210, 210, 0.87) !important;}
