@@ -54,20 +54,21 @@ export class CompetitionComponent implements OnInit {
   public iframemusicurls:any;
   public termsandconditionsmodal:any = false;
 
-  constructor(public readonly meta: MetaService, fb: FormBuilder,private modalService: BsModalService,private router: Router,
-    private apiService: ApiService,
-    private _http: HttpClient,private sanitizer:DomSanitizer,private _scrollToService: ScrollToService) { 
+  constructor(public readonly meta: MetaService, fb: FormBuilder,public modalService: BsModalService,public router: Router,
+    public apiService: ApiService,
+    public _http: HttpClient,public sanitizer:DomSanitizer,public _scrollToService: ScrollToService) { 
     this.meta.setTitle('ArtistXP');
     this.meta.setTag('og:description', 'Monthly Competitions for talented artists and performers to feature, where fans from social networks can vote for them to win competitions and exciting prizes.');
     this.meta.setTag('og:title', 'AudioDeadline Competitions for Talented Artists & Performers');
     this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', 'https://artistxp.com/assets/images/artistheaderlogo.png');
+    this.meta.setTag('og:url', 'https://testbed.artistxp.com/competition');
+    this.meta.setTag('og:image', 'https://testbed.artistxp.com/assets/images/artistxpmediamarketingsignupbann.jpg');
     this.meta.setTag('og:keywords', 'Competitions for Artists, Artists Monthly Competitions');
    
     this.meta.setTag('twitter:description', 'Monthly Competitions for talented artists and performers to feature, where fans from social networks can vote for them to win competitions and exciting prizes.');
     this.meta.setTag('twitter:title', 'AudioDeadline Competitions for Talented Artists & Performers');
     this.meta.setTag('twitter:card', 'summary');
-    this.meta.setTag('twitter:image', 'https://artistxp.com/assets/images/artistheaderlogo.png');
+    this.meta.setTag('twitter:image', 'https://testbed.artistxp.com/assets/images/artistxpmediamarketingsignupbann.jpg');
 
     window.scrollTo(1000,0);
     this.loading = false;

@@ -19,13 +19,14 @@ export class LoginComponent implements OnInit {
     this.meta.setTag('og:description', 'The Artist Experience is the all new Social Network for Artists to interact with new and existing fans, and build relationships with other Talented Artists and Fans.');
     this.meta.setTag('og:title', 'ArtistXP.com – The New Social Network for Artists');
     this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', 'https://audiodeadline-serverless.s3.us-east-2.amazonaws.com/uploads/banner/ArtistXP_Social_Banner.jpg');
+    this.meta.setTag('og:url', 'https://testbed.artistxp.com/competition');
+    this.meta.setTag('og:image', 'https://testbed.artistxp.com/assets/images/artistxpmediamarketingsignupbann.jpg');
     this.meta.setTag('og:keywords', 'Social Network for Artists,  Artist Experience');
 
     this.meta.setTag('twitter:description', 'The Artist Experience is the all new Social Network for Artists to interact with new and existing fans, and build relationships with other Talented Artists and Fans.');
     this.meta.setTag('twitter:title', 'ArtistXP.com – The New Social Network for Artists');
     this.meta.setTag('twitter:card', 'summary_large_image');
-    this.meta.setTag('twitter:image', 'https://audiodeadline-serverless.s3.us-east-2.amazonaws.com/uploads/banner/ArtistXP_Social_Banner.jpg');
+    this.meta.setTag('twitter:image', 'https://testbed.artistxp.com/assets/images/artistxpmediamarketingsignupbann.jpg');
     this.meta.setTag('og:keywords', 'Social Network for Artists,  Artist Experience');
     this.genarateloginForm();
   }

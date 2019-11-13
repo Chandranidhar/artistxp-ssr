@@ -1,0 +1,1627 @@
+@font-face {font-family: 'RobotoCondensedBold';src: url('../fonts/RobotoCondensed-Bold.eot');src: url('../fonts/RobotoCondensed-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/RobotoCondensed-Bold.woff2') format('woff2'),url('../fonts/RobotoCondensed-Bold.woff') format('woff'),url('../fonts/RobotoCondensed-Bold.ttf') format('truetype'),url('../fonts/RobotoCondensed-Bold.svg#RobotoCondensed-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'OpenSansSemibold';src: url('../fonts/OpenSans-Semibold.eot');src: url('../fonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),url('../fonts/OpenSans-Semibold.woff2') format('woff2'),url('../fonts/OpenSans-Semibold.woff') format('woff'),url('../fonts/OpenSans-Semibold.ttf') format('truetype'),url('../fonts/OpenSans-Semibold.svg#OpenSans-Semibold') format('svg');font-weight: 600;font-style: normal;}
+@font-face {font-family: 'RobotoBlack';src: url('../fonts/Roboto-Black.eot');src: url('../fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Black.woff') format('woff'),url('../fonts/Roboto-Black.ttf') format('truetype'),url('../fonts/Roboto-Black.svg#Roboto-Black') format('svg');font-weight: 900;font-style: normal;}
+@font-face {font-family: 'OpenSans';src: url('../fonts/OpenSans.eot');src: url('../fonts/OpenSans.eot?#iefix') format('embedded-opentype'),url('../fonts/OpenSans.woff2') format('woff2'),url('../fonts/OpenSans.woff') format('woff'),url('../fonts/OpenSans.ttf') format('truetype'),url('../fonts/OpenSans.svg#OpenSans') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'RobotoBold';src: url('../fonts/Roboto-Bold.eot');src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Bold.woff2') format('woff2'),url('../fonts/Roboto-Bold.woff') format('woff'),url('../fonts/Roboto-Bold.ttf') format('truetype'),url('../fonts/Roboto-Bold.svg#Roboto-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'RobotoLight';src: url('../fonts/Roboto-Light.eot');src: url('../fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Light.woff2') format('woff2'),url('../fonts/Roboto-Light.woff') format('woff'),url('../fonts/Roboto-Light.ttf') format('truetype'),url('../fonts/Roboto-Light.svg#Roboto-Light') format('svg');font-weight: 300;font-style: normal;}
+@font-face {font-family: 'OpenSansBold';src: url('../fonts/OpenSans-Bold.eot');src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/OpenSans-Bold.woff2') format('woff2'),url('../fonts/OpenSans-Bold.woff') format('woff'),url('../fonts/OpenSans-Bold.ttf') format('truetype'),url('../fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'OpenSansExtrabold';src: url('../fonts/OpenSans-Extrabold.eot');src: url('../fonts/OpenSans-Extrabold.eot?#iefix') format('embedded-opentype'),url('../fonts/OpenSans-Extrabold.woff2') format('woff2'),url('../fonts/OpenSans-Extrabold.woff') format('woff'),url('../fonts/OpenSans-Extrabold.ttf') format('truetype'),url('../fonts/OpenSans-Extrabold.svg#OpenSans-Extrabold') format('svg');font-weight: 800;font-style: normal;}
+@font-face {font-family: 'RobotoMedium';src: url('../fonts/Roboto-Medium.eot');src: url('../fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Medium.woff2') format('woff2'),url('../fonts/Roboto-Medium.woff') format('woff'),url('../fonts/Roboto-Medium.ttf') format('truetype'),url('../fonts/Roboto-Medium.svg#Roboto-Medium') format('svg');font-weight: 500;font-style: normal;}
+@font-face {font-family: 'RobotoRegular';src: url('../fonts/Roboto-Regular.eot');src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/Roboto-Regular.woff2') format('woff2'),url('../fonts/Roboto-Regular.woff') format('woff'),url('../fonts/Roboto-Regular.ttf') format('truetype'),url('../fonts/Roboto-Regular.svg#Roboto-Regular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'Adobe-Garamond-Pro-Bold';src: url('../fonts/AGaramondPro-Bold.eot');src: url('../fonts/AGaramondPro-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/AGaramondPro-Bold.woff2') format('woff2'),url('../fonts/AGaramondPro-Bold.woff') format('woff'),url('../fonts/AGaramondPro-Bold.ttf') format('truetype'),url('../fonts/AGaramondPro-Bold.svg#AGaramondPro-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'notera_personal_use_onlyRg';src: url('../fonts/notera_personaluseonly-webfont.woff2') format('woff2'),url('../fonts/notera_personaluseonly-webfont.woff') format('woff');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'TypoSlabIrregularDemo';src: url('../fonts/TypoSlabIrregularDemo.eot');src: url('../fonts/TypoSlabIrregularDemo.eot?#iefix') format('embedded-opentype'),url('../fonts/TypoSlabIrregularDemo.woff2') format('woff2'),url('../fonts/TypoSlabIrregularDemo.woff') format('woff'),url('../fonts/TypoSlabIrregularDemo.ttf') format('truetype'),url('../fonts/TypoSlabIrregularDemo.svg#TypoSlabIrregularDemo') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'Adobe-Garamond-Pro-Bold';src: url('../fonts/AGaramondPro-Bold.woff2') format('woff2'),url('../fonts/AGaramondPro-Bold.woff') format('woff');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'VerminVibesSlant';src: url('../fonts/Vermin-Vibes-Slant.eot');src: url('../fonts/Vermin-Vibes-Slant.eot?#iefix') format('embedded-opentype'),url('../fonts/Vermin-Vibes-Slant.woff2') format('woff2'),url('../fonts/Vermin-Vibes-Slant.woff') format('woff'),url('../fonts/Vermin-Vibes-Slant.ttf') format('truetype'),url('../fonts/Vermin-Vibes-Slant.svg#Vermin-Vibes-Slant') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'BitterRegular';src: url('../fonts/Bitter-Regular.eot');src: url('../fonts/Bitter-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/Bitter-Regular.woff2') format('woff2'),url('../fonts/Bitter-Regular.woff') format('woff'),url('../fonts/Bitter-Regular.ttf') format('truetype'),url('../fonts/Bitter-Regular.svg#Bitter-Regular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'ACaslonProBoldItalic';src: url('../fonts/ACaslonPro-BoldItalic.eot');src: url('../fonts/ACaslonPro-BoldItalic.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-BoldItalic.woff2') format('woff2'),url('../fonts/ACaslonPro-BoldItalic.woff') format('woff'),url('../fonts/ACaslonPro-BoldItalic.ttf') format('truetype'),url('../fonts/ACaslonPro-BoldItalic.svg#ACaslonPro-BoldItalic') format('svg');font-weight: bold;font-style: italic;}
+@font-face {font-family: 'ACaslonProItalic';src: url('../fonts/ACaslonPro-Italic.eot');src: url('../fonts/ACaslonPro-Italic.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-Italic.woff2') format('woff2'),url('../fonts/ACaslonPro-Italic.woff') format('woff'),url('../fonts/ACaslonPro-Italic.ttf') format('truetype'),url('../fonts/ACaslonPro-Italic.svg#ACaslonPro-Italic') format('svg');font-weight: normal;font-style: italic;}
+@font-face {font-family: 'ACaslonProSemiboldItalic';src: url('../fonts/ACaslonPro-SemiboldItalic.eot');src: url('../fonts/ACaslonPro-SemiboldItalic.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-SemiboldItalic.woff2') format('woff2'),url('../fonts/ACaslonPro-SemiboldItalic.woff') format('woff'),url('../fonts/ACaslonPro-SemiboldItalic.ttf') format('truetype'),url('../fonts/ACaslonPro-SemiboldItalic.svg#ACaslonPro-SemiboldItalic') format('svg');font-weight: 600;font-style: italic;}
+@font-face {font-family: 'ACaslonProRegular';src: url('../fonts/ACaslonPro-Regular.eot');src: url('../fonts/ACaslonPro-Regular.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-Regular.woff2') format('woff2'),url('../fonts/ACaslonPro-Regular.woff') format('woff'),url('../fonts/ACaslonPro-Regular.ttf') format('truetype'),url('../fonts/ACaslonPro-Regular.svg#ACaslonPro-Regular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'ACaslonProSemibold';src: url('../fonts/ACaslonPro-Semibold.eot');src: url('../fonts/ACaslonPro-Semibold.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-Semibold.woff2') format('woff2'),url('../fonts/ACaslonPro-Semibold.woff') format('woff'),url('../fonts/ACaslonPro-Semibold.ttf') format('truetype'),url('../fonts/ACaslonPro-Semibold.svg#ACaslonPro-Semibold') format('svg');font-weight: 600;font-style: normal;}
+@font-face {font-family: 'ACaslonProBold';src: url('../fonts/ACaslonPro-Bold.eot');src: url('../fonts/ACaslonPro-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/ACaslonPro-Bold.woff2') format('woff2'),url('../fonts/ACaslonPro-Bold.woff') format('woff'),url('../fonts/ACaslonPro-Bold.ttf') format('truetype'),url('../fonts/ACaslonPro-Bold.svg#ACaslonPro-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'RalewayBold';src: url('../fonts/Raleway-Bold.eot');src: url('../fonts/Raleway-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/Raleway-Bold.woff2') format('woff2'),url('../fonts/Raleway-Bold.woff') format('woff'),url('../fonts/Raleway-Bold.ttf') format('truetype'),url('../fonts/Raleway-Bold.svg#Raleway-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'RalewayRegular';src: url('../fonts/Raleway.eot');src: url('../fonts/Raleway.eot?#iefix') format('embedded-opentype'),url('../fonts/Raleway.woff2') format('woff2'),url('../fonts/Raleway.woff') format('woff'),url('../fonts/Raleway.ttf') format('truetype'),url('../fonts/Raleway.svg#Raleway') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'HelveticaNormal';src: url('../fonts/Helvetica-Normal.eot');src: url('../fonts/Helvetica-Normal.eot?#iefix') format('embedded-opentype'),url('../fonts/Helvetica-Normal.woff2') format('woff2'),url('../fonts/Helvetica-Normal.woff') format('woff'),url('../fonts/Helvetica-Normal.ttf') format('truetype'),url('../fonts/Helvetica-Normal.svg#Helvetica-Normal') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'HelveticaBold';src: url('../fonts/Helvetica-Bold.eot');src: url('../fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),url('../fonts/Helvetica-Bold.woff2') format('woff2'),url('../fonts/Helvetica-Bold.woff') format('woff'),url('../fonts/Helvetica-Bold.ttf') format('truetype'),url('../fonts/Helvetica-Bold.svg#Helvetica-Bold') format('svg');font-weight: bold;font-style: normal;}
+@font-face {font-family: 'HelveticaNeueMedium';src: url('../fonts/HelveticaNeueMedium.eot');src: url('../fonts/HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),url('../fonts/HelveticaNeueMedium.woff2') format('woff2'),url('../fonts/HelveticaNeueMedium.woff') format('woff'),url('../fonts/HelveticaNeueMedium.ttf') format('truetype'),url('../fonts/HelveticaNeueMedium.svg#HelveticaNeueMedium') format('svg');font-weight: 500;font-style: normal;}
+@font-face {font-family: 'CarmeRegular';src: url('../fonts/Carme.eot');src: url('../fonts/Carme.eot?#iefix') format('embedded-opentype'),url('../fonts/Carme.woff2') format('woff2'),url('../fonts/Carme.woff') format('woff'),url('../fonts/Carme.ttf') format('truetype'),url('../fonts/Carme.svg#Carme') format('svg');font-weight: normal;font-style: normal;}
+
+
+mat-card{box-shadow: none !important; border-radius: 0 !important;padding: 0 !important;}
+mat-list-item{height: auto !important;}
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content{flex-wrap: wrap;padding: 0 !important;}
+.mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+a{text-decoration: none;}
+h1, h2{margin: 0;}
+@font-face {
+font-family: 'FontAwesome';
+src: url('../../assets/fonts/fontawesome/FontAwesome.eot');
+src: url('../../assets/fonts/fontawesome/FontAwesome.eot?#iefix') format('embedded-opentype'),
+url('../../assets/fonts/fontawesome/FontAwesome.woff2') format('woff2'),
+url('../../assets/fonts/fontawesome/FontAwesome.woff') format('woff'),
+url('../../assets/fonts/fontawesome/FontAwesome.ttf') format('truetype'),
+url('../../assets/fonts/fontawesome/FontAwesome.svg#FontAwesome') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'FontAwesome';
+src: url('../../assets/fonts/fontawesome/FontAwesome_1.eot');
+src: url('../../assets/fonts/fontawesome/FontAwesome_1.eot?#iefix') format('embedded-opentype'),
+url('../../assets/fonts/fontawesome/FontAwesome_1.woff2') format('woff2'),
+url('../../assets/fonts/fontawesome/FontAwesome_1.woff') format('woff'),
+url('../../assets/fonts/fontawesome/FontAwesome_1.ttf') format('truetype'),
+url('../../assets/fonts/fontawesome/FontAwesome_1.svg#FontAwesome') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+.fa{font-family: FontAwesome;font-style: normal;font-weight: normal;text-decoration: inherit;}
+
+.facebook:after{content: "\f09a";}
+.youtube:after{content: "\f167";}
+.youtube-play:after{content: "\f16a";}
+.twitter:after{content: "\f099";}
+.share:after{content: "\f1e0";}
+.like:after{content: "\f087";}
+.comment:after{content: "\f0e6";}
+.instagram:after{content: "\f16d";}
+
+
+
+
+
+body{background-color: #000;}
+
+/* width */
+.scrolllight::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .scrolllight::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .scrolllight::-webkit-scrollbar-thumb {
+    background: #565454;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .scrolllight::-webkit-scrollbar-thumb:hover {
+    background: #565454; 
+  }
+  p {
+    margin: 0;
+    padding: 0;
+}
+/*------------------------------------ login css start ------------------------------------ */
+.logintopbarmainwrapper {background-color: #101014;display: block !important;}
+.logincontainer {width: 1782px;margin: 0 auto!important;;display: block !important;;}
+.logintopbarcontainer mat-list-item {width: auto !important}
+.logintopbarcontainer {position: relative;display: -ms-flexbox;display: flex !important;-ms-flex-wrap: wrap;flex-wrap: wrap;-ms-flex-align: stretch;align-items: center;justify-content: space-between;padding: 10px 0 10px;}
+.signupflowwrapperintro {height: 100vh;}
+.signupflowblock {width: 100%;padding: 0;display: inline-block !important;margin: 0;max-width: none;background-color: #101014 !important;min-height: 100%;}
+.loginform mat-form-field {margin: 0 10px}
+.loginform {display: flex;flex-flow: row nowrap; flex-wrap: wrap}
+.loginform .formgroup {display: inline-block; margin-bottom: 0;vertical-align: middle}
+.loginform .formgroup input.mat-input-element {vertical-align: middle;height: 39px;border: 1px solid #53585b;border-radius: 0 !important;background-color: #181818;color: #c9c9c9;font-family: "OpenSans";font-size: 14px;line-height: 30px;padding: 0 7px;resize: none;margin-right: 20px;width: 250px;}
+.loginform .formgroup input.mat-input-element::placeholder{color: #989696 !important;}
+.blackgradientbutton, .blackgradientbutton:hover {  padding: 18px 55px !important;background: #1f2223 !important;background: -moz-linear-gradient(top, #1f2223 0%, #000000 100%) !important;
+background: -webkit-linear-gradient(top, #1f2223 0%,#000000 100%) !important;background: linear-gradient(to bottom, #1f2223 0%,#000000 100%) !important;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f2223', endColorstr='#000000',GradientType=0 ) !important;border: 1px solid #2f3236 !important;
+color: #fffefe !important;border-radius: 50px  !important;font-family: "OpenSans-Bold" !important;font-size: 26px !important;
+line-height: 30px !important;text-transform: uppercase !important;}
+.orangegradientbutton, .orangegradientbutton:hover {padding: 3px 55px !important;background: rgba(254,148,0,1) !important;
+background: -moz-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,148,0,1)), color-stop(100%, rgba(231,85,0,1))) !important;
+background: -webkit-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+background: -o-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);background: -ms-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+background: linear-gradient(to bottom, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9400', endColorstr='#e75500', GradientType=0 );border: 1px solid #101014 !important;
+color: #fffefe !important;border-radius: 50px !important;font-family: "OpenSans-Semibold" !important;font-size: 14px !important;line-height: 30px !important;
+text-transform: uppercase;}
+.logoimgwrapper img {max-width: 100%;}
+.logoimgwrapper {width: 405px; display: block; margin: 0 !important;}
+.loginbodycontainer {position: relative;display: -ms-flexbox;display: flex !important;-ms-flex-wrap: wrap;flex-wrap: wrap;-ms-flex-align: stretch;align-items: stretch;justify-content: space-between;}
+.loginbody {padding: 68px;border-top: 1px solid #2c3436;background-color: #101318; margin: 0 !important;}
+.loginbodycontainer .loginbodyleftblock {width: 58% !important;}
+.loginbodycontainer .loginbodyleftblock .mat-list-item-content {padding-right: 0 !important;padding-left: 0 !important}
+.loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 32px !important;padding-right: 0 !important;flex-wrap: wrap}
+.loginbodycontainer .loginbodyrightblock {width: 40% !important;position: relative;z-index: 10;padding: 0px;border-left: 1px solid #303a49;}
+.loginvideowrapper {width: 100%;background-color: #101217;padding: 9px;-webkit-box-shadow: 2px 2px 15px -5px #000000;box-shadow: 2px 2px 15px -5px #000000;}
+.loginvideo {position: relative;padding-bottom: 54.25%;padding-top: 30px;height: 0;overflow: hidden;background-color: #000;border: 2px solid #37393a;display: block;}
+.loginvideo iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: transparent;}
+.textwrapper mat-card-title {font-family: "Adobe-Garamond-Pro-Bold";font-size: 36px;color: #c7c7c7;margin: 0;padding: 0;text-transform: uppercase;margin-bottom: 15px;}
+.textwrapper mat-card-subtitle {font-family: "Adobe-Garamond-Pro-Bold";font-size: 24px;color: #eb6000;margin: 0;padding: 0;text-transform: uppercase;margin-bottom: 25px;margin-top: 15px;}
+.textwrapper p {background: url(../../assets/images/signupflowmiddlerighticon.png);background-position: left 0px top;background-repeat: no-repeat;padding-left: 26px !important;text-align: left;font-family: "ACaslonProRegular";font-size: 18px;color: #c5c5c5;margin: 0;padding: 0;line-height: 22px;margin-bottom: 15px;}
+.loginbuttonwrapper {width: 100%;display: flex !important;align-items: center;justify-content: center}
+.loginbuttonwrapper button, .loginbuttonwrapper button:hover {font-size: 26px !important;line-height: 30px !important;height: auto;padding: 18px 55px !important;width: auto; margin: 0 10px}
+.loginbodycontainer .blackgradientbutton .mat-list-item-content, .loginbodycontainer .orangegradientbutton .mat-list-item-content {padding-left: 0 !important}
+.errormsgred {color: #eb6000 !important;display: block;}
+.errormsgblue {color: #01cbee !important;display: block;padding-top: 7px; text-align: left}
+.loginbuttoncon {position: relative}
+.loginbuttoncon .errormsgred {
+    position: absolute;
+    left: -267px;
+    bottom: -26px;
+    cursor: pointer;
+    color: #c3c3c3 !important;
+}
+.formsubtitle {
+    color: #89898f;
+    font-family: "OpenSans-Semibold";
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    display: block;
+}
+.rightbutton{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    padding: 10px 21px;
+}
+.rightbutton .orangegradientbutton{
+    padding: 8px 20px !important;
+    font-size: 22px !important;
+    border-radius: 5px !important;
+}
+.rightbutton.rightbutton2 {
+    padding: 10px 0;
+    padding-top: 0;
+}
+.signupflow3wrapper .mat-expansion-indicator::after, .mat-expansion-panel-header-description { color: rgba(216, 210, 210, 0.87) !important;}
+.signupflow3wrapper .mat-expansion-panel-header-title {
+    color: rgba(216, 210, 210, 0.87);
+}
+.signupflow3wrapper .mat-expansion-panel {
+    background: #373b3b;
+    color: rgba(185, 185, 185, 0.87);
+}
+.signupflow3wrapper .mat-expansion-panel .mat-expansion-panel-body{margin-top: 10px;}
+/*------------------------------------ login css end ------------------------------------ */
+
+
+/*------------------------------------ footer css start ------------------------------------ */
+.footermainwrapper .logoimgwrapper {margin: 0 auto !important}
+.footermainwrapper {background-color: #000 !important;display: inline-block !important;text-align: center;width: 100%;padding-top: 27px !important;border-top: 1px solid #292929;}
+.footertop {margin: 0 !important}
+.footertop mat-list mat-list-item, .footertop mat-list mat-list-item a {
+    color: #989595 !important;
+    width: auto !important;
+    font-size: 16px !important;
+    line-height: 21px;
+    cursor: pointer;
+    padding: 0 5px !important;
+    text-decoration: none;
+}
+.footertop mat-list mat-list-item .mat-list-item-content {padding: 0 5px !important}
+.footertop mat-list mat-list-item:hover {color: #f27300 !important}
+.footertop mat-list {width: 95%;margin: 0 auto;display: flex;flex-wrap: wrap;justify-content: center;}
+.footerbottom p {color: #7d7979;font-size: 14px;text-align: center}
+.footerbottom {padding: 25px 20px;background-color: #292929;margin-top: 27px;margin-bottom: 0 !important;}
+.footersolist {color: #aeaeae;font-size: 20px;text-align: center;text-transform: capitalize;font-weight: normal;}
+.footersolist span{display: block;padding-top: 20px;}
+.footersoicons a{padding: 0 10px;cursor: pointer;color: #bdbdbd;text-decoration: none;height: 41px;
+    width: 41px;   
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all 1s; 
+    transition: all 1s;margin: 0 2px;
+}
+
+
+.footersoicons a:hover{
+    text-decoration: none;
+    color: #ffffff;
+    background: #ffffff40;
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    border: 1px solid #797979;
+    
+}
+/*------------------------------------ footer css end ------------------------------------ */
+
+/*------------------------------------ signup css start ------------------------------------ */
+.step2foimgwrapper{display: block;
+    display: block !important;
+    width: 200px;
+    height: 146px;
+    background: #161515 !important;
+    position: relative !important;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 7px solid #323232;    
+}
+    .step2foimgwrapper img{
+        margin: 0 !important;
+        width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    }
+.fromtitle span {margin: 0;padding: 0px;text-transform: uppercase;font-size: 28px;font-family: "TypoSlabIrregularDemo";color: #fff;text-shadow: 2px 3px 9px rgba(0,0,0,0.45);}
+.fromtitle {background-color: #fc8d00;padding: 11px 0;text-align: center;border: 1px solid #000;border-bottom: 0px !important;width: 100%;display: block;}
+.signupbody:after {content: '';background-image: url(../../assets/images/signupflow2wrapperbgoverlay.png) !important;background-position: left top;background-repeat: no-repeat;background-size: cover;position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+.signupbody {background-image: url(../../assets/images/signupflow2wrapper.jpg) !important;background-position: center center;background-color: #000;background-repeat: no-repeat;background-size: cover;position: relative;width: 100%;min-height: 100vh;padding-bottom: 30px;padding-top: 0px;display: inline-block !important;}
+.signupfrwrapper {position: relative;
+    top: 0%;
+    left: 0;
+    width: 599px;
+    margin-top: 45px;
+    margin-bottom: 85px;
+    margin: 0 auto;
+    display: block;
+    z-index: 9;
+    padding: 55px 0;
+    padding-top: 10px;min-height: 867px;}
+.signupflow {background-color: #1e2223;padding-bottom: 25px !important;}
+.signupfrwrapper .signupcontainer {
+    position: relative;
+    z-index: 99;
+    width: auto;
+    background: #44494b;
+    padding: 8px;
+    text-align: left;
+    display: block;
+    min-height: 100%;
+    height: 100%;
+    clear: both;
+    overflow: hidden;
+}
+.mat-form-field-appearance-legacy .mat-form-field-label {transform: inherit !important;-ms-transform: none;color: #373737;transition: none !important;margin-top: 11px;margin-left: 10px;}
+.fromgroup input, .fromgroup textarea, .fromgroup mat-select {-webkit-animation-name: cdk-text-field-autofill-end;animation-name: cdk-text-field-autofill-end;
+    border: 1px solid #2e3234;border-radius: 0 !important;background-color: #000000;height: 40px;color: #89898f;padding: 0 10px !important;width: 100%;}
+    .fromgroup textarea{height: 80px; max-height: 80px;}
+.mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;display: none;}
+.mat-form-field-flex {width: 96% !important;}
+.mat-form-field {display: inline-block;position: relative;text-align: left;width: 100%;}
+.signupflowform {width: 93%; margin: 0 auto}
+.mat-form-field-appearance-legacy .mat-form-field-label {color:#89898f  !important;width: auto !important;}
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 0 !important;}
+.mat-focused .mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: none !important}
+.mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: block !important}
+.mat-form-field-label.ng-star-inserted {display: none !important}
+.mat-form-field-infix {border: 0 !important}
+.signupfrwrapper .mat-list-item .mat-list-item-content {padding:0 !important}
+.mat-select-trigger {padding-top: 8px !important;}
+.mat-select-value {color:#89898f !important;}
+.mat-select-arrow {color: rgba(236, 235, 235, 0.54) !important;}
+.mat-placeholder-required.mat-form-field-required-marker.ng-tns-c3-3.ng-star-inserted {display: none !important}
+.fromgroupcol2 {width: 47%}
+.fromgroupcols {display: flex !important; justify-content: space-between;width: 98%;flex-wrap: wrap}
+.asfbartistxpsubcontainer  .fromgroupcols .example-section{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.asfbartistxpsubcontainer.communitysignupnewblock1 .btnbuyticket_genuserlan {
+    width: 97%;
+}
+.mat-select-panel {background: #000000 !important;border-radius: 0 !important;border: 1px solid #2e3234;padding: 5px 0 !important;}
+.mat-option {color: rgba(156, 156, 156, 0.87) !important;}
+.mat-select-panel .mat-option {font-size: inherit;line-height: 34px !important;height: auto !important;}
+.signupflowform .mat-card-subtitle {font-family: "OpenSans-Semibold";font-size: 16px;line-height: 30px;color: #89898f;text-transform: uppercase;width: 100%;border-bottom: 1px solid #404548;display: inline-block;padding-bottom: 6px;margin-bottom: 30px;margin-top: 10px !important;}
+.signupflowform .mat-card-subtitle b{display: block;font-family: OpenSans;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgb(208, 210, 215) !important;font-weight: normal;}
+.fromgroupcol3 {width: 30%;}
+.signupflowform .mat-checkbox-frame {background-color: black;transition: border-color 90ms cubic-bezier(0,0,.2,.1);border-width: inherit;border-style: inherit;border: 1px solid #2e3234;border-radius: 0;}
+.signupflowform .mat-checkbox {line-height: 24px;position: inherit;font-family: "OpenSans";font-size: 14px;color: #999795;display: block;padding-bottom: 7px;}
+.signupflowform .mat-checkbox-checked .mat-checkbox-checkmark {background: black;border: 1px solid #2e3234;}
+.signupflowform .mat-checkbox-checkmark-path {stroke: #60ff02!important;}
+.fromgroupcol1 {width: 100%; padding: 10px 0 !important}
+.signupflowform .fromgroupcol1 {width: 100%; padding: 20px 0 !important}
+.signupflowform  .fromgroupcol1 .mat-checkbox {color: #ffffff}
+.btnbuyticket_genuserlan {    margin: 8px !important;background: rgba(0,0,6,1) !important;background: -moz-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,6,1)), color-stop(100%, rgba(21,21,25,1))) !important;
+    background: -webkit-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    background: -o-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    background: -ms-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    background: linear-gradient(to bottom, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000006', endColorstr='#151519', GradientType=0 ) !important;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46) !important;text-align: center;width: 100%;line-height: 81px !important;}
+    .signupbuttonwrapper {
+        display: flex !important;
+        justify-content: center;
+        margin: 0 !important;
+    padding: 0 !important;
+    }
+    .btnbuyticket_genuserlan .buttoncon {width: 100% !important;font-family: "VerminVibesSlant" !important;
+    font-size: 36px !important;background: -webkit-linear-gradient(#f3f3f1, #8c8d8c) !important;-webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;margin: 0px !important;line-height: 36px !important;letter-spacing: 0px !important;text-transform: uppercase !important;
+    border: 0 !important;text-align: center !important;padding: 16px 8px 6px !important;}
+.mat-checkbox-layout .mat-checkbox-label {line-height: 17px;white-space: pre-wrap;}
+
+.signupflowform .fromgroupcol1 .mat-checkbox .mat-checkbox-inner-container{margin-right: 8px;
+    margin: 5px 4px auto;
+    vertical-align: top;
+    align-items: self-start;}
+    .signupflowform .fromgroupcol1 .mat-checkbox .mat-checkbox-label b{
+        display: block;
+    font-weight: normal;
+    font-family: OpenSans;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgb(208, 210, 215) !important;
+    margin-bottom: 6px;
+    }
+    .inputgroup .mat-flat-button:not([class*=mat-elevation-z]), .mat-stroked-button:not([class*=mat-elevation-z]) {
+        border: 1px solid #2e3234 !important;
+        border-radius: 0;
+        background: linear-gradient(to top,#010202,#1f2529);
+        color: #c3c3c3;
+        height: 42px;
+        border-left: 0 !important;font-weight: normal;
+    }
+    .inputgroup .mat-flat-button:not([class*=mat-elevation-z]), .mat-stroked-button:not([class*=mat-elevation-z]) input{
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .inputgroup .mat-form-field-flex{align-items: center;}
+    .inputgroup .mat-form-field-flex {
+        width: 100% !important;
+    }
+    .signupflowform .mat-form-field-subscript-wrapper{position: relative;margin-top: 0 !important; padding-bottom: 10px;}
+
+    .formlistwrapper mat-list mat-list-item{color: #89898f !important;font-family: "OpenSans";cursor: pointer;font-size: 14px !important;line-height: 26px;}
+.signupflowstepper{position: relative;
+    z-index: 9;
+    background: none !important;
+    width: 601px;
+    margin: 0 auto;}
+    .signupflowstepper .mat-horizontal-stepper-header-container {
+        justify-content: space-between;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        background: #000;
+        border-radius: 5px;
+        border: 1px solid #1e2223;
+        background: rgba(48,47,48,1);
+        background: -moz-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(48,47,48,1)), color-stop(50%, rgba(36,36,36,1)), color-stop(51%, rgba(26,26,26,1)), color-stop(100%, rgba(0,0,0,1)));
+        background: -webkit-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        background: -o-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        background: -ms-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(to bottom, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f30', endColorstr='#000000', GradientType=0 );
+        overflow: hidden;
+    }
+    .active{
+        overflow: hidden;
+        outline: 0;
+        cursor: pointer;
+        position: relative;
+        box-sizing: content-box;
+        -webkit-tap-highlight-color: transparent;
+        background: #f27200;
+        color: #fff;
+    }
+    .activeafter{background: #000;
+        color: #fff;}
+        .mat-step-header[aria-selected="true"]:nth-child(1){border-radius: 5px;}
+        .mat-step-header[aria-selected="true"], .mat-step-header[aria-selected="true"]:hover{
+            background: rgba(255,149,0,1);
+            background: -moz-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,149,0,1)), color-stop(48%, rgba(251,138,0,1)), color-stop(51%, rgba(246,123,0,1)), color-stop(100%, rgba(237,99,0,1)));
+            background: -webkit-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -o-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -ms-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: linear-gradient(to bottom, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9500', endColorstr='#ed6300', GradientType=0 );
+           position: relative;overflow: initial;
+
+        }
+        .mat-step-header[aria-selected="true"]:nth-child(1) .mat-step-header-ripple:before{display: none;}
+        .mat-step-header[aria-selected="true"]:after, .mat-step-header[aria-selected="true"]:hover:after {
+            content: '';
+            position: absolute;
+            right: -28px;
+            top: 0;
+            height: 100%;
+            width: 107px;
+            clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+            background: rgba(255,149,0,1);
+            background: -moz-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,149,0,1)), color-stop(48%, rgba(251,138,0,1)), color-stop(51%, rgba(246,123,0,1)), color-stop(100%, rgba(237,99,0,1)));
+            background: -webkit-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -o-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: -ms-linear-gradient(top, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            background: linear-gradient(to bottom, rgba(255,149,0,1) 0%, rgba(251,138,0,1) 48%, rgba(246,123,0,1) 51%, rgba(237,99,0,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9500', endColorstr='#ed6300', GradientType=0 );
+            z-index: 999;
+            
+        }
+        .mat-step-header[aria-selected="true"]:nth-last-child(1):after{display: none}
+        .signupflowstepper .mat-horizontal-stepper-header .mat-step-icon {
+            margin-right: 8px;
+            flex: none;
+            display: none;
+        }
+        .signupflowstepper .mat-step-header .mat-step-label.mat-step-label-active {
+            color: rgba(255, 255, 255, 0.87);
+            font-size: 16px;
+            position: relative;
+            z-index: 9;
+            margin-left: 25px;
+            z-index: 9999;
+        }
+        .mat-stepper-horizontal-line{min-width: 44px !important;display: none;}
+        .signupflowstepper .mat-horizontal-content-container{padding: 0;    }
+        .signupflowstepper .mat-horizontal-stepper-header{
+            height: 55px;
+            overflow: initial;
+            padding: 0 16px;
+            min-width: inherit;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+        }
+        .signupflowstepper .mat-horizontal-stepper-header .mat-step-header-ripple:before{
+            content: '';
+            position: absolute;
+            left: -79px;
+            bottom: 0;
+            width: 107px;
+            background: #f60101;
+            height: 100%;
+            z-index: 99;
+            clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+            background: rgba(48,47,48,1);
+            background: -moz-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(48,47,48,1)), color-stop(50%, rgba(36,36,36,1)), color-stop(51%, rgba(26,26,26,1)), color-stop(100%, rgba(0,0,0,1)));
+            background: -webkit-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            background: -o-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            background: -ms-linear-gradient(top, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            background: linear-gradient(to bottom, rgba(48,47,48,1) 0%, rgba(36,36,36,1) 50%, rgba(26,26,26,1) 51%, rgba(0,0,0,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f30', endColorstr='#000000', GradientType=0 );
+            overflow: hidden;
+        }
+        /* .signupflowstepper .mat-horizontal-stepper-header .mat-step-header-ripple:nth-child(1):before{direction: none;} */
+        .signupflowstepper .mat-horizontal-stepper-header:before {
+            content: '';
+            position: absolute;
+            right: -28px;
+            bottom: 0;
+            width: 107px;
+            background: #ffffff;
+            height: 100%;
+            clip-path: polygon(98% 50%, 75% 0%, 100% 50%, 75% 100%, 98% 50%);
+            z-index: 99;
+        }
+        .signupflowstepper .mat-horizontal-stepper-header:nth-last-child(1):before{display: none;}
+        .step3formwrapper{display: flex; flex-wrap: wrap;}
+        .step3formwrapper mat-form-field .mat-form-field-label {
+            margin-top: 8px;
+        }
+        .step3formwrapper mat-form-field{
+            width: 29%;
+            padding: 0 5px;
+            display: block;
+            margin: 0 5px;}
+        .step3formwrapper mat-form-field.mat-form-field-appearance-legacy .mat-form-field-infix {
+            padding: 0;
+        }
+         .singlecol {
+            width: 144px !important;
+            background-color: #171717;
+            position: relative;
+            border: 4px solid #4a4a4a;
+            padding-bottom: 40px;
+            -webkit-box-shadow: 2px 4px 28px -8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 2px 4px 28px -8px rgba(0,0,0,0.75);
+            box-shadow: 2px 4px 28px -8px rgba(0,0,0,0.75);
+            margin-top: 10px;
+            margin: 3px;
+        }
+        .singlecol .imgwrapper {
+            width: 100%;
+            height: 160px;
+            margin: 0 auto;
+        }
+        .singlecol .imgwrapper img{width: 100%;}
+        .singlecollistswrapper .singlecollists {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-height: 325px;
+            overflow-y: scroll;
+        }
+        .singlecollistswrapper .singlecollists::-webkit-scrollbar {
+            width: 5px;
+          }
+          
+          /* Track */
+          .singlecollistswrapper .singlecollists::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px #6e6e6e; 
+            border-radius: 4px;
+          }
+           
+          /* Handle */
+          .singlecollistswrapper .singlecollists::-webkit-scrollbar-thumb {
+            background: #1e2223; 
+            border-radius: 10px;
+          }
+          
+          /* Handle on hover */
+          .singlecollistswrapper .singlecollists::-webkit-scrollbar-thumb:hover {
+            background: #1e2223; 
+          }
+        .singlecollistscontent h1 {
+            color: #adaeaf;
+            font-family: "RobotoRegular";
+            font-size: 14px;
+            line-height: 20px;
+            text-transform: capitalize;
+            margin: 7px 2px 0;
+        }
+        .singlecollistscontent h1 strong {
+            text-transform: uppercase;
+            color: #df8003;
+            font-family: "RobotoMedium";
+            font-weight: normal;
+        }
+        .singlecollistscontent h4 {
+            color: #f6f6f6;
+            font-family: "RobotoRegular";
+            font-size: 14px;
+            line-height: 20px;
+            text-transform: capitalize;
+            margin: 2px;
+            font-weight: normal;
+        }
+        .mat-list-item-content{flex-wrap: wrap;}
+        
+        .singlecol span{
+            width: 100%;
+            display: block;
+            padding: 5px 0;
+            text-align: center;
+        }
+        .singlecol span.imgwrapper{padding: 0;}
+        .singlecol span.singlecollistbtn{padding-bottom: 15px;}
+        .singlecol span.singlecollistbtn a button{
+            flex: 1;
+            background: rgba(255,255,255,1);
+            background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+            background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+            cursor: pointer;
+            padding: 3px 5px;
+            border-radius: 5px;
+            border: 0;
+            width: 89%;
+            font-size: 18px;
+        }
+        .signupflow3 .mat-expansion-panel-header{border-bottom: 1px solid rgb(30, 34, 35);
+            margin-bottom: 0px;
+            border-radius: 0px;
+            height: 40px !important;}
+            .signupflow3 .mat-expansion-panel-header:nth-last-child(1){border: none;}
+/*------------------------------------ signup css end ------------------------------------ */
+
+/*------------------------------------ signupheader css start ------------------------------------ */
+
+.logowrappersml {display: none}
+.mat-drawer-container {display: none !important;}
+.homemain {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;justify-content: space-between;}
+.homemain .smlmenudiv {width: 100%;margin: 0 auto;}
+.homemain .mat-list-item {float: right;text-align: center;height: auto; width: auto;position: relative;margin: 0 1px !important;}
+.smlmenudiv .mat-list-base .menuwrapper .mat-list-item .mat-list-item-content{padding: 0 !important;}
+
+.homemain .mat-list-item a{height: 33px;}
+/*.homemain .mat-list-item:before {content: "";position: absolute;left: 0;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;width: 4px;height: 4px;border: none;text-align: center;-o-text-overflow: ellipsis;text-overflow: ellipsis;background: #b623ff;top: 50%;transform: translateY(-50%);}*/
+.homemain .mat-list-item:first-child:before {display: none;}
+.homemain .mat-list-item .mat-list-item-content {padding: 0 4px;}
+.homemain .mat-nav-list {margin: 0 auto;width: 100%;}
+.homemain .mat-nav-list span.logowrapper {margin-right: 10px;box-sizing: border-box; width:auto;}
+.menuwrapper .mat-list-item.active a{color: #3d3d3d !important;}
+.menuwrapper .mat-list-item.active:after {content: ''; position: absolute;width: 100%; height: 7px; background: #fcff00; top: -250%; left: 0;}
+.menuwrapper .mat-list-item a:hover{color: #3d3d3d !important;}
+.homemain .mat-nav-list span.logowrapperimg {max-width: 100%;}
+.homemain .mat-nav-list span.menuwrapper {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex; width: auto;}
+.navbarlists {display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6 */display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */display: -ms-flexbox;  /* TWEENER - IE 10 */display: -webkit-flex; /* NEW - Chrome */display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */}
+.vpheaderwrapper .mat-toolbar-row, .vpheaderwrapper .mat-toolbar-single-row {height:auto !important;
+ display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;box-sizing: border-box;padding: 0 0px;width: 98%; margin: 0 auto;
+ flex-direction: row;align-items: center;white-space: nowrap;justify-content: center;}
+.mat-list-item {float: right;}
+.homemain mat-nav-list {margin: 0 auto; width: 1350px}
+.homemain mat-nav-list span.logowrapper {flex: 1 1 20% !important;box-sizing: border-box}
+.homemain mat-nav-list span.logowrapper img {max-width: 100%; margin: 0 auto}
+.logowrappersml {display: none}
+.mat-drawer-container {display: none !important;}
+.vpheaderwrapper {position: relative !important;top: 0px;left: 0;z-index: 999;color: #fff;width: 100%; padding: 7px 0px;}
+.vpheaderwrapper.mat-card {background-color: transparent !important;box-shadow: none !important;}
+.vpheaderwrapper .mat-toolbar{background: none !important;color: rgba(0,0,0,.87);width: 100% !important;}
+.vpheaderwrapper .mat-nav-list {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;justify-content: space-between; align-items: center;}
+.vpheaderwrapper .mat-nav-list a {height: auto; font-family: "OpenSansSemibold";color: #fff;text-transform: uppercase !important;padding: 6px 15px;display: inline-block;font-size: 14px;}
+.vpheaderwrapper .mat-nav-list a:hover{color: #000 !important;background: #fff; border-radius: 50px;}
+.vpheaderwrapper .mat-nav-list a.logoimgwrapper:hover{background:none !important;}
+.vpheaderwrapper .mat-nav-list .mat-list-item:not(.mat-list-item-disabled):hover {background: none;}
+.landinglogoblock {position: relative !important;top: 0;left: 0;z-index: 999;color: #fff;width: 100%;}
+.mat-card-content.topbannerhomewrapper {display: block;margin-bottom: 16px;position: relative;z-index: 99;}
+.vpblock1imgleftwrapper {position: absolute;left: -24px;top: 10%;width: 620px;}
+.vpblock1imgleftwrapper img {max-width: 100%;}
+.mat-menu-content {padding: 0 !important;border-radius: 0px !important;background-color: #0071bc;color: #fff;}
+.mat-menu-content a.mat-menu-item {color: #fff !important;text-align: center;}
+.mat-menu-content a.mat-menu-item:hover {color: #000 !important;}
+.mat-menu-panel {position: relative;min-width: inherit;max-width: inherit;border-radius: 0px !important;}
+.mat-menu-panel {min-width: 100%;max-width: 100%;overflow: auto;border-radius: 0px;outline: 0;margin-left: -25%;margin-top: 10px;}
+.mat-menu-content:before {content: "";width: 0;height: 0;border-style: solid;border-width: 0 10px 10px 10px;border-color: transparent transparent #0071bc transparent;line-height: 0px;_border-color: #0071bc #0071bc #2a2b2c #0071bc;_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');top: -10px;z-index: 99999;position: absolute;left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-o-transform: translateX(-50%);}
+.mat-menu-content .mat-menu-item {height:auto;border-radius: 0px !important;line-height: 24px;}
+.vpheaderwrapper .mat-toolbar.mat-primary {background: transparent !important;color: #fff;height:auto !important;}
+.topmenuiconlogo {display: none}
+.formlistwrapper mat-card-title {
+    font-family: "OpenSans";
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0px 8px;
+    color: #89898f !important;
+    font-weight: normal;
+    background: #000;
+    margin: 0;
+    border: 1px solid #2e3234;
+    width: 97%;
+}
+.formlistwrapper mat-list {
+    font-size: 14px;    
+    padding: 0px 8px;
+    color: #89898f !important;
+    font-weight: normal;
+    background: #1e2223;
+    margin: 0;
+    border: 1px solid #2e3234;
+    max-height: 160px !important;
+    display: inline-block;
+    width: 97%;
+    border-top: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.vodeotextwrapper mat-card-subtitle{color: #9a9a99;    margin-top: 0;}
+.vodeotextwrapper mat-card-subtitle strong{color: #eb6000;;}
+/*------------------------------------ signupheader css end ------------------------------------ */
+/*---------------- start fbartistxp css --------------------*/
+.asfbartistxpmaincontainer {background-image:url("../../assets/images/fbartistxpbackground.png");background-position: left top;background-color: #000 ;background-repeat: no-repeat;background-size: contain;}
+.asfbartistxpsubcontainer {width: 1024px; margin: 0 auto; display: block; background: none !important}
+.asfbartistxpsubcontainer .competitionblock2 {background: none; background: none}
+.asfbartistxpsubcontainer .competitionblock2.activecompetitionblock2 .rightbannerdivimg {width: 100%}
+.asfbartistxpsubcontainer .competitionblock2.activecompetitionblock2 .competitionrightdiv .rightbannerdivwrapper .rightbannerdivimgwrapper img {padding: 0px 0px 18px}
+.asfbartistxpsubcontainer .communitysignupnewblock1right .formdiv {width: 100%}
+.asfbartistxpsubcontainer.communitysignupnewblock1 .btnbuyticket_genuserlan {font-size: 30px}
+.asfbartistxpsubcontainer .competitionblock2.activecompetitionblock2 .competitionrightdiv .rightbannerdivwrapper {overflow: inherit}
+.asfbartistxpsubcontainer .artistsexchangeleftdiv {width:60%; background: none; padding-right: 25px}
+.asfbartistxpsubcontainer .artistsexchangeleftdiv .sectionbody {padding-bottom: 0}
+.asfbartistxpsubcontainer .competitionrightdiv {width: 40%; background: none}
+.fbartistxptextwrapper h1 {font-family: "Adobe Caslon Pro"; text-transform: uppercase; color: #fc8e00; font-size: 48px; font-weight: 600}
+.fbartistxptextwrapper h3 {font-family: "Adobe Caslon Pro"; color: #f27200; font-size: 48px; font-weight: 600; margin-top: 10px; margin-bottom: 10px}
+.fbartistxptextwrapper p {font-family: "BitterRegular"; color: #8a8a8e; font-size: 24px;margin-bottom: 30px}
+.fbartistxptextwrapper p strong {color: #f88400;font-weight: normal}
+.fbartistxptextwrapper button {font-family: "Adobe Caslon Pro"; font-weight: 600; text-transform: uppercase; font-size: 36px; color: #000000; background-image: linear-gradient(#fe9400, #ed6700); border: 0; padding: 10px 12px; padding-bottom: 0; margin: 30px 0 20px 0; width: 100%}
+.fbartistxptextwrapper img {max-width: 100%; margin-bottom: 35px}
+/*.ascompetitionrightdivtop {margin-top: -66px}
+*/.ascompetitionrightdivtop {margin-top:10px}
+.competitionrightdivtop.ascompetitionrightdivtop .rightbannerdivwrapper {top: 0px;}
+.fbartistxptextwrapper .blackbutton {background-image: linear-gradient(#292a2a, #1f1f1f); font-size: 30px; font-family: "RobotoRegular"; color: #f27200; font-weight: normal; width: auto; padding: 6px 20px; float: right;  border: 1px solid #191919; margin-bottom: 35px; margin-top: 0}
+.asfbblock3 .fbartistxptextwrapper p {padding-top: 30px;}
+.fbartistxpactivetextwrapper button { margin: 25px 0px; margin-top: 0}
+.fbartistxpactivetextwrapper button.smbutton { width: auto; font-family: "RobotoRegular"; font-size: 26px; padding: 5px 20px}
+/*body.plugin {background: #0e0e0eba !important;}*/
+.blastorpassmainpwrapper{display: flex;}
+.blastorpassmainpwrapper .signupfrwrapper{width: 100%;}
+.fbartistxpmainwrapper:after {content: ''; position: absolute; right: 6px; top: 0; height: 100%; width: 1px; background: #2b2d2d; z-index: 9;}
+.fbartistxpmainwrapper{position: relative;}
+.asfbartistxpmaincontainer .fbartistxpmainwrapper {
+    background-color: transparent;
+    display: block;
+    width: 95%;
+}
+.fbartistxpsubwrapper {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    max-height: 1554px;
+    z-index: 99;
+    position: relative;
+}
+ 
+/*---------------- end fbartistxp css --------------------*/
+
+.asfbartistxpsubcontainer .competitionrightdiv .mat-form-field-flex {
+    width: 91% !important;
+}
+
+.asfbartistxpsubcontainer .competitionrightdiv .mat-form-field-infix{padding: 0 !important;}
+.asfbartistxpsubcontainer .competitionrightdiv .mat-form-field-label-wrapper {top: -19px;}
+.asfbartistxpsubcontainer .competitionrightdiv .signupflowform .fromgroupcol1 {
+    padding: 0 0 !important;
+}
+.asfbartistxpsubcontainer .competitionrightdiv .signupflowform .mat-form-field-subscript-wrapper {
+    padding: 6px 3px;
+    padding-bottom: 3px;
+}
+.signupflowsubtitle{
+    color: #aba8a8;
+    display: flex;
+    align-items: center;
+    padding: 14px 0 !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    cursor: pointer;
+}
+.signupflowsubtitle i{margin-left: 5px;}
+.asfbartistxpsubcontainer .competitionrightdiv .signupflowform .fromgroupcol1 .mat-checkbox {
+    color: #ddd;
+}
+
+.iframewrapper iframe a{pointer-events:none !important;}
+.iframewrapper{display: inline-block; height: 100%; width: 100%;}
+
+/*-------------------start Privacypolicy css -------------------------*/
+.main_bg {background: rgba(0, 0, 0, 0.8); padding: 8px;margin: 0 auto;}
+.refundpolicysubwrapper {min-height: 99vh}
+.privacywrapper {background: #edf1f7;padding:20px 40px;}
+.privacywrapper .logo_wrapper {background: black;text-align: center;padding-bottom: 15px;padding-top: 40px;padding: 13px;}
+.privacywrapper .logo_wrapper img {margin-top: 30px; width: auto; height:auto; max-width: 100%}
+.privacywrapper .page_header {color: #fff;background: #fe4679;background-image: linear-gradient(to right, #fe396f , #fc0045);text-align: left;}
+.privacywrapper .page_header h1 {font-family: 'RobotoMedium';font-size: 35px;text-transform: uppercase;text-align: center;margin: 15px 0;padding: 15px;}
+.modal-dialog .page_content p {font-family:'RobotoRegular' !important; text-align: left}
+.page_content p {font-size:14px;font-family:'RobotoRegular';color: #333333 !important;margin:0;padding-left: 40px !important;text-align: left;}
+a.linktxt {color: #ff6565 !important; text-decoration: none;}
+.page_content p b {color: #000000}
+.page_content ul li {background: url("../images/bullets.png") no-repeat left top; padding-left: 20px;list-style:none;font-size:14px;font-family:'RobotoRegular';color: #333333;margin: 15px 0;text-align: left;}
+.page_content h1 {background: url("../../assets/images/heading_icon.png") no-repeat left top;padding-left: 40px;word-break: break-word; display: block;text-transform: uppercase;font-family: 'RobotoBold';margin: 15px 0;font-size: 31px;text-align: left;color: #333333;margin-bottom: 5px;}
+.pri_ulwrapper ul {padding-left: 42px}
+.contact_wrapper {background: #222222;padding: 20px 30px;margin-top: 30px;}
+.aspri_ulwrapper ul li span {display: block;margin: 5px 0px;position: relative;padding-left: 16px;}
+.aspri_ulwrapper ul li span:after {content: '';background: black;height: 5px;width: 5px;position: absolute;left: 0;top: 7px;border-radius: 50%;}
+.contact_wrapper h1 { font-family: 'RobotoBold'; font-size: 30px; color: #fff;  margin:0; text-transform: uppercase; text-align: left }
+.contact_wrapper p { color: #fff; font-size: 14px; font-family:'RobotoRegular';padding:0;  margin: 15px 0 0 0; text-align: left}
+/*Desclaimer*/.desclaimer_header h1 { text-align: left; margin: 15px 0 !important; padding: 15px 30px !important; }
+.desclaimer_page_content {background: rgba(252,253,254,1);background: -moz-linear-gradient(top, rgba(252,253,254,1) 0%, rgba(239,242,248,1) 100%);background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,253,254,1)), color-stop(100%, rgba(239,242,248,1)));background: -webkit-linear-gradient(top, rgba(252,253,254,1) 0%, rgba(239,242,248,1) 100%);background: -o-linear-gradient(top, rgba(252,253,254,1) 0%, rgba(239,242,248,1) 100%);background: -ms-linear-gradient(top, rgba(252,253,254,1) 0%, rgba(239,242,248,1) 100%);background: linear-gradient(to bottom, rgba(252,253,254,1) 0%, rgba(239,242,248,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfdfe', endColorstr='#eff2f8', GradientType=0 );box-shadow: 0 0 5px 0px #b5b5b5;padding: 20px 35px;font-family: 'RobotoRegular';margin-top: 25px;}
+.desclaimer_page_content p { margin:0; color: #333333 !important; text-align: left; }
+/*terms and conditions*/.page_content p span {background: #fe376d;padding:2px 5px; color: #fff; }
+.assignwrapper .signherebtn {
+    background: #fe376d;
+    border-radius: 0;
+    text-align: center;
+    height: 45px;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: RobotoBlack;
+    color: #fff!important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0,0,0,.2);
+    margin: 0;
+    padding: 8px 20px;
+    text-decoration: none!important;
+    white-space: normal;
+    word-wrap: break-word;
+    border: none!important;
+    outline: 0!important;
+    box-shadow: none!important;
+}
+.assignwrapper .ep_contractbtn {
+    background: #ff8400;
+    border-radius: 0;
+    color: #fff !important;
+    text-align: center;
+    height: 45px;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: RobotoBlack;
+    color: #fff!important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0,0,0,.2);
+    margin: 0;
+    padding: 8px 20px;
+    text-decoration: none!important;
+    white-space: normal;
+    word-wrap: break-word;
+    border: none!important;
+    outline: 0!important;
+    box-shadow: none!important;
+}
+.assignwrapper h5 {
+    color: #000;
+    font-size: 54px;
+    font-family: 'notera_personal_use_onlyRg'!important;
+    margin: 0;
+    padding: 10px 2px;
+    font-weight: normal;
+}
+.assignwrapper {
+    padding-left: 40px;
+}
+.newsignmodal .btn{text-align: center;margin-top: 15px;
+    height: 45px;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: RobotoBlack;
+    color: #000!important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0,0,0,.2);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    text-decoration: none!important;
+    white-space: normal;
+    word-wrap: break-word;
+    border: none!important;
+    outline: 0!important;
+    box-shadow: none!important;}
+/* .newsignmodal.newsignmodal {background-color: #f6faff!important; border-radius: 5px !important; border: 5px solid #5b5959 !important; box-shadow: -4px 7px 10px #000; } */
+.newsignmodal.asnewsignmodal h1 {padding: 5px 10px;text-transform: uppercase; margin-top: 0; background: #fe376d !important; color: #fff; border-radius: 0}
+.newsignmodal.asnewsignmodal h2 { color: #333333; }
+.newsignmodal.asnewsignmodal h3 {border-left: solid 5px #fe376d}
+.newsignmodal.asnewsignmodal .asAgree {background:#fe376d; border-radius: 0; color: #fff !important; margin-right: 10px;}
+.newsignmodal.asnewsignmodal .ascancel {background:#ff8400;  border-radius: 0; color: #fff !important;}
+.newsignmodal input[type=text] {
+    display: block;
+    width: 96%;
+    border: solid 1px #ddd!important;
+    box-shadow: none;
+    padding: 0 10px;
+    outline: 0;
+    min-height: 40px;
+    font-family: RobotoRegular;
+    font-size: 18px;
+}
+.newsignmodal h3 {
+    margin: 0 0 15px 0;
+    padding: 5px 0 5px 20px;
+    color: #000;
+    font-size: 54px;
+    font-family: notera_personal_use_onlyRg!important;font-weight: normal;}
+    .newsignmodal h5 {
+        font-family: RobotoRegular;
+        margin: 0;
+        padding: 5px 0;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: normal;
+        color: #111;
+    }
+/*-------------------end Privacypolicy css -------------------------*/
+
+.backtotopbtn{background: #f47800;
+    position: fixed !important;
+    right: 7px;
+    bottom: 19px;
+    color: #fff!important;
+    background: rgba(254,148,0,1) !important;
+    background: -moz-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,148,0,1)), color-stop(100%, rgba(231,85,0,1))) !important;
+    background: -webkit-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    background: -o-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    z-index: 999;
+}
+
+
+/*---------------- modal css start---------------------- */
+.modal-md{width: 36%;}
+.modal-sm {width: 25%;}
+.agreementmodal {background-color: #f6faff!important; border-radius: 5px !important;border: 5px solid #5b5959 !important; box-shadow: -4px 7px 10px #000;}
+.infomodal mat-dialog-container{
+    transform: none;
+    background: -moz-linear-gradient(272deg, rgba(89,89,89,1) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(89,89,89,1)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(272deg, rgba(89,89,89,1) 0%, rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(272deg, rgba(89,89,89,1) 0%, rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(272deg, rgba(89,89,89,1) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(178deg, rgba(89,89,89,1) 0%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#000000',GradientType=0 );
+    padding: 20px;
+    border: 2px solid #65717b;
+    overflow: inherit;
+}
+.modallogowrapper img {
+    max-width: 100%;
+}
+.modallogowrapper {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+}
+.modalmainwrapper mat-card-title{
+    font-family: RobotoBold;
+    background: -webkit-linear-gradient(#B3B3B3,#838584);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 0px;
+    font-size: 28px;
+    line-height: 30px;padding: 10px 0;padding-bottom: 0;
+}
+
+.modalmainwrapper mat-card-subtitle{
+    font-family: RobotoBold;
+    background: -webkit-linear-gradient(#B3B3B3,#838584);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 0px;
+    font-size: 18px;
+    line-height: 25px;padding: 10px 0;margin: 0;
+}
+.modalbuttonwrapper{
+    display: inline-block !important;
+    width: 100%;
+    text-align: center;
+    margin: 0 !important;
+    padding: 10px 0 !important;padding-bottom: 0 !important;
+}
+.modalmainwrapper{background: none !important; text-align: center; position: relative;}
+.modalclosebtn{
+    text-shadow: none;
+    color: #020202 !important;
+    background-color: #cfcfcf !important;
+    min-width: 30px !important;
+    max-width: 30px;
+    min-height: 30px !important;   
+    max-height: 30px !important;
+    height: 30px !important;    
+    opacity: 100;
+    border-radius: 100px !important;
+    text-align: center !important;
+    padding: 0 !important;
+    line-height: 30px !important;
+    position: absolute !important;
+    top: -36px;
+    right: -33px;
+    cursor: pointer !important;
+    border: 1px solid #64717b !important;
+}
+.modalmainwrapper mat-card-subtitle a {
+    color: #f57a00 !important;
+    background-color: #ef6b00;
+    background: -webkit-linear-gradient(#fe9400,#ed6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.modalmainwrapper mat-card-subtitle a:focus{outline: none;}
+/*---------------- modal css end---------------------- */
+.mat-autocomplete-panel {background: #000 !important;}
+
+/* ------------------- invitationforlaunchplanmain css start --------------------- */
+
+.invitationforlaunchplanmainwrapper .signupfrwrapper{width: 767px;min-height: inherit;}
+.inputtitle{font-family: "OpenSans-Semibold";
+    font-size: 16px;
+    line-height: 30px;
+    color: #89898f;
+    text-transform: uppercase;}
+
+    .invitationforlaunchplanmainwrapper .mat-form-field-infix input{width: 95%;background-color: #fff;}
+    .invitationforlaunchplanmainwrapper .mat-form-field-suffix button.mat-stroked-button{
+        background: #ff0049 !important;
+        padding: 8px 11px;
+        font-family: 'RobotoBold';
+        font-size: 18px !important;
+        color: #fff !important;
+        text-transform: uppercase;
+        line-height: 18px;
+    }
+    .invitationtextwrapper p strong{
+        color: #f67d00;
+    }
+    .invitationtextwrapper p{
+        font-family: OpenSans;
+        font-size: 14px;
+        line-height: 16px;
+        color: rgb(208, 210, 215) !important;
+        margin-bottom: 8px;
+        display: block;
+    }
+    .invitationtextwrapper p a{text-decoration: none;}
+    .invitationlogowrapper img{max-width: 100%;}
+    .invitationlogowrapper {
+        padding: 30px 0;
+        width: 370px;
+        margin: 0 auto;
+        z-index: 9;
+        position: relative;
+        display: block;
+        padding-bottom: 65px;
+    }
+    .invitationforlaunchplanmainwrapper .signupbody:after{background-color: rgba(0,0,0,0.6);}
+    .invitationtextwrapper .fromgroup input{background: #fff !important;}
+    .btnpink{
+        background: #ff0049 !important;
+        padding: 8px 11px;
+        font-family: 'RobotoBold';
+        font-size: 18px !important;
+        color: #fff !important;
+        text-transform: uppercase;
+        line-height: 18px;
+        border-radius: 0 !important;
+    }
+    .invitationbuttonwrapper{
+        display: block;
+        width: 100%;
+        float: right;
+        padding: 13px 0 !important;
+        text-align: right;
+    }
+    .invitationforlaunchplanmainwrapper .signupbody{min-height: inherit;}
+/* ------------------- invitationforlaunchplanmain css end --------------------- */
+
+
+
+
+
+/*****signup for block chain block1 css start****/
+.newwrapper {
+    width: 1780px;
+    margin: 0 auto;
+    display: block;
+}
+.toprightgradientbg {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: none;
+}
+.cslandingformheader {
+    background-color: #fc8d00;
+    padding: 11px 7px;
+    text-align: center;
+    border: 1px solid #000;
+    border-bottom: 0px !important;
+}
+.signupforblockchainblocktop {background-color:#1f1d1d; padding-top: 15px; padding-bottom:15px}
+.signupforblockchainblocktop p {text-align: center; color:#f3f3f3; font-family: "RalewayRegular"; font-size: 14px}
+.signupforblockchainblocknav {background-color:#000000 !important; padding-top: 15px; padding-bottom:15px}
+.signupforblockchainblocknavwrapper {width: 1304px; margin: 0 auto; display: block}
+.signupforblockchainblocknavwrapper .headernewclslogo {width: 310px; height: auto}
+.signupforblockchainblocknavwrapper.signupforblockchainblocknavwrappernew1.signupforblockchainblocknavnew1 .headernewclslogo {width: 400px}
+.signupforblockchainblocknavwrapper.signupforblockchainblocknavwrappernew1.signupforblockchainblocknavnew1 .new1 .headernewclslogo {width: auto !important}
+.fbartistxpnavwrapper .headernewcls .navbar-brand-wrapper .navbar-brand .headernewclslogo {width: 400px; }
+.signupforblockchainblocknavwrapper.signupforblockchainblocknavwrappernew1.contactusnew1 .headernewclslogo {width: auto !important}
+.signupforblockchainblocknavwrapper.signupforblockchainblocknavwrappernew1.contactusnew1 .navbarwrapperightnew1 .navlisthide.show .headernewnavbarcls li:last-child {display: none}
+.signupforblockchainblocknavwrapper .headernewclslogo img {max-width: 100%}
+.signupforblockchainblocknavwrapper .navbarnewclswrapper .headernewnavbarcls li a {color:#fff !important}
+.signupforblockchainblocknavwrapper .navbarnewclswrapper .headernewnavbarcls li a:hover {color:#000 !important}
+.signupforblockchainblocknavwrapper .navbar {margin-bottom: 0px;min-height: 60px}
+.signupforblockchainblocknavwrapper .headernewcls .navbar-brand {padding:0; height: auto}
+.signupforblockchainblocknavwrapper .navbar-collapse.collapse {padding-bottom: 0px !important}
+.signupforblockchainblock1 .titletxt1 {font-family: "Ralewaybold";font-size: 100px;color: #fff;padding: 0;margin: 10px 0 20px 0;line-height: 100px;letter-spacing: 0px;text-align: center !important;width: 100%;text-transform: uppercase;position: relative;z-index: 9999;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+/*.signupforblockchainblock1 .bannerleftnew {width: 100%}
+*/.signupforblockchainblock1 .bannerleftnew span.dtcls {float: right;font-family: "HelveticaNormal";font-size: 24px;color: #fff;padding: 0;font-weight: normal;}
+.signupforblockchainblock1 .bannerleftnew span.dtcls .span2 {background-color: transparent !important;display: inline-block;border: none !important;width: 60px;text-align: center;border-bottom: 1px dashed #fff !important;}
+.signupforblockchainblock1 .bannerleftnew span.dtcls .span1 {background-color: transparent !important;display: inline-block;border: none !important;width: 30px;text-align: center;border-bottom: 1px dashed #fff !important;}
+.signupforblockchainblock1 .bannerleftnew .titletxt2 {font-family: "Ralewaybold";font-size: 36px;color: #fff000;padding: 0;margin: 0px 0 20px 38%;line-height: 42px !important;letter-spacing: 0px;text-align: left !important;text-transform: none !important;position: relative;z-index: 9999;}
+.signupforblockchainblock1 .bannerleftnew .titletxt3 {font-family: "Ralewaybold";font-size: 36px;color: #fff;padding: 0;text-transform: uppercase !important;font-size: 36px;font-weight: bold;margin: 0 0 0 38%;margin-top: 48px;position: relative;z-index: 9999;}
+.signupforblockchainblock1 {background: #0e0517 url(../images/signupblockchainformbg.jpg) no-repeat left top !important;background-size: 100% 150% !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;padding-bottom: 25px;}
+.signupforblockchainblock1 .communitysignupnewblock1left {background-image: none !important;width: 72%}
+.signupforblockchainblock1 .toprightgradientbg img {opacity: 1 !important; max-width: 100%}
+.signupforblockchainblock1 .formtoptxt {font-family: "HelveticaBold";font-size: 44px;color: #fff000;padding: 0;margin: 78px 0 40px 0;line-height: 48px;letter-spacing: 0px;text-align: center !important;width: 100%;text-transform: uppercase;position: relative;z-index: 9;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+.signupforblockchainblock1 .communitysignupnewblock1inner {position: relative; display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: nowrap;justify-content: space-between;width: 79%;margin: 0 auto;}
+.communitysignupnewblock1.signupforblockchainblock1 .btnnewwrapper {background: rgba(21,21,25,1);background: -moz-linear-gradient(top, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21,21,25,1)), color-stop(100%, rgba(0,0,6,1)));background: -webkit-linear-gradient(top, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);background: -o-linear-gradient(top, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);background: -ms-linear-gradient(top, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);background: linear-gradient(to bottom, rgba(21,21,25,1) 0%, rgba(0,0,6,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#151519', endColorstr='#000006', GradientType=0 );-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;}
+.communitysignupnewblock1.signupforblockchainblock1 .btnbuyticket_genuserlan {
+    font-size: 24px;
+    margin: 0 !important;
+    border: 0;
+    height: 67px;
+}
+    .communitysignupnewblock1.signupforblockchainblock1 .btnbuyticket_genuserlan span{font-size: 24px !important;}
+.communitysignupnewblock1.signupforblockchainblock1 .newwrapper {width: 1755px;}
+.signupforblockchainblock1 .cslandingformheader h1 {margin: 0;padding: 0px;text-transform: uppercase;font-size: 44px;font-family: "Ralewaybold";color: #fff;text-shadow: 2px 3px 9px rgba(0,0,0,0.45);}
+.signupforblockchainblock1 .cslandingformheader h1 span {font-size: 36px;display: block;}
+.signupforblockchainblock1 .communitysignupnewblock1right {position: relative;z-index: 9999;width: 28%;}
+.signupforblockchainblock1 .communitysignupnewblock1right .formdiv {width: 380px;background: #15100d !important;padding: 13px 13px 20px;}
+.signupforblockchainblock1 .cslandingformwrapper {background-color: #15100d !important;}
+.signupforblockchainblock1 .cslandingformwrapper .mat-form-field-flex {
+    width: 94% !important;
+}
+.signupforblockchainblock1 .communitysignupnewblock1right .formdiv .form-control,.signupforblockchainblock1 .communitysignupnewblock1right .formdiv textarea.form-control {height: 40px;line-height: 40px;font-size: 18px;}
+.signupforblockchainblock1 .toprightgradientbg {right: -6px;z-index: 999;}
+.manimgwrapper {position: absolute;left: 0;top: -28%;z-index: 999;width: 100%;}
+.signupforblockchainblock1 .imgmanleft {position: absolute;left: -29%;top: 38px;z-index: 999;}
+.signupforblockchainblock1 .manhand {
+    position: absolute;
+    left: -42px;
+    top: 724px;
+    z-index: 9999;
+}
+/*.signupforblockchainblock1 .vbllist1 {margin-top: 11% !important;position: absolute;left: 6%;text-align: left;width: 840px;z-index: 9999;}
+*/.signupforblockchainblock1 .vbllist1 {/*margin-top: 72%!important;position: absolute;left: 48%;text-align: left;width: 840px;z-index: 9999;*/ display: flex; flex-wrap: wrap; position: absolute;left: 1%;width: 840px;z-index: 9999;margin-top: 53%;}
+.signupforblockchainblock1 .vbllist1 li {background: url(../images/signupforblockchainvbllist_arrow.png) no-repeat right bottom;background-size: 100% 100%;position: relative;height: 50px;width: 100%;margin-bottom: 10px;padding: 20px 6% 32px 11% !important;font-family: "Helvetica";font-weight: bold;font-size: 24px;line-height: normal;color: #203b70;display: inline-flex;justify-content: flex-start;}
+.signupforblockchainblock1 .vbllist1 li span {font-family: "Ralewaybold";font-size: 36px !important;color: #fff !important;padding: 0;line-height: 36px;letter-spacing: 0px;text-transform: uppercase;text-shadow: 2px 6px 7px rgba(0, 0, 0, 0.6);padding-right: 20px;}
+.signupforblockchainblock1 .iconblockchain {position: absolute;right: -10%;top: -35%;z-index: 99999;}
+.signupforblockchainblock1 .vblb6img5 {position: absolute;left: 0;top: 85%;z-index: 99999;background: url(../images/blockchainbtn_arrow.png) no-repeat right bottom;width: 924px;height: 125px;}
+.signupforblockchainblock1 .vblb6img5 h2 {font-family: "Ralewaybold";font-size: 48px;color: #0c0000 !important;padding: 0;line-height: 48px;letter-spacing: 0px;text-align: center !important;width: 90%;margin: 30px auto;text-transform: uppercase;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+.signupforblockchainblock1 .communitysignupnewblock1right {position: relative;z-index: 9999;width: 28%;}
+.signupforblockchainblock1 .communitysignupnewblock1right .formdiv .form-group {margin-bottom: 14px;display: inline-block;width: 100%;}
+.signupforblockchainblock1 .bannerleftnew {width: 100%;}
+.signupforblockchainblock1 .bannerleftnew .titletxt3 span {width: 337px;display: block;margin-left: 16%;margin-top: 2px;}
+.signupforblockchainblock1 .bannerleftnew .titletxt3 span img {max-width:100%}
+.signupforblockchainblock2 {background: #050505 url(../images/signupforblockchainblock2bg.jpg) no-repeat left top !important;background-size: 100% 48%!important;min-height: 1px;position: relative;overflow: hidden;padding-bottom: 0px;}
+.signupforblockchainblock2top {padding-top: 0px;position: relative;height: 100%;}
+.signupforblockchainblock2leftbg {position: absolute !important;top: 0px;left: -90.7%;width: 108%;height: 130%;background: rgba(252, 141, 0, 0.8);-webkit-transform: skew(-45.5deg, 0deg);-moz-transform: skew(-45.5deg, 0deg);-o-transform: skew(-45.5deg, 0deg);transform: skew(-45.5deg, 0deg);}
+.signupforblockchainblock2bottom {position: relative;height: 100%;margin-top: 80px;overflow: hidden;}
+.signupforblockchainblock2rightbg {position: absolute !important;top: 0;right: 0%;width: 100%;height: 100%;-webkit-clip-path: polygon(2% 0, 100% 0, 100% 100%, 0 100%, 0 4%);clip-path: polygon(2% 0, 100% 0, 100% 100%, 0 100%, 0 4%);background-color: rgba(234, 151, 25, 1);background-image: url(../images/signupforblockchainblock2bgbottom.png), url(../images/signupforblockchainblock2bgtopleft.png);background-position: center bottom, left top;background-repeat: no-repeat;z-index: 999;background-size: 100%, 32%;}
+/*.signupforblockchainblock2rightbg:after {position: absolute;content: '';left: -23%;top: 0;width: 100%;height: 100%;!* background: url(../images/signupforblockchainblock2bgbottom.png) no-repeat left bottom; *!!* background-size: cover !important; *!-ms-transform: skewX(48.5deg) !important;-webkit-transform: skewX(48.5deg) !important;transform: skewX(-45.5deg) !important;BACKGROUND: rgba(252, 141, 0, 1);}
+*//*.signupforblockchainblock2bottom:after {position: absolute;content: '';left: -23%;top: 0;width: 53%;height: 1000px;-ms-transform: skewX(48.5deg) !important;-webkit-transform: skewX(48.5deg) !important;transform: skewX(-45.5deg) !important;background-color: rgba(252, 141, 0, 1);background-image: url(../images/signupforblockchainblock2bgbottomlefttop.png);z-index: 99;}
+*/.signupforblockchainblock2bottomcontent {padding-left:26%; padding-top: 20px; padding-bottom: 30px}
+.signupforblockchainblock2bottom h2 {font-family: "HelveticaBold";font-size: 30px;color: #faf8f8 !important;padding: 0;line-height: 32px;letter-spacing: 0px;text-align: left !important;width: 100%;margin: 30px auto 10px;text-transform: uppercase;}
+.signupforblockchainblock2bottom p {color: #111111 !important;font-family: "HelveticaNormal";font-size: 24px;line-height: 26px;}
+/*.signupforblockchainblock2rightbg:before {position: absolute;content: '';left: 0;top:0;width: 100%;height: 100%;background:url(../images/signupforblockchainblock2bgtopleft.png) no-repeat left top;background-size: auto !important;-ms-transform: skew(48.5deg, 0deg) !important;-webkit-transform: skew(48.5deg, 0deg) !important;transform: skew(48.5deg, 0deg) !important;}
+*/.signupforblockchainblock2 .newwrapper {position: relative;z-index: 999999;}
+.newwrapperinner {width: 1300px;margin: 0 auto;display: block;}
+.signupforblockchainblock2 h1 {
+    font-family: "Ralewaybold";
+    font-size: 60px;
+    color: #fff !important;
+    padding: 0;
+    line-height: 60px;
+    letter-spacing: 0px;
+    text-align: center !important;
+    width: 90%;
+    margin: 0px auto !important;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+    padding: 50px 0;
+}
+.signupforblockchainimgright {width: 672px;}
+.signupforblockchainimgright img {max-width: 100%}
+.signupforblockchainblock2content {margin-top: 3%;display: inline-flex;width: 113%;}
+.signupforblockchainblock2content p {text-align: left; color:#f0f0f0; font-family: "HelveticaNormal"; font-size: 24px;padding-right: 24px}
+.signupforblockchainblock2content .btnyellownew {background-color: #fc8d00;padding: 14px 40px;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;font-family: "Ralewaybold";color: #fffffe;font-size: 48px;text-transform: uppercase;line-height: 48px;display: inline-block;border-radius: 10px;margin-top: 10%;margin-left: 10%;}
+.signupforblockchainblock2right {position: relative}
+.signupforblockchainblock2right .iconblockchain {position: absolute; bottom: -10px; left: -56px}
+.signupforblockchainblock2bottomcontent .btnyellownew {background-color: #fc8d00;padding: 14px 40px;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;font-family: "Ralewaybold";color: #fffffe;font-size: 48px;text-transform: uppercase;line-height: 48px;display: inline-block;border-radius: 10px;margin-top: 4%;margin-left: 0%;margin-bottom: 36px;}
+.signupforblockchainblock2bottomcontent .iconblockchain {position: absolute;left: 13%;bottom: 24%;}
+.signupforblockchainblock3 {background: #050505 url(../images/signupforblockchainblock3bg.jpg) no-repeat left top !important;background-size: 100% 102%!important;min-height: 1px;position: relative;overflow: hidden;padding-bottom: 25px;width: 100%;padding-top: 45px;}
+.signupforblockchainblock3 h1 {font-family: "Ralewaybold";font-size: 60px;color: #fff !important;padding: 0;line-height: 60px;letter-spacing: 0px;text-align: center !important;width: 100%;margin: 30px auto 48px;text-transform: uppercase;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+.signupforblockchainblock3 p {color: #fff;font-family: "HelveticaNormal";font-size: 24px;line-height: normal;font-weight: normal;}
+.signupforblockchainblock3 .signupforblockchainblock3lists:before {content: "";position: absolute;width: 7px;height: 83%;background-color: #fff;left: 0px;z-index: 9;}
+.signupforblockchainblock3 .signupforblockchainblock3lists {position: relative;margin-left: -15px;margin-top: 80px;}
+.signupforblockchainblock3 ul.signupforblockchainblock3lists {position: relative;width: 86%;}
+.signupforblockchainblock3 .signupforblockchainblock3lists li {list-style: none;position: relative;z-index: 999;margin-bottom: 40px;}
+.signupforblockchainblock3 .signupforblockchainblock3lists li:last-child .image,.signupforblockchainblock3 .signupforblockchainblock3lists li:nth-last-child(2) .image,.signupforblockchainblock3 .signupforblockchainblock3lists li:nth-last-child(3) .image {color: #000 !important;width: 100%;}
+.signupforblockchainblock3 .signupforblockchainblock3lists li .image {background-image: url(../images/signupforblockchainblock3listicon.png);list-style-type: none;text-transform: inherit;font-size: 24px;letter-spacing: 1px;font-weight: normal;margin: 0px 0px 0px -70px;background-repeat: no-repeat;padding-left: 80px;color: #fff;}
+.signupforblockchainblock3 .signupforblockchainblock3lists li .image span {font-family: "HelveticaNormal";font-size: 32px;color: #fffc00 !important;padding: 0;line-height: 36px;letter-spacing: 0px;text-align: left !important;text-transform: uppercase;display: block;margin-bottom: 5px;}
+.signupforblockchainblock3listsbottombg {position: absolute !important;bottom: -7%;left: -25%;width: 115%;height: 50%;background: rgba(252, 141, 0, 0.8);-webkit-transform: skew(-45.5deg, 0deg);-moz-transform: skew(-45.5deg, 0deg);-o-transform: skew(-45.5deg, 0deg);transform: skew(-45.5deg, 0deg);}
+.signupforblockchainblock3listsbottombg .iconblockchain {-webkit-transform: skew(45.5deg, 0deg);-moz-transform: skew(45.5deg, 0deg);-o-transform: skew(45.5deg, 0deg);transform: skew(45.5deg, 0deg);position: absolute !important;top: 2%;right: -11%;width: 234px;}
+.signupforblockchainblock3 .btnyellownew {background-color: #fc8d00;padding: 14px 40px;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;font-family: "Ralewaybold";color: #fffffe;font-size: 48px;text-transform: uppercase;line-height: 48px;display: inline-block;border-radius: 10px;margin-top: 5%;margin-left: 15%;margin-bottom: 70px;}
+.signupforblockchainblock3rightbottom {width:862px; position: absolute; bottom:-4px; right: 0}
+.signupforblockchainblock3rightbottom img {max-width:100%}
+.signupforblockchainblock4 {background: #14101e url(../images/signupforblockchainblock4bg.jpg) no-repeat left top !important;background-size: 100% 100%!important;min-height: 1px;position: relative;overflow: hidden;padding-bottom: 100px;width: 100%;padding-top: 45px;}
+.signupforblockchainblock4toprightyellowbg {position: absolute !important;top: 0%;right: -10%;width: 32%;height: 174px;background: rgba(252, 141, 0, 1);-webkit-transform: skew(60.5deg, 0deg);-moz-transform: skew(60.5deg, 0deg);-o-transform: skew(60.5deg, 0deg);transform: skew(60.5deg, 0deg);}
+.signupforblockchainblock4bottomleftyellowbg {position: absolute !important;bottom: 0%;left: -5%;width: 38%;height: 174px;background: rgba(252, 141, 0, 1);-webkit-transform: skew(-45.5deg, 0deg);-moz-transform: skew(-45.5deg, 0deg);-o-transform: skew(-45.5deg, 0deg);transform: skew(-45.5deg, 0deg);}
+.signupforblockchainblock4bottomleftyellowbg .iconblockchain {-webkit-transform: skew(45.5deg, 0deg);-moz-transform: skew(45.5deg, 0deg);-o-transform: skew(45.5deg, 0deg);transform: skew(45.5deg, 0deg);position: absolute !important;top: -18%;right: -28%;width: 211px;}
+.signupforblockchainblock4 h1 {font-family: "Ralewaybold";font-size: 60px;color: #fff !important;padding: 0;line-height: 60px;letter-spacing: 0px;text-align: center !important;width: 100%;margin: 30px auto 48px;text-transform: uppercase;text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);}
+.signupforblockchainblock4 p {color: #fff;font-family: "HelveticaNormal";font-size: 24px;line-height: normal;font-weight: normal;}
+.videoblockcontentright h2 {font-family: "HelveticaBold";font-size: 36px;color: #fff000 !important;padding: 0;line-height: 36px;letter-spacing: 0px;text-align: left !important;width: 100%;margin: 0px;text-transform: uppercase;}
+.videoblockcontentright p {margin-bottom: 35px;margin-top: 15px;}
+.signupforblockchainblock4 .videoWrapper {position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;border: 5px solid #000000;background: #252525;}
+.signupforblockchainblock4 .videoWrapper iframe, .signupforblockchainblock4 .videoWrapper video, .signupforblockchainblock4 .videoWrapper object, .signupforblockchainblock4 .videoWrapper embed, .signupforblockchainblock4 .videoWrapper img {position:absolute;top:0;left:0;width:100%;height:100%;background-color: transparent;}
+.signupforblockchainblock4 .videoblockcontent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 87%;
+    margin: 0 auto !important;
+    margin-left: 1%;
+    margin-top: 50px !important;
+    margin-bottom: 30px !important;
+}
+.signupforblockchainblock4 .videoblockcontent .col-md-6{width: 50%;;}
+.videoblockcontentright {padding-left: 5%}
+.signupforblockchainblock4 .btnyellownew {background-color: #fc8d00;padding: 14px 40px;-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;font-family: "Ralewaybold";color: #fffffe;font-size: 48px;text-transform: uppercase;line-height: 48px;display: inline-block;border-radius: 10px;margin-top: 6%;margin-left: 34%;margin-bottom: 20px;}
+.signupforblockchainblock1.signupforblockchainstep2 .formdiv .form-group {margin-bottom: 5px;}
+.signupforblockchainstep2 {background: #0e0517 url(../images/signupforblockchainstep2bg.jpg) no-repeat left top !important;background-size: cover !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;padding-bottom: 25px;}
+.signupforblockchainstep2overlay {content:"";position: absolute;top:0;left:0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.6);z-index: 99;}
+.signupforblockchainstep2 .newwrapper {position: relative;z-index: 999;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .ddyy {padding: 0; display: flex;justify-content: space-between;margin-bottom: 0;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .cardlist.list-inline {text-align: center;margin-bottom: 10px;margin-top: 10px;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .cardlist.list-inline li {list-style: none; font-family: "OpenSans";color: #fffffe;font-size: 18px;text-transform: capitalize;line-height: 20px;}
+.paycardlist{display: flex; justify-content: center;padding: 0; margin: 0 !important;}
+.paycardlist li{padding: 0 10px;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .list-inline.ddyy>li {width: 45%; list-style: none; position: relative;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .list-inline.ddyy>li mat-label {
+    color: #89898f;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+}
+.signupforblockchainstep2 .mat-form-field-infix{padding: 0;}
+.signupforblockchainstep2 .cslandingforminnerwrapper .list-inline.ddyy>li:nth-child(2) {padding-right: 0px !important}
+.signupforblockchainstep2 .formdiv .form-group label {line-height: normal;text-transform: inherit;font-weight: normal;}
+.signupforblockchainstep2 .formdiv .form-group label.checkcontainer {display: inline-block;}
+.signupforblockchainblock1.signupforblockchainstep2 .bannerleftnew .titletxt2 {font-family: "RalewayBold";font-size: 60px;color: #fff !important;padding: 0;line-height: normal;letter-spacing: 0px;text-align: left !important;width: 100%;margin: 0px;text-transform: uppercase !important;}
+.signupforblockchainblock1.signupforblockchainstep2 .bannerleftnew p {color: #fff;font-family: "HelveticaNormal";font-size: 24px;line-height: normal;font-weight: normal;margin-top: 20px;display: inline-block;width: 88%;}
+.signupforblockchainstep2 .cslandingformheader h1 {margin: 0;padding: 0px;text-transform: uppercase;font-size: 30px;font-family: "Ralewaybold";color: #fff;text-shadow: 2px 3px 9px rgba(0,0,0,0.45);text-align: center;}
+.signupforblockchainstep2 .cslandingformheader h1 span {display: block;font-size: 30px !important;}
+.signupforblockchainblock1.signupforblockchainstep2 .communitysignupnewblock1inner {width: 76%;margin: 0 auto;margin-bottom: 30px;}
+.signupforblockchainblock1.signupforblockchainstep2 .formdiv .form-group.termsandconditioncls {margin-top: 15px;margin-bottom: 0px;}
+.signupforblockchainblock1.signupforblockchainstep2 .cslandingforminnerwrapper {padding: 21px 19px 10px;}
+.blockchainprod {background-color: #fc8d00;padding: 0;margin-top: 12%;position: relative;height: 306px;}
+.blockchainprod table {width: 100%;height: 100%;margin:0;padding:0;border-collapse: collapse;border-spacing: 0;}
+.blockchainprod table tr {padding: 5px;}
+.blockchainprod table tr:last-child td:nth-last-child(1), .blockchainprod table tr:last-child td:nth-last-child(2) {border-top: 1px solid #fff;}
+.blockchainprod table th, .blockchainprod table td {padding: 10px;text-align: left;font-family:"HelveticaNormal";font-size: 30px;line-height: normal;color: #fff;vertical-align: top;}
+.blockchainprod table th {text-transform: uppercase;font-size: 14px;letter-spacing: 1px;}
+.blockchainprod {display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display:flex; flex-wrap: wrap; justify-content: space-between;}
+.blockchainprodleft {width: 360px;margin-top: -16px;margin-left: -15%;position: absolute;}
+.blockchainprodleft img {max-width: 100%;}
+.blockchainprodright {width: 80%;margin-left: 20%;padding: 15px 10px 15px 25px;}
+.signupforblockchainconfirm .communitysignupnewblock1left {width: 100% !important; padding-right: 0}
+.signupforblockchainconfirm .bannerleftnew p {width: 100% !important}
+.signupforblockchainconfirm .bannerleftnew h3.titletxth3 {font-family: "HelveticaNormal";font-size: 30px; color: #fff; padding: 0; line-height: normal; letter-spacing: 0px; text-align: left !important; width: 100%; margin: 0px;text-transform: uppercase !important; margin-top: 15px}
+.signupforblockchainconfirm .bannerleftnew h3.titletxth3 span {color:#1ab6ff !important}
+.signupforblockchainconfirm .blockchainprod {background-color: #fc8d00; padding: 20px; margin-top: 26px; position: relative; height: auto}
+.signupforblockchainconfirm .blockchainprodleft {width: 20%;position: inherit !important; margin: 0 !important; background-color: #fff; display: flex; align-items: center; justify-content: center; padding: 10px}
+.signupforblockchainconfirm .blockchainprodright {width: 75%; margin-left: 0; padding: 15px}
+.blockchainpordersummery {background-color: #ffffff; padding: 20px; margin-top: 30px; position: relative; height: auto}
+.blockchainpordersummery table {width: 100%; height: 100%; margin:0; padding: 0px; border-collapse: collapse; border-spacing: 0}
+.blockchainpordersummery table tr {padding: 5px}
+.blockchainpordersummery table th {padding: 10px; text-align: left; font-family:"HelveticaNormal";font-size: 30px; line-height: normal; color: #141414;vertical-align: middle}
+.blockchainpordersummery table td {padding: 10px; text-align: left; font-family:"HelveticaNormal";font-size: 18px; line-height: normal; color: #171717;vertical-align: middle}
+.blockchainpordersummery table thead {border-bottom: 2px solid #cacaca}
+.blockchainpordersummery table thead td {font-family: "HelveticaBold"; font-size: 20px; color: #141414 !important; padding: 0px 0px 10px; line-height: normal;letter-spacing: 0px; text-align: left !important; width: 100%;margin: 0px; text-transform: uppercase !important}
+.blockchainpordersummerytable {padding: 10px 15px; background-color: #f1f1f1; margin-top: 20px}
+.blockchainpordersummery h2.titletxt2 {font-family: "RalewayBold"; font-size: 36px; color: #fc8d00 !important; padding: 10px 30px; line-height: normal;letter-spacing: 0px; text-align: left !important; width: 100%;margin: 0px; text-transform: uppercase !important; background-color: #141618; display: inline-block}
+.blockchainpordersummerywrapper { margin-top: 28px}
+.blockchainpordersummerywrapper h5 {font-family: "HelveticaNormal"; font-size: 14px; color: #fff; padding: 0px; line-height: normal;letter-spacing: 0px; width: 100%;margin: 0px; display: inline-block; text-align: right; margin-top:17px}
+.blockchainpordersummerywrapper h5 span {color:#1ab6ff !important}
+.signupblockchainlogoicon {background-color: #000; width: 90px; height: auto; display: block; vertical-align: middle; padding: 10px}
+.signupblockchainlogoicon img {max-width:100%}
+.signupforblockchainblock4 .videoblockcontent a, .signupforblockchainblock4 .videoblockcontentright a:hover, .signupforblockchainconfirm .bannerleftnew h3.titletxth3 span a, .signupforblockchainconfirm .bannerleftnew h3.titletxth3 span a:hover {
+    background: #f28d02;
+    border: 1px solid #a7a7a7;
+    padding: 7px 20px 4px;
+    color: #030303;
+    font-family: HelveticaNormal!important;
+    font-size: 18px!important;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.iconnew {width: 8%}
+.descnew {width: 45%}
+.kychowto {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: space-between}
+.kychowto .blockchainpordersummery {padding: 20px 5px; width: 50%;margin-top: 0px}
+.kychowto .blockchainpordersummerytable {margin-top: 0px; border-top: 5px solid #fff}
+.kychowtostep {}
+.kychowtostep h3 {font-family: "HelveticaNeueMedium"; font-size: 24px; color: #fd9000; padding: 0px; line-height: normal;letter-spacing: 0px; width: 100%;margin: 0px; display: inline-block; text-align: left; margin-top:3px;margin-bottom: 20px}
+.kychowtostep ul {text-align: left}
+.kychowtostep ul li {font-family: "HelveticaNormal"; font-size: 22px !important; color: #010101 !important; font-weight: normal; line-height: 24px !important; list-style: inherit; margin-bottom: 15px;background: url(../../assets/images/kychowtosteplisticon.png); background-position: top 4px left; background-repeat: no-repeat; padding-left: 24px}
+.kychowtostep .blockchainpordersummerytable {padding: 10px 15px; background-color: #f1f1f1; margin-top: 20px; height: 100%}
+.eqWrap {display: flex}
+.equalHW {flex: 1; flex-wrap: wrap}
+.kychowto h2.titletxt2 {font-family: "RalewayBold"; font-size: 36px; color: #fc8d00 !important; padding: 10px 30px; line-height: normal; letter-spacing: 0px; text-align: left !important; width: 100%;margin: 0px; text-transform: uppercase !important; background-color: #141618; display: inline-block}
+.signupforblockchainhowto .bannerleftnew.kyctipslistswrapper .titletxt2 {font-family: "HelveticaBold"; font-size: 36px; color: #ffffff !important; line-height: normal;letter-spacing: 0px; text-align: left !important; width: 100%;margin: 0px; text-transform: uppercase !important;  display: inline-block}
+.kyctipslists {margin-top: 20px}
+.kyctipslists ul {list-style: inherit}
+.kyctipslists ul li {font-family: "HelveticaNormal"; font-size: 22px !important; color: #fff !important; font-weight: normal; line-height: 32px !important; margin-bottom: 15px; margin-left: 0; padding: 8px 4px 8px 36px; list-style-position: outside; background: #f7941d url(../../assets/images/kychowtosteplisticon2.png); background-position: center left 10px; background-repeat: no-repeat;border-radius: 4px; display: flex; justify-content: space-between; position: relative; text-align: left; align-items: center}
+.kyctipslists ul li img {position: relative; margin-right: 5px; margin-top: 0px; height: 92px; width: auto; margin-left: 19%}
+.kychowto .blockchainpordersummery {padding: 0; width: 50%; background-color: #f1f1f1; border: 20px solid #fff}
+.kychowto .blockchainpordersummery:nth-child(odd) {border-right: 9px solid #fff !important}
+.kychowto .blockchainpordersummery:nth-child(even) {border-left: 9px solid #fff !important}
+.blockchainpordersummerywrapper.kychowto {background-color: #fff}
+.signupforblockchainblock1.blockchainstatusblock .communitysignupnewblock1left {background-image: none !important;width: 100%;}
+.statusinfoblock {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: space-between; margin-top: 20px; flex-wrap: wrap}
+.statusinfoblock h5 {font-family: "HelveticaNormal"; font-size: 24px; color: #fff; padding: 0px; line-height: normal;letter-spacing: 0px; margin-top: 10px}
+.statusinfoblock h5 span {color: #fe9200}
+.statusinfotableblockwrapper {margin-top: 30px; margin-bottom: 60px}
+.statusinfotablesearchbox {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: flex-start}
+.statusinfotablesearchbox h2.searchmediatitle {font-family: "HelveticaNormal"; font-size: 36px; color: #e28003; padding: 0px; line-height: normal;letter-spacing: 0px; margin: 0px; text-transform: uppercase}
+.statusinfotableblock {background-color: #ffffff; padding: 20px; margin-top: 30px; position: relative; height: auto}
+.statusinfotableblock table {width: 100%; height: 100%; margin:0; padding: 0px; border-collapse: collapse; border-spacing: 0; border:1px solid #dbdbdb; }
+.statusinfotableblock table tr {padding: 10px 5px}
+.statusinfotableblock table th {padding: 20px 10px; text-align: left; font-family:"HelveticaBold";font-size: 16px; line-height: normal; color: #ffffff;vertical-align: middle;text-transform: uppercase}
+.statusinfotableblock table td {padding: 15px 10px; text-align: left; font-family:"HelveticaNormal";font-size: 15px; line-height: normal; color: #171717;vertical-align: middle}
+.statusinfotableblock table thead {background-color: #141618; border-bottom: 5px solid #fff}
+.statusinfotableblock table thead tr {background-color: #141618 !important}
+.statusinfotableblock table tr:nth-child(odd) {background-color: #f1f1f1}
+.statusinfotableblock table tr:nth-child(even) {background-color: #ffffff}
+.statusinfotableblocktable {padding: 10px 15px; background-color: #f1f1f1; margin-top: 20px}
+.btnblockchainlink {background-color: #7d7d7d;border-radius: 50px;padding: 7px 33px 5px;font-family: "HelveticaNormal";font-size: 15px;text-transform: capitalize;white-space: normal;word-break: normal;color: #fff !important;}
+a.btnblockchainlink:hover {background-color: #494949}
+.statusinfotablesearchbox .search-container {margin-left: 20px;  border: 2px solid #fff}
+.statusinfotablesearchbox input[type=text] {padding: 6px;margin-top: 0;font-size: 17px;border: none;background: #d6d6d6;font-family: "HelveticaNormal";font-size: 24px;width: 86%;}
+.statusinfotablesearchbox .search-container button {float: right;padding: 7px 7px;margin-top: 0;margin-right: 0;background: #d6d6d6;font-size: 23px;border: none;cursor: pointer;color: #878786;width: 14%;}
+.statusinfotablesearchbox .search-container button:hover {background: #d6d6d6;}
+.statusinfotablesearchbox::-webkit-input-placeholder { /* Chrome/Opera/Safari */color: #3d3d3d;text-transform: capitalize;}
+.statusinfotablesearchbox::-moz-placeholder { /* Firefox 19+ */color: #3d3d3d;text-transform: capitalize;}
+.statusinfotablesearchbox:-ms-input-placeholder { /* IE 10+ */color: #3d3d3d;text-transform: capitalize;}
+.statusinfotablesearchbox:-moz-placeholder { /* Firefox 18- */color: #3d3d3d;text-transform: capitalize;}
+.signupblockchaincertificate {}
+.signupblockchaincertificate .blockchainpordersummerytable {margin-top: 0px !important}
+.signupblockchaincertificate .certificateform {}
+.signupblockchaincertificate .certificateform {display: flex; justify-content: space-between; flex-wrap: wrap;align-items: flex-end}
+.signupblockchaincertificate .certificateform .form-group {width:49%;text-align: left;margin-top: 17px}
+.signupblockchaincertificate .certificateform .form-group.form-group-100 {width:100%}
+.signupblockchaincertificate .certificateform .form-group .inputText {margin-bottom: 4px;text-transform: none;font-size: 18px;font-family: "HelveticaNormal";color: #030303;text-align: left;}
+.signupblockchaincertificate .certificateform .form-group .form-control {height: 38px;border:1px solid #a7a7a7;border-radius: 0 !important;background-color: #fff;color: #030303;font-family: "HelveticaNormal";font-size: 14px;line-height:30px;padding: 0 7px;resize: none;width: 100%;}
+.signupblockchaincertificate .certificateform .padding6 {padding-left: 6px; padding-right: 6px}
+.signupblockchaincertificate .certificateform .header-title-new {flex: 1 100%;margin-top: 25px;}
+.signupblockchaincertificate .certificateform h1 {margin: 0;padding: 0px;text-transform: capitalize;font-size: 30px;font-family: "HelveticaBold";color: #030303;text-align: left;}
+.signupeamilbodynewkb input::-webkit-input-placeholder, .signupeamilbodynewkb textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */color:#000000;text-transform: capitalize;}
+.signupeamilbodynewkb input::-moz-placeholder, .signupeamilbodynewkb textarea::-moz-placeholder { /* Firefox 19+ */color:#000000;text-transform: capitalize;}
+.signupeamilbodynewkb input:-ms-input-placeholder, .signupeamilbodynewkb textarea:-ms-input-placeholder { /* IE 10+ */color:#000000;text-transform: capitalize;}
+.signupeamilbodynewkb input:-moz-placeholder, .signupeamilbodynewkb textarea:-moz-placeholder { /* Firefox 18- */color:#000000;text-transform: capitalize;}
+@media screen and (max-width: 600px) {/*.statusinfotablesearchbox .search-container {float: none;}
+*//*.statusinfotablesearchbox a, .topnav2 input[type=text], .statusinfotablesearchbox .search-container button {float: none;display: block;text-align: left;width: 100%;margin: 0;padding: 14px;}
+*/}
+
+
+.fromgroup input::placeholder, .fromgroup textarea::placeholder, .fromgroup mat-select::placeholder {color: #89898f;  opacity: 1; }
+  
+  .fromgroup input::placeholder, .fromgroup textarea::placeholder, .fromgroup mat-select::placeholder  { color: #89898f;}
+  
+  .fromgroup input::placeholder, .fromgroup textarea::placeholder, .fromgroup mat-select::placeholder  { color: #89898f;}
+
+
+
+/*--------- End signupblockchain css ------------*/
+
+
+/* --------------- contact us css start ----------------- */
+
+
+.axpcontactusleftdiv {padding: 0px 0px 0px; /*width: 82.5%;*/ overflow: hidden; height: 1202px; border-right: 0px solid #1c3349;  border-top: 7px solid #1c3349}
+.axpcontactusleftdiv .col-container .col {padding: 0px 5px}
+.axpcontactusleftdiv .col-container .col:nth-child(odd) {padding-left: 0px !important}
+.axpcontactusleftdiv .col-container .col:nth-child(even) {padding-right: 0px !important}
+/*.axpcontactusleftdiv.multi_bg_example_signup {height: auto;background-image: url(../images/axpcontactusleftdivbg.jpg);background-repeat: no-repeat;background-position: center center;background-size: 100%, 100%;padding-left: 0px;padding-right: 0px;overflow: hidden;padding-bottom: 0px;}
+*/.axpcontactusleftdiv {position: relative;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;flex-wrap: wrap;flex: 1 82.5%;}
+.axpcontactusleftdiv .bg {position: relative;top: 0%;left: 0%;width: 100%;height: 100%;z-index: 99;}
+.axpcontactusleftdiv .bg img {position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: auto;min-width: 100%;min-height: 100%;}
+.axpcontactusblock1 {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;flex-wrap: wrap;justify-content: space-between;}
+.axpcontactusblock1 .row {margin: 0; display: flex;justify-content: space-between;width: 100%;}
+.axpcontactusblock1 .competitionrightdiv {/*width: 17.5%;*/display: flex;flex-wrap: wrap;flex: 1 17.5%;z-index: 99;height: 100%;border-bottom: 0px solid #1c3349 !important;border-right: 7px solid #1c3349 !important;display: block;background: #000;position: relative;vertical-align: -webkit-baseline-middle;}
+.axpcontactusblock1 .competitionrightdiv .rightbannerdivwrapper {border: 0px solid #1c3349 !important;position: relative;padding: 0px;margin: 0;top: 0px;right: 0;width: 100% !important;height: 100% !important;/*border-bottom: 7px solid #1c3349 !important;*/display: block;background: #000;overflow: hidden;border-top: 7px solid #1c3349 !important;border-left: 0px !important;}
+.axplandingformwrapper_signup {width: 494px;padding: 0px;z-index: 999;position: absolute;top: 8%;right: 24%;float: right;border-radius: 68px;background: -moz-linear-gradient(145deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* ff3.6+ */background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(254,106,60,1)), color-stop(100%, rgba(255,26,134,1))); /* safari4+,chrome */background: -webkit-linear-gradient(145deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* safari5.1+,chrome10+ */background: -o-linear-gradient(145deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* opera 11.10+ */background: -ms-linear-gradient(145deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* ie10+ */background: linear-gradient(305deg, rgba(255,26,134,1) 0%, rgba(254,106,60,1) 100%); /* w3c */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe6a3c', endColorstr='#ff1a86',GradientType=1 ); /* ie6-9 */}
+.axplandingforminnerwrapper_signup {padding: 42px 58px 58px;border: 0px solid #fff;border-radius: 0px;position: relative;z-index: 999;}
+.axplandingforminnerwrapper_signup h1 {font-family: "RobotoBlack";font-size: 36px;color: #fff;padding: 0px 0px 20px;line-height: 27px;letter-spacing: 0px;text-transform: uppercase;text-align: left;max-width: 100%;margin: 0 auto;}
+.axplandingformwrapper_signup .form input[type="text"],.axplandingformwrapper_signup .form input[type="email"],.axplandingformwrapper_signup .form input[type="tel"],.axplandingformwrapper_signup .form input[type="password"],.axplandingformwrapper_signup .form select,.axplandingformwrapper_signup .form textarea {background: rgba(255, 255, 255, 0.6);color: #06070e;font-family: "RobotoRegular";font-size: 18px;font-style: normal;height:57px;border: 1px solid #ff1579;padding: 0px 2%;margin: 5px 9px 0px 0px;width: 98%;border-radius: 3px;}
+.axplandingformwrapper_signup .form textarea {height: 114px;  padding-top: 5px;color: #06070e; font-family: "RobotoRegular"; font-size: 18px; font-style: normal; float: left; resize: none}
+.axplandingformwrapper_signup .form label {font-weight: normal;color: #06070e; font-family: "RobotoRegular"; font-size: 18px; font-style: normal}
+.axplandingformwrapper_signup .form .form-group {margin-bottom: 5px}
+.axplandingforminnerwrapper_signup form .has-error {color:#fff80d}
+.axplandingformwrapper_signup .your-accept-tc {display: inline-block;margin-top: 10px;margin-bottom: 10px;}
+.your-accept-rsvp, .your-accept-signupaffiliate {margin-top: 5px;display: inline-block;}
+.axplandingformwrapper_signup label {width: 100%;margin-bottom: 10px;}
+.axplandingformwrapper_signup .your-accept-tc .wpcf7-list-item {width:100%;}
+.axplandingformwrapper_signup .your-accept-tc .wpcf7-list-item span {display: inline-block;float: left;color: #e8e7e5;font-family: "OpenSans";font-size: 14px;font-style: normal;margin-left: 10px;}
+/*.landingformwrapper input[type="submit"] {}
+*/.axplandingforminnerwrapper_signup .wpcf7-mail-sent-ok {display: none;}
+.axplandingformwrapper_signup .form input::-webkit-input-placeholder, .axplandingformwrapper_signup .form textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */color:#06070e;}
+.axplandingformwrapper_signup .form input::-moz-placeholder, .axplandingformwrapper_signup .form textarea::-moz-placeholder { /* Firefox 19+ */color:#06070e;}
+.axplandingformwrapper_signup .form input:-ms-input-placeholder, .axplandingformwrapper_signup .form textarea:-ms-input-placeholder { /* IE 10+ */color:#06070e;}
+.axplandingformwrapper_signup .form input:-moz-placeholder, .axplandingformwrapper_signup .form textarea:-moz-placeholder { /* Firefox 18- */color:#06070e;}
+.axplandingforminnerwrapper_signup .screen-reader-response {display: none;}
+.axplandingforminnerwrapper_signup .wpcf7-validation-errors {display: none;}
+.btnformsubmitnew {background: #ffffff;padding: 8px 10px;border: 0px solid #0f2532;text-decoration: none;margin-top: 35px;width: 100%;white-space: normal;word-wrap: break-word;border-radius: 3px;text-align: center;}
+.btnformsubmitnew span {font-family: RobotoBold;text-transform: uppercase;background: -webkit-linear-gradient(#454444,#010202);-webkit-background-clip: text;-webkit-text-fill-color: transparent;font-size: 30px;}
+.artistxpcontactusformbg {position: absolute;top: 50%;left: 20%;-webkit-transform: translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-o-transform:  translate(-50%, -50%);transform: translate(-50%, -50%);z-index: 99;}
+.contactusheader .vpheaderwrapper .mat-toolbar.mat-primary {background: black!important;}
+
+
+/* --------------- contact us css end ----------------- */
+
+.navbarnewclswrapper .headernewnavbarcls li.active {background: #fff;border-radius: 50px;}
+.navbarnewclswrapper .headernewnavbarcls li:hover {color:#000 !important;}
+.navbarnewclswrapper .headernewnavbarcls li:hover a {color:#000 !important;}
+.navbarnewclswrapper .headernewnavbarcls li.active a {color:#000 !important;}
+.navbarnewclswrapper .headernewnavbarcls li:hover {background: #fff;border-radius: 50px;}
+.navbarnewclswrapper .headernewnavbarcls li a {font-family: "OpenSansSemibold";color: #fff;text-transform: uppercase !important;padding: 6px 15px;display: inline-block;}
+.bannerleftnew {width: 53%;margin-top: 60px;display: inline-block;}
+.bannerleftnew h1 {font-family: "Adobe-Garamond-Pro-Bold";color:#8a8a8e;text-transform: uppercase !important;font-size: 44px;font-weight: bold;margin: 0;margin-top: 48px;}
+.bannerleftnew h2 {font-family: "Adobe-Garamond-Pro-Bold";color:#8a8a8e;text-transform: uppercase !important;font-size: 26px;font-weight: bold;margin: 0;}
+.bannerleftnew h3 {font-family: "Adobe-Garamond-Pro-Bold";color:#8a8a8e;text-transform: uppercase !important;font-size: 26px;font-weight: bold;margin: 0;}
+.bannerleftnew h4 {font-family: "Adobe-Garamond-Pro-Bold";color:#8a8a8e;text-transform: uppercase !important;font-size: 33px;font-weight: bold;margin: 14px 0px;}
+.bannerleftnew h5 {font-family: "Myriad Pro";color:#c96c02;text-transform: inherit !important;font-size: 24px;font-weight: normal;margin: 0;margin-top: 20px;}
+.bannerleftnew p {font-family: "Adobe-Garamond-Pro-Bold";color: #8a8a8e;font-size: 24px;font-weight: normal;margin: 0;line-height: 24px;}
+.topbannerlistnew.topbannerlistnew1 {width: 100%;padding: 0px;margin: 0px;padding-left: 0px;margin-top: 18px;margin-bottom: 30px;}
+.cslandingformheader {background-color: #fc8d00;padding: 11px 7px;text-align: center;border: 1px solid #000;border-bottom: 0px !important;}
+.cslandingformwrapper {background-color: #1e2223;}
+.cslandingformheader h1 {margin: 0;padding: 0px;text-transform: uppercase;font-size: 36px;font-family: "TypoSlabIrregularDemo";color: #fff;text-shadow: 2px 3px 9px rgba(0,0,0,0.45);}
+.cslandingformheader h3 {margin: 0;padding: 0px;text-transform: uppercase;font-size: 17px;font-family: "TypoSlabIrregularDemo";color: #000;}
+.cslandingforminnerwrapper {padding: 21px 19px;}
+.communitysignupnewblock1right .formdiv .form-control, .communitysignupnewblock1right .formdiv textarea.form-control {height: 30px;border:1px solid #2e3234;border-radius: 0 !important;background-color: #000000;color: #fff;font-family: "OpenSans";font-size: 14px;line-height:30px;padding: 0 7px;resize: none;}
+.communitysignupnewblock1right .formdiv textarea.form-control {height: 68px}
+.communitysignupnewblock1right .formdiv .form-group p {color: #999795;font-family: "OpenSans";font-size: 14px;line-height: 20px;margin-bottom: 9px;}
+.communitysignupnewblock1right .formdiv select {color:#89898f !important;font-family: "OpenSans";font-size: 14px;line-height:30px;}
+.communitysignupnewblock1right .formdiv input[type=checkbox] {margin: 0px 0 0;left: 0;top: 3px;}
+.communitysignupnewblock1right .formdiv input::-webkit-input-placeholder { /* Chrome/Opera/Safari */color:#89898f;text-transform: capitalize;}
+.communitysignupnewblock1right .formdiv input::-moz-placeholder { /* Firefox 19+ */color:#89898f;text-transform: capitalize;}
+.communitysignupnewblock1right .formdiv input:-ms-input-placeholder { /* IE 10+ */color:#89898f;text-transform: capitalize;}
+.communitysignupnewblock1right .formdiv input:-moz-placeholder { /* Firefox 18- */color:#89898f;text-transform: capitalize;}
+.communitysignupnewblock1 .formdivinnerlist {border-bottom: 1px solid #404548}
+.communitysignupnewblock1 .formdivinnerlistinner:nth-of-type(1) {background: transparent !important}
+.communitysignupnewblock1 .formdivinnerlistinner:nth-last-of-type(1) {background: transparent !important}
+.communitysignupnewblock1 .formdivinnerlistinner label {margin: 0px;font-family: "OpenSans";font-size: 14px;color: #999795;text-transform: capitalize;}
+.communitysignupnewblock1 .formdivinnerlistinner label:before {display: none !important;}
+.communitysignupnewblock1 .formdivinnerlistinner label:after {display: none !important;}
+.communitysignupnewblock1 .formdivinnerlistinner {display: inline-block;width: 49%;margin-bottom: 4px;padding: 0;padding-left: 20px;}
+.communitysignupnewblock1right .formdiv .form-group {margin-bottom: 10px;display: inline-block;width: 100%;}
+.communitysignupnewblock1 input[type=checkbox]:not(old),.communitysignupnewblock1 input[type=radio]:not(old) {width: 20px;margin  : 0;padding : 0;opacity : 0;}
+.communitysignupnewblock1 input[type=checkbox]:not(old) + label,.communitysignupnewblock1 input[type=radio]:not(old) + label {display: inline-block;margin-left: -20px;padding-left: 24px;background: url(../images/newchecks.png) no-repeat 0 0;line-height: 24px;position: inherit;font-family: "OpenSans";font-size: 14px;color: #999795;margin-bottom: 0;}
+.communitysignupnewblock1 input[type=checkbox]:not(old) + label a, .communitysignupnewblock1 input[type=radio]:not(old) + label a {color: #999795;font-family: "OpenSans";font-size: 14px;cursor: pointer;}
+.communitysignupnewblock1 input[type=checkbox]:not(old):checked + label {background-position : 0 -24px;}
+.communitysignupnewblock1 input[type=radio]:not(old):checked + label {background-position : 0 -48px;}
+.communitysignupnewblock1 .formdiv .imageuploaddiv {background: #000000;color: #e8e7e5;font-family: "OpenSans";font-size: 14px;font-style: normal;border: 1px solid #2e3234;padding: 1px;margin: 0px 0px;width: 100%;resize: none;text-align: right;}
+.communitysignupnewblock1 .formdiv .imageuploaddiv div.file {position: relative;overflow: hidden;background: #fc8d00 !important;padding: 4px 6px;font-family: "OpenSansBold";font-size: 14px;color: #fff;border-radius: 0px;text-decoration: none;/* margin-top: 24px !important; */width: 100px;white-space: normal;word-wrap: break-word;text-transform: uppercase;margin: 0;display: inline-block;}
+.communitysignupnewblock1 .formdiv .imageuploaddiv div.file input {position: absolute;font-size: 18px;opacity: 0;right: 0;top: 0;cursor: pointer;}
+.communitysignupnewblock1 .btnbuyticket_genuserlan, .signupflow4wrapper .btnbuyticket_genuserlan {width: 100%;font-family: "VerminVibesSlant";font-size: 36px;background: -webkit-linear-gradient(#f3f3f1, #8c8d8c);-webkit-background-clip: text;-webkit-text-fill-color: transparent;margin: 0px;line-height: 36px;letter-spacing: 0px;text-transform: uppercase;border: 0;text-align: center;padding: 16px 8px 6px;}
+.signupflow4wrapper .btnbuyticket_genuserlan {padding: 16px 32px 6px;}
+.btnnewwrapper {background: rgba(0,0,6,1);background: -moz-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,6,1)), color-stop(100%, rgba(21,21,25,1)));background: -webkit-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);background: -o-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);background: -ms-linear-gradient(top, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);background: linear-gradient(to bottom, rgba(0,0,6,1) 0%, rgba(21,21,25,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000006', endColorstr='#151519', GradientType=0 );-webkit-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-moz-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);-ms-box-shadow: 3px -1px 13px -2px rgba(0,0,0,0.46);text-align: center;}
+.topbannerlistnew {width: 100%;padding: 0px;margin: 0px;padding-left: 0px;margin-top: 40px;}
+.topbannerlistnew li {font-family: "BitterRegular";font-size: 24px;color: #c96c02;padding: 0px;margin: 0px;letter-spacing: 0px;background: url(../images/text2listsblock1left.png) no-repeat left top 8px;list-style-type: none;padding-left: 15px;line-height: 24px;margin-bottom: 8px;background-size: 9px;width: 100%;display: inline-block;vertical-align: top;}
+.topbannerlistnew li span {color: #979799;display: block;}
+.topbannerlistnew.topbannerlistnew1 li {font-family: 18px !important;color: #8a8a8e !important;}
+
+.communitysignupnewblock1 {background: #0e0517 url(../images/communitysignupnewblock1bg.jpg) no-repeat left top !important;background-size: 100% 100% !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;padding-bottom: 25px;}
+.communitysignupnewblock1.communitysignupnewblock1step2 {background: #0e0517 url(../images/communitysignupnewblock1bgstep2.jpg) no-repeat left top !important;background-size: 100% 100% !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;padding-bottom: 25px;border-bottom: 1px solid #2c2c2c;}
+.newwrapper {width: 1780px;margin: 0 auto;display: block;}
+.communitysignupnewblock1inner {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: nowrap;justify-content: space-between;width: 98%;margin: 0 auto;}
+.communitysignupnewblock1left {background: url(../images/csnewblock1leftbg.png) no-repeat right top !important;min-height: 1px;padding-right: 1%;margin-bottom: -30px;position: relative;}
+.communitysignupnewblock1left.communitysignupnewblock1leftstep2 {background: url(../images/csnewblock1leftbgstep2.png) no-repeat right top !important;min-height: 1px;padding-right: 1%;margin-bottom: -30px;/* padding-left: 2%;*/}
+.communitysignupnewblock1leftstep2 .bannerleftnew {margin-top: 94px;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h2 {font-size: 30px;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h1 {font-family: "Adobe-Garamond-Pro-Bold";color:#f68000 !important;text-transform: uppercase !important;font-size: 64px;font-weight: bold;margin: 0;margin-top: 60px;white-space: normal;word-break: break-word;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h3 {font-family: "Adobe-Garamond-Pro-Bold";color: #8a8a8e;text-transform: uppercase !important;font-size: 48px;font-weight: bold;margin: 0;margin-top: 60px !important;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h3 span {font-size: 130px;display: block;}
+.communitysignupnewblock1leftstep2 .bannerleftnew h3 span.txtorangenew {color:#fc8f00 !important;display: inline-block !important;}
+.communitysignupnewblock1.communitysignupnewblock1step2 .btnbuyticket_genuserlan {font-size: 28px;padding: 6px 8px 10px;}
+.communitysignupnewblock1.communitysignupnewblock1step2 .formdivinnerlist {border-bottom: 0px !important;display: flex;flex-wrap: wrap;align-items: flex-start;}
+.communitysignupnewblock1 .btnbuyticket_genuserlan span {display: block;font-size: 14px;}
+
+.communitysignupnewblock1new .bannerleftnew {width: 100%;margin-top: 30px !important;display: inline-block;margin-bottom: 60px !important;text-align: center;}
+.communitysignupnewblock1new .topbannerlistnew li {margin-bottom: 15px;font-size: 20px;}
+.communitysignupnewblock1new .bannerleftnewinner {width: 50%;margin: 0 auto;display: block;}
+.communitysignupnewblock1new .topbannerlistnew {text-align: left;display: inline-block;background: transparent !important;padding: 19px;-webkit-clip-path: polygon(0 0, 100% 0%, 81% 100%, 0% 100%);clip-path: polygon(0 0, 100% 0%, 81% 100%, 0% 100%);width: 24%;position: absolute;left: 0;top:30%;border-top: 3px solid #e85600;border-left: 3px solid #e85600;border-bottom: 3px solid #e85600;}
+.btnorangenew, .btnorangenew:hover {
+    padding: 18px 55px !important;
+    background: rgba(254,148,0,1) !important;
+    background: -moz-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,148,0,1)), color-stop(100%, rgba(231,85,0,1))) !important;
+    background: -webkit-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    background: -o-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    background: -ms-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%)  !important;
+    background: linear-gradient(to bottom, rgba(254,148,0,1) 0%, rgba(231,85,0,1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9400', endColorstr='#e75500', GradientType=0 ) !important;
+    border: 0px solid #2f3237 !important;
+    color: #fffefe !important;
+    border-radius: 50px !important;
+    font-family: "OpenSans-Bold";
+    font-size: 26px !important;
+    line-height: 30px !important;
+    text-transform: uppercase;
+}
+.btndivnew {
+    margin-top: 35px;
+}
+.signupblock4subwrapper .signinimgwrapper {
+    position: absolute;
+    bottom: -87px;
+    left: 4%;
+    z-index: 99;
+}
+/*------------------------ start competition css --------------------------*/.competitionblock1mainwrapper {background: #0e0517 url(../images/competitionblock1mainwrapperbg.jpg) no-repeat left top !important;background-size: cover !important;min-height: 1px;position: relative;padding-top: 20px;overflow: hidden;}
+.competitionblock1mainwrapper .navbarnewclswrapper .headernewnavbarcls li a {color: #fff;}
+.competitionblock1mainwrapper .communitysignupnewblock1left {background: transparent !important;}
+.competitionblock1mainwrapper .communitysignupnewblock1right .formdiv {background-color: transparent !important;}
+.competitionblockmainwrapper {background-size: cover;display: inline-block;width: 100%;background-repeat: no-repeat;position: relative;/*z-index: 999;*/}
+.competitionblock2mainwrapper {background-image: url("../../assets/images/com_banner2.jpg"); min-height: 300px; background-position: left top; padding: 0px 314px}
+.comtextwrapper {text-align: left;color: #ffffff; width: 100%; margin: 0 auto}
+.competitionblock2mainwrapper .comtextwrapper {text-align: center; padding-bottom: 168px}
+.combuttonwrapper {text-align: right}
+.competitionblock2mainwrapper .combuttonwrapper {text-align: center}
+.competitionblock2mainwrapper:after {content: url("../../assets/images/com_bannericon.png"); position: absolute; left: 50.3%; bottom: -34px; transform: translatex(-50%); z-index: 99}
+.competitionblock3subwrapper .btncom {border: 1px solid #373b43 !important}
+.btncom {
+    background-image: linear-gradient(#1f2223, #000000) !important;
+    border: none !important;
+    text-transform: uppercase;
+    color: #aba9a9;
+    font-size: 18px !important;
+    padding: 10px 20px !important;
+    border-radius: 30px !important;
+    margin: 10px 0px;
+    border: 1px solid #4b4c4e !important;
+}
+.btncom:hover {color:#fff !important;background-image: linear-gradient(#000000, #1f2223);  color: #aba9a9; border: 1px solid #373b43 !important}
+.competitionblock2mainwrapper .combuttonwrapper {background-image: url(../../assets/images/btnbackground.png);background-position: center top;min-height: 158px;background-repeat: no-repeat;position: absolute;left: 50%;transform: translateX(-50%);min-width: 317px;bottom: -22px;z-index: 999;}
+.competitionblock2mainwrapper .combuttonwrapper .btncom {margin-top: 31px}
+.comtextwrapper h3 {font-family: 'ACaslonProSemibold'; font-size: 25px;font-weight: 600; color: #c6c6c9}
+.comtextwrapper h2 {font-family: 'ACaslonProBold'; font-size: 47px;font-weight: bold; color: #c6c6c9}
+.comtextwrapper h1 {font-family: 'ACaslonProRegular'; font-size: 44px; color: #c6c6c9;font-weight: normal;}
+.comtextwrapper p {font-family: 'opensans'; font-size: 18px; color: #a7a7a8; padding-bottom: 20px}
+.comtextwrapper h4 {font-family: 'opensans'; font-size: 24px; color: #ffffff; }
+/*.competitionblock3mainwrapper {background-image: url("../../assets/images/com_banner3.jpg"); min-height: 300px; background-position: left top}
+*/.competitionblock3subwrapper {background-image: url("../../assets/images/com_banner003.png"); background-position: right top;padding: 40px 891px 30px 90px;  background-repeat: no-repeat; background-size: cover}
+.competitionblock4subwrapper {background-image: url("../../assets/images/com_banner4.jpg"); background-position: left top;padding: 40px 90px 30px 891px;   background-repeat: no-repeat; background-size: cover}
+.competitionblock5subwrapper {background-image: url("../../assets/images/com_banner05.png"); background-position: right top;padding: 40px 891px 30px 90px;  background-repeat: no-repeat; background-size: cover;background-color: #141828}
+.competitionblock6subwrapper {background-image: url("../../assets/images/com_banner06.png"); background-position: left top;padding: 40px 90px 30px 891px;   background-repeat: no-repeat; background-size: cover}
+.comfooterblock1 {background-color: #000; display: inline-block; text-align: center; width: 100%; padding: 27px 0px;border-top: 1px solid #292929}
+.comfootermenuwrapper {width: 450px; margin: 0 auto}
+.comfootermenuwrapper .list-inline li a {color: #989595; cursor: pointer}
+.comfootersocialmenuwrapper {width: 450px; margin: 0 auto}
+.comfootersocialmenuwrapper h2 {color: #fff; font-size: 20px; text-align: center; text-transform: capitalize}
+.comfootersocialmenuwrapper .list-inline li a {color: #989595; cursor: pointer}
+.comfootersocialmenuwrapper .list-inline li a:hover {color: #989595}
+.comfootersocialmenuwrapper .list-inline li a .fa {color: #989595; font-size: 24px}
+.comfooterblock2 h2 {color: #7d7979; font-size: 14px; text-align: center}
+.comfooterblock2 {padding: 10px 0px; background-color: #292929}
+.comlogowrapper img {width: auto; max-width: 100%}
+.signupblock2subwrapper {background-image: url(../../assets/images/signupbanner2.png);background-position: left 0% top;padding: 50px 90px 50px 820px;background-repeat: no-repeat;background-size: 100%;}
+.signuptextwrappertitles p span {color: #fde239}
+.signuptextwrappertitles p {padding: 7px 10px !important;margin: 2px 0px !important;background-image: linear-gradient(#151519, #000006);color: #aba9a9;font-size: 18px;border: 1px solid #2c3436;}
+.signuptextwrappertitles h1 {font-weight: bold; text-align: center; margin: 0; margin-bottom: 25px}
+.signupblock2mainwrapper {background-image: linear-gradient(to right, #0a0a0a, #0c0c0c,#0e0e0e, #000000, #050505);}
+.signupblock2mainwrapper:before {content: url(../../assets/images/bannerborder1.png);position: absolute;left: 0;top: -7px;z-index: 99;}
+.signupblock2mainwrapper:after {content: url(../../assets/images/bannerborder2.png);position: absolute;right: 0;bottom: -5px;z-index: 99;}
+.signupblock3subwrapper {background-image: url(../../assets/images/signupbanner3.png);background-position: right 15% top;padding:40px 1080px 30px 90px;background-repeat: no-repeat;background-size: cover;background-color: #141828;}
+.competitionblock1mainwrapper .bannerleftnew {width:51%;}
+.bannerleftnew1 .combuttonwrapper {margin-top: -14%;margin-bottom: 6%;}
+.signupblock5 {background: url(../images/signupblock5bannerbgnew.jpg) no-repeat left top; background-size: cover;  height: 657px; position: relative; overflow: hidden}
+.signupblock5 .row {height: 100%}
+.signupblock5contentwrapper {height: 100%}
+.signupblock5content {position: absolute; top:50%; left:29%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); width: 834px; text-align: left}
+.signupblock5 h1 {font-family: "ACaslonProRegular";font-size: 36px; text-transform: capitalize; color:#fff;  padding: 0;  margin: 0px; line-height: 36px; letter-spacing: 0px}
+.signupblock5 h3 {font-family: "ACaslonProRegular";font-size: 28px;text-transform: uppercase;color: #fff;padding: 0;margin: 25px 0px 0px;line-height: 30px;letter-spacing: 0px;display: inline-block;width: 100%;}
+.signupblock5 p {font-family: "OpenSans";font-size: 18px;color: #fff;padding: 0;margin: 25px 0px 0;line-height: 20px;letter-spacing: 0px;display: inline-block;width: 100%;}
+.signupblock5lists {padding-left:0; width: 100%;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-items: flex-start;justify-content: end;margin-top: 10px;}
+.signupblock5lists li {list-style: none; width: 40%;font-family: "OpenSans";font-size: 14px;color: #ffffff;line-height: 20px;margin-top: 15px;margin-right: 15px;}
+.signupblock5lists li span {display: block;font-family: "OpenSansSemibold";font-size: 18px;color: #fff600;text-transform: uppercase;line-height: 20px;}
+.signupblock5comp {width: 502px;height: 502px;background: -moz-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(248,134,35,1)), color-stop(100%, rgba(222,49,6,1)));background: -webkit-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: -o-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: -ms-linear-gradient(39deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);background: linear-gradient(51deg, rgba(248,134,35,1) 0%, rgba(222,49,6,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f88623', endColorstr='#de3106',GradientType=1 );border-radius: 100%;position: absolute;right: -42%;top: 45%;}
+.signupblock5comp h2 {font-family: "TypoSlabIrregularDemo";font-size: 30px;color: #fff600;text-transform: uppercase;display: inline-block;-webkit-transform: rotate(-20deg);-moz-transform: rotate(-20deg);-ms-transform: rotate(-20deg);-o-transform: rotate(-20deg);transform: rotate(-15deg);width: 90%;margin: 57px auto;line-height: 28px;text-align: center;}
+.signupblock5comp h2 span {color:#fff;font-size:24px;text-transform: none !important;display: inline-block;margin-bottom: 20px;width: 100%;line-height: 24px;}
+.signupblock4subwrapper .signinimgwrapper img{max-width: 100%;}
+/*------------------------ end competition css --------------------------*/
+
+.signupblock4subwrapper {background-image: url("../../assets/images/signupbanner4.jpg"); background-position: left 15% top;padding: 80px 90px 80px 1020px;   background-repeat: no-repeat; background-size: cover}
+.artistsexchangeblock1bodybloc1 .sectionheaderinner .btnpink {padding: 8px 9px; margin: 0px 4px !important}
+.soiconmainwrapper .soiconstyle {height: 40px !important;width: 40px !important;border-radius: 50%;background-color: #605e5e;position: relative;display: inline-block;color: #bbb9b9;font-size: 19px;line-height: 38px;text-align: center;border: 1px solid #696868;filter: drop-shadow(-2px 9px 3px #000);box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);cursor: pointer;}
+.soiconmainwrapper .fa-plus {position: absolute;bottom: 57%;left: 54%;background-color: #d06e0a;height: 20px;width: 20px;line-height: 22px;border-radius: 50%;color: #dddddd;background-image: linear-gradient(#fe9201, #ed6600);}
+.competitionblock1mainwrapper.comrupetitionblock1mainwrapper .bannerleftnew1 p {width: 89%}
+.competitionblock1mainwrapper.comrupetitionblock1mainwrapper .combuttonwrapper {text-align: left; padding: 60px 0px; margin-top: 0%; margin-bottom: 0%}
+.competitionblock1mainwrapper.comrupetitionblock1mainwrapper {padding-bottom: 184px}
+.comrupetitionblock2subwrapper {background-image: url(../../assets/images/comre_banner002.jpg);background-position: right top;padding: 40px 40px 30px 90px;background-repeat: no-repeat; background-size: cover}
+.comrupetitionblock2subwrapper .combuttonwrapper {text-align: left; padding: 20px 0px; display: flex;  flex-wrap: wrap;}
+.comrupetitionblock2subwrapper .comtextwrapper p {width: 46%}
+.orangebtn:hover {color: #fff !important;}
+.orangebtn {
+    background-color: #f78000;
+    color: #fff;
+    font-size: 24px !important;
+    padding: 10px 30px !important;
+    border-radius: 0 !important;
+    margin: 5px;
+    font-family: 'OpenSans';
+    width: 367px;
+}
+.communitysignupnewblock1inner{display: block; padding: 0 30px;}
+
+.comtextwrapper h4 { font-weight: normal;margin: 0;}

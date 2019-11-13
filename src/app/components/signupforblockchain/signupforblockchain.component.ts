@@ -51,4 +51,16 @@ export class SignupforblockchainComponent implements OnInit {
     }
   }
 
+  scrollToTop(){
+    
+  }
+  /**blockchainFormSubmit */
+  blockchainFormSubmit(){
+    for (let x in this.blockchainForm.controls) {
+      this.blockchainForm.controls[x].markAsTouched();
+    }
+  }
+  inputBlur(val: any) {
+    this.blockchainForm.controls[val].markAsUntouched();
+  }
 }
