@@ -11,5 +11,8 @@ export class ArtistxpinfoComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  closep(){}
+  onHidden(){}
+  termsandconditionsmodal(){}
+  agreecookiemodal(){}
 }

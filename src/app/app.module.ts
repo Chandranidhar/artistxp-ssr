@@ -49,6 +49,8 @@ import { Signupforblockchainstep2Component } from './components/signupforblockch
 import { SignupforblockchainconfirmationComponent } from './components/signupforblockchainconfirmation/signupforblockchainconfirmation.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ArtistxpinfoComponent } from './components/artistxpinfo/artistxpinfo.component';
+import { LoginModule } from 'dist/login';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +74,7 @@ import { ArtistxpinfoComponent } from './components/artistxpinfo/artistxpinfo.co
     CompetitionrulesComponent,
     RefundpolicyComponent,
     ArtistxpinfoComponent,
-    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent, SignupforblockchainComponent, Signupforblockchainstep2Component, SignupforblockchainconfirmationComponent, ForgotPasswordComponent
+    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent, SignupforblockchainComponent, Signupforblockchainstep2Component, SignupforblockchainconfirmationComponent, ForgotPasswordComponent, ResetPasswordComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -84,6 +86,7 @@ import { ArtistxpinfoComponent } from './components/artistxpinfo/artistxpinfo.co
     HttpClientModule,
     NgtUniversalModule,
     FormsModule, 
+    LoginModule,
     ReactiveFormsModule,
     FacebookModule.forRoot(),
     MetaModule.forRoot(),

@@ -360,21 +360,28 @@ export class SignupflowComponent implements OnInit {
       })
     }
   }
+
+
   /**for account type validation */
   statechangeforaccounttype() {
+    if (this.firstForm.controls['musicians'].value == true || this.firstForm.controls['dancer'].value == true || this.firstForm.controls['model'].value == true) {
+      this.firstForm.controls['fan'].setValue(false);
+      this.firstForm.controls['signupaffiliate'].setValue(true);
+    }    
+  }
+  /**fan */
+  statechangeforaccounttype1(){
     if (this.firstForm.controls['fan'].value == true) {
       this.firstForm.controls['model'].setValue(false);
       this.firstForm.controls['signupaffiliate'].setValue(false);
       this.firstForm.controls['dancer'].setValue(false);
       this.firstForm.controls['musicians'].setValue(false);
     }
-    if (this.firstForm.controls['musicians'].value == true || this.firstForm.controls['dancer'].value == true || this.firstForm.controls['model'].value == true) {
-      this.firstForm.controls['signupaffiliate'].setValue(true);
-      this.firstForm.controls['fan'].setValue(false);
-    }
   }
+
   /*for privacy validation */
   statechangeforprivacy() {
+
     if (this.firstForm.controls['privateval'].value == true) {
       this.firstForm.controls['publicval'].setValue(false);
     }
@@ -386,6 +393,7 @@ export class SignupflowComponent implements OnInit {
 
   /**submit function */
   firstsubmit() {
+    console.log(this.firstForm.value);
     this.firstForm.markAllAsTouched();
     if (this.firstForm.valid) {
       this.apiService.postDatawithoutToken('datalist', { "source": "user", "condition": { "email": this.firstForm.controls['email'].value } })

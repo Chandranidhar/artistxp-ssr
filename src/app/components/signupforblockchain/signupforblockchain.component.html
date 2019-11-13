@@ -41,7 +41,7 @@
           </div>
           <div class="communitysignupnewblock1right">
             <h2 class="formtoptxt">Only $19.95<br> for 10 Certifications!<!--For 10 Medias!--> </h2>
-            <form class="formdiv" name="dancingform" novalidate [formGroup]="blockchainForm">
+            <form class="formdiv" name="dancingform" novalidate [formGroup]="blockchainForm" (ngSubmit)="blockchainFormSubmit()">
               <div class="cslandingformwrapper" #destinationRef>
                 <mat-card-title class="cslandingformheader">
                   <h1>protect your <span>creative work!</span></h1>
