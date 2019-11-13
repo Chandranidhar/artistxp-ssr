@@ -1625,3 +1625,91 @@ a.btnblockchainlink:hover {background-color: #494949}
 .communitysignupnewblock1inner{display: block; padding: 0 30px;}
 
 .comtextwrapper h4 { font-weight: normal;margin: 0;}
+
+
+.forgotmainwrapper{background-image: url(../../assets/images/forgotbg.png);
+background-size: cover;
+background-position: left top;
+background-repeat: no-repeat;
+background-color: #282780;
+position: relative;
+}
+
+
+
+
+.forgotmainwrapper .from {
+    width: 39%!important;
+    margin: 0 auto;
+    margin-left: 43%!important;
+    background: rgba(255, 255, 255, 0.17);
+    padding: 20px !important;
+    border: 1px solid #a8a8a8;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2)!important;
+    position: relative;margin-top: 121px !important;
+}
+.forgotmainwrapper .from:after{
+    content: '';
+    background: url(../../assets/images/artistheaderlogo.png);
+    height: 99px;
+    width: 471px;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: -122px;
+    transform: translatex(-50%);
+}
+.forgotmainwrapper .from h2 {
+    text-align: center!important;
+    background-color: #00f0!important;
+    color: #fff!important;
+    padding: 10px!important;
+    text-transform: uppercase!important;
+    padding-bottom: 39px !important;
+}
+
+.forgotmainwrapper .mat-form-field-flex input {
+    height: 40px;
+    background: #fff;padding: 0 1%;
+}
+.forgotmainwrapper .mat-form-field-flex {
+    width: 100% !important;
+}
+
+
+.forgotmainwrapper form button {
+    color: white !important;
+    font-size: 28px;
+    height: auto;
+    padding: 10px 0;
+    border-radius: 0;
+    background: rgba(254,148,0,1) !important;
+    background: -moz-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(237,103,0,1) 100%) !important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,148,0,1)), color-stop(100%, rgba(237,103,0,1))) !important;
+    background: -webkit-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(237,103,0,1) 100%) !important;
+    background: -o-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(237,103,0,1) 100%) !important;
+    background: -ms-linear-gradient(top, rgba(254,148,0,1) 0%, rgba(237,103,0,1) 100%) !important;
+    background: linear-gradient(to bottom, rgba(254,148,0,1) 0%, rgba(237,103,0,1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9400', endColorstr='#ed6700', GradientType=0 ) !important;
+    margin-top: 30px;
+}
+
+.forgotmainwrapper .signupfooter a {
+    cursor: pointer;
+    color: #fff;
+}
+.forgotmainwrapper .mat-error {
+    display: block;
+    margin-bottom: 10px;
+    color: #fd9000;
+}
+
+
+.forgotmainwrapper .mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+    margin-top: 0;
+    top: 0;
+    position: relative;
+}
+
+
+

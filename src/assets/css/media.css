@@ -102,6 +102,11 @@
     .axpcontactusleftdiv .bg img {left: -64px}
 }
 @media only screen and (max-width: 1440px) {
+    .forgotmainwrapper .from:after {
+        height: 64px;
+        width: 306px;
+        top: -93px;
+    }
     .competitionblock2mainwrapper {
         padding: 0px 77px;
         padding-left: 624px;
@@ -146,6 +151,7 @@
     .comrupetitionblock2subwrapper {padding: 40px 214px 30px 90px;}
 }
 @media only screen and (max-width: 1300px) {
+    .forgotmainwrapper .from {width: 48%!important;}
     .signupblock5content {left: 36%;}
     .signupforblockchainblock1.signupforblockchainstep2.signupforblockchainconfirm .communitysignupnewblock1inner {width: 90%;}
 }
@@ -166,6 +172,8 @@
     .loginbuttonwrapper.mat-list-base button.mat-list-item, .loginbuttonwrapper.mat-list-base button.mat-list-item:hover {padding: 12px 26px !important;font-size: 18px !important}
 }
 @media only screen and (max-width: 1199px) {
+    
+
     .competitionblock2mainwrapper {
         padding: 0px 77px;
         background-size: 406%;
@@ -295,6 +303,39 @@
     .loginbodycontainer .loginbodyrightblock .mat-list-item-content {padding-left: 0px !important}
 }
 @media only screen and (max-width: 991px) {
+    .forgotmainwrapper {
+        padding-top: 98%;
+        background-size: 238%;}
+
+        .forgotmainwrapper .from {
+            width: 96%!important;
+            margin: 0 !important;
+            margin-left: 0%!important;
+        }
+        .forgotmainwrapper .main-div{
+            position: relative;
+            z-index: 9;
+            height: auto !important;
+            padding-bottom: 20px;
+        
+        }
+    .forgotmainwrapper:after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: #000;
+        position: absolute !important;
+        left: 0;
+        top: 0;
+        background: rgba(0,0,0,1);
+        background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+        background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+        background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+        background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+    }
     .communitysignupnewblock1left {background: none !important}
     .bannerleftnew h1 {margin-top: 20px; font-size: 28px;}
     .bannerleftnew h2 {font-size: 20px;   }
@@ -419,7 +460,11 @@
     .invitationlogowrapper {width: 77%}
     .privacywrapper {padding: 20px 20px}
 }
+
 @media only screen and (max-width: 440px) {
+    .forgotmainwrapper form button{padding: 5px 0; font-size: 23px;    margin-top: 12px;}
+    .forgotmainwrapper {padding-top: 124%;}
+    .forgotmainwrapper .from h2{padding-bottom: 18px !important;font-size: 22px;}
     .signupflowstepper .mat-horizontal-stepper-header .mat-step-header-ripple:before {}
     .signupflowstepper .mat-horizontal-stepper-header {width: 16%}
     .signupflowstepper .mat-horizontal-stepper-header:before {right: -17px; width: 47px}
@@ -435,3 +480,16 @@
     .loginbuttonwrapper {flex-wrap: wrap}
     .loginbuttonwrapper button, .loginbuttonwrapper button:hover {margin: 10px 0}
 }
+@media only screen and (max-width: 380px) {
+    .forgotmainwrapper .from:after {
+        height: 53px;
+        width: 253px;
+        top: -66px;
+    }
+    .forgotmainwrapper {
+        padding-top: 100%;
+    }
+}
+
+
+
