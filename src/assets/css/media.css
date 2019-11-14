@@ -304,8 +304,7 @@
 }
 @media only screen and (max-width: 991px) {
     .forgotmainwrapper {
-        padding-top: 98%;
-        background-size: 238%;}
+        padding-top: 98%;background-size: 238%;min-height: 100%;}
 
         .forgotmainwrapper .from {
             width: 96%!important;
@@ -333,7 +332,7 @@
         background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
         background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
         background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
-        background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgb(6, 5, 49) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
     }
     .communitysignupnewblock1left {background: none !important}
@@ -405,6 +404,12 @@
     .competitionblock1mainwrapper .bannerleftnew {width: 72%}
 }
 @media only screen and (max-width: 767px) {
+    .topbannerlistnew li{
+        background-position: center top;
+        padding-top: 30px;
+        margin-bottom: 10px;
+        padding-left: 0;
+    }
     .competitionblock1mainwrapper {background: #0e0517 url(../images/competitionblock1mainwrapperbg.jpg) no-repeat right 60% top !important;position: relative;background-image: none !important;}
     .competitionblock1mainwrapper:after {content: "";background: -moz-linear-gradient(182deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(40%, rgba(0,0,0,0.8)), color-stop(100%, rgba(153,218,255,0)));background: -webkit-linear-gradient(182deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);background: -o-linear-gradient(182deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);background: -ms-linear-gradient(182deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);background: linear-gradient(268deg, rgba(153,218,255,0) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0,0,0,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#99DAFF',GradientType=1 );position: absolute;top: 0;left: 0;width: 100%;height: 100%;display: inherit !important;}
     .communitysignupnewblock1inner {position: relative;z-index: 999;}
@@ -463,7 +468,7 @@
 
 @media only screen and (max-width: 440px) {
     .forgotmainwrapper form button{padding: 5px 0; font-size: 23px;    margin-top: 12px;}
-    .forgotmainwrapper {padding-top: 124%;}
+    .forgotmainwrapper {padding-top: 116%;}
     .forgotmainwrapper .from h2{padding-bottom: 18px !important;font-size: 22px;}
     .signupflowstepper .mat-horizontal-stepper-header .mat-step-header-ripple:before {}
     .signupflowstepper .mat-horizontal-stepper-header {width: 16%}
@@ -473,8 +478,12 @@
     .loginbuttoncon .errormsgred {left: 0;position: inherit;bottom: 0;width: auto}
     .loginform .loginbuttoncon {display: flex;align-items: center;justify-content: space-between}
     .loginform {padding-bottom: 0;padding-top: 10px}
-    .loginform .formgroup input {width: 95% !important;margin: 0 !important}
-    .loginform .formgroup {width: 100%; padding: 5px 0}
+    .loginform .formgroup input {
+        width: 99% !important;
+        margin: 0 !important;
+        padding: 0 1% !important;
+    }
+    .loginform .formgroup {width: 100%; padding: 5px 0; text-align: left;}
     .loginform .formgroup .errormsgblue {padding-left: 0}
     .logintopbarcontainer {padding: 27px 0 5px 0 !important}
     .loginbuttonwrapper {flex-wrap: wrap}
@@ -487,7 +496,7 @@
         top: -66px;
     }
     .forgotmainwrapper {
-        padding-top: 100%;
+        padding-top: 109%;
     }
 }
 

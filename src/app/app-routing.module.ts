@@ -23,6 +23,7 @@ import { Signupforblockchainstep2Component } from './components/signupforblockch
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ArtistxpinfoComponent } from './components/artistxpinfo/artistxpinfo.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -47,7 +48,8 @@ const routes: Routes = [
   { path: 'signupforblockchainconfirmation', component: SignupforblockchainconfirmationComponent },
   { path: 'signupforblockchainstep2', component: Signupforblockchainstep2Component },
   { path: 'artistxpinfo', component: ArtistxpinfoComponent},
-  {path:'reset-password',component:ResetPasswordComponent}
+  {path:'reset-password',component:ResetPasswordComponent},
+  {path:'cookiepolicy',component:CookiepolicyComponent}
   // demo example for resolve and auth guard along with can activate
   
   // { path: "recentSignUp", component: RecentSignUpComponent, canActivate:[AuthGuard], resolve: {results: Resolveservice}, data: {source: 'admindashboard'}},

@@ -51,6 +51,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ArtistxpinfoComponent } from './components/artistxpinfo/artistxpinfo.component';
 import { LoginModule } from 'dist/login';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +75,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     CompetitionrulesComponent,
     RefundpolicyComponent,
     ArtistxpinfoComponent,
-    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent, SignupforblockchainComponent, Signupforblockchainstep2Component, SignupforblockchainconfirmationComponent, ForgotPasswordComponent, ResetPasswordComponent
+    AgreementComponent,SignDialogComponent, InvitationforlaunchplanComponent, SignupforblockchainComponent, Signupforblockchainstep2Component, SignupforblockchainconfirmationComponent, ForgotPasswordComponent, ResetPasswordComponent, CookiepolicyComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
