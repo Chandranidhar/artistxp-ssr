@@ -2,8 +2,8 @@
   <mat-card-content class="signupbody">
 <app-signupheader></app-signupheader>
 
-  <mat-horizontal-stepper class="signupflowstepper"  #stepper>
-    <mat-step [stepControl]="firstForm" > 
+  <mat-horizontal-stepper [linear]="isLinear"  class="signupflowstepper"  #stepper>
+    <mat-step [stepControl]="firstForm"> 
         <ng-template matStepLabel>Step 1</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
@@ -36,7 +36,7 @@
 
 
                     <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Email" value="" type="email" formControlName="email" (blur)="f.inputBlur(firstForm,'email')">
+                        <input matInput placeholder="Email" value="" type="email" formControlName="email" autocomplete="off" (blur)="f.inputBlur(firstForm,'email')">
                         <mat-error *ngIf="firstForm.controls['email']?.touched && firstForm.controls['email'].errors && firstForm.controls['email'].errors.required" class="errormsgred">email is required !</mat-error>
                         <mat-error *ngIf="firstForm.controls['email']?.touched && firstForm.controls['email'].errors && firstForm.controls['email'].errors.pattern" class="errormsgred">Please Check yourEemail !</mat-error>
                         <span class="errormsgred" *ngIf="err==1"> Email already exists!</span>
@@ -46,12 +46,12 @@
                         <input matInput placeholder="Username" value="" type="text">
                     </mat-form-field> -->
                     <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Password" value="" type="password" formControlName="password" (blur)="f.inputBlur(firstForm,'password')">
+                        <input matInput placeholder="Password" value="" type="password" formControlName="password"  autocomplete="off" (blur)="f.inputBlur(firstForm,'password')">
                         <mat-error *ngIf="firstForm.controls['password']?.touched && firstForm.controls['password'].errors && firstForm.controls['password'].errors.required" class="errormsgred">Password is required !</mat-error>
                         <mat-error *ngIf="firstForm.controls['password']?.touched && firstForm.controls['password'].errors && firstForm.controls['password'].errors.minlength" class="errormsgred">Confirm Password is required !</mat-error>
                     </mat-form-field>
                     <mat-form-field class="example-full-width fromgroup">
-                        <input matInput placeholder="Confirm Password" value="" type="password" formControlName="confirmpassword" (blur)="f.inputBlur(firstForm,'confirmpassword')">
+                        <input matInput placeholder="Confirm Password" value="" type="password" formControlName="confirmpassword" autocomplete="off"(blur)="f.inputBlur(firstForm,'confirmpassword')">
                         <mat-error *ngIf="firstForm.controls['confirmpassword']?.touched && firstForm.controls['confirmpassword'].errors && firstForm.controls['confirmpassword'].errors.required" class="errormsgred">Confirm Password is required !</mat-error>
                         <mat-error *ngIf="firstForm.controls['confirmpassword']?.touched && firstForm.controls['confirmpassword'].errors && firstForm.controls['confirmpassword'].errors.minlength" class="errormsgred">Confirm Password is required !</mat-error>
                     </mat-form-field>
@@ -187,8 +187,8 @@
         </mat-list>
     </span>
     </mat-step>
-    <mat-step [stepControl]="secondForm" >
-        <ng-template matStepLabel>Step  2</ng-template>
+    <mat-step [stepControl]="secondForm">
+        <ng-template matStepLabel >Step  2</ng-template>
       <span class="signupfrwrapper">
         <mat-list class="signupcontainer">
                         <mat-list-item class="signupflow signupflow2" >
@@ -293,26 +293,7 @@
                                     </span>
                         </span>
                     </ng-container>
-                    <!-- <span class="formlistwrapper">
-                        <mat-card-title>Performance Category/ Genre (Music):</mat-card-title>
-                        <mat-list role="list" class="scrolllight">
-                                
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="genre">Select Genre</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="heavymetal">Heavy Metal</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="edm">EDM</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="rap">Rap</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="blues">Blues</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="country">Country</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="musical">Musical</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="rock">Rock</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="pop">Pop</mat-checkbox></mat-list-item>
-                            <mat-list-item role="listitem"><mat-checkbox class="example-margin"  formControlName="hiphop">Hip-Hop (Music)</mat-checkbox></mat-list-item>
-                          </mat-list>
-                    </span> -->
-
-                    <!-- <mat-form-field class="example-full-width fromgroup">
-                  <textarea matInput placeholder="Leave a comment"></textarea>
-                </mat-form-field> -->
+                   
                 <ng-container *ngIf="(userdata.get('musicians')!=null && userdata.get('musicians') == 'true') || (userdata.get('dancer')!=null && userdata.get('dancer') == 'true')">
                   <mat-card-subtitle>ABILITY: (CHOOSE ONE ONLY) <b>Enter by the Most Experienced Recording Artist/Dancer's Ability Level</b></mat-card-subtitle>
                   <span class="fromgroupcols">
@@ -342,39 +323,7 @@
                       </span>
                   </span>
                 </ng-container>
-               
-          
-                <!-- <div formArrayName="experiences" *ngFor="let creds of secondForm.controls.experiences['controls']; let i = index">
-                        <div [formGroupName]="i">
-                <mat-form-field class="example-full-width fromgroup inputgroup">
-                    <mat-placeholder>Experiences</mat-placeholder>
-                      <input matInput type="text" formControlName="exper">
-                      <mat-error *ngIf="secondForm.controls['exper']?.touched && secondForm.controls['exper'].errors && secondForm.controls['exper'].errors.required" class="errormsgred">Experienced is required !</mat-error>
-                      <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="addCreds()">
-                        <mat-icon>add</mat-icon>
-                    </button>
-                   <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="delCreds(i)">
-                        <mat-icon>remove</mat-icon>
-                    </button>            
-                  </mat-form-field>
-                 </div>
-                </div> -->
-
-                <!-- <div formArrayName="website" *ngFor="let creds of secondForm.controls.website['controls']; let k = index">
-                        <div [formGroupName]="k">
-                  <mat-form-field class="example-full-width fromgroup inputgroup">
-                      <mat-placeholder>Website</mat-placeholder>
-                        <input matInput type="text" formControlName="wsite">
-                        <mat-error *ngIf="secondForm.controls['wsite']?.touched && secondForm.controls['wsite'].errors && secondForm.controls['wsite'].errors.required" class="errormsgred">Experienced is required !</mat-error>
-                        <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="addweb()">
-                          <mat-icon>add</mat-icon>
-                      </button>
-                      <button type="button" mat-button matSuffix mat-stroked-button aria-label="search" (click)="delweb(k)">
-                          <mat-icon>remove</mat-icon>
-                      </button>
-                    </mat-form-field>
-                </div>
-            </div> -->
+            
             <ng-container class="form-group">
               <!--<label><span>Website:</span></label>-->
               <div class="selectdiv" *ngFor="let item of websites.controls; let i = index;">
@@ -701,7 +650,7 @@
                                         </mat-expansion-panel>
                                       </mat-accordion>
                                       <mat-card-actions class="signupbuttonwrapper">
-                                        <button mat-button class="btnbuyticket_genuserlan">
+                                        <button mat-button class="btnbuyticket_genuserlan" matStepperNext>
                                             <span class="buttoncon">Next</span>
                                         </button>
                                         <button mat-button class="btnbuyticket_genuserlan" matStepperNext>
@@ -798,14 +747,11 @@
                 </mat-list>
             </span>
       </mat-step>
-    
   </mat-horizontal-stepper>
-  
   
   <!-- Copyright 2019 Google Inc. All Rights Reserved.
       Use of this source code is governed by an MIT-style license that
       can be found in the LICENSE file at http://angular.io/license -->
-
 
 </mat-card-content>
 </mat-card>

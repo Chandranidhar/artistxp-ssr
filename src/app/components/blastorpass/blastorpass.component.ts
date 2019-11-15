@@ -14,6 +14,10 @@ import { DialogData } from '../signupflow/signupflow.component';
 import { MetaService } from '@ngx-meta/core';
 declare var $:any;
 declare var FB: any;
+export interface DialogData {
+
+  agreeterms: any;
+}
 @Component({
   selector: 'app-blastorpass',
   templateUrl: './blastorpass.component.html',
@@ -130,6 +134,30 @@ export class BlastorpassComponent implements OnInit {
 
     return array.filter(option => option.name.toLowerCase().includes(filterValue));
   }
+  
+  getCountryStateCityList() {
+    // this._http.get("assets/json/country.json")
+    this.apiservice.getJsonObject('assets/json/country.json')     // json for english-speaking-country
+      .subscribe(res => {
+        let result: any;
+        result = res;
+        this.countrylistarray = result;
+      });
+    this.apiservice.getJsonObject('assets/json/state.json')   // json for states of world
+      .subscribe(res => {
+        let result2: any;
+        result2 = res;
+        this.statelistarray = result2;
+      });
+    this.apiservice.getJsonObject('assets/json/cities.json')     // json for cities of world
+      .subscribe(res => {
+        let result3: any;
+        result3 = res;
+        this.citylistarray = result3;
+      });
+  }
+
+
   setStatelist() {
     this.selectedstatearray = [];
     let selectedcountry: any = {};
@@ -175,6 +203,8 @@ export class BlastorpassComponent implements OnInit {
   
 
   ngOnInit() {
+    this.getCountryStateCityList();
+
     this.dataForm = this.fb.group({
       firstname: ["", Validators.required],
       lastname: ["", Validators.required],
@@ -243,6 +273,7 @@ export class BlastorpassComponent implements OnInit {
         startWith(''),
         map(value => this._filter(this.countrylistarray, value))
       );
+
   }
   scrollToTop(){
 
@@ -374,9 +405,9 @@ export class BlastorpassComponent implements OnInit {
         let result: any;
         result = res;
         if (result.status == 'success') {
-          // this.agreecookiemodal = false; // modal close here
-          // this.termsmodal.onNoClick();
-          // console.log(this.agreeval);
+           this.agreecookiemodal = false; // modal close here
+           //this.termsmodal.onNoClick();
+           console.log(this.agreeval);
           this.dialog.closeAll();
           // setTimeout(()=>{
           //   this.myStepper.next();
@@ -676,6 +707,7 @@ export class BlastorpassComponent implements OnInit {
   }
   openTermsDialog() {            //demo for dialog 
     const dialogTermsRef = this.dialog.open(TermsDialogBlastComponent, {
+      disableClose: true ,
       data: { agreeterms: 0 }
     });
     dialogTermsRef.afterClosed().subscribe(result => {
@@ -685,6 +717,7 @@ export class BlastorpassComponent implements OnInit {
   }
   openTermsDialogAgree() {            //demo for dialog 
     const dialogTermsRef = this.dialog.open(TermsDialogBlastComponent, {
+      disableClose: true ,
       data: { agreeterms: 1 }
     });
     dialogTermsRef.afterClosed().subscribe(result => {

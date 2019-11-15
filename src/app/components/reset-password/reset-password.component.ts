@@ -7,12 +7,12 @@ import { ApiService } from '../../services/api-service';
   styleUrls: ['./reset-password.component.css']
 })
 export class ResetPasswordComponent implements OnInit {
-  public fromTitleName: any = 'Reset From';
+  public fromTitleName: any = 'Reset Form';
 
   public logo: any = '';
   public serverUrl: any = this.apiservice.api_url;
   public addEndpoint: any = {
-    endpoint:'addorupdatedata',
+    endpoint:'resetpassword',
     source:'user'
   };
   constructor(public apiservice: ApiService) { }

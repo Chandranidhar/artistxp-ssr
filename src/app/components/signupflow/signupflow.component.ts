@@ -39,8 +39,8 @@ export interface DialogData {
 
 export class SignupflowComponent implements OnInit {
 
-  @ViewChild('stepper', { static: true }) public myStepper: MatStepper;
-  isLinear = false;
+  @ViewChild('stepper', { static: false })  public myStepper: MatStepper;
+  isLinear = true;
   firstForm: FormGroup;
   secondForm: FormGroup;
   fourthForm: FormGroup;
@@ -170,6 +170,7 @@ export class SignupflowComponent implements OnInit {
   openTermsDialogAgree() {            //demo for dialog 
     const dialogTermsRef = this.dialog.open(TermsDialogComponent, {
       panelClass: ['modal-md', 'infomodal'],
+     disableClose: true ,
       data: { agreeterms: 1 }
     });
     dialogTermsRef.afterClosed().subscribe(result => {
@@ -204,7 +205,7 @@ export class SignupflowComponent implements OnInit {
         }
       })
   }
-
+/**api service for json data of state country and city */
   getCountryStateCityList() {
     // this._http.get("assets/json/country.json")
     this.apiService.getJsonObject('assets/json/country.json')     // json for english-speaking-country
@@ -226,6 +227,7 @@ export class SignupflowComponent implements OnInit {
         this.citylistarray = result3;
       });
   }
+  
   setStatelist() {
     this.selectedstatearray = [];
     let selectedcountry: any = {};
@@ -393,7 +395,7 @@ export class SignupflowComponent implements OnInit {
 
   /**submit function */
   firstsubmit() {
-    console.log(this.firstForm.value);
+    //console.log(this.firstForm.value);
     this.firstForm.markAllAsTouched();
     if (this.firstForm.valid) {
       this.apiService.postDatawithoutToken('datalist', { "source": "user", "condition": { "email": this.firstForm.controls['email'].value } })
@@ -401,15 +403,15 @@ export class SignupflowComponent implements OnInit {
           let result1: any = {};
           result1 = res;
           this.signup = result1.resc;
-          console.log(result1.resc);
-          console.log(this.signup);
+          // console.log(result1.resc);
+          // console.log(this.signup);
           if (this.signup == 1) {
             this.err = 1;
-            console.log(this.err);
-            console.log('false');
+            // console.log(this.err);
+            // console.log('false');
           } else {
             this.err = 0;
-            console.log(this.err);
+            // console.log(this.err);
             this.openTermsDialogAgree();
           }
         })
@@ -483,7 +485,7 @@ export class SignupflowComponent implements OnInit {
         if (result.status == 'success') {
           this.dialog.closeAll();
           this.myStepper.next();      //invoke function to go to the next step of element stepper 
-
+          this.isLinear=false;
 
           let udetails = result.result.ops[0];
           this.userdata.set('_id', result.result.ops[0]._id);

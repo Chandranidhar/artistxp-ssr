@@ -6,13 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./artistxpinfo.component.css']
 })
 export class ArtistxpinfoComponent implements OnInit {
-
+public termsandconditionsmodal:any;
+public agreecookiemodal:any;
   constructor() { }
 
   ngOnInit() {
   }
   closep(){}
   onHidden(){}
-  termsandconditionsmodal(){}
-  agreecookiemodal(){}
+  dosubmit1(template:any){}
+  
 }

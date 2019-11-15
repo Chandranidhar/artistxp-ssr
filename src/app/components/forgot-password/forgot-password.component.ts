@@ -15,10 +15,10 @@ export class ForgotPasswordComponent implements OnInit {
   public formTitle: any = 'Forget Password';
   public serverUrl:any = this.apiservice.api_url;
   public addEndpoint: any = {
-    endpoint:'adfeg'
+    endpoint:'forgetpassword'
   };
 
-  public domanUrl: any = '';
+  public domanUrl: any = 'localhost:4200/reset-password';
   constructor(public activatedRouter: ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder) {}
   
 

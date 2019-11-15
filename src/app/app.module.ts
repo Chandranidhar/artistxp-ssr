@@ -49,7 +49,7 @@ import { Signupforblockchainstep2Component } from './components/signupforblockch
 import { SignupforblockchainconfirmationComponent } from './components/signupforblockchainconfirmation/signupforblockchainconfirmation.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ArtistxpinfoComponent } from './components/artistxpinfo/artistxpinfo.component';
-import { LoginModule } from 'dist/login';
+import { LoginModule } from 'login';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.component';
 @NgModule({
@@ -101,7 +101,7 @@ import { CookiepolicyComponent } from './components/cookiepolicy/cookiepolicy.co
     // CookieService 
   ],
   providers: [AuthGuard,CookieService,ApiService],
-  entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent,SuccessDialogComponent,BlastorpassComponent, TermsDialogComponent,QueryDialogBlastComponent,AgreementComponent, SignDialogComponent],
+  entryComponents: [SignupflowComponent, QueryDialogComponent,TermsDialogComponent,SuccessDialogComponent,BlastorpassComponent, TermsDialogComponent,QueryDialogBlastComponent,AgreementComponent, SignDialogComponent,TermsDialogBlastComponent],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
